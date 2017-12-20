@@ -2,5 +2,5 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 
 
 Maintenant, ce projet devient l'adaptation a notre  site de mariage collaboratif.
-On veut le pusher sur github
+Ce projet est sur github, et sur heroku
 
