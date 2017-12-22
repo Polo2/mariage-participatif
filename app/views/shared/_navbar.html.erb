@@ -11,14 +11,17 @@
 
       <!-- Links when logged in -->
       <% if current_user.weddings.empty? %>
-        <%= link_to "Your wedding",  new_wedding_path , class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to t("navbar.my_wedding"),  new_wedding_path , class: "navbar-wagon-item navbar-wagon-link" %>
       <% else %>
         <div class="dropdown">
-          <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">Your wedding</a>
+          <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+            <%= t("navbar.my_wedding") %>
+          </a>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to wedding_path(current_user.weddings.future.last) do %> <i class="fa fa-hourglass-half"></i>
-                My wedding
+              <%= link_to wedding_path(current_user.weddings.future.last) do %>
+                <i class="fa fa-hourglass-half"></i>
+                <%= t("navbar.my_wedding") %>
               <% end %>
             </li>
             <% memories = current_user.weddings.passed %>
@@ -34,7 +37,7 @@
       <% end %>
 
       <div class="dropdown">
-        <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">Invitations</a>
+        <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"><%= t("navbar.inviations") %></a>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <% if current_user.registries.exists? %>
             <li>
@@ -75,8 +78,8 @@
 
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Sign up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t("navbar.login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t("navbar.sign_up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 

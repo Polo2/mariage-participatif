@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  navbar:
+    login: "Login"
+    sign_up: "Sign Up"
+    my_wedding: "My wedding"
+    invitations: "Invitations"
