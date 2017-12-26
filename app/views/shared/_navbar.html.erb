@@ -28,7 +28,7 @@
             <% memories.each do |memory| %>
               <li>
                 <%= link_to wedding_path(memory) do %> <i class="fa fa-check"></i>
-              Memories
+              <%= t("navbar.memories") %>
                 <% end %>
               </li>
             <% end %>
@@ -37,7 +37,7 @@
       <% end %>
 
       <div class="dropdown">
-        <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"><%= t("navbar.inviations") %></a>
+        <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"><%= t("navbar.invitations") %></a>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <% if current_user.registries.exists? %>
             <li>
@@ -49,7 +49,7 @@
             </li>
           <% else %>
             <li>
-              <i class="fa fa-times"><a class="ddtext">No wedding</a></i>
+              <i class="fa fa-times"><a class="ddtext"><%= t("navbar.no_wedding")%></a></i>
             </li>
           <% end %>
         </ul>
@@ -63,13 +63,13 @@
             <li>
               <%= link_to users_profile_path do %>
                 <i class="fa fa-user"></i>
-                Profile
+                <%= t("navbar.profile") %>
               <% end %>
             </li>
             <li>
               <%= link_to destroy_user_session_path,  method: :delete, data: { confirm: "Log out, sure?"}  do %>
                 <i class="fa fa-sign-out"></i>
-                Log out
+                <%= t("navbar.log_out") %>
               <% end %>
             </li>
           </ul>
@@ -88,10 +88,10 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Your wedding</a></li>
-        <li><a href="#">Invitations</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Log out</a></li>
+        <li><a href="#"><%= t("navbar.my_wedding") %></a></li>
+        <li><a href="#"><%= t("navbar.invitations")%></a></li>
+        <li><a href="#"><%= t("navbar.profile")%></a></li>
+        <li><a href="#"><%= t("navbar.log_out")%></a></li>
       </ul>
     </div>
   </div>
