@@ -24,5 +24,74 @@ en:
   navbar:
     login: "Login"
     sign_up: "Sign Up"
+    log_out: "Log out"
     my_wedding: "My wedding"
     invitations: "Invitations"
+    memories: "Memories"
+    no_wedding: "No invitation"
+    profile: "Profile"
+  home:
+    baseline: "Your collaborative wedding experience"
+    getting_married: "GETTING MARRIED"
+    getting_married_description: "Live a unique collaborative wedding experience.
+                You will create a dedicated platform for your website where you can :"
+    getting_married_l1: "share invitations"
+    getting_married_l2: "organize details"
+    getting_married_l3: "guest list and memories..."
+    getting_married_l4: "You may ask guest's help by participating to a dedicated extra-job !"
+    getting_married_create: "CREATE"
+    invited: "GUEST"
+    invited_l1: "As a wedding guest you will be able to"
+    invited_l2: "organize your way to the wedding"
+    invited_l3: "participate to some wedding tasks"
+    invited_l4: "see the wedding memories"
+    invited_l5: "chat with other guests..."
+    invited_l6: "Now, you just have to enjoy the wedding celebration !"
+    invited_sign_up: "SIGN UP"
+    contact_form_title: "Contact us"
+    contact_form_name: "Full Name"
+    contact_form_email: "Email address"
+    contact_form_message: "Message"
+    contact_form_send: "SEND"
+  wedding:
+    wedder_tab:
+      guest: "Guest"
+      guests: "Guests"
+      answer: "Answer"
+      answers: "Answers"
+      pending_task: "Pending task"
+      pending_tasks: "Pending tasks"
+      new_message: "New Message"
+      new_messages: "New Messages"
+    guest_list:
+      title: "Guest list"
+      add: "Add guest"
+      list: "See guest list"
+  links:
+    edit: "Edit"
+    destroy: "Destroy"
+    back: "Back"
+    confirmation: "Are you sure ?"
+  task:
+    choose_new: "Choose one new task"
+    create: "Create"
+    title: "My Tasks"
+    mark: "Mark as done"
+    unmark: "Unmark as done"
+    done: "Task done |"
+    not_done: "This task is unfulfilled |"
+    tdl: "ToDo list"
+    type_here: "Type here"
+    add: "Add task"
+    private: "Private"
+    public: "Public"
+    comments: "Comments"
+    messages: "Messages"
+    new_message: "Write new message :"
+    needs: "Needs"
+
+
+
+
+
+

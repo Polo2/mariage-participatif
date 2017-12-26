@@ -4,7 +4,7 @@
 <!----------- MARIES / GUEST -------------->
 <div class="home-page">
   <div class="parallax">
-    <div class="phrase">Your collaborative wedding experience</div>
+    <div class="phrase"><%= t("home.baseline") %></div>
   </div>
   <div class="paddded-tb">
     <div class="container">
@@ -15,19 +15,17 @@
               <i class="fa fa-heart-o"></i>
             </div>
             <div class="title">
-              <h3>GETTING MARRIED</h3>
+              <h3><%= t("home.getting_married")%></h3>
             </div>
             <div class="description">
-                Live a unique collaborative wedding experience.
-                You will create a dedicated platform for your website where you can :
+                <%= t("home.getting_married_description") %>
                 <br>
-                <li>share invitations</li>
-                <li>organization details</li>
-                <li>guest list and memories...</li>
-                <br>
-                You may ask guest's help by participating to a dedicated extra-job !
+                <li><%= t("home.getting_married_l1")%></li>
+                <li><%= t("home.getting_married_l2")%></li>
+                <li><%= t("home.getting_married_l3")%></li>
+                <br><%= t("home.getting_married_l4")%>
             </div>
-            <%= link_to 'CREATE', new_wedding_path, class: 'button' %>
+            <%= link_to t("home.getting_married_create"), new_wedding_path, class: 'button' %>
           </div>
         </div>
         <div class="col-xs-12 col-md-4 col-md-offset-2">
@@ -36,18 +34,18 @@
               <i class="fa fa-envelope-o"></i>
             </div>
             <div class="title">
-              <h3>GUEST</h3>
+              <h3><%= t("home.invited") %></h3>
             </div>
             <div class="description">
-              As a wedding guest you will be able to :
-              <li>organize your way to the wedding</li>
-              <li>participate to some wedding tasks</li>
-              <li>see the wedding memories</li>
-              <li>chat with other guests...</li>
+              <%= t("home.invited_l1") %>
+              <li><%= t("home.invited_l2") %></li>
+              <li><%= t("home.invited_l3") %></li>
+              <li><%= t("home.invited_l4") %></li>
+              <li><%= t("home.invited_l5") %></li>
               <br>
-              Now, you just have to enjoy the wedding celebration !
+              <%= t("home.invited_l6") %>
             </div>
-            <%= link_to 'FIND', new_user_registration_path, class: 'button' %>
+            <%= link_to t("home.invited_sign_up"), new_user_registration_path, class: 'button' %>
           </div>
         </div>
       </div>
@@ -56,7 +54,7 @@
 
 
   <!----------- Ils nous font confiance -------------->
-  <div class="testimonials paddded-tb">
+ <!--  <div class="testimonials paddded-tb">
     <div class="container">
       <h3 class="text-center"><span class="section-title">They trust us</span></h3>
       <div class="row">
@@ -95,11 +93,11 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!----------- Contact us form -------------->
   <div class="addmargin">
-    <h3><span class="section-title">Contact us</span></h3>
+    <h3><span class="section-title"><%= t("home.contact_form_title")%></span></h3>
   </div>
   <div class="contact">
     <div class="container">
@@ -108,19 +106,19 @@
 
           <div class="row">
             <div class="col-md-6 col-sm-12">
-              <label for="contactFormFullName">Full Name</label>
-              <input type="email" class="form-control" id="contactFormFullName" placeholder="Enter full name">
+              <label for="contactFormFullName"><%= t("home.contact_form_name")%></label>
+              <input type="email" class="form-control" id="contactFormFullName" >
             </div>
             <div class="col-md-6 col-sm-12">
-              <label for="contactFormEmail">Email address</label>
-              <input type="email" class="form-control" id="contactFormEmail" placeholder="Enter email address">
+              <label for="contactFormEmail"><%= t("home.contact_form_email")%></label>
+              <input type="email" class="form-control" id="contactFormEmail" >
             </div>
           </div>
           <div class="row marged-top">
             <div class="col-xs-12">
-              <label>Message</label>
+              <label><%= t("home.contact_form_message")%></label>
               <input id="exampleInputMessage1" placeholder="Type here" class="form-control mb-4" rows="10" name="message">
-              <button id="button" class="button marged-top" placeholder="Send">SEND</button>
+              <button id="button" class="button marged-top" placeholder="Send"><%= t("home.contact_form_send")%></button>
             </div>
           </div>
         </div>

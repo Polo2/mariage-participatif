@@ -6,14 +6,14 @@
           <div class="tab active" href="<%= wedding_registries_path(@wedding) %>">
             <h3><%= @wedding.guests.count %></h3>
             <p>
-              <%= @wedding.guests.count > 1 ? "Guests" : "Guest" %>
+              <%= @wedding.guests.count > 1 ? t("wedding.wedder_tab.guests") : t("wedding.wedder_tab.guest") %>
             </p>
           </div>
 
           <div class="tab">
             <h3><%= @wedding.guests.where(presence: true).count %></h3>
             <p>
-              <%= @wedding.guests.where(presence: true).count > 1 ? "Answers" : "Answer" %>
+              <%= @wedding.guests.where(presence: true).count > 1 ? t("weding.wedder_tab.answers") : t("wedding.wedder_tab.answer") %>
             </p>
           </div>
 
@@ -26,7 +26,7 @@
           <a class="tab">
             <h3><%= @wedding.tasks.where(statut: false).count %></h3>
             <p>
-              <%= @wedding.tasks.count > 1 ? "Pending tasks" : "Pending task" %>
+              <%= @wedding.tasks.count > 1 ? t("wedding.wedder_tab.pending_tasks") : t("wedding.wedder_tab.pending_task") %>
             </p>
           </a>
 
@@ -34,7 +34,7 @@
           <div class="tab">
             <h3><%= @messages_count %></h3>
             <p>
-              <%= @messages_count > 1 ? "New Messages" : "New Message" %>
+              <%= @messages_count > 1 ? t("wedding.wedder_tab.new_messages") : t("wedding.wedder_tab.new_message") %>
             </p>
           </div>
         </div>

@@ -12,13 +12,13 @@
           <i class="fa fa-hourglass-half"></i>
         <% end %>
 
-        <%= @task.statut ? "Task done | " : "This task is unfulfilled |" %>
+        <%= @task.statut ? t("task.done") : t("task.not_done") %>
 
         <% if policy(@wedding).edit? %>
           <% if @task.statut %>
-            <%= link_to "Unmark as done", edit_wedding_task_path(@wedding, @task) %>
+            <%= link_to t("task.unmark"), edit_wedding_task_path(@wedding, @task) %>
           <% else %>
-            <%= link_to "Mark as done", edit_wedding_task_path(@wedding, @task) %>
+            <%= link_to t("task.mark"), edit_wedding_task_path(@wedding, @task) %>
           <% end %>
         <% end %>
       </p>
@@ -27,11 +27,11 @@
     <% if policy(@wedding).edit? %>
       <div class="row">
         <div class="col-xs-8">
-          <h4>Review list</h4>
+          <h4><%= t("task.tdl")%></h4>
         </div>
 
         <div class="col-xs-4">
-          <h4>Add task</h4>
+          <h4><%= t("task.add")%></h4>
         </div>
       </div>
     <% end %>
@@ -43,19 +43,19 @@
           <div class="leftblock bloc">
             <div class="row">
               <div class="col-xs-6 task-details">
-                <h4>Private</h4>
+                <h4><%= t("task.private") %></h4>
                 <ul>
                   <% @private_elements.each do |element| %>
                     <li>
                       <%= element.content %>
                       <%= link_to edit_wedding_task_element_path(@wedding, @task, element) do %><i class="fa fa-pencil"></i><% end %>
-                      <%= link_to wedding_task_element_path(@wedding, @task, element), method: :delete, data: { confirm: 'Sure?' } do %><i class="fa fa-trash"></i><% end %>
+                      <%= link_to wedding_task_element_path(@wedding, @task, element), method: :delete, data: { confirm: t("links.confirmation") } do %><i class="fa fa-trash"></i><% end %>
                     </li>
                   <% end %>
                 </ul>
               </div>
               <div class="col-xs-6 task-details">
-                <h4>Public</h4>
+                <h4><%= t("task.public") %></h4>
                   <ul>
                   <% @public_elements.each do |element| %>
                     <li>
@@ -75,20 +75,20 @@
           </div>
         </div>
         <div class="col-xs-12 discussion">
-          <h4>Comments</h4>
+          <h4><%= t("task.comments")%></h4>
           <div class="downblock bloc invited-height-block">
             <%= render 'messages/messages-content' %>
           </div>
         </div>
       <% else %>
         <div class="col-xs-8 discussion">
-          <h4>Messages</h4>
+          <h4><%= t("task.messages") %></h4>
           <div class="leftblock bloc invited-height-block">
             <%= render 'messages/messages-content' %>
           </div>
         </div>
          <div class="col-xs-4 task-details">
-          <h4>Needs</h4>
+          <h4><%= t("task.needs")%></h4>
             <div class="rightblock bloc invited-height-block">
               <ul>
               <% @public_elements.each do |element| %>
@@ -102,7 +102,7 @@
       <% end %>
     </div>
     <div class=links>
-      <%= link_to "Back to Wedding", wedding_path(@wedding), class: "back-link" %>
+      <%= link_to t("links.back"), wedding_path(@wedding), class: "back-link" %>
     </div>
   </div>
 </div>
