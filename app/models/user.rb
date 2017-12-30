@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :messages
 
   after_create :link_registries
-  has_attachment :avatar
+  has_attachment :avatar, accept: [:jpg, :png, :gif]
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
