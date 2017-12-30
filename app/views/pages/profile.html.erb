@@ -8,16 +8,17 @@
         <div class="profile-weddings-infos">
           <div class="profile-wedding-org">
             <span><%= current_user.weddings.future.count %></span>
-            <p>wedding in preparation</p>
+            <p><%= t("profile.wedding_in_preparation")%></p>
           </div>
           <div class="profile-memories">
             <span><%= current_user.weddings.passed.count %></span>
-            <p>invitations</p>
+            <p>invitation(s)</p>
           </div>
         </div>
       </div>
       <div class="links">
-        <%= link_to "Home", root_path %><%= link_to "Edit profile", edit_user_registration_path %>
+        <%= link_to t("links.home"), root_path %>
+        <%= link_to t("links.edit"), edit_user_registration_path %>
       </div>
     </div>
   </div>

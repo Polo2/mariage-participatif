@@ -4,11 +4,14 @@ fr:
     login: "Connexion"
     sign_up: "Inscription"
     log_out: "Deconnexion"
+    log_out_confirm: "Certain ?"
     my_wedding: "Mon mariage"
     invitations: "Invitations"
     memories: "Souvenirs"
     no_wedding: "Pas d'invitation"
     profile: "Profil"
+  profile:
+    wedding_in_preparation: "mariage en cours de préparation"
   devise:
     resend_instructions: "Renvoi des identifiants"
   home:
@@ -49,6 +52,7 @@ fr:
       add: "Nouvelle invitation"
       list: "Voir la liste"
   links:
+    home: "Acceuil"
     edit: "Editer"
     destroy: "Détruire"
     back: "Retour"

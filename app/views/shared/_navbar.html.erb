@@ -58,7 +58,7 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= avatar_for current_user, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= avatar_for current_user, width: 45, height: 45, crop: :thumb, gravity: :face,  class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to users_profile_path do %>
@@ -67,7 +67,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to destroy_user_session_path,  method: :delete, data: { confirm: "Log out, sure?"}  do %>
+              <%= link_to destroy_user_session_path,  method: :delete, data: { confirm: t("navbar.log_out_confirm")}  do %>
                 <i class="fa fa-sign-out"></i>
                 <%= t("navbar.log_out") %>
               <% end %>

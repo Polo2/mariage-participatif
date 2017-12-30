@@ -25,11 +25,14 @@ en:
     login: "Login"
     sign_up: "Sign Up"
     log_out: "Log out"
+    log_out_confirm: "Log out, sure?"
     my_wedding: "My wedding"
     invitations: "Invitations"
     memories: "Memories"
     no_wedding: "No invitation"
     profile: "Profile"
+  profile:
+    wedding_in_preparation: "wedding in preparation"
   devise:
     oui: "yes"
     non: "no"
@@ -72,6 +75,7 @@ en:
       add: "Add guest"
       list: "See guest list"
   links:
+    home: "Home"
     edit: "Edit"
     destroy: "Destroy"
     back: "Back"
