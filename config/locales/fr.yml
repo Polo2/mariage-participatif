@@ -9,10 +9,12 @@ fr:
     memories: "Souvenirs"
     no_wedding: "Pas d'invitation"
     profile: "Profil"
+  devise:
+    resend_instructions: "Renvoi des identifiants"
   home:
     baseline: "Vivre une expérience de mariage collaboratif"
     getting_married: "Vous vous mariez"
-    getting_married_description: "Avec cette plateforme web, Vous pourrez créer une page dédiées à votre mariage et ses invités !
+    getting_married_description: "Avec cette plateforme web, vous pourrez créer une page dédiée à votre mariage et ses invités !
               Vous pourrez par exemple :"
     getting_married_l1: "Envoyer et suivre vos invitations"
     getting_married_l2: "Planifier les services que vous demandez"
@@ -66,5 +68,6 @@ fr:
     public: "Public"
     comments: "Commentaires"
     messages: "Messages"
-    new_message: "AJouter un nouveau message :"
+    new_message: "Ajouter un nouveau message :"
     needs: "Besoins"
+    add_element: "Ajouter un élement"

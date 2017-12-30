@@ -30,6 +30,10 @@ en:
     memories: "Memories"
     no_wedding: "No invitation"
     profile: "Profile"
+  devise:
+    oui: "yes"
+    non: "no"
+    resend_instructions: "Resend confirmation instructions"
   home:
     baseline: "Your collaborative wedding experience"
     getting_married: "GETTING MARRIED"
@@ -89,6 +93,7 @@ en:
     messages: "Messages"
     new_message: "Write new message :"
     needs: "Needs"
+    add_element: "Add element"
 
 
 

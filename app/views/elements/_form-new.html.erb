@@ -4,8 +4,8 @@
   <%=
   # f.input :public, collection: [ public_for(true), public_for(false) ], as: :radio_buttons
   %>
-  <%= f.input :public, collection: {Yes: true, No: false}, as: :radio_buttons %>
-  <%= f.button :submit, 'Add' %>
+  <%= f.input :public, collection: { Oui: true, Non: false}, as: :radio_buttons %>
+  <%= f.button :submit, t("task.add_element") %>
 
 <% end %>
 

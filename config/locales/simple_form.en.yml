@@ -14,10 +14,12 @@ en:
     # labels:
     #   defaults:
     #     password: 'Password'
-    #   user:
+    user:
     #     new:
     #       email: 'E-mail to sign in.'
-    #     edit:
+      edit:
+         first_name: "First real name"
+         last_name: "Last name"
     #       email: 'E-mail.'
     # hints:
     #   defaults:
