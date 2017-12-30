@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.3.5'
 
 gem 'omniauth-facebook'
-gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
@@ -19,6 +18,11 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'awesome_print'
+
+# devise et 118n
+gem 'devise'
+gem 'rails-i18n', '5.0.3'
+gem 'devise-i18n', '~> 1.2 '
 
 # attachinary
 gem 'cloudinary'
