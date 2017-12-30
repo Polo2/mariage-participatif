@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :set_locale
   before_action :authenticate_user!
   before_action :set_user_weddings, :if => :user_signed_in?
 
@@ -21,6 +22,10 @@ class ApplicationController < ActionController::Base
 
   def set_user_weddings
     @user_weddings = current_user.weddings
+  end
+
+  def set_locale
+    I18n.locale = :fr
   end
 
 end
