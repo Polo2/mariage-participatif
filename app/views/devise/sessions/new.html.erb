@@ -1,22 +1,28 @@
+
 <div class="new auth">
   <div class="contact-form">
     <div class="contact">
       <div class="container">
         <div class="col-xs-12 col-md-6 col-md-offset-3">
-          <h3 class="text-center">
-            <span class="section-title">Log in</span>
-          </h3>
 
-            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="form-inputs">
-              <%= f.input :email, label: "Email address", required: false, autofocus: true, class: 'form-control', placeholder: 'Type email' %>
-              <%= f.input :password, label: "Password", required: false, class: 'form-control', placeholder: 'Type password' %>
-              <%= f.input :remember_me, label: "Stay connected", as: :boolean if devise_mapping.rememberable? %>
-            </div>
+        <h3 class="text-center">
+          <span class="section-title"><%= t(".sign_in") %></span>
+        </h3>
 
-            <button id="button" placeholder="Log in">LOG IN</button>
-          <% end %>
-          <div class=links>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, required: false, autofocus: true %>
+            <%= f.input :password, required: false %>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="form-actions" id="button">
+            <%= f.button :submit, t(".sign_in") %>
+          </div>
+
+        <% end %>
+
+          <div class="links">
             <%= render "devise/shared/links" %>
           </div>
         </div>
