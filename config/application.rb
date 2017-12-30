@@ -17,6 +17,9 @@ require "attachinary/orm/active_record"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Website in french as default_locale
+config.i18n.default_locale = :fr
+
 module MariEtVous
   class Application < Rails::Application
     config.generators do |generate|
