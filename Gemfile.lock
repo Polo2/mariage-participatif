@@ -79,6 +79,8 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.5.0)
+      devise (>= 3.4)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -181,6 +183,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (5.0.3)
+      i18n (~> 0.7)
+      railties (~> 5.0)
     railties (5.0.6)
       actionpack (= 5.0.6)
       activesupport (= 5.0.6)
@@ -258,6 +263,7 @@ DEPENDENCIES
   cocoon
   coffee-rails
   devise
+  devise-i18n (~> 1.2)
   figaro
   font-awesome-sass
   geocoder
@@ -274,6 +280,7 @@ DEPENDENCIES
   pundit
   rails (= 5.0.6)
   rails-assets-underscore!
+  rails-i18n (= 5.0.3)
   redis
   sass-rails
   simple_form
