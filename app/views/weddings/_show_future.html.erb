@@ -30,7 +30,8 @@
     </div>
     <div class="col-xs-12 col-sm-4">
       <div class="info-wedding-location">
-        <div id="map" style="height: 400px;"></div>
+       <!--  <%= cl_image_tag @wedding.photo.path, width: 300, height: 400, crop: :thumb, gravity: :center %> -->
+        <!-- <div id="map" style="height: 400px;"></div> -->
       </div>
     </div>
   </div>
@@ -39,9 +40,9 @@
 
     <hr>
       <h3 class="text-center">
-        <span class="section-title"><%= t("wedding.guest_list.title")%></span>
+        <span class="section-title"><%= t("wedding.4blocs")%></span>
       </h3>
-  <div class="presence-block">
+ <!--  <div class="presence-block">
     <div class="text-center">
       <% if policy(@wedding).edit? %>
         <%= link_to t("wedding.guest_list.add"), new_wedding_registry_path(@wedding), class: "button button-show" %>
@@ -49,12 +50,86 @@
       <% end %>
     </div>
 
-    <% if @wedding.registries.where(user: current_user).present? %>
+    <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
       <% @registry = @wedding.registries.find_by(user: current_user) %>
         <%= render "registries/presence", registry: @registry %>
     <% end %>
     <hr>
-  </div>
+  </div> -->
+
+  <% if policy(@wedding).edit? %>
+    <div class="4-blocs">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div class="wedding-bloc invitations">
+            <h3 class="text-center">
+            <span class="section-title"><%= t("wedding.guest_list.title")%></span>
+            </h3>
+            <p>Nombre d'invitations : 250 </p>
+            <p>Nombre de réponses positives : 133 </p>
+            <p>Nombre de réponses en attente : 117 </p>
+            <%= link_to t("wedding.guest_list.add"), new_wedding_registry_path(@wedding), class: "button button-show" %>
+            <%= link_to t("wedding.guest_list.list"), wedding_registries_path(@wedding), class: "button button-show"%>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="wedding-bloc accomodations">
+            <h3 class="text-center">
+            <span class="section-title">Bloc services</span>
+            </h3>
+            <p>Nombre de services proposés : 154 </p>
+            <p>Nombre de services pourvus : 133 </p>
+            <p>Nombre de services vacants : 21 </p>
+            <%= link_to "Detail services", wedding_path(@wedding), class: "button button-show" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="wedding-bloc trips">
+            <h3 class="text-center">
+            <span class="section-title">Bloc logements</span>
+              <div id="map" style="height: 250px;"></div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="wedding-bloc tasks">
+            <h3 class="text-center">
+            <span class="section-title">Bloc trajets</span>
+             <%= image_tag "https://www.blablacar.com/images/blablacar-ridesharing-logo.png", width: 400 %>
+             <%= image_tag "https://www.oui.sncf/sites/all/modules/custom_addons/vsct_feature_canvas/theme/dist/img/oui-sncf.svg", width:350 %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <% else %>
+    <div class="4-blocs">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div class="bloc-invitations">
+            <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
+            <% @registry = @wedding.registries.find_by(user: current_user) %>
+            <%= render "registries/presence", registry: @registry %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="bloc-accomodations">
+            <p>Bloc 2</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="bloc-trips">
+            <p>Bloc 3</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="bloc-tasks">
+            <p>Bloc 4</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
 
   <% content_for(:after_js) do %>

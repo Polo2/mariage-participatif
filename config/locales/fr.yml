@@ -38,6 +38,7 @@ fr:
     contact_form_message: "Message :"
     contact_form_send: "ENVOI"
   wedding:
+    4blocs: " 4 blocs"
     wedder_tab:
       guest: "Invité"
       guests: "Invités"
@@ -60,7 +61,7 @@ fr:
   task:
     choose_new: "Choisir une nouvelle tâche"
     create: "Créer"
-    title: "Nos tâches"
+    title: "Discussions"
     mark: "Marquer comme terminée"
     unmark: "Marqer comme 'en-cours'"
     done: "Tâche terminée |"
