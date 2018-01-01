@@ -61,6 +61,7 @@ en:
     contact_form_message: "Message"
     contact_form_send: "SEND"
   wedding:
+    4blocs: " 4 blocks"
     wedder_tab:
       guest: "Guest"
       guests: "Guests"

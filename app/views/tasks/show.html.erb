@@ -61,7 +61,7 @@
                     <li>
                       <%= element.content %>
                       <%= link_to edit_wedding_task_element_path(@wedding, @task, element) do %><i class="fa fa-pencil"></i><% end %>
-                      <%= link_to wedding_task_element_path(@wedding, @task, element), method: :delete, data: { confirm: 'Sure?' } do %><i class="fa fa-trash"></i><% end %>
+                      <%= link_to wedding_task_element_path(@wedding, @task, element), method: :delete, data: { confirm: t("links.confirmation")  } do %><i class="fa fa-trash"></i><% end %>
                     </li>
                   <% end %>
                 </ul>
