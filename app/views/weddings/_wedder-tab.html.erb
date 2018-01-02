@@ -13,7 +13,7 @@
           <div class="tab">
             <h3><%= @wedding.guests.where(presence: true).count %></h3>
             <p>
-              <%= @wedding.guests.where(presence: true).count > 1 ? t("weding.wedder_tab.answers") : t("wedding.wedder_tab.answer") %>
+              <%= @wedding.guests.where(presence: true).count > 1 ? t("wedding.wedder_tab.answers") : t("wedding.wedder_tab.answer") %>
             </p>
           </div>
 

@@ -39,9 +39,10 @@ fr:
     contact_form_send: "ENVOI"
   wedding:
     4blocs: " 4 blocs"
+    title_new_wedding: "Creation de la page de votre mariage"
     wedder_tab:
-      guest: "Invité"
-      guests: "Invités"
+      guest: "Invitation"
+      guests: "Invitations"
       answer: "Réponse"
       answers: "Réponses"
       pending_task: "Tâche en cours"
@@ -51,9 +52,18 @@ fr:
     guest_list:
       title: "Liste des invités"
       add: "Nouvelle invitation"
+      add_guests: "Ajouter des invités à ce groupe"
+      edit: "Mise à jour de cette invitation"
       list: "Voir la liste"
+      number_of_guest: "Nombre"
+      action: "Action"
+      new_group: "Invitation d'une famille / d'un groupe"
+      group: "Groupe"
+      name: "Nom"
+      statut: "Présence ?"
   links:
     home: "Acceuil"
+    show: "Voir"
     edit: "Editer"
     destroy: "Détruire"
     back: "Retour"
@@ -76,3 +86,53 @@ fr:
     new_message: "Ajouter un nouveau message :"
     needs: "Besoins"
     add_element: "Ajouter un élement"
+
+  simple_form:
+    labels:
+      user:
+        first_name: "Prénom"
+        last_name: "Nom"
+        email: "Email"
+        avatar: "Photo (optionnel)"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation du mot de passe"
+      wedding:
+        title: "Nom du mariage"
+        description: "Description en quelques lignes"
+        date: "Date"
+        location: "Lieu du mariage"
+        capacity: "Nombre d'invités prévus"
+        photo: "Photo d'ambiance"
+        spouse_photo: "Phote des mariés"
+        spouse_first_name: "Prénom du / de la marié(e)"
+        spouse_last_name: "Nom du / de la marié(e)"
+      registry:
+        email: "Mail"
+        group_name: "Nom de la famille / du groupe"
+        name: "Nom"
+        presence: "Presence"
+      guests:
+        name: "Nom"
+        presence: "Presence"
+
+
+  helpers:
+    submit:
+      wedding:
+        create: "Création du mariage"
+        update: "Mettre à jour"
+      registry:
+        create: "Valider l'invitation"
+        update: "Mettre à jour"
+
+
+
+
+
+
+
+
+
+
+
+
