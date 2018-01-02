@@ -40,6 +40,7 @@ fr:
   wedding:
     4blocs: " 4 blocs"
     title_new_wedding: "Creation de la page de votre mariage"
+    title_edit_wedding: "Mise à jour la page de votre mariage"
     wedder_tab:
       guest: "Invitation"
       guests: "Invitations"
@@ -55,19 +56,12 @@ fr:
       add_guests: "Ajouter des invités à ce groupe"
       edit: "Mise à jour de cette invitation"
       list: "Voir la liste"
-      number_of_guest: "Nombre"
+      number_of_guests: "Nombre"
       action: "Action"
       new_group: "Invitation d'une famille / d'un groupe"
       group: "Groupe"
       name: "Nom"
       statut: "Présence ?"
-  links:
-    home: "Acceuil"
-    show: "Voir"
-    edit: "Editer"
-    destroy: "Détruire"
-    back: "Retour"
-    confirmation: "Certain ?"
   task:
     choose_new: "Choisir une nouvelle tâche"
     create: "Créer"
@@ -86,6 +80,18 @@ fr:
     new_message: "Ajouter un nouveau message :"
     needs: "Besoins"
     add_element: "Ajouter un élement"
+  links:
+    home: "Acceuil"
+    show: "Voir"
+    edit: "Editer"
+    destroy: "Détruire"
+    back: "Retour"
+    confirmation: "Certain ?"
+  flash-messages:
+    wedding-created: "Votre mariage a bien été créée"
+    wedding-updated: "Votre mariage a été mis à jour"
+    wedding-destroyed: "Ce mariage a bien été supprimé du site web"
+    wedding-does-not-exist: "Désolé, impossible de trouver de mariage "
 
   simple_form:
     labels:
@@ -114,7 +120,6 @@ fr:
       guests:
         name: "Nom"
         presence: "Presence"
-
 
   helpers:
     submit:
