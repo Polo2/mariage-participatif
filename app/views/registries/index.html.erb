@@ -8,15 +8,13 @@
       <% if @wedding.user == current_user %>
 
         <div class="guest-email">
-          <p><%= @wedding.user.first_name%> <%= @wedding.user.last_name %></p>
+          <p>Export Excel, ou maj Google drive</p>
         </div>
 
       <% end %>
 
       <div class="guest_details">
         <table>
-
-
             <tr>
               <th><%= t("wedding.guest_list.group") %></th>
               <th><%= t("wedding.guest_list.number_of_guests") %></th>
@@ -25,7 +23,7 @@
         <% @registries.each do |reg| %>
           <tr class="guests-row">
             <td><%= reg.guests.first.name %></td>
-            <td><%= reg.guests.length %> </td>
+            <td class="text-center"><%= reg.guests.length %> </td>
             <td>
               <div class="links" id="no-margin">
                   <%= link_to t("links.show"), wedding_registry_path(@wedding, reg) %>
