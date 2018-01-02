@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <h3 class="text-center">
-        <span class="section-title">Guest list</span>
+        <span class="section-title"><%= t("wedding.guest_list.title") %></span>
       </h3>
 
       <% if @wedding.user == current_user %>
@@ -18,19 +18,19 @@
 
 
             <tr>
-              <th>Family</th>
-              <th>Guests</th>
-              <th>Action</th>
+              <th><%= t("wedding.guest_list.group") %></th>
+              <th><%= t("wedding.guest_list.number_of_guests") %></th>
+              <th><%= t("wedding.guest_list.action") %></th>
             </tr>
         <% @registries.each do |reg| %>
-          <tr>
+          <tr class="guests-row">
             <td><%= reg.guests.first.name %></td>
             <td><%= reg.guests.length %> </td>
             <td>
-              <div class="links">
-                  <%= link_to 'Show', wedding_registry_path(@wedding, reg) %>
-                  <%= link_to 'Edit', edit_wedding_registry_path(@wedding, reg) %>
-                  <%= link_to 'Destroy', wedding_registry_path(@wedding, reg), method: :delete, data: { confirm: 'Are you sure?' } %>
+              <div class="links" id="no-margin">
+                  <%= link_to t("links.show"), wedding_registry_path(@wedding, reg) %>
+                  <%= link_to t("links.edit"), edit_wedding_registry_path(@wedding, reg) %>
+                  <%= link_to t("links.destroy"), wedding_registry_path(@wedding, reg), method: :delete, data: { confirm: t("links.confirmation") } %>
               </div>
             </td>
           </tr>
@@ -38,7 +38,7 @@
         </table>
       </div>
       <div class="links">
-        <%= link_to "Back to wedding", wedding_path(@wedding) %>
+        <%= link_to t("links.back"), wedding_path(@wedding) %>
       </div>
     </div>
   </div>

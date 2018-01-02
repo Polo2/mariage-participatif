@@ -7,8 +7,8 @@
       <div class="guest_details">
         <table>
           <tr>
-            <th>Name</th>
-            <th>Status</th>
+            <th><%= t("wedding.guest_list.name") %></th>
+            <th><%= t("wedding.guest_list.statut") %></th>
           </tr>
           <% @registry.guests.each do |guest| %>
             <tr>
@@ -19,9 +19,9 @@
         </table>
       </div>
       <div class="links">
-        <%= link_to "Back to wedding", wedding_path(@wedding) %>
-        <%= link_to "Edit", edit_wedding_registry_path(@wedding, @registry) %>
-        <%= link_to "Registries", wedding_registries_path(@wedding) %>
+        <%= link_to t("links.back"), wedding_path(@wedding) %>
+        <%= link_to t("links.edit"), edit_wedding_registry_path(@wedding, @registry) %>
+        <%= link_to t("wedding.guest_list.list"), wedding_registries_path(@wedding) %>
       </div>
     </div>
   </div>

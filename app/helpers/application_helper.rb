@@ -15,9 +15,9 @@ module ApplicationHelper
 
   def presence_for(presence)
     if presence
-      "#{icon('check-square')} Confirmed".html_safe
+      "#{icon('check-square')} Oui".html_safe
     else
-      "#{icon('times-circle')} Pending".html_safe
+      "#{icon('times-circle')} Non".html_safe
     end
   end
 end

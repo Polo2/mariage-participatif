@@ -47,4 +47,14 @@
   border-left: 1px solid $p-grey;
   border-right: 1px solid $p-grey;
 }
+
+
 //===== =====//
+
+#no-margin {
+  margin-bottom: 0 !important;
+}
+
+.guests-row {
+  margin-bottom: 20px;
+}
