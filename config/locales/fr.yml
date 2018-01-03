@@ -62,6 +62,10 @@ fr:
       group: "Groupe"
       name: "Nom"
       statut: "Présence ?"
+    guest:
+      your_invitation: "Votre invitation"
+      go_to_registry: "Voir l'invitation"
+      add_guest: "Ajouter un invité"
   task:
     choose_new: "Choisir une nouvelle tâche"
     create: "Créer"
@@ -84,8 +88,10 @@ fr:
     home: "Acceuil"
     show: "Voir"
     edit: "Editer"
+    update: "Mettre à jour"
     destroy: "Détruire"
     back: "Retour"
+    back_to_wedding: "Retour au mariage"
     confirmation: "Certain ?"
   flash-messages:
     wedding-created: "Votre mariage a bien été créée"

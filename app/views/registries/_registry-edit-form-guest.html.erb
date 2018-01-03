@@ -1,0 +1,33 @@
+<h4><%= t("wedding.guest_list.edit")%></h4>
+  <p>Edition as the guest</p>
+
+  <%= simple_form_for([@wedding, @registry]) do |f| %>
+    <%= f.input :group_name, required: true %>
+    <%= f.input :email, required: true %>
+
+    <p>Membres de ce groupe :</p>
+    <%= f.simple_fields_for :guests do |guest_f|  %>
+      <div class="nested-fields">
+        <div class="row">
+          <div class="col-xs-8">
+            <div class="form-inline">
+              <%= guest_f.input :name, label: false, disabled: true %>
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="form-inline">
+              <%= guest_f.input :presence %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="form-actions">
+      <%= f.button :submit, t("links.update") %>
+
+    </div>
+
+  <% end %>
+
+

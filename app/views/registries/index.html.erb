@@ -22,7 +22,7 @@
             </tr>
         <% @registries.each do |reg| %>
           <tr class="guests-row">
-            <td><%= reg.guests.first.name %></td>
+            <td><%= reg.group_name %></td>
             <td class="text-center"><%= reg.guests.length %> </td>
             <td>
               <div class="links" id="no-margin">
