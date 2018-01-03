@@ -58,7 +58,7 @@ fr:
       list: "Voir la liste"
       number_of_guests: "Nombre"
       action: "Action"
-      new_group: "Invitation d'une famille / d'un groupe"
+      new_group: "Invitation d'une famille"
       group: "Groupe"
       name: "Nom"
       statut: "Présence ?"
