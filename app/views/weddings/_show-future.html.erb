@@ -102,31 +102,46 @@
     </div>
 
   <% else %>
+
     <div class="4-blocs">
       <div class="row">
         <div class="col-xs-12 col-md-6">
-          <div class="bloc-invitations">
-            <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
-            <% @registry = @wedding.registries.find_by(user: current_user) %>
-            <%= render "registries/presence", registry: @registry %>
-            <% end %>
+           <div class="wedding-bloc invitations">
+            <h3 class="text-center">
+            <span class="section-title"><%= t("wedding.guest.your_invitation")%></span>
+            </h3>
+              <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
+                <% @registry = @wedding.registries.find_by(user: current_user) %>
+
+                <p><%=  @registry.guests.count %> personnes invitées</p>
+                <p>dont 2 enfants</p>
+                <p> <%= @registry.guests.where(presence: true).count %> réponses OUI </p>
+                <%= link_to t("wedding.guest.go_to_registry"), wedding_registry_path(@wedding, @registry), class: "button button-show" %>
+              <% end %>
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
-          <div class="bloc-accomodations">
-            <p>Bloc 2</p>
+          <div class="wedding-bloc accomodations">
+            <h3 class="text-center">
+            <span class="section-title">Bloc services</span>
+
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
-          <div class="bloc-trips">
-            <p>Bloc 3</p>
+          <div class="wedding-bloc trips">
+            <h3 class="text-center">
+            <span class="section-title">Bloc logements</span>
+
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
-          <div class="bloc-tasks">
-            <p>Bloc 4</p>
+          <div class="wedding-bloc tasks">
+            <h3 class="text-center">
+            <span class="section-title">Bloc trajets</span>
+
           </div>
         </div>
+
       </div>
     </div>
   <% end %>

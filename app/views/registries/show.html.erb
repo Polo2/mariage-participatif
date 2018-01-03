@@ -1,5 +1,5 @@
 <div class="container">
-  <% if current_user[:id] == @wedding[:user_id] %>
+  <% if current_user[:id] == @wedding[:user_id] || current_user[:id] == @registry[:user_id] %>
     <%= render 'registry_table_show' %>
   <% end %>
 </div>

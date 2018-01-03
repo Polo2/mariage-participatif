@@ -31,7 +31,7 @@ class RegistriesController < ApplicationController
   def update
     # current_user.registries.find(params[:registry_id])
     @registry.update(registry_params)
-    if current_user == @wedding.user
+    if current_user == @wedding.user || current_user == @registry.user
       redirect_to wedding_registry_path(@wedding, @registry)
     else
       redirect_to wedding_path(@wedding)
@@ -50,7 +50,7 @@ class RegistriesController < ApplicationController
   end
 
   def registry_params
-    params.require(:registry).permit(:email, guests_attributes: [:id, :name, :presence, :_destroy])
+    params.require(:registry).permit(:email, :group_name, guests_attributes: [:id, :name, :presence, :_destroy])
   end
 
   def set_wedding

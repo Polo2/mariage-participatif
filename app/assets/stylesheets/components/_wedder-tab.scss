@@ -5,6 +5,8 @@
 
 .tabs {
   display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
   margin: 0px 0px 30px 0px;
   background-color: $green-background;
   border-radius: 0px 0px 3px 3px;
@@ -44,7 +46,7 @@
   flex: 0 0 20%;
   text-align: center;
   padding: 10px 0;
-  top: 10px;
+  margin: auto;
 }
 // .tab:first-child {
 //   border-radius: 10px 0 0 0;
