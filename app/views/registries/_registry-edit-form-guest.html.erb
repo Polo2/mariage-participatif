@@ -1,11 +1,11 @@
 <h4><%= t("wedding.guest_list.edit")%></h4>
-  <p>Edition as the guest</p>
+
 
   <%= simple_form_for([@wedding, @registry]) do |f| %>
     <%= f.input :group_name, required: true %>
-    <%= f.input :email, required: true %>
+    <%= f.input :email, required: true, disabled: true %>
 
-    <p>Membres de ce groupe :</p>
+    <p><%= t("wedding.guest.members_of_this_group")%> :</p>
     <%= f.simple_fields_for :guests do |guest_f|  %>
       <div class="nested-fields">
         <div class="row">
@@ -23,8 +23,23 @@
       </div>
     <% end %>
 
+    <div class="form-address">
+
+      <%= f.input :address %>
+      <div class="form-adress-inline">
+        <div class="col-xs-6">
+          <%= f.input :zipcode %>
+        </div>
+        <div class="col-xs-6">
+          <%= f.input :city %>
+        </div>
+      </div>
+
+    </div>
+
+
     <div class="form-actions">
-      <%= f.button :submit, t("links.update") %>
+      <%= f.button :submit, t("links.validate") %>
 
     </div>
 

@@ -37,27 +37,8 @@
   </div>
 
 
-
-    <hr>
-      <h3 class="text-center">
-        <span class="section-title"><%= t("wedding.4blocs")%></span>
-      </h3>
- <!--  <div class="presence-block">
-    <div class="text-center">
-      <% if policy(@wedding).edit? %>
-        <%= link_to t("wedding.guest_list.add"), new_wedding_registry_path(@wedding), class: "button button-show" %>
-        <%= link_to t("wedding.guest_list.list"), wedding_registries_path(@wedding), class: "button button-show"%>
-      <% end %>
-    </div>
-
-    <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
-      <% @registry = @wedding.registries.find_by(user: current_user) %>
-        <%= render "registries/presence", registry: @registry %>
-    <% end %>
-    <hr>
-  </div> -->
-
   <% if policy(@wedding).edit? %>
+  <!-- Vue du mariage par les mariés -->
     <div class="4-blocs">
       <div class="row">
         <div class="col-xs-12 col-md-6">
@@ -101,7 +82,9 @@
       </div>
     </div>
 
+
   <% else %>
+  <!-- Page du mariage vue pour l'invité -->
 
     <div class="4-blocs">
       <div class="row">
@@ -112,10 +95,11 @@
             </h3>
               <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
                 <% @registry = @wedding.registries.find_by(user: current_user) %>
-
-                <p><%=  @registry.guests.count %> personnes invitées</p>
-                <p>dont 2 enfants</p>
-                <p> <%= @registry.guests.where(presence: true).count %> réponses OUI </p>
+                <ul class="guest-recap">
+                  <li><%=  @registry.guests.count %> personnes invitées</li>
+                  <li>dont 2 enfants</li>
+                  <li> <%= @registry.guests.where(presence: true).count %> réponses OUI </li>
+                </ul>
                 <%= link_to t("wedding.guest.go_to_registry"), wedding_registry_path(@wedding, @registry), class: "button button-show" %>
               <% end %>
           </div>

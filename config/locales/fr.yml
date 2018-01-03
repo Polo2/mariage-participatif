@@ -66,6 +66,8 @@ fr:
       your_invitation: "Votre invitation"
       go_to_registry: "Voir l'invitation"
       add_guest: "Ajouter un invité"
+      members_of_this_group: "Membres de ce groupe"
+      ask_address: "Pour recevoir votre faire-part"
   task:
     choose_new: "Choisir une nouvelle tâche"
     create: "Créer"
@@ -88,11 +90,13 @@ fr:
     home: "Acceuil"
     show: "Voir"
     edit: "Editer"
+    modify: "Modifier"
     update: "Mettre à jour"
     destroy: "Détruire"
     back: "Retour"
     back_to_wedding: "Retour au mariage"
     confirmation: "Certain ?"
+    validate: "Valider"
   flash-messages:
     wedding-created: "Votre mariage a bien été créée"
     wedding-updated: "Votre mariage a été mis à jour"
@@ -123,6 +127,9 @@ fr:
         group_name: "Nom de la famille / du groupe"
         name: "Nom"
         presence: "Presence"
+        address: "Addresse postale (pour recevoir votre faire-part)"
+        zipcode: "Code Postal"
+        city: "Ville"
       guests:
         name: "Nom"
         presence: "Presence"
