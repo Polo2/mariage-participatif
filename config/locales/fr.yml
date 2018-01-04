@@ -52,6 +52,7 @@ fr:
       new_messages: "Nouveaux messages"
     guest_list:
       title: "Liste des invités"
+      title_bloc: "Bloc invités"
       add: "Nouvelle invitation"
       add_guests: "Ajouter des invités à ce groupe"
       edit: "Mise à jour de cette invitation"
@@ -59,7 +60,7 @@ fr:
       number_of_guests: "Nombre"
       action: "Action"
       new_group: "Invitation d'une famille"
-      group: "Groupe"
+      group: "Nom de famille"
       name: "Nom"
       statut: "Présence ?"
     guest:
@@ -124,24 +125,28 @@ fr:
         spouse_last_name: "Nom du / de la marié(e)"
       registry:
         email: "Mail"
-        group_name: "Nom de la famille / du groupe"
+        group_name: "Nom de famille"
         name: "Nom"
         presence: "Presence"
         address: "Addresse postale (pour recevoir votre faire-part)"
         zipcode: "Code Postal"
         city: "Ville"
       guests:
-        name: "Nom"
+        name: "Prénom"
         presence: "Presence"
+        adult: "Enfant ?"
 
   helpers:
     submit:
       wedding:
         create: "Création du mariage"
-        update: "Mettre à jour"
+        update: "Valider"
       registry:
         create: "Valider l'invitation"
-        update: "Mettre à jour"
+        update: "Valider"
+      guests:
+        create: "Créer"
+        update: "Valider"
 
 
 

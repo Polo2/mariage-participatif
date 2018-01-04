@@ -20,4 +20,8 @@ class Wedding < ApplicationRecord
     date < Date.current
    end
 
+   def how_many_guests
+
+   end
+
 end

@@ -13,27 +13,10 @@
       <% if current_user.weddings.empty? %>
         <%= link_to t("navbar.my_wedding"),  new_wedding_path , class: "navbar-wagon-item navbar-wagon-link" %>
       <% else %>
-        <div class="dropdown">
-          <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <%= link_to wedding_path(current_user.weddings.future.last), class: "navbar-wagon-item navbar-wagon-link" do %>
+            <i class="fa fa-hourglass-half"></i>
             <%= t("navbar.my_wedding") %>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to wedding_path(current_user.weddings.future.last) do %>
-                <i class="fa fa-hourglass-half"></i>
-                <%= t("navbar.my_wedding") %>
-              <% end %>
-            </li>
-            <% memories = current_user.weddings.passed %>
-            <% memories.each do |memory| %>
-              <li>
-                <%= link_to wedding_path(memory) do %> <i class="fa fa-check"></i>
-              <%= t("navbar.memories") %>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
+        <% end %>
       <% end %>
 
       <div class="dropdown">
