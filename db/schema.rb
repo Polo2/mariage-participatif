@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104173130) do
+ActiveRecord::Schema.define(version: 20180104192038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,9 @@ ActiveRecord::Schema.define(version: 20180104173130) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.boolean  "child"
+    t.integer  "service_id"
     t.index ["registry_id"], name: "index_guests_on_registry_id", using: :btree
+    t.index ["service_id"], name: "index_guests_on_service_id", using: :btree
   end
 
   create_table "messages", force: :cascade do |t|
@@ -95,6 +97,18 @@ ActiveRecord::Schema.define(version: 20180104173130) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["wedding_id"], name: "index_reviews_on_wedding_id", using: :btree
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "capacity"
+    t.integer  "user_id"
+    t.integer  "task_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "appointment"
+    t.index ["task_id"], name: "index_services_on_task_id", using: :btree
+    t.index ["user_id"], name: "index_services_on_user_id", using: :btree
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -157,6 +171,8 @@ ActiveRecord::Schema.define(version: 20180104173130) do
   add_foreign_key "registries", "users"
   add_foreign_key "registries", "weddings"
   add_foreign_key "reviews", "weddings"
+  add_foreign_key "services", "tasks"
+  add_foreign_key "services", "users"
   add_foreign_key "tasks", "weddings"
   add_foreign_key "weddings", "users"
 end

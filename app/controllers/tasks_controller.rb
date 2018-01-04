@@ -11,13 +11,11 @@ class TasksController< ApplicationController
 
 
   def show
-    @private_elements = @task.elements.where(public: false)
-    @public_elements = @task.elements.where(public: true)
-    @element = Element.new
+    @services = @task.services
+    @service = Service.new
 
     @messages = @task.messages.all.order(:created_at)
     @messages.update_all(read: true) if @task.wedding.user == current_user
-
     @message = Message.new
   end
 
@@ -70,8 +68,8 @@ private
 
   def parsing_json
     file = File.read("#{Rails.root}/lib/tasks_details/details.json")
-    categories_details = JSON.parse(file)
-    return categories_details
+    service_details = JSON.parse(file)
+    return service_details
   end
 
 

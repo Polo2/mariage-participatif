@@ -3,7 +3,7 @@ require 'json'
 class Task < ApplicationRecord
 
   belongs_to :wedding
-  has_many :elements, dependent: :destroy
+  # has_many :elements, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :services, dependent: :destroy
 
@@ -16,7 +16,7 @@ class Task < ApplicationRecord
     defaults_services = JSON.parse(file)
 
     defaults_services[name].each do |text|
-      Element.create(task: self, content: text, public: false)
+      Service.create(task: self, name: text)
     end
 
   end
