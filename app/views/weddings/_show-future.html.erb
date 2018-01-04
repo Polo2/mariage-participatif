@@ -102,7 +102,7 @@
                 <% @registry = @wedding.registries.find_by(user: current_user) %>
                 <ul class="bloc-list">
                   <li><%=  @registry.guests.count %> personnes invitées</li>
-                  <li>dont 2 enfants</li>
+                  <li>dont <%= @registry.guests.where(adult: false).count %> enfant(s) </li>
                   <li> <%= @registry.guests.where(presence: true).count %> réponses OUI </li>
                 </ul>
                 <%= link_to t("wedding.guest.go_to_registry"), wedding_registry_path(@wedding, @registry), class: "button button-show" %>
