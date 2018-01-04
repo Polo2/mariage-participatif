@@ -9,11 +9,13 @@ Rails.application.routes.draw do
   get "users/profile", to: 'pages#profile'
 
   resources :weddings do
-    resources :registries
     resources :reviews
     resources :tasks do
       resources :elements, only: [:index, :create, :show, :edit, :update, :destroy ]
       resources :messages, only: [:create, :index, :new, :destroy, :show]
+    end
+    resources :registries do
+      resources :accomodations
     end
   end
 

@@ -1,6 +1,7 @@
 class Registry < ApplicationRecord
   belongs_to :wedding
   belongs_to :user
+  belongs_to :accomodation
   has_many :guests
 
   accepts_nested_attributes_for :guests

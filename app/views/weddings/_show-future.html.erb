@@ -121,6 +121,13 @@
           <div class="wedding-bloc trips">
             <h3 class="text-center">
             <span class="section-title">Bloc logements</span>
+            <% if  @registry.accomodation_id? %>
+              <p>Votre logement est bien reservé</p>
+              <%= link_to "Voir détail", wedding_registry_accomodations_path(@wedding, @registry, @registry.accomodation), class: "button button-show" %>
+            <% else %>
+              <p>Pas encore de logement</p>
+              <%= link_to "Choisir votre logement", new_wedding_registry_accomodation_path(@wedding, @registry), class: "button button-show" %>
+            <% end %>
 
           </div>
         </div>
