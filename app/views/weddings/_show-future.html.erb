@@ -51,7 +51,6 @@
               <li>Nombre d'invitations : <%= @wedding.registries.count %> </li>
               <li>Nombre de personnes invitées : <%= @wedding.guests.count %> </li>
               <li>Nombre de réponses positives : <%= @wedding.guests.where(presence: true).count%>  </li>
-              <li>Nombre de réponses négatives : <%= @wedding.guests.where(presence: false).count%>  </li>
             <ul>
 
             <%= link_to t("wedding.guest_list.add"), new_wedding_registry_path(@wedding), class: "button button-show" %>
@@ -135,7 +134,7 @@
           <div class="wedding-bloc tasks">
             <h3 class="text-center">
             <span class="section-title">Bloc trajets</span>
-
+              <div id="map" style="height: 250px;"></div>
           </div>
         </div>
 

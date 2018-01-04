@@ -50,7 +50,7 @@ class RegistriesController < ApplicationController
   end
 
   def registry_params
-    params.require(:registry).permit(:email, :group_name, :address, :zipcode, :city, guests_attributes: [:id, :name, :presence, :_destroy])
+    params.require(:registry).permit(:email, :group_name, :address, :zipcode, :city, guests_attributes: [:id, :name, :presence, :adult :_destroy])
   end
 
   def set_wedding
