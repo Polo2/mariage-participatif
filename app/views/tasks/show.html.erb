@@ -26,12 +26,12 @@
 
     <% if policy(@wedding).edit? %>
       <div class="row">
-        <div class="col-xs-8">
-          <h4><%= t("task.tdl")%></h4>
+        <div class="col-xs-12 col-sm-8">
+          <h4><%= t("task.list")%></h4>
         </div>
 
-        <div class="col-xs-4">
-          <h4><%= t("task.add_element")%></h4>
+        <div class="col-xs-12 col-sm-4">
+          <h4><%= t("task.add_service")%></h4>
         </div>
       </div>
     <% end %>
@@ -39,29 +39,20 @@
 
     <div class="row">
       <% if policy(@wedding).edit? %>
-        <div class="col-xs-8">
+        <div class="col-xs-12 col-sm-8">
           <div class="leftblock bloc">
             <div class="row">
-              <div class="col-xs-6 task-details">
-                <h4><%= t("task.private") %></h4>
+              <div class="col-xs-12 task-details">
                 <ul>
-                  <% @private_elements.each do |element| %>
+                  <% @services.each do |service| %>
                     <li>
-                      <%= element.content %>
-                      <%= link_to edit_wedding_task_element_path(@wedding, @task, element) do %><i class="fa fa-pencil"></i><% end %>
-                      <%= link_to wedding_task_element_path(@wedding, @task, element), method: :delete, data: { confirm: t("links.confirmation") } do %><i class="fa fa-trash"></i><% end %>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
-              <div class="col-xs-6 task-details">
-                <h4><%= t("task.public") %></h4>
-                  <ul>
-                  <% @public_elements.each do |element| %>
-                    <li>
-                      <%= element.content %>
-                      <%= link_to edit_wedding_task_element_path(@wedding, @task, element) do %><i class="fa fa-pencil"></i><% end %>
-                      <%= link_to wedding_task_element_path(@wedding, @task, element), method: :delete, data: { confirm: t("links.confirmation")  } do %><i class="fa fa-trash"></i><% end %>
+                      <% if service.capacity? & service.appointment? %>
+                        <%= "#{service.name}, pour #{service.capacity} personnes, créneau: #{service.appointment}." %>
+                      <% else %>
+                        <%= "#{service.name}" %>
+                      <% end %>
+                      <%= link_to wedding_task_path(@wedding, @task) do %><i class="fa fa-pencil"></i><% end %>
+                      <%= link_to wedding_task_path(@wedding, @task) do %><i class="fa fa-trash"></i><% end %>
                     </li>
                   <% end %>
                 </ul>
@@ -69,9 +60,9 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-4">
           <div class="rightblock bloc">
-            <%= render 'elements/form-new', wedding: @wedding, task: @task, element: @element %>
+             <%= render 'services/form-service', wedding: @wedding, task: @task, service: @service %>
           </div>
         </div>
         <div class="col-xs-12 discussion">
@@ -81,24 +72,24 @@
           </div>
         </div>
       <% else %>
-        <div class="col-xs-8 discussion">
+       <div class="col-xs-12 col-sm-6 task-details">
+        <h4><%= t("task.list")%></h4>
+          <div class="rightblock bloc invited-height-block">
+            <ul>
+            <% @services.each do |service| %>
+              <li>
+                <%= service.name %>
+              </li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 discussion">
           <h4><%= t("task.messages") %></h4>
           <div class="leftblock bloc invited-height-block">
             <%= render 'messages/messages-content' %>
           </div>
         </div>
-         <div class="col-xs-4 task-details">
-          <h4><%= t("task.needs")%></h4>
-            <div class="rightblock bloc invited-height-block">
-              <ul>
-              <% @public_elements.each do |element| %>
-                <li>
-                  <%= element.content %>
-                </li>
-              <% end %>
-              </ul>
-            </div>
-          </div>
       <% end %>
     </div>
     <div class=links>

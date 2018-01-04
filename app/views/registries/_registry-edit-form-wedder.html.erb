@@ -8,13 +8,16 @@
     <%= f.simple_fields_for :guests do |guest_f|  %>
       <div class="nested-fields">
         <div class="row">
-          <div class="col-xs-8">
-            <div class="form-inline">
+          <div class="form-inline">
+            <div class="col-xs-12 col-sm-6">
               <%= guest_f.input :name, label: false %>
             </div>
           </div>
-          <div class="col-xs-4">
-            <div class="form-inline">
+          <div class="form-inline">
+            <div class="col-xs-6 col-sm-3">
+              <%= guest_f.input :child %>
+            </div>
+            <div class="col-xs-6 col-sm-3">
               <%= guest_f.input :presence %>
             </div>
           </div>

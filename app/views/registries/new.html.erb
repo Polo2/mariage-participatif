@@ -4,7 +4,7 @@
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
         <% if current_user[:id] == @wedding[:user_id] %>
 
-          <%= render 'form-registry', wedding: @wedding, registry: @egistry %>
+          <%= render 'form-registry', wedding: @wedding, registry: @registry %>
 
         <div class="links">
           <%= link_to t("links.back"), wedding_path(@wedding) %>

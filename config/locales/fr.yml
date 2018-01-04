@@ -48,6 +48,8 @@ fr:
       answers: "Réponses"
       pending_task: "Tâche en cours"
       pending_tasks: "Tâches en cours"
+      pending_service: "Service proposé"
+      pending_services: "Services proposés"
       new_message: "Nouveau message"
       new_messages: "Nouveaux messages"
     guest_list:
@@ -71,12 +73,13 @@ fr:
       ask_address: "Pour recevoir votre faire-part"
   task:
     choose_new: "Choisir une nouvelle tâche"
+    choose: "Choisir"
     create: "Créer"
     title: "Discussions"
-    mark: "Marquer comme terminée"
-    unmark: "Marqer comme 'en-cours'"
-    done: "Tâche terminée |"
-    not_done: "Tâche en cours |"
+    mark: "Marquer comme complet"
+    unmark: "Marqer comme 'à compléter'"
+    done: "Service au complet |"
+    not_done: "Service où recruter |"
     tdl: "ToDo liste"
     type_here: "Ecrire ici"
     add: "Ajouter une tâche"
@@ -86,11 +89,14 @@ fr:
     messages: "Messages"
     new_message: "Ajouter un nouveau message :"
     needs: "Besoins"
-    add_element: "Ajouter un élement"
+    add_service: "Ajouter un service"
+    list: "Liste des services pour cette tâche"
   links:
     home: "Acceuil"
     show: "Voir"
     edit: "Editer"
+    answer: "Répondre"
+    modify_answer: "Modifier ma réponse"
     modify: "Modifier"
     update: "Mettre à jour"
     destroy: "Détruire"
@@ -134,7 +140,7 @@ fr:
       guests:
         name: "Prénom"
         presence: "Presence"
-        adult: "Enfant ?"
+        child: "Enfant ?"
 
   helpers:
     submit:

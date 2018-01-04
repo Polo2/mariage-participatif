@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :reviews
     resources :tasks do
       resources :elements, only: [:index, :create, :show, :edit, :update, :destroy ]
+      resources :services, only: [:index, :create, :show, :edit, :update, :destroy ]
       resources :messages, only: [:create, :index, :new, :destroy, :show]
     end
     resources :registries do

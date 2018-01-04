@@ -20,7 +20,11 @@ class Wedding < ApplicationRecord
     date < Date.current
    end
 
-   def how_many_guests
+   def services_count
+      compteur = 0
+      tasks_list = self.tasks
+      tasks_list.each { |t| compteur += t.services.count }
+      compteur
 
    end
 
