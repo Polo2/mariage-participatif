@@ -1,5 +1,4 @@
 <h4><%= t("wedding.guest_list.edit")%></h4>
-  <p>Edition as the wedder</p>
 
   <%= simple_form_for([@wedding, @registry]) do |f| %>
     <%= f.input :group_name %>
@@ -25,12 +24,12 @@
 
     <div class="links">
       <%= link_to_add_association f, :guests do %>
-        <%= icon('plus-circle') %> <%= t("wedding.guest.add_guest") %>
+        <i class="fa fa-plus"></i>  <%= t("wedding.guest.add_guest") %>
       <% end %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Done !" %>
+      <%= f.button :submit %>
     </div>
 
   <% end %>

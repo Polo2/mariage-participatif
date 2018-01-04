@@ -1,6 +1,3 @@
-<h4><%= t("wedding.guest_list.edit")%></h4>
-
-
   <%= simple_form_for([@wedding, @registry]) do |f| %>
     <%= f.input :group_name, required: true %>
     <%= f.input :email, required: true, disabled: true %>
