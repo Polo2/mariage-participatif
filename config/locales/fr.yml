@@ -91,6 +91,8 @@ fr:
     home: "Acceuil"
     show: "Voir"
     edit: "Editer"
+    answer: "Répondre"
+    modify_answer: "Modifier ma réponse"
     modify: "Modifier"
     update: "Mettre à jour"
     destroy: "Détruire"
@@ -134,7 +136,7 @@ fr:
       guests:
         name: "Prénom"
         presence: "Presence"
-        adult: "Enfant ?"
+        child: "Enfant ?"
 
   helpers:
     submit:

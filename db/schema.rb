@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104022326) do
+ActiveRecord::Schema.define(version: 20180104173130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20180104022326) do
     t.boolean  "presence",    default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.boolean  "adult"
+    t.boolean  "child"
     t.index ["registry_id"], name: "index_guests_on_registry_id", using: :btree
   end
 
