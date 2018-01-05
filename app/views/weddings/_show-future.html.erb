@@ -6,6 +6,7 @@
 
 
 <div class="container">
+
   <div class="row">
     <div class="col-xs-12 col-sm-8">
       <div class="wedding-informations">
@@ -52,45 +53,50 @@
               <li>Nombre de personnes invitées : <%= @wedding.guests.count %> </li>
               <li>Nombre de réponses positives : <%= @wedding.guests.where(presence: true).count%>  </li>
             <ul>
-
-            <%= link_to t("wedding.guest_list.add"), new_wedding_registry_path(@wedding), class: "button button-show" %>
-            <%= link_to t("wedding.guest_list.list"), wedding_registries_path(@wedding), class: "button button-show"%>
-
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6">
-          <div class="wedding-bloc accomodations">
-            <h3 class="text-center">
-            <span class="section-title">Bloc services</span>
-            </h3>
-            <ul class="bloc-list">
-            <li>Nombre de services proposés : </li>
-            <li>Nombre de services pourvus :  </li>
-            <li>Nombre de services vacants :  </li>
-            <%= link_to "Detail services", wedding_path(@wedding), class: "button button-show" %>
-            </ul>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6">
-          <div class="wedding-bloc trips">
-            <h3 class="text-center">
-            <span class="section-title">Bloc logements</span>
-              <div id="map" style="height: 250px;"></div>
-              <%= link_to "Detail Logements", wedding_path(@wedding, @registry), class: "button button-show" %>
+            <div class="button-container">
+              <%= link_to t("wedding.guest_list.add"), new_wedding_registry_path(@wedding), class: "button button-show" %>
+              <%= link_to t("wedding.guest_list.list"), wedding_registries_path(@wedding), class: "button button-show"%>
+            </div>
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
           <div class="wedding-bloc tasks">
             <h3 class="text-center">
-            <span class="section-title">Bloc trajets</span>
-             <%= image_tag "https://www.blablacar.com/images/blablacar-ridesharing-logo.png", width: 400 %>
-             <%= image_tag "https://www.oui.sncf/sites/all/modules/custom_addons/vsct_feature_canvas/theme/dist/img/oui-sncf.svg", width:350 %>
-             <%= link_to "Detail Trajets", wedding_path(@wedding), class: "button button-show" %>
+            <span class="section-title">Bloc services</span>
+            </h3>
+              <ul class="bloc-list">
+                <li>Nombre de services proposés : </li>
+                <li>Nombre de services pourvus :  </li>
+                <li>Nombre de services vacants :  </li>
+              </ul>
+              <div class="button-container">
+                <%= link_to "Detail services", wedding_path(@wedding), class: "button button-show" %>
+              </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="wedding-bloc accomodations">
+            <h3 class="text-center">
+              <span class="section-title">Bloc logements</span>
+            </h3>
+              <div id="map" style="height: 250px;"></div>
+              <div class="button-container">
+                <%= link_to "Detail Logements", wedding_path(@wedding, @registry), class: "button button-show" %>
+              </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="wedding-bloc trips">
+            <h3 class="text-center">
+              <span class="section-title">Bloc trajets</span>
+            </h3>
+            <div class="button-container">
+              <%= link_to "Detail Trajets", wedding_path(@wedding), class: "button button-show" %>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
 
   <% else %>
   <!-- Page du mariage vue pour l'invité -->
@@ -100,54 +106,64 @@
         <div class="col-xs-12 col-md-6">
            <div class="wedding-bloc invitations">
             <h3 class="text-center">
-            <span class="section-title"><%= t("wedding.guest.your_invitation")%></span>
+              <span class="section-title"><%= t("wedding.guest.your_invitation")%></span>
             </h3>
-              <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
-                <% @registry = @wedding.registries.find_by(user: current_user) %>
-                <ul class="bloc-list">
-                  <li><%=  @registry.guests.count %> personnes invitées</li>
-                  <li>dont <%= @registry.guests.where(child: true).count %> enfant(s) </li>
-                  <li> <%= @registry.guests.where(presence: true).count %> réponses OUI </li>
-                </ul>
+            <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
+              <% @registry = @wedding.registries.find_by(user: current_user) %>
+              <ul class="bloc-list">
+                <li><%=  @registry.guests.count %> personnes invitées</li>
+                <li>dont <%= @registry.guests.where(child: true).count %> enfant(s) </li>
+                <li> <%= @registry.guests.where(presence: true).count %> réponses OUI </li>
+              </ul>
+              <div class="button-container">
                 <%= link_to t("wedding.guest.go_to_registry"), wedding_registry_path(@wedding, @registry), class: "button button-show" %>
+              </div>
               <% end %>
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
           <div class="wedding-bloc accomodations">
             <h3 class="text-center">
-            <span class="section-title">Bloc services</span>
-
+              <span class="section-title">Bloc services</span>
+             </h3>
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
           <div class="wedding-bloc trips">
             <h3 class="text-center">
-            <span class="section-title">Bloc logements</span>
+              <span class="section-title">Bloc logements</span>
+            </h3>
             <% if  @registry.accomodation_id? %>
               <ul class="bloc-list">
                 <li>Votre logement est bien reservé</li>
               </ul>
-              <%= link_to "Voir détail", wedding_registry_accomodations_path(@wedding, @registry, @registry.accomodation), class: "button button-show" %>
+              <div class="button-container">
+                <%= link_to "Voir détail", wedding_registry_accomodations_path(@wedding, @registry, @registry.accomodation), class: "button button-show" %>
+              </div>
             <% else %>
-              <ul class="bloc-list">
+              <ul>
                 <li>Pas encore de logement</li>
-                <%= link_to "Choisir votre logement", wedding_registry_accomodations_path(@wedding, @registry), class: "button button-show" %>
               </ul>
+              <div class="button-container">
+                <%= link_to "Choisir votre logement", wedding_registry_accomodations_path(@wedding, @registry), class: "button button-show" %>
+              </div>
             <% end %>
-
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
           <div class="wedding-bloc tasks">
             <h3 class="text-center">
-            <span class="section-title">Bloc trajets</span>
-              <div id="map" style="height: 250px;"></div>
+              <span class="section-title">Bloc trajets</span>
+            </h3>
+            <div id="map" style="height: 250px;"></div>
+            <div class="button-container">
+              <%= link_to "Chercher un covoiturage", wedding_path(@wedding)%>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
+
   <% end %>
 
 

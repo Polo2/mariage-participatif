@@ -79,6 +79,7 @@
   border-radius: 5px;
   padding: 20px;
   overflow: auto;
+  position: relative;
    ul {
       list-style: none;
       padding: 0;
@@ -88,8 +89,19 @@
     li {
       margin-bottom: 5px;
     }
+
 }
 
+.button-container {
+
+    display: inline-flex;
+    justify-content: space-evenly;
+    margin-left: -20px;
+    width: 99%;
+    position: absolute;
+    bottom: 25px;
+
+}
 
 
 
