@@ -10,12 +10,11 @@
 </div>
 
 <div class= tasklist>
-  <div class="container">
-    <div class="row">
+  <div class="row">
+    <ul class="tasks">
       <% wedding.tasks.each do |task| %>
-      <div class="col-xs-6 col-md-3">
-        <ul class="tasks">
-          <%= link_to wedding_task_path(wedding, task) do %>
+        <%= link_to wedding_task_path(wedding, task) do %>
+        <div class="col-xs-6 col-md-3">
           <li class="task">
             <div class="taskname button">
               <strong> <%= task.name %> </strong>
@@ -42,12 +41,12 @@
             </div>
             <% end %>
           </li>
-        </ul>
-        <% end %>
-      </div>
-    </div>
+        </div>
+      <% end %>
+    </ul>
   </div>
 </div>
+
 
 
 
