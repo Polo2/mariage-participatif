@@ -71,6 +71,12 @@ fr:
       add_guest: "Ajouter un invité"
       members_of_this_group: "Membres de ce groupe"
       ask_address: "Pour recevoir votre faire-part"
+    blocs:
+      bloc-registry: "Invitations"
+      bloc-task: "Services"
+      bloc-accomodations: "Logements"
+      bloc-trip: "CooVoiturage"
+
   task:
     choose_new: "Choisir une nouvelle tâche"
     choose: "Choisir"

@@ -1,51 +1,52 @@
+
 <h3 class="text-center">
   <span class="section-title"><%= t("task.title") %></span>
 </h3>
-<div class="task-block">
-    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
-      <% if policy(@wedding).edit? %>
-          <%= link_to t("task.add"), new_wedding_task_path(@wedding), class: "button button-show"  %>
-      <% end %>
-    </div>
 
-  <div class= tasklist>
-    <div class="container">
-      <div class="row">
-          <% wedding.tasks.each do |task| %>
-          <div class="col-xs-6 col-md-3">
-            <ul class="tasks">
-              <%= link_to wedding_task_path(wedding, task) do %>
-              <li class="task">
-                <div class="taskname button">
-                  <strong> <%= task.name %> </strong>
-                  <div class="tasknotification">
-                    <% if wedding.user == current_user %>
-                      <% if task.messages.where(read: false).count == 0 %>
+<div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+  <% if policy(@wedding).edit? %>
+      <%= link_to t("task.add"), new_wedding_task_path(@wedding), class: "button button-show"  %>
+  <% end %>
+</div>
 
-                      <% elsif task.messages.where(read: false).count == 1%>
-                        <%= task.messages.where(read: false).count %> message
-                      <% else %>
-                        <%= task.messages.where(read: false).count %> messages
-                      <% end %>
-                    <% else %>
+<div class= tasklist>
+  <div class="container">
+    <div class="row">
+      <% wedding.tasks.each do |task| %>
+      <div class="col-xs-6 col-md-3">
+        <ul class="tasks">
+          <%= link_to wedding_task_path(wedding, task) do %>
+          <li class="task">
+            <div class="taskname button">
+              <strong> <%= task.name %> </strong>
+              <div class="tasknotification">
+                <% if wedding.user == current_user %>
+                  <% if task.messages.where(read: false).count == 0 %>
 
-                    <% end %>
-                      <div class= statut>
-                        <% if task.statut %>
-                          <i class="fa fa-check"></i>
-                        <% else %>
-                          <i class="fa fa-hourglass-half"></i>
-                        <% end %>
-                      </div>
-                  </div>
-                </div>
+                  <% elsif task.messages.where(read: false).count == 1%>
+                    <%= task.messages.where(read: false).count %> message
+                  <% else %>
+                    <%= task.messages.where(read: false).count %> messages
+                  <% end %>
+                <% else %>
+
                 <% end %>
-              </li>
+                  <div class= statut>
+                    <% if task.statut %>
+                      <i class="fa fa-check"></i>
+                    <% else %>
+                      <i class="fa fa-hourglass-half"></i>
+                    <% end %>
+                  </div>
+              </div>
             </div>
-          <% end %>
+            <% end %>
+          </li>
         </ul>
+        <% end %>
       </div>
     </div>
+  </div>
 </div>
 
 
