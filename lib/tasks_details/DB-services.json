@@ -1,0 +1,688 @@
+{
+  "db-services": [
+    {
+      "type": "cuisine",
+      "details": "installer les broches, faire des braises ",
+      "capacity": "2",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "11h-13h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "cuisine",
+      "details": "préparation du café",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "13h-14h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "cuisine",
+      "details": "faire des braises ",
+      "capacity": "2",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "13h-15h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "cuisine",
+      "details": "récupérer les entrées des invité(e)s",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "14h-15h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "cuisine",
+      "details": "faire des braises et mettre les agneaux à cuire",
+      "capacity": "2",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "15h-17h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "cuisine",
+      "details": "cuire le méchoui",
+      "capacity": "1",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "17h-21h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "cuisine",
+      "details": "terminer la cuisine du dîner (réchauffer tartes, pommes de terre...)",
+      "capacity": "4",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "20h-21h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "garde des enfants",
+      "details": "animation d'un atelier pour les enfants",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "garde des enfants",
+      "details": "atelier pour les enfants",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "17h30-19h",
+      "location": "abbaye"
+    },
+    {
+      "type": "garde des enfants",
+      "details": "véiller sur les enfants",
+      "capacity": "2",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "20h-23h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "installation",
+      "details": "décoration de la salle",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "10h-12h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "installation",
+      "details": "installation de la salle   ",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "10h-12h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "installation",
+      "details": "Installation de la sono dans la salle",
+      "capacity": "3",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "10h-12h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "installation",
+      "details": "préparer le dîner (laver salades, pommes de terres, fromage...)",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "11h-12h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "installation",
+      "details": "Installation des chaises dans l'Abbaye",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "11h-12h  et/ou 15h-16h",
+      "location": "abbaye"
+    },
+    {
+      "type": "installation",
+      "details": "installation du café d'accueil",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "13h-14h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "installation",
+      "details": "préparer le dîner (laver salades, pommes de terres, fromage...)",
+      "capacity": "6",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "installation",
+      "details": "installation de l'apéro",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "installation",
+      "details": "dresser la table",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "installation",
+      "details": "décoration de l'Abbaye",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "abbaye"
+    },
+    {
+      "type": "installation",
+      "details": "installation du vin d'honneur",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "abbaye"
+    },
+    {
+      "type": "installation",
+      "details": "installation de la soirée (tireuse à bière...)",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "23h-23h30",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "installation",
+      "details": "installation du brunch",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "dimanche",
+      "time": "09h30-10h30",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "musiciens",
+      "details": "Musique en fil rouge le samedi",
+      "capacity": "30",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h - 00h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "navette",
+      "details": "conduire la navette",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "10h-11h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "navette",
+      "details": "conduire la navette",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "11h-12h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "navette",
+      "details": "conduire la navette",
+      "capacity": "0",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "13h-14h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "navette",
+      "details": "conduire la navette",
+      "capacity": "0",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "14h-15h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "navette",
+      "details": "conduire la navette",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "navette",
+      "details": "conduire la navette",
+      "capacity": "0",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "19h-20h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "navette",
+      "details": "conduire la navette",
+      "capacity": "0",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "22h-23h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "photos",
+      "details": "photos café",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "14h-15h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "photos",
+      "details": "photos préparatifs",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "photos",
+      "details": "photos vin d'honneur",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "16h-17h",
+      "location": "abbaye"
+    },
+    {
+      "type": "photos",
+      "details": "photos messe",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "17h30-19h",
+      "location": "abbaye"
+    },
+    {
+      "type": "photos",
+      "details": "photos procession",
+      "capacity": "3",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "19h-20h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "photos",
+      "details": "photos apéro",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "20h-21h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "photos",
+      "details": "photos dîner",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "21h-23h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "photos",
+      "details": "photos soirée",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "23h-00h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "photos",
+      "details": "photos dimanche matin",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "dimanche",
+      "time": "11h-14h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "photos",
+      "details": "photos dimanche après midi",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "dimanche",
+      "time": "14h-17h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "photos",
+      "details": "photos dimanche soir",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "dimanche",
+      "time": "18h-22h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "préparatifs",
+      "details": "montage du barnum",
+      "capacity": "8",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "09h-11h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "préparatifs",
+      "details": "apporter du bois",
+      "capacity": "8",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "09h-11h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "préparatifs",
+      "details": "installation de la salle lounge",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "11h-12h et/ou 15h-16h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "rangement",
+      "details": "rangement du café",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "14h-14h30",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "rangement",
+      "details": "rangement du vin d'honneur",
+      "capacity": "4",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "17h-17h30",
+      "location": "abbaye"
+    },
+    {
+      "type": "rangement",
+      "details": "rangement et démontage instruments de musique",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "19h-19h30",
+      "location": "abbaye"
+    },
+    {
+      "type": "rangement",
+      "details": "ranger l'apéro",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "20h45-21h15",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "rangement",
+      "details": "desservir le dîner",
+      "capacity": "4",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "23h-23h30",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "rangement",
+      "details": "ranger le brunch",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "dimanche",
+      "time": "17h-18h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "relationnel",
+      "details": "point info",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "13h-14h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "relationnel",
+      "details": "accueil des invité(e)s",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "13h-15h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "relationnel",
+      "details": "garant de l'heure (monsieur ou madame montre)",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "13h30-15h30 (en discontinu)",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "relationnel",
+      "details": "point info",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "14h-15h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "relationnel",
+      "details": "garant de l'heure (monsieur ou madame montre)",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h30-17h30 (en discontinu)",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "relationnel",
+      "details": "accueil et placement dans l'Abbaye",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "17h-17h30",
+      "location": "abbaye"
+    },
+    {
+      "type": "relationnel",
+      "details": "garant de l'heure (monsieur ou madame montre)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "17h30-19h30",
+      "location": "abbaye"
+    },
+    {
+      "type": "relationnel",
+      "details": "point info",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "19h-20h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "relationnel",
+      "details": "garant de l'heure (monsieur ou madame montre)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "19h30-21h30 (en discontinu)",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "relationnel",
+      "details": "garant de l'heure (monsieur ou madame montre)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "21h30-23h30 (en discontinu)",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "service",
+      "details": "service du café",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "14h-15h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "service",
+      "details": "service du vin d'honneur",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "16h-17h",
+      "location": "abbaye"
+    },
+    {
+      "type": "service",
+      "details": "service de l'apéro",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "20h-21h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "service",
+      "details": "service du dîner (passe plats)",
+      "capacity": "6",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "21h-23h (en discontinu)",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "service",
+      "details": "service du dîner",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "dimanche",
+      "time": "20h-20h30",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "support",
+      "details": "couteau suisse (courses de dernière minute, solutionnage...)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "09h-13h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "support",
+      "details": "couteau suisse (courses de dernière minute, solutionnage...)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "13h-19h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "support",
+      "details": "aide à la procession",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "19h-20h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "support",
+      "details": "couteau suisse (courses de dernière minute, solutionnage...)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "19h-23h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "vaisselle",
+      "details": "vaisselle du café",
+      "capacity": "4",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "vaisselle",
+      "details": "Vaisselle du vin d'honneur",
+      "capacity": "0",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "17h30-19h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "vaisselle",
+      "details": "Vaisselle de l'apéro",
+      "capacity": "4",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "21h-21h30",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "vaisselle",
+      "details": "Vaisselle du dîner",
+      "capacity": "6",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "22h-23h30 (en discontinu)",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "vaisselle",
+      "details": "Vaisselle des verres de la soirée",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "dimanche",
+      "time": "09h30-10h30",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "vaisselle",
+      "details": "Vaisselle du dîner",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "dimanche",
+      "time": "21h30-22h30",
+      "location": "grange de Beauvais"
+    }
+  ]
+}

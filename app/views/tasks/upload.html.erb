@@ -1,0 +1,24 @@
+<p>Hello world</p>
+<p><%= @wedding.title %><p>
+
+<p><%= "#{@nb_tasks} catégories de services ont été supprimées" %></p>
+<p><%= "#{@clean_service_list.values.count} nouvelles catégories de service vont être créés" %></p>
+
+<ul>
+  <% @wedding.tasks.each do |t| %>
+    <li>
+      <%= t.name %>
+    </li>
+  <% end %>
+</ul>
+
+<%= @display %>
+
+<div class="links">
+  <%= link_to "Back to wedding", wedding_path(@wedding) %>
+</div>
+
+<div>
+  <%= @clean_service_list %>
+</div>
+
