@@ -48,7 +48,11 @@ class TasksController< ApplicationController
   end
 
   def destroy
+    @task.destroy
     redirect_to wedding_path(@wedding)
+  end
+
+  def initialize
   end
 
 private

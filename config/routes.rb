@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "users/profile", to: 'pages#profile'
 
+
   resources :weddings do
     resources :reviews
     resources :tasks do
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
       resources :services, only: [:index, :create, :show, :edit, :update, :destroy ]
       resources :messages, only: [:create, :index, :new, :destroy, :show]
     end
+    get "initialize/tasks", to: "tasks#initialize"
     resources :registries do
       resources :accomodations
     end

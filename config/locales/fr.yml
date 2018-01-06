@@ -97,6 +97,8 @@ fr:
     needs: "Besoins"
     add_service: "Ajouter un service"
     list: "Liste des services pour cette tâche"
+    initialize: "Importer depuis excel"
+    initialize-confirmation: "Attention, tous les services déja créés seront supprimés. Etes vous sûr d'importer la nouvelle liste des services ?"
   links:
     home: "Acceuil"
     show: "Voir"
