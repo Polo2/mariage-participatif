@@ -1,18 +1,21 @@
 .tasklist {
 
-padding: 23px;
+padding: 0px;
 padding-top: 30px;
 margin-top: 49px;
+width: 95%;
 
   .tasks {
     list-style: none;
     display: flex;
+    padding: 0px !important;
 
     .task {
       color: #726e6e;
       margin-bottom: 25px;
       margin-top: 9px;
       margin-left: 10px;
+      padding: 6px;
     }
 
     a {
