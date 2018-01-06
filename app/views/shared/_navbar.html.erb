@@ -70,12 +70,52 @@
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#"><%= t("navbar.my_wedding") %></a></li>
-        <li><a href="#"><%= t("navbar.invitations")%></a></li>
-        <li><a href="#"><%= t("navbar.profile")%></a></li>
-        <li><a href="#"><%= t("navbar.log_out")%></a></li>
-      </ul>
+
+      <% if user_signed_in? %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <%= link_to users_profile_path do %>
+              <i class="fa fa-user"></i>
+              <%= t("navbar.profile") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path,  method: :delete, data: { confirm: t("navbar.log_out_confirm")}  do %>
+              <i class="fa fa-sign-out"></i>
+              <%= t("navbar.log_out") %>
+            <% end %>
+          </li>
+          <% if current_user.weddings.empty? %>
+            <li><%= link_to "? #{t("navbar.my_wedding")} ?",  new_wedding_path %></li>
+          <% else %>
+            <li>
+              <%= link_to wedding_path(current_user.weddings.future.last) do %>
+                <i class="fa fa-hourglass-half"></i>
+                <%= t("navbar.my_wedding") %>
+              <% end %>
+            </li>
+          <% end %>
+          <% unless current_user.registries.empty? %>
+            <li><span class="navbar-wagon-item navbar-wagon-link"><%= "#{t("navbar.invitations")} : " %></span>
+              <ul class="navbar-wagon-dropdown-menu">
+                <% current_user.registries.each do |reg| %>
+                  <li>
+                    <%= link_to wedding_path(reg.wedding) do %>
+                      <i class="fa fa-hourglass-half"></i>
+                      <%= reg.wedding.user.first_name %> & <%= reg.wedding.spouse_first_name %>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><%= link_to t("navbar.login"), new_user_session_path %></li>
+          <li><%= link_to t("navbar.sign_up"), new_user_registration_path %></li>
+        </ul>
+      <% end %>
     </div>
   </div>
 </div>
