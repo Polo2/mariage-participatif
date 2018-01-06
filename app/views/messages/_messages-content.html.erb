@@ -1,24 +1,18 @@
 <div class="messages-block" id="scrollzone">
-
-   <% @messages.each do |m| %>
-      <div class="message-wrapper <%=  m.user == m.task.wedding.user ? 'wedder' : 'invited'   %> ">
-        <div class="message frame">
-          <div class="message-body">
-            <p><%= m.content %></p>
-          </div>
-          <div class="message-name">
-            <p>by <%= m.user.first_name %></p>
-            <p><%=m.created_at.strftime('%m/%d at %H:%M')%></p>
-          </div>
+ <% @messages.each do |m| %>
+    <div class="message-wrapper <%=  m.user == m.task.wedding.user ? 'wedder' : 'invited'   %> ">
+      <div class="message frame">
+        <div class="message-body">
+          <p><%= m.content %></p>
+        </div>
+        <div class="message-name">
+          <p>by <%= m.user.first_name %></p>
+          <p><%=m.created_at.strftime('%m/%d at %H:%M')%></p>
         </div>
       </div>
-    <% end %>
-
+    </div>
+  <% end %>
 </div>
-
-
-
-
 
 
 <div class="messages-form">

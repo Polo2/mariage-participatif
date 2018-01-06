@@ -11,12 +11,12 @@ Rails.application.routes.draw do
 
   resources :weddings do
     resources :reviews
+    get "tasks/upload", to: "tasks#upload"
     resources :tasks do
       resources :elements, only: [:index, :create, :show, :edit, :update, :destroy ]
       resources :services, only: [:index, :create, :show, :edit, :update, :destroy ]
       resources :messages, only: [:create, :index, :new, :destroy, :show]
-    end
-    get "initialize/tasks", to: "tasks#initialize"
+      end
     resources :registries do
       resources :accomodations
     end

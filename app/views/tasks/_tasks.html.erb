@@ -7,7 +7,7 @@
   <% if policy(@wedding).edit? %>
     <div>
       <%= link_to t("task.add"), new_wedding_task_path(@wedding), class: "button button-show"  %>
-      <%= link_to t("task.initialize"), wedding_initialize_tasks_path(@wedding), data: { confirm: t("task.initialize-confirmation") } ,class: "button button-show" %>
+      <%= link_to t("task.initialize"), wedding_tasks_upload_path(@wedding), data: { confirm: t("task.initialize-confirmation") } ,class: "button button-show" %>
     </div>
   <% end %>
 </div>
