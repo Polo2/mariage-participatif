@@ -111,7 +111,7 @@ private
       new_task = Task.new(name: t_name, wedding: @wedding, statut: false)
       new_task.save
       t_services.each do |service|
-        Service.create( name: service[:day], capacity: service[:capacity], appointment: service[:time] , task: new_task  )
+        Service.create( name: service[:day], capacity: service[:capacity], appointment: service[:time] , task: new_task, day: service[:day], location: service[:location], details: service[:details]  )
       end
     end
   end
