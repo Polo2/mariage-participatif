@@ -71,6 +71,7 @@
               </ul>
               <div class="button-container">
                 <%= link_to "Detail services", wedding_path(@wedding), class: "button button-show" %>
+                <%= link_to t("task.initialize"), wedding_tasks_upload_path(@wedding), data: { confirm: t("task.initialize-confirmation") } ,class: "button button-show" %>
               </div>
           </div>
         </div>
