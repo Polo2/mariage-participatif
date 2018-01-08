@@ -65,12 +65,13 @@
             <span class="section-title"><%= t("wedding.blocs.bloc-task")%></span>
             </h3>
               <ul class="bloc-list">
-                <li>Nombre de services proposés : </li>
-                <li>Nombre de services pourvus :  </li>
-                <li>Nombre de services vacants :  </li>
+                <li>Nombre de services proposés : <%= @wedding.services_count %></li>
+                <li>Nombre de services pourvus :  0 </li>
+                <li>Nombre de services vacants :  <%= @wedding.services_count %> </li>
               </ul>
               <div class="button-container">
                 <%= link_to "Detail services", wedding_path(@wedding), class: "button button-show" %>
+                <%= link_to t("task.initialize"), wedding_tasks_upload_path(@wedding), data: { confirm: t("task.initialize-confirmation") } ,class: "button button-show" %>
               </div>
           </div>
         </div>

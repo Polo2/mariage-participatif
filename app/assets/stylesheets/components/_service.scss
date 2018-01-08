@@ -1,0 +1,54 @@
+.service-card {
+    background-color: #dce5df;
+
+    display: flex;
+    border-radius: 5px;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.service-description {
+    flex: 0 0 40%;
+    padding: 5px;
+    font-weight: 200;
+    font-size: 17px;
+}
+
+.service-details {
+    flex: 0 1 25%;
+    padding: 5px;
+
+    ul {
+      font-style: none;
+    }
+
+    li {
+      font-size: 15px;
+      margin-top: 0px !important;
+      .fa {
+        visibility: visible !important;
+        margin-right: 2px;
+      }
+    }
+
+}
+
+.service-registrations {
+    flex: 0 0 20%;
+    padding: 5px;
+
+    ul {
+      font-style: none;
+    }
+
+    li {
+      font-size: 14px;
+      margin-top: 0px !important;
+    }
+}
+
+.service-registrate {
+    flex: 0 0 10%;
+    padding: 5px;
+}

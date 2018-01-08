@@ -72,19 +72,53 @@
           </div>
         </div>
       <% else %>
-       <div class="col-xs-12 col-sm-6 task-details">
+       <div class="col-xs-12 task-details">
         <h4><%= t("task.list")%></h4>
           <div class="rightblock bloc invited-height-block">
             <ul>
             <% @services.each do |service| %>
               <li>
-                <%= service.name %>
+                <div class="service-card">
+                  <div class="service-description">
+                    <%= service.details %>
+                  </div>
+                  <div class="service-details">
+                    <ul>
+                      <li><%= icon('calendar') %><%= service.day %></li>
+                      <li><i class="fa fa-clock-o"></i>
+<%= service.appointment %></li>
+                      <li><%= icon('map-marker') %><%= service.location %></li>
+
+                    </ul>
+                  </div>
+                  <div class="service-registrations">
+                    <ul>
+                      <li><%= (service.guests.count == service.capacity) ? "Service complet" : "Reste #{service.capacity - service.guests.count} place" %> </li>
+                      <li><%= "#{service.guests.count} inscrits"%></li>
+                    </ul>
+                  </div>
+                  <div class="service-registrate">
+                    <div class="dropdown">
+                      <% if policy(@wedding).edit? %>
+                        <a href="#">Modifier</a>
+                      <% else %>
+                        <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"> Inscription </a>
+                        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                          <% current_user.registries.last.guests.where(child: false).where(presence: true).each do |g| %>
+                            <li><%= g.name %> </li>
+                          <% end %>
+
+                        </ul>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
               </li>
             <% end %>
             </ul>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-6 discussion">
+        <div class="col-xs-12 discussion">
           <h4><%= t("task.messages") %></h4>
           <div class="leftblock bloc invited-height-block">
             <%= render 'messages/messages-content' %>
