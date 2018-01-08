@@ -39,7 +39,7 @@ width: 95%;
       letter-spacing: 3px;
       border: 1px solid white;
       height: 80px;
-      width: 117px;
+      width: 130px;
        }
 
   .button:hover {
@@ -143,6 +143,7 @@ width: 95%;
 
   .invited-height-block{
     height: 420px;
+    overflow: auto;
   }
 
   .btn.btn-default {
@@ -163,6 +164,10 @@ width: 95%;
 
   .fa {
     font-size: 20px;
+  }
+
+  ul {
+    list-style:none;
   }
 
 }
