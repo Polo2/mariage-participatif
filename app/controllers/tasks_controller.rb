@@ -3,6 +3,7 @@ require 'json'
 class TasksController< ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :set_wedding
+  before_action :set_registry
 
 
   def index
@@ -120,7 +121,9 @@ private
     end
   end
 
-  # def creating_new_services_from_hash(task_name)
-  # end
+  def set_registry
+    @registry = current_user.registries.last unless policy(@wedding).edit?
+  end
+
 
 end

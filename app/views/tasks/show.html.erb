@@ -91,27 +91,47 @@
 
                     </ul>
                   </div>
-                  <div class="service-registrations">
-                    <ul>
-                      <li><%= service.is_service_complete? ? "Service complet" : "Reste #{service.capacity - service.guests.count} place" %> </li>
-                      <li><%= "#{service.guests.count} inscrits"%></li>
-                    </ul>
-                  </div>
-                  <div class="service-registrate">
-                    <div class="dropdown">
-                      <% if policy(@wedding).edit? %>
-                        <a href="#">Modifier</a>
-                      <% else %>
-                        <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"> Inscription </a>
-                        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                          <%= simple_form_for([@wedding, @task, service]) do |f| %>
-                            <%= f.association :guests, collection: @list_guests_adults_without_service, as: :check_boxes %>
-                            <%= f.button :submit %>
-                          <% end %>
-                        </ul>
-                      <% end %>
+
+                  <% if service.is_service_complete? %>
+                    <div class="service-registrations" id="complete">
+                      <ul>
+                        <li>Service complet !</li>
+                        <li></li>
+                      </ul>
                     </div>
-                  </div>
+                    <div class="service-links">
+                      <div class="dropdown">
+                        <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"><%= "#{service.guests.count} inscrits !"%></a>
+                        <ul class="dropdown-menu">
+                        <% service.guests.each do |guest| %>
+                          <li><%= "#{@registry.group_name.capitalize}, #{guest.name} " %></li>
+                        <% end %>
+                        </ul>
+                      </div>
+                    </div>
+                  <% else %>
+                    <div class="service-registrations">
+                      <ul>
+                        <li><%= "#{service.capacity - service.guests.count} place(s)" %></li>
+                        <li><%= "#{service.guests.count} inscrits"%></li>
+                      </ul>
+                    </div>
+                    <div class="service-links">
+                      <div class="dropdown">
+                        <% if policy(@wedding).edit? %>
+                          <a href="#">Modifier</a>
+                        <% else %>
+                          <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"> Inscription </a>
+                          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                            <%= simple_form_for([@wedding, @task, service]) do |f| %>
+                              <%= f.association :guests, collection: @list_guests_adults_without_service, as: :check_boxes %>
+                              <%= f.button :submit %>
+                            <% end %>
+                          </ul>
+                        <% end %>
+                      </div>
+                    </div>
+                  <% end %>
                 </div>
               </li>
             <% end %>
