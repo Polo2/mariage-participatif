@@ -1,5 +1,5 @@
 class Accomodation < ApplicationRecord
   belongs_to :wedding
-  has_many :users
+  has_many :registries
 
 end
