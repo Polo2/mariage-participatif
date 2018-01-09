@@ -104,10 +104,10 @@
                       <% else %>
                         <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"> Inscription </a>
                         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                          <% current_user.registries.last.guests.where(child: false).where(presence: true).each do |g| %>
-                            <li><%= g.name %> </li>
+                          <%= simple_form_for([@wedding, @task, service]) do |f| %>
+                            <%= f.association :guests, collection: @list_guests_adults, as: :check_boxes %>
+                            <%= f.button :submit %>
                           <% end %>
-
                         </ul>
                       <% end %>
                     </div>
