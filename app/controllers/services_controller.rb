@@ -14,6 +14,7 @@ before_action :set_service, only: [:show, :edit, :update, :destroy]
   end
 
   def create
+
     @service = Service.new(service_params)
     @service.task = @task
     if @service.save
@@ -25,7 +26,14 @@ before_action :set_service, only: [:show, :edit, :update, :destroy]
   end
 
   def update
+
+    guest_list = register_guests(params[:service]["guest_ids"])
+    guest_list.each do |g|
+      g.service = @service
+      g.save
+    end
     @service.update(service_params)
+
     @service.task = @task
     if @service.save
       redirect_to wedding_task_path(@wedding, @task)
@@ -49,11 +57,18 @@ private
   end
 
   def set_service
-    @service = service.find(params[:id])
+    @service = Service.find(params[:id])
   end
 
   def service_params
     params.require(:service).permit(:name, :capacity, :appointment)
+  end
+
+  def register_guests(array_guest_ids)
+    array_ids = array_guest_ids.select{ |e| !e.empty? }.map{ |n| n.to_i }
+    guests_array =  []
+    array_ids.each { |id| guests_array << Guest.find(id) }
+    return guests_array
   end
 
 end

@@ -149,6 +149,8 @@ fr:
         name: "Prénom"
         presence: "Presence"
         child: "Enfant ?"
+      service:
+        guests: "Inscrire"
 
   helpers:
     submit:
@@ -161,7 +163,9 @@ fr:
       guests:
         create: "Créer"
         update: "Valider"
-
+      service:
+        create: "Créer"
+        update: "Valider"
 
 
 

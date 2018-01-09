@@ -37,3 +37,10 @@
 
       <%= link_to "Back", wedding_registry_path(@wedding, @registry) %>
     </div>
+
+
+Liste guest for registry
+
+<% current_user.registries.last.guests.where(child: false).where(presence: true).each do |g| %>
+                            <li><%= g.name %> </li>
+                          <% end %>
