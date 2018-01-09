@@ -93,7 +93,7 @@
                   </div>
                   <div class="service-registrations">
                     <ul>
-                      <li><%= (service.guests.count == service.capacity) ? "Service complet" : "Reste #{service.capacity - service.guests.count} place" %> </li>
+                      <li><%= service.is_service_complete? ? "Service complet" : "Reste #{service.capacity - service.guests.count} place" %> </li>
                       <li><%= "#{service.guests.count} inscrits"%></li>
                     </ul>
                   </div>
@@ -105,7 +105,7 @@
                         <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"> Inscription </a>
                         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
                           <%= simple_form_for([@wedding, @task, service]) do |f| %>
-                            <%= f.association :guests, collection: @list_guests_adults, as: :check_boxes %>
+                            <%= f.association :guests, collection: @list_guests_adults_without_service, as: :check_boxes %>
                             <%= f.button :submit %>
                           <% end %>
                         </ul>

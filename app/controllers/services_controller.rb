@@ -28,15 +28,20 @@ before_action :set_service, only: [:show, :edit, :update, :destroy]
   def update
 
     guest_list = register_guests(params[:service]["guest_ids"])
-    guest_list.each do |g|
-      g.service = @service
-      g.save
-    end
-    @service.update(service_params)
 
-    @service.task = @task
-    if @service.save
-      redirect_to wedding_task_path(@wedding, @task)
+    if (guest_list.length + @service.guests.count ) <= @service.capacity
+      guest_list.each do |g|
+        g.service = @service
+        g.save
+      end
+      @service.update(service_params)
+
+      @service.task = @task
+      if @service.save
+        redirect_to wedding_task_path(@wedding, @task)
+      end
+    else
+      redirect_to wedding_task_path(@wedding, @task), alert: "Désolé, pas assez de place sur ce service"
     end
   end
 
@@ -70,5 +75,8 @@ private
     array_ids.each { |id| guests_array << Guest.find(id) }
     return guests_array
   end
+
+
+
 
 end

@@ -19,6 +19,7 @@ class TasksController< ApplicationController
     @message = Message.new
 
     @list_guests_adults = current_user.registries.last.guests.where(child: false).where(presence: true) unless current_user == @wedding.user
+    @list_guests_adults_without_service = @list_guests_adults.select { |g| !g.service_id?  }
   end
 
 
@@ -60,6 +61,7 @@ class TasksController< ApplicationController
     @clean_service_list = cleaning_service_json(import_tasks_from_json)
 
     creating_new_tasks_from_hash(@clean_service_list)
+    redirect_to wedding_path(@wedding)
 
   end
 
@@ -118,7 +120,7 @@ private
     end
   end
 
-  def creating_new_services_from_hash(task_name)
-  end
+  # def creating_new_services_from_hash(task_name)
+  # end
 
 end

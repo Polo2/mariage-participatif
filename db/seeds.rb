@@ -20,41 +20,37 @@ Wedding.destroy_all
 puts "Cleaning data base users"
 User.destroy_all
 
-puts "Création du user Polo@odile"
+
+puts "Création du user polo@odile - azerty"
 
 
 new_user_polo = User.create({
     first_name: "Paul",
     last_name: "de Bodi",
     email: "polo@odile",
-    password: "333333",
-    password_confirmation: "333333",
+    password: "azerty",
+    password_confirmation: "azerty",
     avatar_url: "https://avatars3.githubusercontent.com/u/32060402?s=460&v=4"
     })
 
-new_user_aurel = User.create({
-    first_name: "Aurelie",
-    last_name: "Dubs",
-    email: "aure@lie.fr",
-    password: "222222",
-    password_confirmation: "222222",
-    avatar_url: "https://avatars0.githubusercontent.com/u/32846131?s=400&v=4"
-    })
 
-new_user_horti = User.create({
-    first_name: "Hor",
-    last_name: "Titi",
-    email: "hor@titi.fr",
-    password: "111111",
-    password_confirmation: "111111",
-    avatar_url: "https://avatars0.githubusercontent.com/u/32671308?s=400&v=4"
-    })
-
-puts "id horti : #{new_user_horti.id}"
-puts "id aurelie : #{new_user_aurel.id}"
 puts "id polo : #{new_user_polo.id}"
 
-puts "Création des mariages civils et religieux"
+puts "Création du user famille@testeur - azerty"
+
+new_user_testeur = User.create({
+    first_name: "Famille",
+    last_name: "Testeur",
+    email: "famille@testeur",
+    password: "azerty",
+    password_confirmation: "azerty",
+    avatar_url: "https://t3.ftcdn.net/jpg/00/65/63/24/500_F_65632409_bzggYSmL28PdjZkuAVveONRGUnOsQNjr.jpg"
+    })
+
+puts "id testeurs : #{new_user_testeur.id}"
+
+puts "Création du mariage religieux"
+
 
 
 wedding1_polo = Wedding.create({
@@ -70,32 +66,78 @@ wedding1_polo = Wedding.create({
   spouse_last_name: "Monseu"
   })
 
-wedding2_polo = Wedding.create({
-  title: "Mariage civil à Villeurbanne",
-  description: "Mariage civil, en plus petit comité : les Lyonnais, les temoins, la famille ... à la mairie de Villeurbanne. Puis soirée dans un coin de Lyon ou environs  ",
-  capacity: 33,
-  user_id: new_user_polo.id,
-  date: Date.new(2017,1,27),
-  location: "Villeurbanne",
-  photo_url: "http://ekladata.com/iFXMrulEPn1hJsuM-eAZtYl9Mzk.jpg",
-  spouse_photo_url: "https://avatars1.githubusercontent.com/u/32060402?s=400&u=33d0f8f8d6ac9979437727646e169c3173784a42&v=4",
-  spouse_first_name: "Odile",
-  spouse_last_name: "Monseu"
+puts "Création d'1 invitation"
+
+registry_testeurs = Registry.create({
+  user_id: new_user_testeur.id,
+  wedding_id: wedding1_polo.id,
+  email: "famille@testeur",
+  group_name: "Testeurs",
+  address: "Rue des testeurs",
+  zipcode: "69000",
+  city: "Lyon",
   })
 
+puts "id registry : #{registry_testeurs.id}"
 
-wedding5_aurel = Wedding.create({
-  title: "Trinquons !",
-  description: "Parce que la vie, c'est la joie.",
-  capacity: 132,
-  user_id: new_user_aurel.id,
-  date: Date.new(2018,12,31),
-  location: "Valence, France",
-  photo_url: "https://www.theknot.com/assets/topic_pages/wedding-vows-ceremony-de390170d87b481e073afef3e03a2c7b4a5d7e0b1de1036a40816f80fa85a6cd.jpg",
-  spouse_photo_url: "https://avatars0.githubusercontent.com/u/32846131?s=400&v=4",
-  spouse_first_name: "Sylvain",
-  spouse_last_name: "Chêne"
+puts "Creation des 5 guests adultes & 1 adulte absent & 1 enfant "
+
+5.times do |i|
+  Guest.create!({
+    registry_id: registry_testeurs.id,
+    name: "adulte #{i+1}",
+    presence: true,
+    child: false,
+    })
+  puts "id adulte #{i+1} : #{Guest.last.id}"
+end
+
+
+Guest.create({
+    registry_id: registry_testeurs.id,
+    name: "adulte absent",
+    presence: true,
+    child: false,
+    })
+
+puts "id adulte absent : #{Guest.last.id} "
+
+Guest.create({
+  registry_id: registry_testeurs.id,
+  name: "l'enfant",
+  presence: true,
+  child: true,
   })
+
+puts "id enfant : #{Guest.last.id} "
+
+
+# wedding2_polo = Wedding.create({
+#   title: "Mariage civil à Villeurbanne",
+#   description: "Mariage civil, en plus petit comité : les Lyonnais, les temoins, la famille ... à la mairie de Villeurbanne. Puis soirée dans un coin de Lyon ou environs  ",
+#   capacity: 33,
+#   user_id: new_user_polo.id,
+#   date: Date.new(2017,1,27),
+#   location: "Villeurbanne",
+#   photo_url: "http://ekladata.com/iFXMrulEPn1hJsuM-eAZtYl9Mzk.jpg",
+#   spouse_photo_url: "https://avatars1.githubusercontent.com/u/32060402?s=400&u=33d0f8f8d6ac9979437727646e169c3173784a42&v=4",
+#   spouse_first_name: "Odile",
+#   spouse_last_name: "Monseu"
+#   })
+
+
+# wedding5_aurel = Wedding.create({
+#   title: "Trinquons !",
+#   description: "Parce que la vie, c'est la joie.",
+#   capacity: 132,
+#   user_id: new_user_aurel.id,
+#   date: Date.new(2018,12,31),
+#   location: "Valence, France",
+#   photo_url: "https://www.theknot.com/assets/topic_pages/wedding-vows-ceremony-de390170d87b481e073afef3e03a2c7b4a5d7e0b1de1036a40816f80fa85a6cd.jpg",
+#   spouse_photo_url: "https://avatars0.githubusercontent.com/u/32846131?s=400&v=4",
+#   spouse_first_name: "Sylvain",
+#   spouse_last_name: "Chêne"
+#   })
 
 
 
@@ -157,5 +199,5 @@ wedding5_aurel = Wedding.create({
 #   content: 'Yes!',
 # )
 
-
 puts "seed done !"
+
