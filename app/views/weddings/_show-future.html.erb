@@ -66,8 +66,9 @@
             </h3>
               <ul class="bloc-list">
                 <li>Nombre de services proposés : <%= @wedding.services_count %></li>
-                <li>Nombre de services pourvus :  0 </li>
-                <li>Nombre de services vacants :  <%= @wedding.services_count %> </li>
+                <li>Nombre d'invités inscrits   : <%= @wedding.nb_of_guests_registred_to_a_service_count %></li>
+                <li>Nombre de services complets : <%= @wedding.complete_services_count %> </li>
+                <li>Nombre d'invités nécessaire : <%= @wedding.guests_needed_for_service_count %>  </li>
               </ul>
               <div class="button-container">
                 <%= link_to "Detail services", wedding_path(@wedding), class: "button button-show" %>

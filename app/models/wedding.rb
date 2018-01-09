@@ -16,16 +16,49 @@ class Wedding < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
 
-   def passed?
+  def passed?
     date < Date.current
-   end
+  end
 
-   def services_count
-      compteur = 0
-      tasks_list = self.tasks
-      tasks_list.each { |t| compteur += t.services.count }
-      compteur
+  def services_count
+    compteur = 0
+    tasks_list = self.tasks
+    tasks_list.each { |t| compteur += t.services.count }
+    compteur
+  end
 
-   end
+  def complete_services_count
+    compteur = 0
+    tasks_list = self.tasks
+    tasks_list.each do |t|
+      complete_services = t.services.select{ |s| s.is_service_complete? }
+      compteur += complete_services.count
+    end
+    compteur
+  end
+
+  def nb_of_guests_registred_to_a_service_count
+    guest_registred_list = []
+    reg_list = self.registries
+    reg_list.each do |reg|
+      reg.guests.each do |guest|
+        guest_registred_list << guest if guest.service_id?
+      end
+    end
+    return guest_registred_list.length
+  end
+
+  def guests_needed_for_service_count
+    compteur = 0
+    job_service_list = []
+    tasks_list = self.tasks
+    tasks_list.each do |t|
+      ser_vices = t.services
+      ser_vices.each { |s| compteur += s.capacity.to_i  }
+    end
+    job_service_list.each { |s| compteur += s.capacity }
+
+    return (compteur - nb_of_guests_registred_to_a_service_count)
+  end
 
 end

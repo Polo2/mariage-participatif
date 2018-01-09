@@ -5,6 +5,7 @@ class TasksController< ApplicationController
   before_action :set_wedding
 
 
+
   def index
     @tasks = Task.where('wedding_id = ?', @wedding.id)
   end
@@ -19,7 +20,7 @@ class TasksController< ApplicationController
     @message = Message.new
 
     @list_guests_adults = current_user.registries.last.guests.where(child: false).where(presence: true) unless current_user == @wedding.user
-    @list_guests_adults_without_service = @list_guests_adults.select { |g| !g.service_id?  }
+    @list_guests_adults_without_service = @list_guests_adults.select { |g| !g.service_id?  } unless current_user == @wedding.user
   end
 
 
@@ -120,7 +121,6 @@ private
     end
   end
 
-  # def creating_new_services_from_hash(task_name)
-  # end
+
 
 end

@@ -37,9 +37,10 @@
 .service-registrations {
     flex: 0 0 20%;
     padding: 5px;
-
+    text-align: center;
     ul {
       font-style: none;
+      padding-left: 1px !important;
     }
 
     li {
@@ -48,7 +49,16 @@
     }
 }
 
-.service-registrate {
+#complete {
+
+    li {
+      font-size: 16px !important;
+      font-weight: 600;
+      color: $green;
+    }
+  }
+
+.service-links {
     flex: 0 0 10%;
     padding: 5px;
 }
