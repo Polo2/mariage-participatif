@@ -3,7 +3,7 @@ require 'json'
 class TasksController< ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :set_wedding
-  before_action :set_registry
+
 
 
   def index
@@ -20,7 +20,7 @@ class TasksController< ApplicationController
     @message = Message.new
 
     @list_guests_adults = current_user.registries.last.guests.where(child: false).where(presence: true) unless current_user == @wedding.user
-    @list_guests_adults_without_service = @list_guests_adults.select { |g| !g.service_id?  }
+    @list_guests_adults_without_service = @list_guests_adults.select { |g| !g.service_id?  } unless current_user == @wedding.user
   end
 
 
@@ -121,9 +121,6 @@ private
     end
   end
 
-  def set_registry
-    @registry = current_user.registries.last unless policy(@wedding).edit?
-  end
 
 
 end
