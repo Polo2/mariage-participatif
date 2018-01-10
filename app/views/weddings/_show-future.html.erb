@@ -82,19 +82,24 @@
             <h3 class="text-center">
               <span class="section-title"><%= t("wedding.blocs.bloc-accomodations")%></span>
             </h3>
-              <div id="map" style="height: 250px;"></div>
+            <ul class="bloc-list">
+              <li>Nombre de logements : <%= @wedding.accomodations.count %></li>
+              <li>Nombre d'invités inscrits aux logements : <%= @wedding.nb_of_guests_with_accomodation_count %></li>
+            </ul>
+              <!-- <div id="map" style="height: 250px;"></div> -->
               <div class="button-container">
-                <%= link_to "Detail Logements", wedding_path(@wedding, @registry), class: "button button-show" %>
+                <%= link_to "Detail Logements",  wedding_path(@wedding, @registry), class: "button button-show" %>
+                <%= link_to "Importer depuis Excel", wedding_accomodations_upload_path(@wedding),  data: { confirm: t("task.initialize-accomodations-confirmation") }, class: "button button-show" %>
               </div>
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
-          <div class="wedding-bloc trips">
+          <div class="wedding-bloc vegetable">
             <h3 class="text-center">
-              <span class="section-title"><%= t("wedding.blocs.bloc-trip") %></span>
+              <span class="section-title"><%= t("wedding.blocs.bloc-vegetable") %></span>
             </h3>
             <div class="button-container">
-              <%= link_to "Detail Trajets", wedding_path(@wedding), class: "button button-show" %>
+              <%= link_to "Detail Entrées", wedding_path(@wedding), class: "button button-show" %>
             </div>
           </div>
         </div>
@@ -127,7 +132,7 @@
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
-          <div class="wedding-bloc trips">
+          <div class="wedding-bloc task">
             <h3 class="text-center">
               <span class="section-title"><%= t("wedding.blocs.bloc-task")%></span>
              </h3>
@@ -156,9 +161,9 @@
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
-          <div class="wedding-bloc tasks">
+          <div class="wedding-bloc vegetable">
             <h3 class="text-center">
-              <span class="section-title"><%= t("wedding.blocs.bloc-trip") %></span>
+              <span class="section-title"><%= t("wedding.blocs.bloc-vegetable") %></span>
             </h3>
             <div id="map" style="height: 250px;"></div>
             <div class="button-container">

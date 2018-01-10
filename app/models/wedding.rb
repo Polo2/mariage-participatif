@@ -2,6 +2,7 @@ class Wedding < ApplicationRecord
   belongs_to :user
   has_many :tasks, dependent: :destroy
   has_many :registries, dependent: :destroy
+  has_many :accomodations, dependent: :destroy
   has_many :guests, through: :registries
 
   scope :future, -> { where('date > ?', Date.current) }
@@ -59,6 +60,17 @@ class Wedding < ApplicationRecord
     job_service_list.each { |s| compteur += s.capacity }
 
     return (compteur - nb_of_guests_registred_to_a_service_count)
+  end
+
+  def nb_of_guests_with_accomodation_count
+    compteur = 0
+    accomodations_list = self.accomodations
+    reg_list = self.registries
+    reg_list.each do |reg|
+      present_adults_guests = reg.guests.where(child: false).where(presence: true)
+      compteur += present_adults_guests if reg.accomodation_id?
+    end
+    return compteur
   end
 
 end
