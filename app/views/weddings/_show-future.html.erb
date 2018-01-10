@@ -85,6 +85,7 @@
               <div id="map" style="height: 250px;"></div>
               <div class="button-container">
                 <%= link_to "Detail Logements", wedding_path(@wedding, @registry), class: "button button-show" %>
+                <%= link_to "Importer depuis Excel", wedding_accomodations_upload_path(@wedding),  data: { confirm: t("task.initialize-accomodations-confirmation") }, class: "button button-show" %>
               </div>
           </div>
         </div>

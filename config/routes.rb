@@ -10,8 +10,9 @@ Rails.application.routes.draw do
 
 
   resources :weddings do
-    resources :reviews
     get "tasks/upload", to: "tasks#upload"
+    get "accomodations/upload", to: "accomodations#upload"
+    resources :reviews
     resources :tasks do
       resources :elements, only: [:index, :create, :show, :edit, :update, :destroy ]
       resources :services, only: [:index, :create, :show, :edit, :update, :destroy ]
