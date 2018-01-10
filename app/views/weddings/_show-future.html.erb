@@ -88,7 +88,7 @@
             </ul>
               <!-- <div id="map" style="height: 250px;"></div> -->
               <div class="button-container">
-                <%= link_to "Detail Logements", wedding_path(@wedding, @registry), class: "button button-show" %>
+                <%= link_to "Detail Logements",  wedding_path(@wedding, @registry), class: "button button-show" %>
                 <%= link_to "Importer depuis Excel", wedding_accomodations_upload_path(@wedding),  data: { confirm: t("task.initialize-accomodations-confirmation") }, class: "button button-show" %>
               </div>
           </div>
@@ -132,7 +132,7 @@
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
-          <div class="wedding-bloc trips">
+          <div class="wedding-bloc task">
             <h3 class="text-center">
               <span class="section-title"><%= t("wedding.blocs.bloc-task")%></span>
              </h3>

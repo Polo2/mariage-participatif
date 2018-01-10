@@ -3,6 +3,10 @@ require 'json'
 class AccomodationsController < ApplicationController
   before_action :set_wedding
 
+  def index
+    @accomodations = Accomodation.where('wedding_id = ?', @wedding.id)
+  end
+
   def upload
     Accomodation.destroy_all
     @accomodations_list = parsing_json["accomodations-DB"]
