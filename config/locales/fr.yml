@@ -22,7 +22,7 @@ fr:
     getting_married_l1: "Envoyer et suivre vos invitations"
     getting_married_l2: "Planifier les services que vous demandez"
     getting_married_l3: "Faciliter l'échange d'informations "
-    getting_married_l4: "Et permettre à vos invités de rendre leur service"
+    getting_married_l4: "Et permettre les services de vos invités "
     getting_married_create: "JE CREE MON MARIAGE COLLABORATIF"
     invited: "Vous êtes invités"
     invited_l1: "En étant invités à un mariage via cette platefrome web, vous pourrez :"
@@ -76,7 +76,7 @@ fr:
       bloc-task: "Services"
       bloc-accomodations: "Logements"
       bloc-trip: "CooVoiturage"
-
+      bloc-vegetable: "Entrée Végétale"
   task:
     choose_new: "Choisir une nouvelle tâche"
     choose: "Choisir"

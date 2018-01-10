@@ -7,7 +7,7 @@ class AccomodationsController < ApplicationController
     Accomodation.destroy_all
     @accomodations_list = parsing_json["accomodations-DB"]
     creating_new_accomodations_from_array(@accomodations_list)
-
+    redirect_to wedding_path(@wedding)
   end
 
   private
