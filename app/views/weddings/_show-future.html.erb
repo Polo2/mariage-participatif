@@ -41,6 +41,7 @@
   <% if policy(@wedding).edit? %>
   <!-- Vue du mariage par les mariés -->
     <div class="4-blocs">
+      <h2 class="text-center"><span class="section-title">4 blocs :</span></h2>
       <div class="row">
         <div class="col-xs-12 col-md-6">
           <div class="wedding-bloc invitations">
@@ -104,11 +105,13 @@
   <!-- Page du mariage vue pour l'invité -->
 
     <div class="4-blocs">
+      <h3 class="text-center">4 étapes à compléter pour valider votre inscription :</h3>
+      <div class="row">
       <div class="row">
         <div class="col-xs-12 col-md-6">
            <div class="wedding-bloc invitations">
             <h3 class="text-center">
-              <span class="section-title"><%= t("wedding.bloc.invitations")%></span>
+              <span class="section-title"><%= t("wedding.blocs.bloc-registry")%></span>
             </h3>
             <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
               <% @registry = @wedding.registries.find_by(user: current_user) %>
@@ -126,14 +129,14 @@
         <div class="col-xs-12 col-md-6">
           <div class="wedding-bloc trips">
             <h3 class="text-center">
-              <span class="section-title"><%= t("wedding.bloc.bloc-trips")%></span>
+              <span class="section-title"><%= t("wedding.blocs.bloc-task")%></span>
              </h3>
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
           <div class="wedding-bloc accomodations">
             <h3 class="text-center">
-              <span class="section-title"><%= t("wedding.bloc.bloc-accomodations")%></span>
+              <span class="section-title"><%= t("wedding.blocs.bloc-accomodations")%></span>
             </h3>
             <% if  @registry.accomodation_id? %>
               <ul class="bloc-list">
@@ -155,7 +158,7 @@
         <div class="col-xs-12 col-md-6">
           <div class="wedding-bloc tasks">
             <h3 class="text-center">
-              <span class="section-title"><%= t("wedding.bloc.bloc-trip")%></span>
+              <span class="section-title"><%= t("wedding.blocs.bloc-trip") %></span>
             </h3>
             <div id="map" style="height: 250px;"></div>
             <div class="button-container">
