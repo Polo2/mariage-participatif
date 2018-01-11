@@ -88,7 +88,7 @@
             </ul>
               <!-- <div id="map" style="height: 250px;"></div> -->
               <div class="button-container">
-                <%= link_to "Detail Logements",  wedding_path(@wedding, @registry), class: "button button-show" %>
+                <%= link_to "Detail Logements",  wedding_accomodations_path(@wedding), class: "button button-show" %>
                 <%= link_to "Importer depuis Excel", wedding_accomodations_upload_path(@wedding),  data: { confirm: t("task.initialize-accomodations-confirmation") }, class: "button button-show" %>
               </div>
           </div>
@@ -148,14 +148,14 @@
                 <li>Votre logement est bien reservé</li>
               </ul>
               <div class="button-container">
-                <%= link_to "Voir détail", wedding_registry_accomodations_path(@wedding, @registry, @registry.accomodation), class: "button button-show" %>
+                <%= link_to "Voir liste", wedding_accomodations_path(@wedding), class: "button button-show" %>
               </div>
             <% else %>
               <ul>
                 <li>Pas encore de logement</li>
               </ul>
               <div class="button-container">
-                <%= link_to "Choisir votre logement", wedding_registry_accomodations_path(@wedding, @registry), class: "button button-show" %>
+                <%= link_to "Choisir votre logement", wedding_accomodations_path(@wedding), class: "button button-show" %>
               </div>
             <% end %>
           </div>

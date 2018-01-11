@@ -13,13 +13,12 @@ Rails.application.routes.draw do
     get "tasks/upload", to: "tasks#upload"
     get "accomodations/upload", to: "accomodations#upload"
     resources :reviews
+    resources :registries
+    resources :accomodations
     resources :tasks do
       resources :elements, only: [:index, :create, :show, :edit, :update, :destroy ]
       resources :services, only: [:index, :create, :show, :edit, :update, :destroy ]
       resources :messages, only: [:create, :index, :new, :destroy, :show]
-      end
-    resources :registries do
-      resources :accomodations
     end
   end
 

@@ -5,10 +5,10 @@
         <span class="section-title"><%= t("wedding.guest_list.title") %></span>
       </h3>
 
-      <% if @wedding.user == current_user %>
+      <% if policy(@wedding).edit? %>
 
         <div class="guest-email">
-          <p>Export Excel, ou maj Google drive</p>
+          <p>Liste des invitations</p>
         </div>
 
       <% end %>
