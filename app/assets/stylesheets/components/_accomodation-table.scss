@@ -17,12 +17,15 @@
 
 .accomodation_details th {
   border-bottom: 1px solid $p-grey;
+  text-align: center;
   color: #333;
 }
 
 .accomodation_details td, .accomodation_details th {
   padding: 11px 2px;
-  border-bottom: 1px solid $p-grey;
+  border: 1px dashed $p-grey;
+  padding-left: 5px;
+  text-align: center;
 }
 
 .accomodation_details td:nth-last-child {

@@ -10,24 +10,48 @@
         <table>
           <tr class="accomodations-titles">
             <th>Nom logement</th>
-            <th>Personne à contacter</th>
+            <th>Distance</th>
             <th>Adresse</th>
-            <th>Coordonées</th>
-            <th>S'inscrire</th>
+            <th>Détails</th>
+            <th>Réservation</th>
           </tr>
         <% @accomodations.each do |acc| %>
           <tr class="accomodations-row">
             <td><%= acc.name %></td>
-            <td><%= acc.contact_name %></td>
+            <td class="text-center"><%="#{acc.distance} km"%></td>
             <td><%= acc.location%></td>
             <td>
-              <ul class="list-unstyled">
-                <li><%= acc.contact_email if acc.contact_email?%></li>
-                <li><%= acc.contact_phone if acc.contact_phone? %></li>
-                <li><a href=<%="#{acc.contact_website}"%> ><%="site web" if acc.contact_website? %></a></li>
-              </ul>
+              <% case acc.category %>
+                <% when "camping"%>
+                  <%= "Sous la tente" %>
+                <% when "amis"%>
+                  <%= "Chez des amis" %>
+                <% when "hotel"%>
+                  <%= "Acceuil payant" %>
+                <% else %>
+              <% end %>
             </td>
-            <td><%= acc.complete? ? "Complet !" : "S'inscrire" %></td>
+            <td>
+              <% case acc.category %>
+                <% when "camping"%>
+                  <%= link_to "Valider sa tente", wedding_path(@wedding) %>
+                <% when "amis"%>
+                  <%= link_to "Demander à être logé", wedding_path(@wedding)%>
+                <% when "hotel"%>
+                  <%= link_to "Réserver sur le site", acc.contact_website, target: "_blank" %>
+                <% else %>
+              <% end %>
+            </td>
+
+            <!-- <td>
+              <ul class="list-unstyled">
+                <% if acc.contact_email? %><li><i class="fa fa-envelope"></i><%= acc.contact_email%></li> <%end%>
+                <% if acc.contact_phone? %><li><i class="fa fa-phone"></i><%= acc.contact_phone%></li> <%end%>
+                <% if acc.contact_website? %>
+                  <li><a href=<%="#{acc.contact_website}"%> target = "_blank"  ><%="site web" if acc.contact_website? %></a></li>
+                <%end%>
+              </ul>
+            </td> -->
           </tr>
           <% end %>
         </table>

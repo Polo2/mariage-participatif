@@ -21,14 +21,24 @@ class AccomodationsController < ApplicationController
   end
 
   def parsing_json
-    file = File.read("#{Rails.root}/lib/accomodations_details/accomodations-DB.json")
+    file = File.read("#{Rails.root}/lib/accomodations_details/accomodations-DB-v2.json")
     accomodations_details = JSON.parse(file)
     return accomodations_details
   end
 
   def creating_new_accomodations_from_array(array)
     array.each do |accom|
-      Accomodation.create(name: accom["name"], location: accom["location"], contact_name: accom["contact_name"], contact_email: accom["contact_email"], contact_website: accom["contact_url"], contact_phone: accom["contact_phone"], complete?: false, wedding: @wedding )
+      Accomodation.create(
+        name: accom["name"],
+        location: accom["location"],
+        contact_name: accom["contact_name"],
+        contact_email: accom["contact_email"],
+        contact_website: accom["contact_url"],
+        contact_phone: accom["contact_phone"],
+        distance: accom["distance"],
+        category: accom["type"],
+        complete?: false,
+        wedding: @wedding )
     end
   end
 

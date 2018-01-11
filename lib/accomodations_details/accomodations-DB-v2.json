@@ -1,0 +1,312 @@
+{
+  "accomodations-DB": [
+    {
+      "name": "Sous la tente",
+      "location": "Au plus proche",
+      "contact_name": "",
+      "contact_phone": "",
+      "contact_email": "",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "0",
+      "type": "camping"
+    },
+    {
+      "name": "Maison de la Mission de France",
+      "location": "17 r de l'abbé Tauleigne 89230 PONTIGNY",
+      "contact_name": "Françoise LdS",
+      "contact_phone": "0386475694",
+      "contact_email": "fleclercds@gmail.com",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "0",
+      "type": "amis"
+    },
+    {
+      "name": "Gite de France à Venouse",
+      "location": "2 rue de Rouvray 89230 VENOUSE",
+      "contact_name": "cf site web",
+      "contact_phone": "0386477515",
+      "contact_email": "",
+      "contact_url": "https://www.gites-de-france.com/location-vacances-Venouse-Gite-89G239.html",
+      "complete?": "false",
+      "distance": "3",
+      "type": "hotel"
+    },
+    {
+      "name": "Maison des randonneurs",
+      "location": "5 rue Germain Besnard, 89000 Auxerre",
+      "contact_name": "cf site web",
+      "contact_phone": "0386414322",
+      "contact_email": "",
+      "contact_url": "http://www.maison-rando.fr/",
+      "complete?": "false",
+      "distance": "18",
+      "type": "hotel"
+    },
+    {
+      "name": "Chez Laurence & Christian Canavezio",
+      "location": "31 Rue Faidherbe, 89000 Auxerre",
+      "contact_name": "Christian ou Laurence Canavezio",
+      "contact_phone": "0386421753",
+      "contact_email": "famille.canavesio@wanadoo.fr ",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "19",
+      "type": "amis"
+    },
+    {
+      "name": "Chez Pierre & Claire Pedergnana",
+      "location": "11, rue de Lambsheim,89000 st Georges sur Baulche",
+      "contact_name": "Claire",
+      "contact_phone": "0386468057",
+      "contact_email": "pederganaclaire@gmail.com ",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "19",
+      "type": "amis"
+    },
+    {
+      "name": "Chez Albert & Annie Ghesquières",
+      "location": " 41 rue P Armandot 89000 Auxerre",
+      "contact_name": "Annie ",
+      "contact_phone": "0678175860",
+      "contact_email": "annie.ghesquieres@wanadoo.fr",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "19",
+      "type": "amis"
+    },
+    {
+      "name": "Chez Claudine & Philippe Poloni",
+      "location": "3 rue René Laffon 89000 Auxerre",
+      "contact_name": "Claudine et Philippe",
+      "contact_phone": "0682257665",
+      "contact_email": " cp.poloni@neuf.fr ",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "18",
+      "type": "amis"
+    },
+    {
+      "name": "Chez Pierre & Marie-Aleth Butin",
+      "location": "10 grand Rue Bligny en Othe",
+      "contact_name": "Pierre Marie-Aleth",
+      "contact_phone": "0386430855",
+      "contact_email": "ma.verrey@orange.fr",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "30",
+      "type": "amis"
+    },
+    {
+      "name": "Chez Sergine & Jean-Yves Boscher",
+      "location": "27 rue des seringas Pontigny",
+      "contact_name": "Sergine  Boscher",
+      "contact_phone": "0386474738",
+      "contact_email": "sergine.boscher@hotmail.com ",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "0",
+      "type": "amis"
+    },
+    {
+      "name": "Maison diocésaine Troyes",
+      "location": "10 rue de l'Isle, 10000 Troyes",
+      "contact_name": "Pascal Monseu",
+      "contact_phone": "0386475694",
+      "contact_email": "",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "60",
+      "type": "amis"
+    },
+    {
+      "name": "Chez Marie-Agnès Truchy",
+      "location": "2, rue du four, 89230 Bleigny le Carreau",
+      "contact_name": "Marie-Agnès",
+      "contact_phone": "0386418878",
+      "contact_email": "marie-agnes.truchy@wanadoo.fr",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "9",
+      "type": "amis"
+    },
+    {
+      "name": "Chez Jacqueline Percheron",
+      "location": "16 rue Chanteprime 89800 Maligny",
+      "contact_name": "Jacqueline P",
+      "contact_phone": "0386474963",
+      "contact_email": "",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "6",
+      "type": "amis"
+    },
+    {
+      "name": "Chez les Monseu",
+      "location": "4, rue chateau gaillard 89230 Pontigny",
+      "contact_name": "Françoise LdS",
+      "contact_phone": "0386475694",
+      "contact_email": "fleclercds@gmail.com",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "0",
+      "type": "amis"
+    },
+    {
+      "name": "Chez Jean-Max Gailledrat (presbytère)",
+      "location": "1 place de l'église, 89550 Hery",
+      "contact_name": "Curé de Héry",
+      "contact_phone": "0684220495",
+      "contact_email": "jm.gailledrat@orange.fr ",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "7",
+      "type": "amis"
+    },
+    {
+      "name": "Chez Huguette Guerin",
+      "location": "9, rue Moutier 89550 Hery ",
+      "contact_name": "",
+      "contact_phone": "0679630947",
+      "contact_email": "",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "7",
+      "type": "amis"
+    },
+    {
+      "name": "Chez Françoise & Hugues Cousin ",
+      "location": "3, rue st Germain, 89000 Auxerre",
+      "contact_name": "Auxerre",
+      "contact_phone": "0386461956",
+      "contact_email": "francoisecarolcousin@orange.fr",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "19",
+      "type": "amis"
+    },
+    {
+      "name": "Chez Luc & Marie Feillée",
+      "location": "5, rue du Moutier 89550 Hery ",
+      "contact_name": "Françoise LdS",
+      "contact_phone": "0386475694",
+      "contact_email": "fleclercds@gmail.com ",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "7",
+      "type": "amis"
+    },
+    {
+      "name": "Chez Jean & Isabelle Bouvet",
+      "location": "1, rue Rabé 89230 Pontigny",
+      "contact_name": "Françoise LdS",
+      "contact_phone": "0386475694",
+      "contact_email": "fleclercds@gmail.com ",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "0",
+      "type": "amis"
+    },
+    {
+      "name": "Burgundy Idyl, chambre d'hôtes",
+      "location": "4 rue de la Bacelle, 89230 MONTIGNY LA RESLE",
+      "contact_name": "cf site web",
+      "contact_phone": "0386418677",
+      "contact_email": "",
+      "contact_url": "https://fr.bedandbreakfast.com/france-montigny-la-resle-burgundyidyl-reviews.html",
+      "complete?": "false",
+      "distance": "7",
+      "type": "hotel"
+    },
+    {
+      "name": "Chez Anissa & Guy Lorenzatti (chambre d'hôtes)",
+      "location": "Villeneuve sur Yonne",
+      "contact_name": "Anissa et Guy Lorenzatti",
+      "contact_phone": "0671261767",
+      "contact_email": "anissaetguy@gmail.com ",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "50",
+      "type": "amis"
+    },
+    {
+      "name": "Hôtel le Pressoir",
+      "location": "20 Chemin des Ruelles, 89380 Appoigny",
+      "contact_name": "cf site web",
+      "contact_phone": "0386532711",
+      "contact_email": "",
+      "contact_url": "http://www.hotelpressoir.cmonsite.fr/",
+      "complete?": "false",
+      "distance": "20",
+      "type": "hotel"
+    },
+    {
+      "name": "Hôtel Cerise",
+      "location": "ZA Macherin, 2 Rue d'Athènes, 89470 Monéteau",
+      "contact_name": "cf site web",
+      "contact_phone": "0386405592",
+      "contact_email": "",
+      "contact_url": "https://www.cerise-hotels-residences.com/fr/hotels-et-residences/details/auxerre",
+      "complete?": "false",
+      "distance": "20",
+      "type": "hotel"
+    },
+    {
+      "name": "Hôtel Première Classe",
+      "location": "Avenue de l'Europe et Rue d'Athènes, 89470 Monéteau",
+      "contact_name": "cf site web",
+      "contact_phone": "0386406789",
+      "contact_email": "",
+      "contact_url": "https://www.premiereclasse.com/fr/hotels/premiere-classe-auxerre",
+      "complete?": "false",
+      "distance": "20",
+      "type": "hotel"
+    },
+    {
+      "name": "Hôtel Campanile",
+      "location": "Rue d'Athènes, 89470 Monéteau",
+      "contact_name": "cf site web",
+      "contact_phone": "0386407111",
+      "contact_email": "",
+      "contact_url": "https://www.campanile.com/fr/hotels/campanile-auxerre-moneteau",
+      "complete?": "false",
+      "distance": "20",
+      "type": "hotel"
+    },
+    {
+      "name": "B&B Auxerre Bourgogne",
+      "location": "Zone d'activités de Macherin, 2 rue d'Athènes, 89470 Monéteau",
+      "contact_name": "cf site web",
+      "contact_phone": "0892788005",
+      "contact_email": "",
+      "contact_url": "http://www.hotel-bb.com/fr/hotels/auxerre-1.htm?utm_source=googlemaps&utm_medium=fichehotel&utm_campaign=seo",
+      "complete?": "false",
+      "distance": "20",
+      "type": "hotel"
+    },
+    {
+      "name": "B&B Monéteau",
+      "location": "Lieu-dit La Grande Source, Avenue de l'Europe, 89470 Monéteau",
+      "contact_name": "cf site web",
+      "contact_phone": "0892707589",
+      "contact_email": "",
+      "contact_url": "http://www.hotel-bb.com/fr/hotels/auxerre-2.htm?utm_source=googlemaps&utm_medium=fichehotel&utm_campaign=seo",
+      "complete?": "false",
+      "distance": "20",
+      "type": "hotel"
+    },
+    {
+      "name": "Quick Palace",
+      "location": "Rue de Bruxelles - ZA des Macherins, 89470 Monéteau",
+      "contact_name": "cf site web",
+      "contact_phone": "0386534475",
+      "contact_email": "",
+      "contact_url": "http://www.quickpalace-auxerre.com/",
+      "complete?": "false",
+      "distance": "20",
+      "type": "hotel"
+    }
+  ]
+}
