@@ -1,97 +1,42 @@
-<h4>Liste des logements</h4>
-<p>OLes invités trouvent les coordonées pour réserver leur logement ...</p>
-<p>Mais ils peuvent indiquer là où ils iront dormir</p>
 
-<div class="row">
-  <% if policy(@wedding).edit? %>
-    <div class="col-xs-12 task-details">
-    <h4>Liste des logements</h4>
-      <div class="rightblock bloc invited-height-block">
-        <ul>
-        <% @accomodations.each do |accomodation| %>
-          <li>
-            <div class="service-card">
-              <div class="service-description">
-                <span>Détail</span>
-              </div>
-              <div class="service-details">
-                <ul>
-                  <li><%= icon('calendar') %>jour</li>
-                  <li><i class="fa fa-clock-o"></i>heure</li>
-                  <li><%= icon('map-marker') %>lieu</li>
-                </ul>
-              </div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 class="text-center">
+        <span class="section-title">Liste des logements</span>
+      </h3>
 
-              <% if accomodation.complete? %>
-                <div class="service-registrations" id="complete">
-                  <ul>
-                    <li>Complet !</li>
-                  </ul>
-                </div>
-              <% else %>
-                <div class="service-registrations">
-                  <ul>
-                    <li>Pas complet !</li>
-                  </ul>
-                </div>
-              <% end %>
-              <div class="service-links">
-                <%= link_to "Modifier", edit_wedding_task_service_path(@wedding, @task, service) %>
-              </div>
-            </div>
-          </li>
-        <% end %>
-        </ul>
+      <div class="accomodation_details">
+        <table>
+          <tr class="accomodations-titles">
+            <th>Nom logement</th>
+            <th>Personne à contacter</th>
+            <th>Adresse</th>
+            <th>Coordonées</th>
+            <th>S'inscrire</th>
+          </tr>
+        <% @accomodations.each do |acc| %>
+          <tr class="accomodations-row">
+            <td><%= acc.name %></td>
+            <td><%= acc.contact_name %></td>
+            <td><%= acc.location%></td>
+            <td>
+              <ul class="list-unstyled">
+                <li><%= acc.contact_email if acc.contact_email?%></li>
+                <li><%= acc.contact_phone if acc.contact_phone? %></li>
+                <li><a href=<%="#{acc.contact_website}"%> ><%="site web" if acc.contact_website? %></a></li>
+              </ul>
+            </td>
+            <td><%= acc.complete? ? "Complet !" : "S'inscrire" %></td>
+          </tr>
+          <% end %>
+        </table>
+
+      </div>
+      <div class="links">
+        <a href="http://www.lequipe.fr">Lien l'equipe</a>
+        <%= link_to t("links.back"), wedding_path(@wedding) %>
       </div>
     </div>
-
-  <% else %>
-
-   <div class="col-xs-12 task-details">
-    <h4>Liste des logements</h4>
-    <p>On vous laisse les contacter pour vous y inscrire ...</p>
-    <p>Mais merci d'indiquer là où vous irez dormir</p>
-      <div class="rightblock bloc invited-height-block">
-        <ul>
-        <% @accomodations.each do |accomodation| %>
-          <li>
-            <div class="service-card">
-              <div class="service-description">
-                <%= accomodation.name %>
-              </div>
-              <div class="service-details">
-                <ul>
-                  <li><%= icon('calendar') %><%= accomodation.contact_name %></li>
-                  <li><i class="fa fa-clock-o"></i>Samedi</li>
-                  <li><%= icon('map-marker') %><%= accomodation.location %></li>
-                </ul>
-              </div>
-
-              <% if accomodation.complete? %>
-                <div class="service-registrations" id="complete">
-                  <ul>
-                    <li>Logement complet !</li>
-                  </ul>
-                </div>
-                <div class="service-links">
-                  <a href="#">Lien mort</a>
-                </div>
-              <% else %>
-                <div class="service-registrations">
-                  <ul>
-                    <a href="#">Confirmer sa réservation</a>
-                  </ul>
-                </div>
-                <div class="service-links">
-                  <a href="#">Lien mort</a>
-                </div>
-              <% end %>
-            </div>
-          </li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-
-  <% end %>
+  </div>
 </div>
