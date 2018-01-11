@@ -1,0 +1,697 @@
+{
+  "db-services": [
+    {
+      "type": "Cuisine",
+      "details": "Préparer le méchoui : installer les broches de cuisson et faire le feu pour faire beaucoup de braises.",
+      "capacity": "2",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "11h-13h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Cuisine",
+      "details": "Préparer du café pour 250 personnes et mettre les petits gateaux dans des plats.",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "13h-14h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Cuisine",
+      "details": "Entretenir le feux et les braises pour préparer la cuisson du méchoui.",
+      "capacity": "2",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "13h-15h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Cuisine",
+      "details": "Mettre les entrées apportées par les invité(e)s au frais. Noter sur une étiquette les ingrédients qui composent chaque plat.",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "14h-15h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Cuisine",
+      "details": "Entretenir le feux et les braises pour préparer la cuisson du méchoui, puis mettre les agneaux à cuire.",
+      "capacity": "2",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "15h-17h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Cuisine",
+      "details": "Véiller à la bonne cuisson du méchoui et entretenir le feu.",
+      "capacity": "1",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "17h-21h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Cuisine",
+      "details": "Faire les derniers préparatifs de cuisine : réchauffer les pommes de terre, puis réchauffer les tartes et ouvrir le vin rouge.",
+      "capacity": "4",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "20h-21h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Garde des enfants",
+      "details": "Animer un atelier pour les enfants : activité manuelle pour se faire un accéssoire aux couleurs du mariage #pseudoenfantsd'honneur",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Garde des enfants",
+      "details": "Animer un atelier pour les enfant pendant la messe autour d'une question spirituelle.",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "17h30-19h",
+      "location": "abbaye de Pontigny"
+    },
+    {
+      "type": "Garde des enfants",
+      "details": "Veiller sur les enfants.",
+      "capacity": "1",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "20h-21h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Garde des enfants",
+      "details": "Veiller sur les enfants.",
+      "capacity": "1",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "21h-22h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Garde des enfants",
+      "details": "Veiller sur les enfants.",
+      "capacity": "1",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "22h-23h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Préparatifs",
+      "details": "Décorer la salle de récéption et la cour : lumières, décoration des tables et du lieu, lanternes exterieures...",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "10h-12h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Préparatifs",
+      "details": "Installer la salle de récéption : tables, chaises, mobilier extérieur...",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "10h-12h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Préparatifs",
+      "details": "Installer la sono dans la salle de récéption.",
+      "capacity": "3",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "10h-12h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Cuisine",
+      "details": "Préparer le dîner : laver les salades, préparer les pommes de terre et les desserts,...",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "11h-12h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Installation",
+      "details": "Installer les chaises et les bancs dans l'église.",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "11h-12h  et/ou 15h-16h",
+      "location": "abbaye de Pontigny"
+    },
+    {
+      "type": "Installation",
+      "details": "Dresser la table pour le café : mettre des nappes sur les tables, installer les percolateurs...",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "13h-14h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Cuisine",
+      "details": "Préparer le dîner : mettre les pommes de terres à cuire, préparer les plateaux de fromage...",
+      "capacity": "4",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Installation",
+      "details": "Installer l'apéritif/entrée : dresser les tables de buffet, placer les plats stockés au frigo, préparer les verres et les plateaux...",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Installation",
+      "details": "Dresser la table du repas : mettre des nappes, mettre le couvert, décorer les tables...",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Installation",
+      "details": "Nettoyer et décorer l'église : passer le balais et le loup dans les stalles, fleurir autour de l'autel.",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "abbaye de Pontigny"
+    },
+    {
+      "type": "Installation",
+      "details": "Installer le vin d'honneur : dresser les tables de service, préparer les flûtes et les plateaux de gougères.",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "abbaye de Pontigny"
+    },
+    {
+      "type": "Installation",
+      "details": "Installer la salle pour la soirée : mettre en marche la tireuse à bière et le percolateur, préparer une table de boissons et d'eau...",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "23h-23h30",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Installation",
+      "details": "Installer le brunch : dresser des tables, préparer le buffet et les boissons chaudes.",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "dimanche",
+      "time": "09h30-10h30",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Musiciens",
+      "details": "Jouer de la musique à au moins un moment du mariage (messe, vin d'honneur, procession, dîner, soirée...)",
+      "capacity": "30",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h - 00h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Navette",
+      "details": "Conduire la navette : conduire un véhicule 9 places entre Pontigny et la gare et entre différents points du village.",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "10h-11h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Navette",
+      "details": "Conduire la navette : conduire un véhicule 9 places entre Pontigny et la gare et entre différents points du village.",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "11h-12h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Navette",
+      "details": "Conduire la navette : conduire un véhicule 9 places entre Pontigny et la gare et entre différents points du village.",
+      "capacity": "0",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "13h-14h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Navette",
+      "details": "Conduire la navette : conduire un véhicule 9 places entre différents points du village.",
+      "capacity": "0",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "14h-15h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Navette",
+      "details": "Conduire la navette : conduire un véhicule 9 places entre différents points du village.",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Navette",
+      "details": "Conduire la navette : conduire un véhicule 9 places entre différents points du village.",
+      "capacity": "0",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "19h-20h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Navette",
+      "details": "Conduire la navette : conduire un véhicule 9 places entre différents points du village.",
+      "capacity": "0",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "22h-23h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Photos",
+      "details": "Prendre des photos et/ou filmer pendant le café. (Prévoir son propre matériel)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "14h-15h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Photos",
+      "details": "Prendre des photos et/ou filmer pendant les préparatifs. (Prévoir son propre matériel)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Photos",
+      "details": "Prendre des photos et/ou filmer pendant le vin d'honneur. (Prévoir son propre matériel)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "16h-17h",
+      "location": "abbaye de Pontigny"
+    },
+    {
+      "type": "Photos",
+      "details": "Prendre des photos et/ou filmer pendant la messe. (Prévoir son propre matériel)",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "17h30-19h",
+      "location": "abbaye de Pontigny"
+    },
+    {
+      "type": "Photos",
+      "details": "Prendre des photos et/ou filmer pendant la procession. (Prévoir son propre matériel)",
+      "capacity": "3",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "19h-20h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Photos",
+      "details": "Prendre des photos et/ou filmer pendant l'apéritif. (Prévoir son propre matériel)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "20h-21h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Photos",
+      "details": "Prendre des photos et/ou filmer pendant le dîner. (Prévoir son propre matériel)",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "21h-23h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Photos",
+      "details": "Prendre des photos et/ou filmer pendant la soirée. (Prévoir son propre matériel)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "23h-00h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Photos",
+      "details": "Prendre des photos et/ou filmer dimanche matin. (Prévoir son propre matériel)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "dimanche",
+      "time": "11h-14h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Photos",
+      "details": "Prendre des photos et/ou filmer dimanche après-midi. (Prévoir son propre matériel)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "dimanche",
+      "time": "14h-17h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Photos",
+      "details": "Prendre des photos et/ou filmer dimanche soir. (Prévoir son propre matériel)",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "dimanche",
+      "time": "18h-22h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Préparatifs",
+      "details": "Installer un barnum dans la cour de la Grange de Beauvais.",
+      "capacity": "8",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "09h-11h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Préparatifs",
+      "details": "Transporter du bois : Charger le bois stocké chez les Monseu dans une grande remorque et l'enmener à la Grange de Beauvais.",
+      "capacity": "8",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "09h-11h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Préparatifs",
+      "details": "Installer la zone lounge : transporter des fauteuils, des canapés, des tapis, des lampes, des petites tables et les installer sous le barnum.",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "11h-12h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Préparatifs",
+      "details": "Installer la zone lounge : transporter des fauteuils, des canapés, des tapis, des lampes, des petites tables et les installer sous le barnum.",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Préparatifs",
+      "details": "Mettre en place la signalétique : placer des panneaux (déjà prêts) aux points stratégiques définis sur une carte. ",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "9h-10h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Rangement",
+      "details": "Desservir le café et apporter la vaisselle en cuisine.",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "14h-14h30",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Rangement",
+      "details": "Ranger le vin d'honneur : ranger les tables, rassembler les flûtes...",
+      "capacity": "4",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "17h-17h30",
+      "location": "abbaye de Pontigny"
+    },
+    {
+      "type": "Rangement",
+      "details": "Ranger et démonter les instruments de musique à la fin de la messe, et les charger dans une voiture.",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "19h-19h30",
+      "location": "abbaye de Pontigny"
+    },
+    {
+      "type": "Rangement",
+      "details": "Desservir l'apéritif et apporter la vaisselle en cuisine.",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "20h45-21h15",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Rangement",
+      "details": "Desservir le dîner et apporter la vaisselle en cuisine.",
+      "capacity": "4",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "23h-23h30",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Relationnel",
+      "details": "Faire la vaisselle du dîner à l'aide d'un lave-vaisselle de collectivité.",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "13h-14h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Relationnel",
+      "details": "Accueillir les convives : à l'aide d'un listing, veiller à ce que chacun sache où il dort et quel est son service, expliquer le dérouler, indiquer la localisation des différents lieux...",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "13h-15h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Relationnel",
+      "details": "Madame ou Monsieur Montre : être attentif au respect des horaires du déroulé et, à l'aide d'un mégaphone et/ou d'un élément de costume, initier les mouvements...",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "13h30-15h30 (en discontinu)",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Relationnel",
+      "details": "Faire la vaisselle du dîner à l'aide d'un lave-vaisselle de collectivité.",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "14h-15h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Relationnel",
+      "details": "Madame ou Monsieur Montre : être attentif au respect des horaires du déroulé et, à l'aide d'un mégaphone et/ou d'un élément de costume, initier les mouvements...",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "15h30-17h30 (en discontinu)",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Relationnel",
+      "details": "Accueillir et placer les convives dans les église, pour les inviter à occuper les places de devant...",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "17h-17h30",
+      "location": "abbaye de Pontigny"
+    },
+    {
+      "type": "Relationnel",
+      "details": "Madame ou Monsieur Montre : être attentif au respect des horaires du déroulé et, à l'aide d'un mégaphone et/ou d'un élément de costume, initier les mouvements...",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "17h30-19h30",
+      "location": "abbaye de Pontigny"
+    },
+    {
+      "type": "Relationnel",
+      "details": "Faire la vaisselle du dîner à l'aide d'un lave-vaisselle de collectivité.",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "19h-20h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Relationnel",
+      "details": "Madame ou Monsieur Montre : être attentif au respect des horaires du déroulé et, à l'aide d'un mégaphone et/ou d'un élément de costume, initier les mouvements...",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "19h30-21h30 (en discontinu)",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Relationnel",
+      "details": "Madame ou Monsieur Montre : être attentif au respect des horaires du déroulé et, à l'aide d'un mégaphone et/ou d'un élément de costume, initier les mouvements...",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "21h30-23h30 (en discontinu)",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Service",
+      "details": "Servir le café.",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "14h-15h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Service",
+      "details": "Servir les boissons et les gougères au vin d'honneur.",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "16h-17h",
+      "location": "abbaye de Pontigny"
+    },
+    {
+      "type": "Service",
+      "details": "Servir l'apéritif.",
+      "capacity": "6",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "20h-21h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Service",
+      "details": "Servir le dîner : passer les plats de la cuisine au buffet.",
+      "capacity": "6",
+      "nb_compas": "1 compa",
+      "day": "samedi",
+      "time": "21h-23h (en discontinu)",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Support",
+      "details": "Couteau suisse : faire les courses de dernière minute, solutionner les ultimes problèmes...",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "09h-13h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Support",
+      "details": "Couteau suisse : faire les courses de dernière minute, solutionner les ultimes problèmes...",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "13h-19h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Support",
+      "details": "Aider le bon déroulement de la procession : rendre service aux organisateurs de ce temps.",
+      "capacity": "2",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "19h-20h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Support",
+      "details": "Couteau suisse : faire les courses de dernière minute, solutionner les ultimes problèmes...",
+      "capacity": "1",
+      "nb_compas": "",
+      "day": "samedi",
+      "time": "19h-23h",
+      "location": "à droite à gauche"
+    },
+    {
+      "type": "Vaisselle",
+      "details": "Faire la vaisselle du café à l'aide d'un lave-vaisselle de collectivité.",
+      "capacity": "2",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "15h-16h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Vaisselle",
+      "details": "Faire la vaisselle des verres du vin d'honneur à l'aide d'un lave-vaisselle de collectivité.",
+      "capacity": "0",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "17h30-19h",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Vaisselle",
+      "details": "Faire la vaisselle de l'apéritif à l'aide d'un lave-vaisselle de collectivité.",
+      "capacity": "4",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "21h-21h30",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Vaisselle",
+      "details": "Faire la vaisselle du dîner à l'aide d'un lave-vaisselle de collectivité.",
+      "capacity": "6",
+      "nb_compas": "2 compas",
+      "day": "samedi",
+      "time": "22h-23h30 (en discontinu)",
+      "location": "grange de Beauvais"
+    },
+    {
+      "type": "Vaisselle",
+      "details": "Faire la vaisselle des verres de la soirée à l'aide d'un lave-vaisselle de collectivité.",
+      "capacity": "4",
+      "nb_compas": "",
+      "day": "dimanche",
+      "time": "09h30-10h30",
+      "location": "grange de Beauvais"
+    }
+  ]
+}

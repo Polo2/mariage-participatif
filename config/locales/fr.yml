@@ -152,7 +152,12 @@ fr:
         child: "Enfant ?"
       service:
         guests: "Inscrire"
-
+        name: "Catégorie"
+        details: "Description"
+        capacity: "Nb de personnes nécessaires"
+        day: "Jour"
+        location: "Lieu"
+        appointment: "Créneau"
   helpers:
     submit:
       wedding:

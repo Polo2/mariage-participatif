@@ -5,6 +5,7 @@
     <%= f.input :title, required: true %>
     <%= f.input :description, required: true %>
     <%= f.input :date,  start_year: Time.now.year, end_year: Time.now.year + 8, order: [:day, :month, :year], required: true, class: "inline" %>
+    <%= f.input :deadline,  start_year: Time.now.year, end_year: Time.now.year + 8, order: [:day, :month, :year], required: true, class: "inline" %>
     <%= f.input :location, required: true %>
     <%= f.input :capacity, numericality: { only_integer: true, greater_than: 0}, required: true , hint: "... une estimation"%>
     <%= f.input :photo, as: :attachinary, required: true %>

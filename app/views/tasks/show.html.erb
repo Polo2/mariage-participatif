@@ -20,7 +20,7 @@
           <% else %>
             <%= link_to t("task.mark"), edit_wedding_task_path(@wedding, @task) %>
           <% end %>
-          <%= link_to "|     Ajouter un service", wedding_task_path(@wedding, @task)%>
+          <%= link_to "|     Ajouter un service", new_wedding_task_service_path(@wedding, @task)%>
         <% end %>
       </p>
     </div>
