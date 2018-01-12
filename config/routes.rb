@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'questions/new'
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
 
 
@@ -21,6 +23,7 @@ Rails.application.routes.draw do
       resources :messages, only: [:create, :index, :new, :destroy, :show]
     end
   end
+  resources :questions, only: [:new, :create]
 
   mount Attachinary::Engine => "/attachinary"
   # end
