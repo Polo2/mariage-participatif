@@ -47,6 +47,15 @@ new_user_testeur = User.create({
     avatar_url: "https://t3.ftcdn.net/jpg/00/65/63/24/500_F_65632409_bzggYSmL28PdjZkuAVveONRGUnOsQNjr.jpg"
     })
 
+new_user_email_testeur = User.create({
+    first_name: "Polo",
+    last_name: "de Bodi",
+    email: "polo2bodi@gmail.com",
+    password: "azerty",
+    password_confirmation: "azerty",
+    avatar_url: "http://blogs.lexpress.fr/styles/froggista/files/2013/07/facteur.jpg"
+  })
+
 puts "id testeurs : #{new_user_testeur.id}"
 
 puts "Création du mariage religieux"
