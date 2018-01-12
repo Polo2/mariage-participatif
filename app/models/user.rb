@@ -11,8 +11,10 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :messages
 
+  after_create :send_welcome_email
   after_create :link_registries
   has_attachment :avatar, accept: [:jpg, :png, :gif]
+
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
@@ -42,5 +44,9 @@ class User < ApplicationRecord
       registry.user = self
       registry.save
     end
+  end
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
   end
 end
