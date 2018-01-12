@@ -1,10 +1,13 @@
 <%= simple_form_for([@wedding, @task, @service]) do |f| %>
 
-  <%= f.input :name %>
-  <%= f.input :capacity %>
-  <%= f.input :appointment %>
 
-  <%= f.button :submit, t("task.add_service") %>
+  <%= f.input :details, as: :text %>
+  <%= f.input :capacity %>
+  <%= f.input :day %>
+  <%= f.input :appointment %>
+  <%= f.input :location %>
+
+  <%= f.button :submit, "Valider" %>
 
 <% end %>
 

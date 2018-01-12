@@ -16,8 +16,8 @@ Rails.application.routes.draw do
     resources :registries
     resources :accomodations
     resources :tasks do
+      resources :services
       resources :elements, only: [:index, :create, :show, :edit, :update, :destroy ]
-      resources :services, only: [:index, :create, :show, :edit, :update, :destroy ]
       resources :messages, only: [:create, :index, :new, :destroy, :show]
     end
   end

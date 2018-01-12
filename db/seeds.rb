@@ -59,9 +59,10 @@ wedding1_polo = Wedding.create({
   capacity: 51,
   user_id: new_user_polo.id,
   date: Date.new(2018, 5, 19),
+  deadline: Date.new(2018, 3, 4),
   location: "Abbaye de Pontigny",
   photo_url: "https://www.le-pigeonnier-colbert.fr/wp-content/uploads/Abbaye-de-Pontigny-1040x559.jpg",
-  spouse_photo_url: "https://avatars1.githubusercontent.com/u/32060402?s=400&u=33d0f8f8d6ac9979437727646e169c3173784a42&v=4",
+  spouse_photo_url: "http://static1.purepeople.com/articles/7/54/05/7/@/396217-richard-gere-et-cindy-crawford-950x0-3.jpg",
   spouse_first_name: "Odile",
   spouse_last_name: "Monseu"
   })

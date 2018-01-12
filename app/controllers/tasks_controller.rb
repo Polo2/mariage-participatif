@@ -59,8 +59,8 @@ class TasksController< ApplicationController
   def upload
     @nb_tasks = @wedding.tasks.count
     Task.where('wedding_id = ?', @wedding.id).destroy_all
-    @clean_service_list = cleaning_service_json(import_tasks_from_json)
 
+    @clean_service_list = cleaning_service_json(import_tasks_from_json)
     creating_new_tasks_from_hash(@clean_service_list)
     redirect_to wedding_path(@wedding)
 
@@ -88,7 +88,7 @@ private
   end
 
   def import_tasks_from_json
-    file = File.read("#{Rails.root}/lib/tasks_details/DB-services.json")
+    file = File.read("#{Rails.root}/lib/tasks_details/DB-services-v2.json")
     service_details = JSON.parse(file)
     return service_details
   end

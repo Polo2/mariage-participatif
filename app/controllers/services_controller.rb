@@ -11,6 +11,7 @@ before_action :set_service, only: [:show, :edit, :update, :destroy]
   end
 
   def new
+    @service = Service.new
   end
 
   def create
@@ -27,21 +28,28 @@ before_action :set_service, only: [:show, :edit, :update, :destroy]
 
   def update
 
-    guest_list = register_guests(params[:service]["guest_ids"])
-
-    if (guest_list.length + @service.guests.count ) <= @service.capacity
-      guest_list.each do |g|
-        g.service = @service
-        g.save
-      end
+    if policy(@wedding).edit?
       @service.update(service_params)
-
       @service.task = @task
-      if @service.save
-        redirect_to wedding_task_path(@wedding, @task)
-      end
+      redirect_to wedding_task_path(@wedding, @task) if @service.save
     else
-      redirect_to wedding_task_path(@wedding, @task), alert: "Désolé, pas assez de place sur ce service"
+
+      guest_list = register_guests(params[:service]["guest_ids"])
+
+      if (guest_list.length + @service.guests.count ) <= @service.capacity
+        guest_list.each do |g|
+          g.service = @service
+          g.save
+        end
+        @service.update(service_params)
+
+        @service.task = @task
+        if @service.save
+          redirect_to wedding_task_path(@wedding, @task)
+        end
+      else
+        redirect_to wedding_task_path(@wedding, @task), alert: "Désolé, pas assez de place sur ce service"
+      end
     end
   end
 
