@@ -4,6 +4,7 @@ class Wedding < ApplicationRecord
   has_many :registries, dependent: :destroy
   has_many :accomodations, dependent: :destroy
   has_many :guests, through: :registries
+  has_many :accomodation_requests, through: :accomodations
 
   scope :future, -> { where('date > ?', Date.current) }
   scope :passed, -> { where('date < ?', Date.current) }

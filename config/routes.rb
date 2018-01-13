@@ -16,13 +16,13 @@ Rails.application.routes.draw do
     resources :reviews
     resources :registries
     resources :accomodations do
-      resources :accomodation_requests, only: [:new, :create, :index]
+      resources :accomodation_requests, only: [:new, :create]
     end
     resources :tasks do
       resources :services
-      resources :elements, only: [:index, :create, :show, :edit, :update, :destroy ]
       resources :messages, only: [:create, :index, :new, :destroy, :show]
     end
+    resources :accomodation_requests, only: [ :index, :edit, :destroy ]
   end
   resources :questions, only: [:new, :create]
 

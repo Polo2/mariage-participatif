@@ -1,5 +1,6 @@
 class AccomodationRequestsController < ApplicationController
 before_action :set_wedding
+before_action :set_accomodation_request, only: [:edit, :destroy]
 
 
   def new
@@ -29,33 +30,34 @@ before_action :set_wedding
     else
       redirect_to wedding_path(@wedding),  alert: "La demande de logement n'a pas pu être créée"
     end
-
-
   end
 
-  def create
-
-  end
 
   def index
-  end
-
-  def show
+    @accomodations_pending_requests = @wedding.accomodation_requests.where(statut: false)
   end
 
   def edit
+    @accomodation_request.statut = true
+    if @accomodation_request.save
+      redirect_to wedding_accomodation_requests_path(@wedding)
+    end
   end
 
-  def update
-  end
 
   def destroy
+    @accomodation_request.destroy
+    redirect_to wedding_accomodation_requests_path(@wedding)
   end
 
   private
 
   def set_wedding
     @wedding = Wedding.find(params[:wedding_id])
+  end
+
+  def set_accomodation_request
+    @accomodation_request = AccomodationRequest.find(params[:id])
   end
 
 end

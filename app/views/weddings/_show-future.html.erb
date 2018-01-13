@@ -83,13 +83,16 @@
               <span class="section-title"><%= t("wedding.blocs.bloc-accomodations")%></span>
             </h3>
             <ul class="bloc-list">
-              <li>Nombre de logements : <%= @wedding.accomodations.count %></li>
+              <li>Nombre de logements proposés: <%= @wedding.accomodations.count %></li>
               <li>Nombre d'invités inscrits aux logements : <%= @wedding.nb_of_guests_with_accomodation_count %></li>
+              <li>Nombre de logements complets</li>
+              <li>Nombre de demandes à loger chez des amis</li>
             </ul>
               <!-- <div id="map" style="height: 250px;"></div> -->
               <div class="button-container">
-                <%= link_to "Detail Logements",  wedding_accomodations_path(@wedding), class: "button button-show" %>
-                <%= link_to "Importer depuis Excel", wedding_accomodations_upload_path(@wedding),  data: { confirm: t("task.initialize-accomodations-confirmation") }, class: "button button-show" %>
+                <%= link_to "Liste logements",  wedding_accomodations_path(@wedding), class: "button button-show" %>
+                <%= link_to "Liste demandes", wedding_accomodation_requests_path(@wedding), class: "button button-show" %>
+                <%= link_to "Import Excel", wedding_accomodations_upload_path(@wedding),  data: { confirm: t("task.initialize-accomodations-confirmation") }, class: "button button-show" %>
               </div>
           </div>
         </div>
@@ -108,6 +111,9 @@
 
   <% else %>
   <!-- Page du mariage vue pour l'invité -->
+            <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
+              <% @registry = @wedding.registries.find_by(user: current_user) %>
+            <% end %>
 
     <div class="4-blocs">
       <h3 class="text-center">4 étapes à compléter pour valider votre inscription :</h3>
@@ -118,8 +124,6 @@
             <h3 class="text-center">
               <span class="section-title"><%= t("wedding.blocs.bloc-registry")%></span>
             </h3>
-            <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
-              <% @registry = @wedding.registries.find_by(user: current_user) %>
               <ul class="bloc-list">
                 <li><%=  @registry.guests.count %> personnes invitées</li>
                 <li>dont <%= @registry.guests.where(child: true).count %> enfant(s) </li>
@@ -128,7 +132,6 @@
               <div class="button-container">
                 <%= link_to t("wedding.guest.go_to_registry"), wedding_registry_path(@wedding, @registry), class: "button button-show" %>
               </div>
-              <% end %>
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
@@ -143,21 +146,54 @@
             <h3 class="text-center">
               <span class="section-title"><%= t("wedding.blocs.bloc-accomodations")%></span>
             </h3>
-            <% if  @registry.accomodation_id? %>
-              <ul class="bloc-list">
-                <li>Votre logement est bien reservé</li>
-              </ul>
-              <div class="button-container">
-                <%= link_to "Voir liste", wedding_accomodations_path(@wedding), class: "button button-show" %>
-              </div>
-            <% else %>
-              <ul>
-                <li>Pas encore de logement</li>
-              </ul>
-              <div class="button-container">
-                <%= link_to "Choisir votre logement", wedding_accomodations_path(@wedding), class: "button button-show" %>
-              </div>
-            <% end %>
+            <ul class="bloc-list">
+              <% if !@registry.accomodation_request_ids.empty? %>
+                <% accomodation = @registry.accomodation_requests.last.accomodation %>
+                <% if @registry.accomodation_requests.last.statut %>
+
+                  <li>Votre logement est bien reservé</li>
+                  <% case accomodation.category %>
+                    <% when "camping"%>
+                      <li>Vous avez prévu de camper</li>
+                      <li>Vous pourrez planter la tente le samedi après midi, après le café et avant la cérémonie</li>
+                      <li>Pensez à la tente, et un bon duvet</li>
+                    <% when "amis"%>
+                      <li>Demande acceptée !</li>
+                      <li>Vous irez dormir chez des amis à nous,</li>
+                      <li>à savoir : <%= accomodation.name %></li>
+                      <li>L'adresse : <%= accomodation.location %>,</li>
+                      <li>A <%= accomodation.distance %> km du lieu de la fête (à peu près)</li>
+                      <li>Merci qui ?</li>
+                    <% when "hotel"%>
+                      <li>Vous avez prévu de dormir à l'hôtel,</li>
+                      <li>A savoir : <%= accomodation.name %></li>
+                      <li>! Parfait !</li>
+                    <% else %>
+                    <li></li>
+                  <% end %>
+
+                <% else %>
+
+                  <li>Merci d'avoir demandé à être acceuilli chez des amis</li>
+                  <li>à savoir : <%= accomodation.name %></li>
+                  <li>Demande en attente de confirmation</li>
+                  <li>Nous sommes en train de voir avec eux, on revient vers vous</li>
+
+                <% end %>
+
+              <% else %>
+
+                  <li>Vous n'avez pas encore choisi (ou confirmé) votre logement</li>
+                  <li>Nous avons recensé des lieux d'acceuil proches de Pontigny</li>
+                  <li>Des amis qui nous prêtent des chambres, des hôtels, ou la solution camping</li>
+                  <li>Allez consulter la liste, et choisissez le votre</li>
+              <% end%>
+            </ul>
+            <div class="button-container">
+              <% if @registry.accomodation_request_ids.empty? %>
+                <%= link_to "Liste des logements", wedding_accomodations_path(@wedding), class: "button button-show" %>
+              <% end %>
+            </div>
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
