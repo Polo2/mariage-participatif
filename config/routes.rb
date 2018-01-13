@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'questions/new'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
 
@@ -16,7 +15,9 @@ Rails.application.routes.draw do
     get "accomodations/upload", to: "accomodations#upload"
     resources :reviews
     resources :registries
-    resources :accomodations
+    resources :accomodations do
+      resources :accomodation_requests, only: [:new, :create, :index]
+    end
     resources :tasks do
       resources :services
       resources :elements, only: [:index, :create, :show, :edit, :update, :destroy ]
