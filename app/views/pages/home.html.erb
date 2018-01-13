@@ -99,44 +99,30 @@
   <div class="addmargin">
     <h3><span class="section-title"><%= t("home.contact_form_title")%></span></h3>
   </div>
+
   <div class="contact">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-6 col-md-offset-3">
-
-          <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <label for="contactFormFullName"><%= t("home.contact_form_name")%></label>
-              <input type="email" class="form-control" id="contactFormFullName" >
+          <%= simple_form_for(@question) do |f|%>
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <%= f.input :name %>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <%= f.input :email %>
+              </div>
             </div>
-            <div class="col-md-6 col-sm-12">
-              <label for="contactFormEmail"><%= t("home.contact_form_email")%></label>
-              <input type="email" class="form-control" id="contactFormEmail" >
+            <div class="row marged-top">
+              <div class="col-xs-12">
+                <%= f.input :message , as: :text%>
+                <%= f.submit "Envoyer", class: 'button' %>
+              </div>
             </div>
-          </div>
-          <div class="row marged-top">
-            <div class="col-xs-12">
-              <label><%= t("home.contact_form_message")%></label>
-              <input id="exampleInputMessage1" class="form-control mb-4" rows="10" name="message">
-              <button id="button" class="button marged-top" placeholder="Send"><%= t("home.contact_form_send")%></button>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
-
-<div class="form-test">
-
-  <%= simple_form_for(@question) do |f|%>
-
-    <%= f.input :name %>
-    <%= f.input :email %>
-    <%= f.input :message %>
-
-    <%= f.submit "Envoyer" %>
-  <% end %>
-
-</div>
 
 </div>
