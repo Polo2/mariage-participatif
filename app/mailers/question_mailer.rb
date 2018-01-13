@@ -10,3 +10,4 @@ class QuestionMailer < ApplicationMailer
     mail(from: "contact@mariage-participatif.fr", to: "paul@mariage-participatif.fr",  subject: "mariage-participatif.fr : Nouveau message de #{@question.name}")
   end
 end
+

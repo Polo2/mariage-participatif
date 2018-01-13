@@ -8,8 +8,10 @@ class User < ApplicationRecord
 
   has_many :weddings
   has_many :registries
-  has_many :reviews
-  has_many :messages
+  has_many :reviews, dependent: :destroy
+  has_many :messages, dependent: :destroy
+
+
 
   after_create :send_welcome_email
   after_create :link_registries
