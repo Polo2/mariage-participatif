@@ -2,6 +2,7 @@ class Registry < ApplicationRecord
   belongs_to :wedding
   belongs_to :user
   has_many :guests, dependent: :destroy
+  has_many :services, through: :guests
   has_many :accomodation_requests, dependent: :destroy
 
   accepts_nested_attributes_for :guests
