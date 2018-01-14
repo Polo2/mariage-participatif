@@ -12,6 +12,8 @@ class WeddingsController < ApplicationController
   # GET /weddings/1.json
   def show
     authorize(@wedding)
+    @tasks_with_service = @wedding.tasks_with_service
+    @tasks_without_service = @wedding.tasks_without_service
      @markers = Gmaps4rails.build_markers([@wedding]) do |wedding, marker|
        marker.lat wedding.latitude
        marker.lng wedding.longitude

@@ -4,158 +4,168 @@
   </h3>
 
   <div class="fullblock">
-    <div class="statut">
-      <p>
-        <% if @task.statut %>
-          <i class="fa fa-check"></i>
-        <% else %>
-          <i class="fa fa-hourglass-half"></i>
-        <% end %>
-
-        <%= @task.statut ? t("task.done") : t("task.not_done") %>
-
-        <% if policy(@wedding).edit? %>
+    <% if @services.count > 0 %>
+      <div class="statut">
+        <p>
           <% if @task.statut %>
-            <%= link_to t("task.unmark"), edit_wedding_task_path(@wedding, @task) %>
+            <i class="fa fa-check"></i>
           <% else %>
-            <%= link_to t("task.mark"), edit_wedding_task_path(@wedding, @task) %>
+            <i class="fa fa-hourglass-half"></i>
           <% end %>
-          <%= link_to "|     Ajouter un service", new_wedding_task_service_path(@wedding, @task)%>
-        <% end %>
-      </p>
-    </div>
+
+          <%= @task.statut ? t("task.done") : t("task.not_done") %>
+
+          <% if policy(@wedding).edit? %>
+            <% if @task.statut %>
+              <%= link_to t("task.unmark"), edit_wedding_task_path(@wedding, @task) %>
+            <% else %>
+              <%= link_to t("task.mark"), edit_wedding_task_path(@wedding, @task) %>
+            <% end %>
+            <%= link_to "|     Ajouter un service", new_wedding_task_service_path(@wedding, @task)%>
+          <% end %>
+        </p>
+      </div>
+    <% end %>
 
 
     <div class="row">
       <% if policy(@wedding).edit? %>
-        <div class="col-xs-12 task-details">
-        <h4><%= t("task.list")%></h4>
-          <div class="rightblock bloc invited-height-block">
-            <ul>
-            <% @services.each do |service| %>
-              <li>
-                <div class="service-card">
-                  <div class="service-description">
-                    <%= service.details %>
-                  </div>
-                  <div class="service-details">
-                    <ul>
-                      <li><%= icon('calendar') %><%= service.day %></li>
-                      <li><i class="fa fa-clock-o"></i><%= service.appointment %></li>
-                      <li><%= icon('map-marker') %><%= service.location %></li>
-                    </ul>
-                  </div>
+        <% if @services.count > 0 %>
+          <div class="col-xs-12 task-details">
+          <h4><%= t("task.list")%></h4>
+            <div class="rightblock bloc invited-height-block">
+              <ul>
+              <% @services.each do |service| %>
+                <li>
+                  <div class="service-card">
+                    <div class="service-description">
+                      <%= service.details %>
+                    </div>
+                    <div class="service-details">
+                      <ul>
+                        <li><%= icon('calendar') %><%= service.day %></li>
+                        <li><i class="fa fa-clock-o"></i><%= service.appointment %></li>
+                        <li><%= icon('map-marker') %><%= service.location %></li>
+                      </ul>
+                    </div>
 
-                  <% if service.is_service_complete? %>
-                    <div class="service-registrations" id="complete">
-                      <ul>
-                        <li>Service complet !</li>
-                        <div class="dropdown">
-                          <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"><%= "#{service.guests.count} inscrits !"%></a>
-                          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                            <% service.guests.each do |guest| %>
-                              <li><%= "#{guest.registry.group_name.capitalize}, #{guest.name} " %></li>
-                            <% end %>
-                          </ul>
-                        </div>
-                      </ul>
+                    <% if service.is_service_complete? %>
+                      <div class="service-registrations" id="complete">
+                        <ul>
+                          <li>Service complet !</li>
+                          <div class="dropdown">
+                            <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"><%= "#{service.guests.count} inscrits !"%></a>
+                            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                              <% service.guests.each do |guest| %>
+                                <li><%= "#{guest.registry.group_name.capitalize}, #{guest.name} " %></li>
+                              <% end %>
+                            </ul>
+                          </div>
+                        </ul>
+                      </div>
+                    <% else %>
+                      <div class="service-registrations">
+                        <ul>
+                          <li><%= "#{service.capacity - service.guests.count} place(s)" %></li>
+                          <li><%= "#{service.guests.count} inscrits"%></li>
+                        </ul>
+                      </div>
+                    <% end %>
+                    <div class="service-links">
+                      <%= link_to "Modifier", edit_wedding_task_service_path(@wedding, @task, service) %>
                     </div>
-                  <% else %>
-                    <div class="service-registrations">
-                      <ul>
-                        <li><%= "#{service.capacity - service.guests.count} place(s)" %></li>
-                        <li><%= "#{service.guests.count} inscrits"%></li>
-                      </ul>
-                    </div>
-                  <% end %>
-                  <div class="service-links">
-                    <%= link_to "Modifier", edit_wedding_task_service_path(@wedding, @task, service) %>
                   </div>
-                </div>
-              </li>
-            <% end %>
-            </ul>
+                </li>
+              <% end %>
+              </ul>
+            </div>
           </div>
-        </div>
+        <% end %>
 
         <div class="col-xs-12 discussion">
-          <h4><%= t("task.comments")%></h4>
+          <h4>Discussion</h4>
+          <p>Espace dédié pour parler (entre autre) de : "<%= @task.name %>" </p>
           <div class="downblock bloc invited-height-block">
             <%= render 'messages/messages-content' %>
           </div>
         </div>
-      <% else %>
-       <div class="col-xs-12 task-details">
-        <h4><%= t("task.list")%></h4>
-          <div class="rightblock bloc invited-height-block">
-            <ul>
-            <% @services.each do |service| %>
-              <li>
-                <div class="service-card">
-                  <div class="service-description">
-                    <%= service.details %>
-                  </div>
-                  <div class="service-details">
-                    <ul>
-                      <li><%= icon('calendar') %><%= service.day %></li>
-                      <li><i class="fa fa-clock-o"></i><%= service.appointment %></li>
-                      <li><%= icon('map-marker') %><%= service.location %></li>
-                    </ul>
-                  </div>
 
-                  <% if service.is_service_complete? %>
-                    <div class="service-registrations" id="complete">
-                      <ul>
-                        <li>Service complet !</li>
-                      </ul>
-                    </div>
-                    <div class="service-links">
-                      <div class="dropdown">
-                        <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"><%= "#{service.guests.count} inscrits !"%></a>
-                        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                        <% service.guests.each do |guest| %>
-                          <li><%= "#{guest.registry.group_name.capitalize}, #{guest.name} " %></li>
-                        <% end %>
+      <% else %>
+        <% if @services.count > 0 %>
+          <div class="col-xs-12 task-details">
+            <h4><%= t("task.list")%></h4>
+              <div class="rightblock bloc invited-height-block">
+                <ul>
+                <% @services.each do |service| %>
+                  <li>
+                    <div class="service-card">
+                      <div class="service-description">
+                        <%= service.details %>
+                      </div>
+                      <div class="service-details">
+                        <ul>
+                          <li><%= icon('calendar') %><%= service.day %></li>
+                          <li><i class="fa fa-clock-o"></i><%= service.appointment %></li>
+                          <li><%= icon('map-marker') %><%= service.location %></li>
                         </ul>
                       </div>
+
+                      <% if service.is_service_complete? %>
+                        <div class="service-registrations" id="complete">
+                          <ul>
+                            <li>Service complet !</li>
+                          </ul>
+                        </div>
+                        <div class="service-links">
+                          <div class="dropdown">
+                            <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"><%= "#{service.guests.count} inscrits !"%></a>
+                            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                            <% service.guests.each do |guest| %>
+                              <li><%= "#{guest.registry.group_name.capitalize}, #{guest.name} " %></li>
+                            <% end %>
+                            </ul>
+                          </div>
+                        </div>
+                      <% else %>
+                        <div class="service-registrations">
+                          <ul>
+                            <li><%= "#{service.capacity - service.guests.count} place(s)" %></li>
+                            <li><%= "#{service.guests.count} inscrits"%></li>
+                          </ul>
+                        </div>
+                        <div class="service-links">
+                          <div class="dropdown">
+                            <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"> Inscription </a>
+                            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                              <%= simple_form_for([@wedding, @task, service]) do |f| %>
+                                <%= f.association :guests, collection: @list_guests_adults_without_service, as: :check_boxes %>
+                                <%= f.button :submit %>
+                              <% end %>
+                            </ul>
+                          </div>
+                        </div>
+                      <% end %>
                     </div>
-                  <% else %>
-                    <div class="service-registrations">
-                      <ul>
-                        <li><%= "#{service.capacity - service.guests.count} place(s)" %></li>
-                        <li><%= "#{service.guests.count} inscrits"%></li>
-                      </ul>
-                    </div>
-                    <div class="service-links">
-                      <div class="dropdown">
-                        <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"> Inscription </a>
-                        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                          <%= simple_form_for([@wedding, @task, service]) do |f| %>
-                            <%= f.association :guests, collection: @list_guests_adults_without_service, as: :check_boxes %>
-                            <%= f.button :submit %>
-                          <% end %>
-                        </ul>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              </li>
-            <% end %>
-            </ul>
+                  </li>
+                <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <div class="col-xs-12 discussion">
+            <h4><%= t("task.messages") %></h4>
+            <div class="leftblock bloc invited-height-block">
+              <%= render 'messages/messages-content' %>
+            </div>
           </div>
-        </div>
-        <div class="col-xs-12 discussion">
-          <h4><%= t("task.messages") %></h4>
-          <div class="leftblock bloc invited-height-block">
-            <%= render 'messages/messages-content' %>
-          </div>
-        </div>
       <% end %>
     </div>
+
     <div class=links>
       <%= link_to t("links.back"), wedding_path(@wedding), class: "back-link" %>
       <%= link_to t("links.destroy"), wedding_task_path(@wedding, @task), method: :delete, data: { confirm: t("links.confirmation") } %>
     </div>
+
   </div>
 </div>
 

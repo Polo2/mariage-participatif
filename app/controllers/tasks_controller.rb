@@ -27,8 +27,8 @@ class TasksController< ApplicationController
   def new
     @tasks = @wedding.tasks
     @tasks_name_list = parsing_json.keys
-    @tasks_existing_names_list = @tasks.pluck(:name)
-    @tasks_filtered_names_list = @tasks_name_list.select { |taskname|  !@tasks_existing_names_list.include?(taskname) }
+    # @tasks_existing_names_list = @tasks.pluck(:name)
+    # @tasks_filtered_names_list = @tasks_name_list.select { |taskname|  !@tasks_existing_names_list.include?(taskname) }
     @task = Task.new
   end
 
