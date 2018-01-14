@@ -21,7 +21,14 @@ class Registry < ApplicationRecord
   # end
 
   def update_score
-    score
+    score = 0
+    score += self.guests.where(presence: nil).empty? ? 25 : 0
+    score += ( self.services.count == self.guests.where(child: false).where(presence: true).count ) ? 25 : 0
+    if !self.accomodation_request_ids.empty?
+      score += self.accomodation_requests.last.statut ? 25 : 15
+    end
+    score += 0
+    return score
   end
 
   def score_as_array
@@ -39,7 +46,7 @@ class Registry < ApplicationRecord
   end
 
   def set_score_array
-    score = 0
+    score_registry = 0
   end
 
 

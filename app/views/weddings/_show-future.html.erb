@@ -112,9 +112,7 @@
 
   <% else %>
   <!-- Page du mariage vue pour l'invité -->
-    <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
-      <% @registry = @wedding.registries.find_by(user: current_user) %>
-    <% end %>
+
 
     <div class="4-blocs">
       <h3 class="text-center">4 étapes à compléter pour valider votre inscription :</h3>
@@ -156,7 +154,7 @@
                 <li>On a hâte !</li>
 
               <% else %>
-                <li>Vous avez déjà choisi <%= @registry.services.count%> sur <%= @registry.guests.where(presence: true, child: false).count %> </li>
+                <li>Vous avez déjà choisi <%= @registry.services.count %> sur <%= @registry.guests.where(presence: true, child: false).count %> </li>
                 <li>Merci !</li>
                 <li>Encore un peu d'inspiration pour les derniers services ? Lisez ..</li>
                 <li>Des questions à vous poser ? Ecrivez ..</li>
