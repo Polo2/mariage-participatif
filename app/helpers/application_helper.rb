@@ -15,7 +15,7 @@ module ApplicationHelper
 
   def presence_for(presence)
     if presence.nil?
-      "#{icon('question-circle-o')} En attente".html_safe
+      "#{icon('question-circle-o')} En attente t".html_safe
     elsif presence
       "#{icon('check-square')} Oui".html_safe
     else
