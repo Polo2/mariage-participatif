@@ -78,4 +78,16 @@ class Wedding < ApplicationRecord
     return compteur
   end
 
+  def tasks_with_service
+    tasks_list = self.tasks
+    tasks_with_service = tasks_list.select { |task|  task.services.count > 0 }
+    return tasks_with_service
+  end
+
+  def tasks_without_service
+    tasks_list = self.tasks
+    tasks_without_service = tasks_list.select { |task|  task.services.count == 0 }
+    return tasks_without_service
+  end
+
 end

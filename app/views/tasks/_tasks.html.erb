@@ -1,20 +1,15 @@
 
+
+
 <h3 class="text-center">
-  <span class="section-title">Catgéories de Services</span>
+  <span class="section-title">Catégories de Services</span>
 </h3>
 
-<div class="text-center">
-  <% if policy(@wedding).edit? %>
-    <div>
-      <%= link_to t("task.add"), new_wedding_task_path(@wedding), class: "button button-show"  %>
-    </div>
-  <% end %>
-</div>
 
 <div class= tasklist>
   <ul class="tasks">
     <div class="row">
-      <% wedding.tasks.each do |task| %>
+      <% wedding.tasks_with_service.each do |task| %>
         <%= link_to wedding_task_path(wedding, task) do %>
         <div class="col-xs-3 col-md-2">
           <li class="task">
@@ -53,6 +48,46 @@
   <span class="section-title">Autres discussions</span>
 </h3>
 
+<div class= tasklist>
+  <ul class="tasks">
+    <div class="row">
+      <% wedding.tasks_without_service.each do |task| %>
+        <%= link_to wedding_task_path(wedding, task) do %>
+        <div class="col-xs-3 col-md-2">
+          <li class="task">
+            <div class="taskname button">
+              <strong> <%= task.name %> </strong>
+              <div class="tasknotification">
+                <% if wedding.user == current_user %>
+                  <% if task.messages.where(read: false).count == 0 %>
+
+                  <% elsif task.messages.where(read: false).count == 1%>
+                    <%= task.messages.where(read: false).count %> message
+                  <% else %>
+                    <%= task.messages.where(read: false).count %> messages
+                  <% end %>
+                <% else %>
+
+                <% end %>
+              </div>
+            </div>
+          </li>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </ul>
+</div>
+
+
+
+<div class="text-center">
+  <% if policy(@wedding).edit? %>
+    <div>
+      <%= link_to t("task.add"), new_wedding_task_path(@wedding), class: "button button-show"  %>
+    </div>
+  <% end %>
+</div>
 
 
 
