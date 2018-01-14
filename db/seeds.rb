@@ -85,7 +85,7 @@ registry_testeurs = Registry.create({
   group_name: "Testeurs",
   address: "Rue des testeurs",
   zipcode: "69000",
-  city: "Lyon",
+  city: "Lyon"
   })
 
 puts "id registry : #{registry_testeurs.id}"
@@ -96,8 +96,8 @@ puts "Creation des 5 guests adultes & 1 adulte absent & 1 enfant "
   Guest.create!({
     registry_id: registry_testeurs.id,
     name: "adulte #{i+1}",
-    presence: true,
     child: false,
+    presence: nil
     })
   puts "id adulte #{i+1} : #{Guest.last.id}"
 end
@@ -106,8 +106,8 @@ end
 Guest.create({
     registry_id: registry_testeurs.id,
     name: "adulte absent",
-    presence: true,
     child: false,
+    presence: nil
     })
 
 puts "id adulte absent : #{Guest.last.id} "
@@ -115,8 +115,8 @@ puts "id adulte absent : #{Guest.last.id} "
 Guest.create({
   registry_id: registry_testeurs.id,
   name: "l'enfant",
-  presence: true,
   child: true,
+  presence: nil
   })
 
 puts "id enfant : #{Guest.last.id} "
