@@ -51,8 +51,9 @@
 
             <ul class="bloc-list">
               <li>Nombre d'invitations : <%= @wedding.registries.count %> </li>
-              <li>Nombre de personnes invitées : <%= @wedding.guests.count %> </li>
-              <li>Nombre de réponses positives : <%= @wedding.guests.where(presence: true).count%>  </li>
+              <li>Nombre d'invités : <%= @wedding.guests.count %> </li>
+              <li>Nombre d'invités ayant répondu oui : <%= @wedding.guests.where(presence: true).count %>  </li>
+              <li>(dont : <%= @wedding.guests.where(presence: true).where(child: true).count %> enfants</li>
             <ul>
             <div class="button-container">
               <%= link_to t("wedding.guest_list.add"), new_wedding_registry_path(@wedding), class: "button button-show" %>
@@ -84,9 +85,9 @@
             </h3>
             <ul class="bloc-list">
               <li>Nombre de logements proposés: <%= @wedding.accomodations.count %></li>
-              <li>Nombre d'invités inscrits aux logements : <%= @wedding.nb_of_guests_with_accomodation_count %></li>
-              <li>Nombre de logements complets : </li>
-              <li>Nombre de demandes à loger chez des amis : </li>
+              <li>Nombre d'invités inscrits aux logements : <%= @wedding.nb_of_guests_with_accomodation_count %>  </li>
+              <li>Nombre de logements complets : <%= @wedding.accomodations.where(complete: true).count %></li>
+              <li>Nombre de demdandes d'hebergements à traiter : <%= @wedding.accomodation_requests.where(statut: false).count %></li>
             </ul>
               <!-- <div id="map" style="height: 250px;"></div> -->
               <div class="button-container">
@@ -237,6 +238,7 @@
         </div>
       </div>
     </div>
+  </div>
 
   <% end %>
 
