@@ -68,9 +68,12 @@ class Wedding < ApplicationRecord
     compteur = 0
     accomodations_list = self.accomodations
     reg_list = self.registries
+    # reg_list_with_accomodation_request = self.registries.select { |reg| reg.accomodation_request_ids.empty? }
     reg_list.each do |reg|
       present_adults_guests = reg.guests.where(child: false).where(presence: true)
-      compteur += present_adults_guests if reg.accomodation_id?
+      unless reg.accomodation_request_ids.empty?
+        compteur += present_adults_guests.count if reg.accomodation_requests.last.statut
+      end
     end
     return compteur
   end
