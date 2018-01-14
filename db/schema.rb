@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114140045) do
+ActiveRecord::Schema.define(version: 20180114180137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,8 +114,8 @@ ActiveRecord::Schema.define(version: 20180114140045) do
     t.string   "address"
     t.integer  "zipcode"
     t.string   "city"
-    t.integer  "score"
     t.integer  "accomodation_id"
+    t.integer  "score_registry"
     t.index ["accomodation_id"], name: "index_registries_on_accomodation_id", using: :btree
     t.index ["user_id"], name: "index_registries_on_user_id", using: :btree
     t.index ["wedding_id"], name: "index_registries_on_wedding_id", using: :btree

@@ -10,6 +10,8 @@ class Registry < ApplicationRecord
 
   before_create :set_user_id
 
+  after_create :set_score_array
+
   # def status
   #   if @registry.guests.presence == true
   #     return "Confirmed"
@@ -17,6 +19,15 @@ class Registry < ApplicationRecord
   #     return "Pending"
   #   end
   # end
+
+  def update_score
+    score
+  end
+
+  def score_as_array
+    return [0,0,0,0]
+  end
+
   private
 
   def set_user_id
@@ -25,6 +36,10 @@ class Registry < ApplicationRecord
     if @user.present?
       self.user_id = @user.id
     end
+  end
+
+  def set_score_array
+    score = 0
   end
 
 
