@@ -8,7 +8,6 @@ class User < ApplicationRecord
 
   has_many :weddings
   has_many :registries
-  has_many :reviews, dependent: :destroy
   has_many :messages, dependent: :destroy
 
 

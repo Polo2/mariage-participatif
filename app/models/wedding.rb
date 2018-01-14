@@ -1,5 +1,6 @@
 class Wedding < ApplicationRecord
   belongs_to :user
+  has_many :reviews, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :registries, dependent: :destroy
   has_many :accomodations, dependent: :destroy
