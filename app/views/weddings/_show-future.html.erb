@@ -85,8 +85,8 @@
             <ul class="bloc-list">
               <li>Nombre de logements proposés: <%= @wedding.accomodations.count %></li>
               <li>Nombre d'invités inscrits aux logements : <%= @wedding.nb_of_guests_with_accomodation_count %></li>
-              <li>Nombre de logements complets</li>
-              <li>Nombre de demandes à loger chez des amis</li>
+              <li>Nombre de logements complets : </li>
+              <li>Nombre de demandes à loger chez des amis : </li>
             </ul>
               <!-- <div id="map" style="height: 250px;"></div> -->
               <div class="button-container">
@@ -111,9 +111,9 @@
 
   <% else %>
   <!-- Page du mariage vue pour l'invité -->
-            <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
-              <% @registry = @wedding.registries.find_by(user: current_user) %>
-            <% end %>
+    <% if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit? %>
+      <% @registry = @wedding.registries.find_by(user: current_user) %>
+    <% end %>
 
     <div class="4-blocs">
       <h3 class="text-center">4 étapes à compléter pour valider votre inscription :</h3>
@@ -139,6 +139,35 @@
             <h3 class="text-center">
               <span class="section-title"><%= t("wedding.blocs.bloc-task")%></span>
              </h3>
+             <ul class="bloc-list">
+
+              <% if @registry.services.count == 0 %>
+
+                <li>C'est un mariage collaboratif, nous proposons à chacun de vous de prendre part au déroulé de cette journée</li>
+                <li>Pour chaque catégorie, il y a plusieurs services, avec heure, lieu, chef d'equipe ... et echange de messages !</li>
+                <li>Pour votre groupe, choisissez <%= @registry.guests.where(presence: true, child: false).count %> service(s)</li>
+                <li>Allez voir les services, rangé par catégorie, en bas de cette page</li>
+
+              <% elsif @registry.services.count == @registry.guests.where(presence: true, child: false).count %>
+
+                <li>Vous avez choisi tous vos services ... Merci !</li>
+                <li>Vous pouvez continuer à poster et lire des messages sur chacun des services</li>
+                <li>On a hâte !</li>
+
+              <% else %>
+                <li>Vous avez déjà choisi <%= @registry.services.count%> sur <%= @registry.guests.where(presence: true, child: false).count %> </li>
+                <li>Merci !</li>
+                <li>Encore un peu d'inspiration pour les derniers services ? Lisez ..</li>
+                <li>Des questions à vous poser ? Ecrivez ..</li>
+                <li>Ca y est ? Inscrivez ..</li>
+              <% end %>
+            </ul>
+            <div class="button-container">
+              <%= link_to "La liste", wedding_path(@wedding), class: "button button-show" %>
+            <% unless @registry.services.count == 0 %>
+              <%= link_to "Vos services", wedding_path(@wedding), class: "button button-show" %>
+            <% end %>
+            </div>
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
@@ -201,9 +230,8 @@
             <h3 class="text-center">
               <span class="section-title"><%= t("wedding.blocs.bloc-vegetable") %></span>
             </h3>
-            <div id="map" style="height: 250px;"></div>
             <div class="button-container">
-              <%= link_to "Chercher un covoiturage", wedding_path(@wedding)%>
+              <%= link_to "Postez votre entrée", wedding_path(@wedding), class: "button button-show" %>
             </div>
           </div>
         </div>

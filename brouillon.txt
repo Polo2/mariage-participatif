@@ -44,3 +44,7 @@ Liste guest for registry
 <% current_user.registries.last.guests.where(child: false).where(presence: true).each do |g| %>
                             <li><%= g.name %> </li>
                           <% end %>
+
+
+bloc map
+<div id="map" style="height: 250px;"></div>
