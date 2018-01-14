@@ -1,6 +1,6 @@
 class AccomodationRequestsController < ApplicationController
 before_action :set_wedding
-before_action :set_accomodation_request, only: [:edit, :destroy]
+before_action :set_accomodation_request, only: [:edit, :destroy, :mark_as_complete]
 
 
   def new
@@ -42,6 +42,10 @@ before_action :set_accomodation_request, only: [:edit, :destroy]
     if @accomodation_request.save
       redirect_to wedding_accomodation_requests_path(@wedding)
     end
+  end
+
+  def mark_as_complete
+
   end
 
 
