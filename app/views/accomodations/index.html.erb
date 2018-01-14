@@ -32,29 +32,40 @@
               <% end %>
             </td>
             <td>
-              <% case acc.category %>
-                <% when "camping"%>
-                  <%= link_to "Valider sa tente", new_wedding_accomodation_accomodation_request_path(@wedding, acc) %>
-                <% when "amis"%>
-                  <%= link_to "Demander à être logé", new_wedding_accomodation_accomodation_request_path(@wedding, acc) %>
-                <% when "hotel"%>
-                <ul class="list-unstyled">
-                  <li><%= link_to "Réserver sur le site", acc.contact_website, target: "_blank" %></li>
-                  <li><%= link_to "Confirmer la réservation", new_wedding_accomodation_accomodation_request_path(@wedding, acc) %></li>
-                </ul>
+              <% if acc.is_complete? %>
+                <div id="complete">
+                  <ul class="list-unstyled">
+                    <li>Logement complet !</li>
+                  </ul>
+                </div>
+              <% else %>
+                <% if policy(@wedding).edit? %>
+                  <% case acc.category %>
+                    <% when "camping" %>
+                      <%= link_to "Marquer comme complet ?",  edit_wedding_accomodation_path(@wedding, acc) %>
+                    <% when "amis" %>
+                      <%= link_to "Marquer comme complet", edit_wedding_accomodation_path(@wedding, acc) %>
+                    <% when "hotel" %>
+                    <ul class="list-unstyled">
+                      <li><%= link_to "Marquer comme complet !", edit_wedding_accomodation_path(@wedding, acc) %></li>
+                      <li><%= link_to "voir site web",  acc.contact_website, target: "_blank" %></li>
+                  <% end%>
                 <% else %>
+                  <% case acc.category %>
+                    <% when "camping"%>
+                      <%= link_to "Valider sa tente", new_wedding_accomodation_accomodation_request_path(@wedding, acc) %>
+                    <% when "amis"%>
+                      <%= link_to "Demander à être logé", new_wedding_accomodation_accomodation_request_path(@wedding, acc) %>
+                    <% when "hotel"%>
+                    <ul class="list-unstyled">
+                      <li><%= link_to "Réserver sur le site", acc.contact_website, target: "_blank" %></li>
+                      <li><%= link_to "Confirmer la réservation", new_wedding_accomodation_accomodation_request_path(@wedding, acc) %></li>
+                    </ul>
+                    <% else %>
+                  <% end %>
+                <% end %>
               <% end %>
             </td>
-
-            <!-- <td>
-              <ul class="list-unstyled">
-                <% if acc.contact_email? %><li><i class="fa fa-envelope"></i><%= acc.contact_email%></li> <%end%>
-                <% if acc.contact_phone? %><li><i class="fa fa-phone"></i><%= acc.contact_phone%></li> <%end%>
-                <% if acc.contact_website? %>
-                  <li><a href=<%="#{acc.contact_website}"%> target = "_blank"  ><%="site web" if acc.contact_website? %></a></li>
-                <%end%>
-              </ul>
-            </td> -->
           </tr>
           <% end %>
         </table>

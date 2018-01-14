@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113195053) do
+ActiveRecord::Schema.define(version: 20180114140045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20180113195053) do
     t.string   "contact_email"
     t.string   "contact_website"
     t.string   "contact_phone"
-    t.boolean  "complete?"
     t.integer  "distance"
     t.string   "category"
+    t.boolean  "complete"
     t.index ["wedding_id"], name: "index_accomodations_on_wedding_id", using: :btree
   end
 
