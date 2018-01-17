@@ -13066,7 +13066,9 @@ button.close {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
+
 /* line 19, /Users/hortiti/code/hmdf/mari-et-vous/app/assets/stylesheets/pages/_home.scss */
 .home-page .icon {
   border-radius: 50%;
