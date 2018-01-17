@@ -273,7 +273,7 @@ DEPENDENCIES
   autoprefixer-rails
   awesome_print
   bootstrap-sass
-  cloudinary
+  cloudinary (= 1.1.7)
   cocoon
   coffee-rails
   devise

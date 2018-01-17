@@ -136,7 +136,7 @@ fr:
         location: "Lieu du mariage"
         capacity: "Nombre d'invités prévus"
         photo: "Photo d'ambiance"
-        spouse_photo: "Phote des mariés"
+        spouse_photo: "Photo des mariés"
         spouse_first_name: "Prénom du / de la marié(e)"
         spouse_last_name: "Nom du / de la marié(e)"
       registry:

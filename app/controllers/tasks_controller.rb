@@ -15,7 +15,7 @@ class TasksController< ApplicationController
     @services = @task.services
     @service = Service.new
 
-    @messages = @task.messages.all.order(:created_at)
+    @messages = @task.messages.all.order(:created_at).reverse
     @messages.update_all(read: true) if @task.wedding.user == current_user
     @message = Message.new
 
