@@ -62,6 +62,7 @@ puts "Création du mariage religieux"
 
 
 
+
 wedding1_polo = Wedding.create({
   title: "Mariage religieux à Pontigny",
   description: "Mariage collaboratif en Bourgogne, au milieu des vigne de Chablis. Venez passer avec nous les 3 jours du week-end de la Pentecôte. Venez vous associer à la Joie de notre engagement. On compte sur vous!",
