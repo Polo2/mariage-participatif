@@ -10,8 +10,6 @@ class Registry < ApplicationRecord
 
   before_create :set_user_id
 
-  after_create :set_score_array
-
   # def status
   #   if @registry.guests.presence == true
   #     return "Confirmed"
@@ -23,7 +21,7 @@ class Registry < ApplicationRecord
   def update_score
     score = 0
     score += self.guests.where(presence: nil).empty? ? 25 : 0
-    score += ( self.services.count == self.guests.where(child: false).where(presence: true).count ) ? 25 : 0
+    score += ( (self.services.count == self.guests.where(child: false).where(presence: true).count) && self.guests.where(presence: nil).empty?  ) ? 25 : 0
     if !self.accomodation_request_ids.empty?
       score += self.accomodation_requests.last.statut ? 25 : 15
     end
@@ -31,9 +29,6 @@ class Registry < ApplicationRecord
     return score
   end
 
-  def score_as_array
-    return [0,0,0,0]
-  end
 
   private
 
@@ -43,10 +38,6 @@ class Registry < ApplicationRecord
     if @user.present?
       self.user_id = @user.id
     end
-  end
-
-  def set_score_array
-    score_registry = 0
   end
 
 
