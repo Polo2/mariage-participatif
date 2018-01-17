@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
 
 
-  after_create :send_welcome_email
+  #  after_create :send_welcome_email
   after_create :link_registries
   has_attachment :avatar, accept: [:jpg, :png, :gif, :jpeg]
 
