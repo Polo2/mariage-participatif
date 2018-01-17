@@ -22,7 +22,7 @@ fr:
     getting_married_l1: "Envoyer et suivre vos invitations"
     getting_married_l2: "Planifier les services que vous demandez"
     getting_married_l3: "Faciliter l'échange d'informations "
-    getting_married_l4: "Et permettre les services de vos invités "
+    getting_married_l4: "Et permettre les services de vos invités !"
     getting_married_create: "JE CREE MON MARIAGE COLLABORATIF"
     invited: "Vous êtes invités"
     invited_l1: "En étant invités à un mariage via cette platefrome web, vous pourrez :"
@@ -158,6 +158,10 @@ fr:
         day: "Jour"
         location: "Lieu"
         appointment: "Créneau"
+      question:
+        name: Votre nom
+        email: Votre email
+        message: Et votre message
   helpers:
     submit:
       wedding:
