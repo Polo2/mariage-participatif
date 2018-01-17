@@ -163,6 +163,11 @@ fr:
         name: Votre nom
         email: Votre email
         message: Et votre message
+      vegetable:
+        name: "son nom :"
+        slogan: "et un slogan ?"
+        capacity: "pour combien de bouches :"
+        photo: "avec la photo ?"
   helpers:
     submit:
       wedding:

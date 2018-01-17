@@ -7,6 +7,8 @@
 
           <%= simple_form_for([@wedding, @registry, @vegetable]) do |f| %>
             <%= f.input :name, required: true %>
+            <%= f.input :slogan, hint: "33 caractères max" %>
+            <%= f.input :capacity, hint: "à peu près ..." %>
             <%= f.input :photo, as: :attachinary, required: true %>
 
             <div class="form-actions">

@@ -13,7 +13,7 @@ before_action :set_registry, only: [:new, :create]
     @vegetable = Vegetable.new(vegetable_params)
     @vegetable.registry = @registry
     if @vegetable.save
-      redirect_to wedding_path(@wedding), notice: "Miam !"
+      redirect_to wedding_vegetables_path(@wedding), notice: "Miam !"
     else
       redirect_to wedding_path(@wedding), error: "Aïe : petit probleme en cuisine ..."
     end
@@ -30,7 +30,7 @@ before_action :set_registry, only: [:new, :create]
   end
 
   def vegetable_params
-    params.require(:vegetable).permit(:name, :photo)
+    params.require(:vegetable).permit(:name, :slogan, :capacity, :photo)
   end
 
 end

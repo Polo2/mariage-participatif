@@ -5,12 +5,18 @@
     <% @vegetables.each do |vg| %>
 
      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path vg.photo.path, height: 185, width: 360, crop: :fill %>');">
-          <div class="card-category">Popular</div>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_image_for vg, height: 185, width: 360, crop: :fill %>');">
+          <div class="card-category"><%= vg.slogan %></div>
           <div class="card-description">
             <h2><%= vg.name %></h2>
           </div>
           <%= avatar_for vg.registry.user , width: 45, height: 45, crop: :thumb, gravity: :face,  class: "card-user"%>
+          <div class="card-capacity">
+            <% if vg.capacity? %>
+              <p><%= vg.capacity %></p>
+              <i class="fa fa-cutlery"></i>
+            <% end %>
+          </div>
         </div>
       </div>
 
