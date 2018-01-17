@@ -27,7 +27,7 @@ puts "Création du user polo@odile - azerty"
 new_user_polo = User.create({
     first_name: "Paul",
     last_name: "de Bodi",
-    email: "polo@odile",
+    email: "paul.debodinat@gmail.com",
     password: "azerty",
     password_confirmation: "azerty",
     avatar_url: "https://avatars3.githubusercontent.com/u/32060402?s=460&v=4"
@@ -41,7 +41,7 @@ puts "Création du user famille@testeur - azerty"
 new_user_testeur = User.create({
     first_name: "Famille",
     last_name: "Testeur",
-    email: "famille@testeur",
+    email: "polo2bodi@gmail.com",
     password: "azerty",
     password_confirmation: "azerty",
     avatar_url: "https://t3.ftcdn.net/jpg/00/65/63/24/500_F_65632409_bzggYSmL28PdjZkuAVveONRGUnOsQNjr.jpg"
@@ -50,7 +50,7 @@ new_user_testeur = User.create({
 new_user_email_testeur = User.create({
     first_name: "Polo",
     last_name: "de Bodi",
-    email: "polo2bodi@gmail.com",
+    email: "jeanbalthazard@hotmail.com",
     password: "azerty",
     password_confirmation: "azerty",
     avatar_url: "http://blogs.lexpress.fr/styles/froggista/files/2013/07/facteur.jpg"
@@ -81,7 +81,7 @@ puts "Création d'1 invitation"
 registry_testeurs = Registry.create({
   user_id: new_user_testeur.id,
   wedding_id: wedding1_polo.id,
-  email: "famille@testeur",
+  email: "polo2bodi@gmail.com",
   group_name: "Testeurs",
   address: "Rue des testeurs",
   zipcode: "69000",
@@ -121,6 +121,14 @@ Guest.create({
 
 puts "id enfant : #{Guest.last.id} "
 
+
+registry_paul = Registry.create({
+  wedding_id: wedding1_polo.id,
+  email: "polo2bodi@gmail.com",
+  group_name: "de Bodinat",
+  })
+
+puts "id registry polo2bodi@gmail.com : #{registry_paul.id}"
 
 # wedding2_polo = Wedding.create({
 #   title: "Mariage civil à Villeurbanne",
