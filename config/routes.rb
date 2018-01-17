@@ -19,10 +19,11 @@ Rails.application.routes.draw do
       resources :accomodation_requests, only: [:new, :create]
     end
     resources :tasks do
-      resources :services
+      resources :services, only: [:new, :create, :update, :destroy]
       resources :messages, only: [:create, :index, :new, :destroy, :show]
     end
     resources :accomodation_requests, only: [ :index, :edit, :destroy ]
+    resources :services, only: [:index]
   end
   resources :questions, only: [:new, :create]
 

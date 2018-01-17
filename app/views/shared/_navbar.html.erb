@@ -11,11 +11,11 @@
 
       <!-- Links when logged in -->
       <% if current_user.weddings.empty? %>
-        <%= link_to "Créer mon mariage",  new_wedding_path , class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to t("navbar.create_my_wedding"),  new_wedding_path , class: "navbar-wagon-item navbar-wagon-link" %>
       <% else %>
         <%= link_to wedding_path(current_user.weddings.future.last), class: "navbar-wagon-item navbar-wagon-link" do %>
             <i class="fa fa-hourglass-half"></i>
-            <%= t("navbar.my_wedding") %>
+            <%= t("navbar.see_my_wedding") %>
         <% end %>
       <% end %>
 
@@ -86,12 +86,12 @@
             <% end %>
           </li>
           <% if current_user.weddings.empty? %>
-            <li><%= link_to "? #{t("navbar.my_wedding")} ?",  new_wedding_path %></li>
+            <li><%= link_to "#{t("navbar.create_my_wedding")}",  new_wedding_path %></li>
           <% else %>
             <li>
               <%= link_to wedding_path(current_user.weddings.future.last) do %>
                 <i class="fa fa-hourglass-half"></i>
-                <%= t("navbar.my_wedding") %>
+                <%= t("navbar.see_my_wedding") %>
               <% end %>
             </li>
           <% end %>

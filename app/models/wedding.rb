@@ -2,9 +2,10 @@ class Wedding < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :tasks, dependent: :destroy
+  has_many :services, through: :tasks
   has_many :registries, dependent: :destroy
-  has_many :accomodations, dependent: :destroy
   has_many :guests, through: :registries
+  has_many :accomodations, dependent: :destroy
   has_many :accomodation_requests, through: :accomodations
 
   scope :future, -> { where('date > ?', Date.current) }

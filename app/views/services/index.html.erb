@@ -1,0 +1,66 @@
+<div class="container">
+
+  <% if policy(@wedding).edit? %>
+    <p>Coucou les mariés ! Vous voulez voir la liste des services ? Désolé, mais le mieux, et de passer par votre BDD Excel, ou de passer par les categories / discussions </p>
+    <p>Sur cette page, un invité voit le service auquel il est inscrit</p>
+
+  <% else %>
+
+    <p><%= @services.count %> services !</p>
+    <div class="fullblock">
+      <% if @services.count > 0 %>
+        <div class="col-xs-12 task-details">
+          <% @guests.each do |g| %>
+            <h4><%= g.name %> :</h4>
+            <% if g.service_id? %>
+              <div class="service-card">
+                <div class="service-description">
+                  <%= g.service.details %>
+                </div>
+
+                <div class="service-details">
+                  <ul>
+                    <li><%= icon('calendar') %><%= g.service.day %></li>
+                    <li><i class="fa fa-clock-o"></i><%= g.service.appointment %></li>
+                    <li><%= icon('map-marker') %><%= g.service.location %></li>
+                  </ul>
+                </div>
+
+                <% if g.service.is_service_complete? %>
+                  <div class="service-registrations" id="complete">
+                    <ul>
+                      <li>Service complet !</li>
+                      <div class="dropdown">
+                        <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"><%= "#{service.guests.count} inscrits !"%></a>
+                        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                          <% g.service.guests.each do |guest| %>
+                            <li><%= "#{guest.registry.group_name.capitalize}, #{guest.name} " %></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                    </ul>
+                  </div>
+                <% else %>
+                  <div class="service-registrations">
+                    <ul>
+                      <li><%= "#{g.service.capacity - g.service.guests.count} place(s)" %></li>
+                      <li><%= "#{g.service.guests.count} inscrits"%></li>
+                    </ul>
+                  </div>
+                <% end %>
+                <div class="service-links">
+                  <ul>
+                    <li>Catégorie:</li>
+                    <li><%= link_to g.service.task.name, wedding_task_path(@wedding, g.service.task) %></li>
+                  </ul>
+                </div>
+              </div>
+            <% else %>
+              <p>Pas encore de service</p>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
