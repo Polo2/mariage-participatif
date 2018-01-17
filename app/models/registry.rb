@@ -23,10 +23,11 @@ class Registry < ApplicationRecord
     score = 0
     score += self.guests.where(presence: nil).empty? ? 25 : 0
     score += ( (self.services.count == self.guests.where(child: false).where(presence: true).count) && self.guests.where(presence: nil).empty?  ) ? 25 : 0
-    if !self.accomodation_request_ids.empty?
+    if ( !self.accomodation_request_ids.empty? && self.guests.where(presence: nil).empty? )
       score += self.accomodation_requests.last.statut ? 25 : 15
     end
-    score += self.vegetables.empty? ? 0 : 25
+    score += ( !self.vegetables.empty? && self.guests.where(presence: nil).empty? ) ? 25 : 0
+    score = 0 if self.guests.where(presence: nil).empty?
     return score
   end
 

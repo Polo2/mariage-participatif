@@ -16,7 +16,7 @@ class TasksController< ApplicationController
     @service = Service.new
 
     @messages = @task.messages.all.order(:created_at).reverse
-    @messages.update_all(read: true) if @task.wedding.user == current_user
+    @messages.update_all(read: true) if @task.wedding.user == current_user unless @task.messages.empty?
     @message = Message.new
 
     @list_guests_adults = current_user.registries.last.guests.where(child: false).where(presence: true) unless current_user == @wedding.user
