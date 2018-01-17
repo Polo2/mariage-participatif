@@ -31,7 +31,7 @@
                     <ul>
                       <li>Service complet !</li>
                       <div class="dropdown">
-                        <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"><%= "#{service.guests.count} inscrits !"%></a>
+                        <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"><%= "#{g.service.guests.count} inscrits !"%></a>
                         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
                           <% g.service.guests.each do |guest| %>
                             <li><%= "#{guest.registry.group_name.capitalize}, #{guest.name} " %></li>

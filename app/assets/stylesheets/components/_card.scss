@@ -3,6 +3,8 @@
   background-size: cover !important;
   background-position: center;
   position: relative;
+  color: white;
+  margin: 10px auto;
 }
 .card-user {
   position: absolute;
@@ -25,7 +27,7 @@
 }
 .card-description h2 {
   font-size: 24px;
-  color: #333333;
+  color: white;
 }
 .card-description p {
   font-size: 14px;
@@ -44,4 +46,15 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.card-capacity {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+
+  p {
+    font-size: 18px;
+  }
 }

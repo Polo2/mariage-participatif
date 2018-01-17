@@ -4,6 +4,7 @@ class Registry < ApplicationRecord
   has_many :guests, dependent: :destroy
   has_many :services, through: :guests
   has_many :accomodation_requests, dependent: :destroy
+  has_many :vegetables, dependent: :destroy
 
   accepts_nested_attributes_for :guests
   validates :email, presence: true
@@ -25,7 +26,7 @@ class Registry < ApplicationRecord
     if !self.accomodation_request_ids.empty?
       score += self.accomodation_requests.last.statut ? 25 : 15
     end
-    score += 0
+    score += self.vegetables.empty? ? 0 : 25
     return score
   end
 

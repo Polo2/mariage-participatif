@@ -1,4 +1,5 @@
 module ApplicationHelper
+
   def avatar_for(user, options = {})
 
     if user.avatar.present?
@@ -10,6 +11,15 @@ module ApplicationHelper
 
   def public_for(bool)
     bool ? "Yes" : "No"
+  end
+
+  def background_image_for(vegetable,  options = {})
+
+    if vegetable.photo.present?
+      cl_image_path vegetable.photo.path, options
+    else
+      image_path 'salade.jpg', options
+    end
   end
 
   def presence_for(presence)
