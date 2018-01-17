@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   devise_for :users
    # controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
 
@@ -14,7 +15,10 @@ Rails.application.routes.draw do
     get "tasks/upload", to: "tasks#upload"
     get "accomodations/upload", to: "accomodations#upload"
     resources :reviews
-    resources :registries
+    resources :registries do
+      resources :vegetables, only: [:new, :create]
+    end
+    resources :vegetables, only: [:index]
     resources :accomodations do
       resources :accomodation_requests, only: [:new, :create]
     end

@@ -101,8 +101,11 @@
             <h3 class="text-center">
               <span class="section-title"><%= t("wedding.blocs.bloc-vegetable") %></span>
             </h3>
+            <ul class="bloc-list">
+              <li>Déjà <%= @wedding.vegetables.count %> entrées préparées</li>
+            </ul>
             <div class="button-container">
-              <%= link_to "Detail Entrées", wedding_path(@wedding), class: "button button-show" %>
+              <%= link_to "Voir liste entrées", wedding_vegetables_path(@wedding), class: "button button-show" %>
             </div>
           </div>
         </div>
@@ -195,8 +198,12 @@
                       <li>Vous avez prévu de dormir à l'hôtel,</li>
                       <li>A savoir : <%= accomodation.name %></li>
                       <li>! Parfait !</li>
+                    <% when "home"%>
+                      <li>Vous avez prévus de rentrer dormir chez vous</li>
+                      <li>! Parfait ! et ...</li>
+                      <li>Prudence sur la route ;)</li>
                     <% else %>
-                    <li></li>
+                      <li></li>
                   <% end %>
 
                 <% else %>
@@ -228,8 +235,24 @@
             <h3 class="text-center">
               <span class="section-title"><%= t("wedding.blocs.bloc-vegetable") %></span>
             </h3>
+
+            <ul class="bloc-list">
+              <% if @registry.vegetable_ids.empty? %>
+                <li>Nous demandons à chacun de préparer un plat végétal</li>
+                <li>Ces plats serviront de base au cocktail, et aà l'entrée du dîner</li>
+                <li>Alors, à vos légumes, à vos bocaux, c'est parti !</li>
+                <li>On vous propose même de publier ici votre entrée ... Belle source d'inspiration !</li>
+              <% else %>
+                <li>Merci d'avoir déjà annoncé votre entrée !</li>
+                <li><%= @registry.vegetables.last.name %></li>
+                <li>Vous pourrez la confier à une equipe de service, dès le café d'acceuil</li>
+                <li>On a hâte</li>
+              <% end %>
+            </ul>
+
             <div class="button-container">
-              <%= link_to "Postez votre entrée", wedding_path(@wedding), class: "button button-show" %>
+              <%= link_to "Nouvelle entrée", new_wedding_registry_vegetable_path(@wedding, @registry), class: "button button-show" %>
+              <%= link_to "Voir liste", wedding_vegetables_path(@wedding), class: "button button-show" %>
             </div>
           </div>
         </div>

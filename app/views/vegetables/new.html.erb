@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="form-center">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+         <h4 class="text-center">
+          <span class="section-title">Votre entrée</span></h4>
+
+          <%= simple_form_for([@wedding, @registry, @vegetable]) do |f| %>
+            <%= f.input :name, required: true %>
+            <%= f.input :photo, as: :attachinary, required: true %>
+
+            <div class="form-actions">
+              <%= f.button :submit, "Valider" %>
+            </div>
+          <% end %>
+
+        <div class="links">
+          <%= link_to t("links.back"), wedding_path(@wedding) %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

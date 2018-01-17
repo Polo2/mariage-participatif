@@ -77,7 +77,7 @@ fr:
       bloc-task: "Services"
       bloc-accomodations: "Logements"
       bloc-trip: "CooVoiturage"
-      bloc-vegetable: "Entrée Végétale"
+      bloc-vegetable: "Contributions Végétales"
   task:
     choose_new: "Choisir une nouvelle tâche"
     choose: "Choisir"
@@ -177,6 +177,9 @@ fr:
       service:
         create: "Créer"
         update: "Valider"
+      messages:
+        create: "Envoyer"
+        update: "Envoyer"
 
 
 
