@@ -62,7 +62,6 @@ puts "Création du mariage religieux"
 
 
 
-
 wedding1_polo = Wedding.create({
   title: "Mariage religieux à Pontigny",
   description: "Mariage collaboratif en Bourgogne, au milieu des vigne de Chablis. Venez passer avec nous les 3 jours du week-end de la Pentecôte. Venez vous associer à la Joie de notre engagement. On compte sur vous!",
@@ -123,13 +122,29 @@ Guest.create({
 puts "id enfant : #{Guest.last.id} "
 
 
-registry_paul = Registry.create({
+
+registry_odile = Registry.create({
   wedding_id: wedding1_polo.id,
-  email: "polo2bodi@gmail.com",
-  group_name: "de Bodinat",
+  email: "o.monseu@gmail.com",
+  group_name: "Monseu de Bodinat",
   })
 
-puts "id registry polo2bodi@gmail.com : #{registry_paul.id}"
+Guest.create({
+  registry_id: registry_odile.id,
+  name: "Odile",
+  child: false,
+  presence: nil
+  })
+
+Guest.create({
+  registry_id: registry_odile.id,
+  name: "Paul",
+  child: false,
+  presence: nil
+  })
+
+
+
 
 # wedding2_polo = Wedding.create({
 #   title: "Mariage civil à Villeurbanne",

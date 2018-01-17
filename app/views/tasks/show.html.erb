@@ -175,7 +175,9 @@
           <div class="col-xs-12 discussion">
             <h4><%= t("task.messages") %></h4>
             <div class="leftblock bloc invited-height-block">
-              <%= render 'messages/messages-content' %>
+              <% unless @task.messages.empty? %>
+                <%= render 'messages/messages-content' %>
+              <% end %>
             </div>
           </div>
       <% end %>
