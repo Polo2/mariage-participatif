@@ -164,7 +164,7 @@
               <% end %>
             </ul>
             <div class="button-container">
-              <%= link_to "Liste des services", wedding_path(@wedding), class: "button button-show" %>
+              <a class="button button-show" href="#task-discussion-container">Liste des services</a>
             <% unless @registry.services.count == 0 %>
               <%= link_to "Vos services", wedding_services_path(@wedding), class: "button button-show" %>
             <% end %>
@@ -279,7 +279,7 @@
     <% end %>
   <% end %>
 
-<div class="tasks-bloc">
+<div class="tasks-bloc" id="task-discussion-container">
   <%= render 'tasks/tasks', wedding: @wedding %>
 </div>
 

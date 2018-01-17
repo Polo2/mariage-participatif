@@ -57,21 +57,6 @@ ActiveRecord::Schema.define(version: 20180117213057) do
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
   end
 
-  create_table "contact_questions", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "elements", force: :cascade do |t|
-    t.text    "content"
-    t.boolean "public"
-    t.integer "task_id"
-    t.index ["task_id"], name: "index_elements_on_task_id", using: :btree
-  end
-
   create_table "guests", force: :cascade do |t|
     t.integer  "registry_id",                 null: false
     t.string   "name",                        null: false
