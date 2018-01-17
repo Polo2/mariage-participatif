@@ -14,7 +14,10 @@ before_action :set_accomodation_request, only: [:edit, :destroy, :mark_as_comple
         message = "Demande de logement chez des amis bien effectuée, on revient vers vous pour confirmer"
         when "hotel"
         @accomodation_request.statut = true
-        message = "Merci de nous avoir confirmé dormir à l'hôtel"
+        message = "Vous irez dormir à l'hôtel, merci de l'avoir indiqué"
+        when "home"
+        @accomodation_request.statut = true
+        message = "Vous rentrerez dormir chez vous, merci de l'avoir indiqué"
         when "camping"
         @accomodation_request.statut = true
         message = "Merci, vive le camping, pensez à un duvet bien chaud"
@@ -42,10 +45,6 @@ before_action :set_accomodation_request, only: [:edit, :destroy, :mark_as_comple
     if @accomodation_request.save
       redirect_to wedding_accomodation_requests_path(@wedding)
     end
-  end
-
-  def mark_as_complete
-
   end
 
 

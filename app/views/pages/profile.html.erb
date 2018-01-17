@@ -11,7 +11,7 @@
             <p><%= t("profile.wedding_in_preparation")%></p>
           </div>
           <div class="profile-memories">
-            <span><%= current_user.weddings.passed.count %></span>
+            <span><%= current_user.registries.exists? ? current_user.registries.count : 0 %></span>
             <p>invitation(s)</p>
           </div>
         </div>

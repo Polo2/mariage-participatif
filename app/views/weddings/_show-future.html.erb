@@ -8,7 +8,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-xs-12 col-sm-8">
+    <div class="col-xs-12 col-sm-8 height-to-500px">
       <div class="wedding-informations">
         <div class="spouse-photo">
           <% if @wedding.spouse_photo? %>
@@ -29,10 +29,9 @@
         </blockquote>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-4 height-to-500px">
       <div class="info-wedding-location">
-       <!--  <%= cl_image_tag @wedding.photo.path, width: 300, height: 400, crop: :thumb, gravity: :center %> -->
-        <!-- <div id="map" style="height: 400px;"></div> -->
+        <div id="map" style="height: 400px;"></div>
       </div>
     </div>
   </div>
@@ -125,8 +124,8 @@
             </h3>
               <ul class="bloc-list">
                 <li><%=  @registry.guests.count %> personnes invitées</li>
-                <li>dont <%= @registry.guests.where(child: true).count %> enfant(s) </li>
-                <li> <%= @registry.guests.where(presence: true).count %> réponses OUI </li>
+                <li>dont <%= @registry.guests.where(child: true).count %> enfant <%= "s" if @registry.guests.where(child: true).count > 1%> </li>
+                <li> <%= @registry.guests.where(presence: true).count %> <%= "réponse#{"s" if @registry.guests.where(presence: true).count > 1} OUI"%> </li>
               </ul>
               <div class="button-container">
                 <%= link_to t("wedding.guest.go_to_registry"), wedding_registry_path(@wedding, @registry), class: "button button-show" %>
@@ -145,7 +144,7 @@
                 <li>C'est un mariage collaboratif, nous proposons à chacun de vous de prendre part au déroulé de cette journée</li>
                 <li>Pour chaque catégorie, il y a plusieurs services, avec heure, lieu, chef d'equipe ... et echange de messages !</li>
                 <li>Pour votre groupe, choisissez <%= @registry.guests.where(presence: true, child: false).count %> service(s)</li>
-                <li>Allez voir les services, rangé par catégorie, en bas de cette page</li>
+                <li>Venez voir les services proposés, rangés par catégorie, en bas de cette page</li>
 
               <% elsif @registry.services.count == @registry.guests.where(presence: true, child: false).count %>
 
@@ -162,7 +161,7 @@
               <% end %>
             </ul>
             <div class="button-container">
-              <%= link_to "La liste", wedding_path(@wedding), class: "button button-show" %>
+              <%= link_to "Liste des services", wedding_path(@wedding), class: "button button-show" %>
             <% unless @registry.services.count == 0 %>
               <%= link_to "Vos services", wedding_path(@wedding), class: "button button-show" %>
             <% end %>

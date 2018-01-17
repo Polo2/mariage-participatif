@@ -12,6 +12,17 @@
       "type": "camping"
     },
     {
+      "name": "Je dors chez moi",
+      "location": "#homesweethome",
+      "contact_name": "",
+      "contact_phone": "",
+      "contact_email": "",
+      "contact_url": "",
+      "complete?": "false",
+      "distance": "0",
+      "type": "home"
+    },
+    {
       "name": "Maison de la Mission de France",
       "location": "17, r de l'abbé Tauleigne, 89230 Pontigny",
       "contact_name": "Françoise LdS",

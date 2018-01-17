@@ -48,3 +48,6 @@ Liste guest for registry
 
 bloc map
 <div id="map" style="height: 250px;"></div>
+
+
+<%= avatar_for current_user, width: 45, height: 45, crop: :thumb, gravity: :face,  class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>

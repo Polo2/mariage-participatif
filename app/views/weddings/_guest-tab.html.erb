@@ -12,12 +12,16 @@
         <% end %>
       </div>
       <div class="tab">
-        <h3>Inscription complétée à <%= @registry.score_registry %> % </h3>
+        <h3>Inscription complétée à</h3>
+        <h3><%= @registry.score_registry %> % </h3>
       </div>
       <div class="tab">
         <% if (@wedding.date - Date.current) > 0 %>
           <h3> J - <%=  (@wedding.date - Date.current).to_i %></h3>
           <p>avant le mariage</p>
+        <% else %>
+          <h3> J + <%=  -(@wedding.date - Date.current).to_i %></h3>
+          <p>depuis le mariage</p>
         <% end %>
       </div>
     </div>
