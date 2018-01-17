@@ -1,10 +1,15 @@
 class ServicesController < ApplicationController
 before_action :set_wedding
-before_action :set_task
+before_action :set_task, only: [:new, :create, :update, :destroy]
 before_action :set_service, only: [:show, :edit, :update, :destroy]
 
   def index
-    @services = Service.where('wedding_id = ? AND task_id = ?', @wedding.id, @task.id)
+    if policy(@wedding).edit?
+      @services = @wedding.services
+    else
+      @services = current_user.registries.last.services
+      @guests = current_user.registries.last.guests.where(child: false, presence: true)
+    end
   end
 
   def show
@@ -83,8 +88,6 @@ private
     array_ids.each { |id| guests_array << Guest.find(id) }
     return guests_array
   end
-
-
 
 
 end

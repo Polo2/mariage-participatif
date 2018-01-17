@@ -72,7 +72,7 @@
                 <li>Nombre d'invités nécessaire : <%= @wedding.guests_needed_for_service_count %>  </li>
               </ul>
               <div class="button-container">
-                <%= link_to "Detail services", wedding_path(@wedding), class: "button button-show" %>
+                <%= link_to "Detail services", wedding_services_path(@wedding), class: "button button-show" %>
                 <%= link_to t("task.initialize"), wedding_tasks_upload_path(@wedding), data: { confirm: t("task.initialize-confirmation") } ,class: "button button-show" %>
               </div>
           </div>
@@ -163,7 +163,7 @@
             <div class="button-container">
               <%= link_to "Liste des services", wedding_path(@wedding), class: "button button-show" %>
             <% unless @registry.services.count == 0 %>
-              <%= link_to "Vos services", wedding_path(@wedding), class: "button button-show" %>
+              <%= link_to "Vos services", wedding_services_path(@wedding), class: "button button-show" %>
             <% end %>
             </div>
           </div>
