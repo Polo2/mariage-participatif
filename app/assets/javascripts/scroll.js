@@ -1,2 +1,2 @@
-var objDiv = document.getElementById("scrollzone");
-objDiv.scrollTop = objDiv.scrollHeight;
+// var objDiv = document.getElementById("scrollzone");
+// objDiv.scrollTop = objDiv.scrollHeight;

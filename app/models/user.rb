@@ -14,7 +14,8 @@ class User < ApplicationRecord
 
   after_create :send_welcome_email
   after_create :link_registries
-  has_attachment :avatar, accept: [:jpg, :png, :gif]
+  has_attachment :avatar, accept: [:jpg, :png, :gif, :jpeg]
+
 
 
   def self.find_for_facebook_oauth(auth)
@@ -50,4 +51,5 @@ class User < ApplicationRecord
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
   end
+
 end
