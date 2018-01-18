@@ -51,3 +51,6 @@ bloc map
 
 
 <%= avatar_for current_user, width: 45, height: 45, crop: :thumb, gravity: :face,  class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+
+last push was rejected by heroku at 1 am
