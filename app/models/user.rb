@@ -44,6 +44,7 @@ class User < ApplicationRecord
 
     registries.each do |registry|
       registry.user = self
+      registry.guests.each { |g| g.presence = nil }
       registry.save
     end
   end

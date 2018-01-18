@@ -17,6 +17,7 @@ class RegistriesController < ApplicationController
 
   def create
     @registry = Registry.new(registry_params)
+    @registry.guests.each { |g|  g.presence = nil }
     @registry.wedding = @wedding
     if @registry.save
       redirect_to wedding_registry_path(@wedding, @registry)
