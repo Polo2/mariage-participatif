@@ -27,7 +27,6 @@ class Registry < ApplicationRecord
       score += self.accomodation_requests.last.statut ? 25 : 15
     end
     score += ( !self.vegetables.empty? && self.guests.where(presence: nil).empty? ) ? 25 : 0
-    score = 0 if self.guests.where(presence: nil).empty?
     return score
   end
 

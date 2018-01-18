@@ -4,7 +4,7 @@ class AccomodationsController < ApplicationController
   before_action :set_wedding
 
   def index
-    @accomodations = Accomodation.where('wedding_id = ?', @wedding.id)
+    @accomodations = Accomodation.where('wedding_id = ?', @wedding.id).order(:distance)
   end
 
   def upload

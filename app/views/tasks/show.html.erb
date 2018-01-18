@@ -81,9 +81,6 @@
                         </ul>
                       </div>
                     <% end %>
-                    <div class="service-links">
-                      <%= link_to "Modifier", edit_wedding_task_service_path(@wedding, @task, service) %>
-                    </div>
                   </div>
                 </li>
               <% end %>
@@ -174,13 +171,12 @@
           <% end %>
           <div class="col-xs-12 discussion">
             <h4><%= t("task.messages") %></h4>
+            <p>Espace dédié pour parler (entre autre) de : "<%= @task.name %>" </p>
             <div class="leftblock bloc invited-height-block">
-              <% unless @task.messages.empty? %>
                 <%= render 'messages/messages-content' %>
-              <% end %>
             </div>
           </div>
-      <% end %>
+      <% end %>*
     </div>
 
     <div class=links>

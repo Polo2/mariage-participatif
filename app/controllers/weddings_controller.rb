@@ -15,8 +15,13 @@ class WeddingsController < ApplicationController
     @tasks_with_service = @wedding.tasks_with_service
     @tasks_without_service = @wedding.tasks_without_service
 
-    @registry = @wedding.registries.find_by(user: current_user) if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit?
-    @registry.score_registry = @registry.update_score if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit?
+    unless policy(@wedding).edit?
+      @registry = @wedding.registries.where(user: current_user).last unless @wedding.registries.where(user: current_user).empty?
+      @registry.score_registry = @registry.update_score unless @wedding.registries.where(user: current_user).empty?
+    end
+
+    # @registry = @wedding.registries.find_by(user: current_user) if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit?
+    # @registry.score_registry = @registry.update_score if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit?
 
     @messages_count = nb_new_messages
     @markers = Gmaps4rails.build_markers([@wedding]) do |wedding, marker|
