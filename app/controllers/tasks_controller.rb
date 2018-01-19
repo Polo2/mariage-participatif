@@ -16,7 +16,9 @@ class TasksController< ApplicationController
     @service = Service.new
 
     @messages = @task.messages.order(:created_at).reverse
-    @messages.update_all(read: true) if @wedding.user == current_user && !@messages.empty?
+
+    @messages.each {|m| m.update_as_read } if policy(@wedding).edit?
+
     @message = Message.new
 
     @list_guests_adults = current_user.registries.last.guests.where(child: false).where(presence: true) unless current_user == @wedding.user
@@ -66,6 +68,14 @@ class TasksController< ApplicationController
 
   end
 
+  def update_all_as_read(messages)
+    @messages = messages
+    @messages.each do |m|
+      m.read == true
+      m.save
+    end
+  end
+
 private
 
   def set_task
@@ -79,7 +89,6 @@ private
   def task_params
     params.require(:task).permit(:name)
   end
-
 
   def parsing_json
     file = File.read("#{Rails.root}/lib/tasks_details/details.json")

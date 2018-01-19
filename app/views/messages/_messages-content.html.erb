@@ -6,8 +6,11 @@
           <p><%= m.content %></p>
         </div>
         <div class="message-name">
-          <p>by <%= m.user.first_name %></p>
-          <p><%=m.created_at.strftime('%m/%d at %H:%M')%></p>
+          <p>par <%= m.user == m.task.wedding.user ? "#{@wedding.user.first_name.capitalize} et #{@wedding.spouse_first_name}"  : "#{m.user.first_name}" %></p>
+          <p><%=m.created_at.strftime('le %m/%d, à %H:%M')%></p>
+        </div>
+        <div class="message-picture">
+          <%= avatar_for m.user, width: 45, height: 45, crop: :thumb, gravity: :face,  class: "avatar" %>
         </div>
       </div>
     </div>
