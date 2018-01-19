@@ -5,7 +5,7 @@ class RegistriesController < ApplicationController
   before_action :set_wedding
 
   def index
-    @registries = Registry.where('wedding_id = ?', @wedding.id )
+    @registries = Registry.where('wedding_id = ?', @wedding.id ).order(:group_name)
   end
 
   def show
