@@ -7,6 +7,6 @@ class RequestMailer < ApplicationMailer
     @registry = request.registry
     @wedding = @accomodation.wedding
 
-    mail(to: "paul@mariage-participatif.fr", subject: "Nouvelle demande de logement" )
+    mail(to: "polodile.mdb@gmail.com", subject: "Nouvelle demande de logement" )
   end
 end
