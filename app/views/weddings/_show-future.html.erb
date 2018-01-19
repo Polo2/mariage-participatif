@@ -62,6 +62,7 @@
             <div class="button-container">
               <%= link_to t("wedding.guest_list.add"), new_wedding_registry_path(@wedding), class: "button button-show" %>
               <%= link_to t("wedding.guest_list.list"), wedding_registries_path(@wedding), class: "button button-show"%>
+              <%= link_to "Import Excel", wedding_registries_upload_path(@wedding), data: { confirm: "Attention, vous allez supprimer toutes les invitations déja existantes... Continuer ?" } ,class: "button button-show" %>
             </div>
           </div>
         </div>
