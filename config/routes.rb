@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :weddings do
     get "tasks/upload", to: "tasks#upload"
     get "accomodations/upload", to: "accomodations#upload"
+    get "registries/upload", to: "registries#upload"
     resources :reviews
     resources :registries do
       resources :vegetables, only: [:new, :create]
