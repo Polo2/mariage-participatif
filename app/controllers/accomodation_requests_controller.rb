@@ -11,16 +11,16 @@ before_action :set_accomodation_request, only: [:edit, :destroy, :mark_as_comple
       case @accomodation.category
         when "amis"
         @accomodation_request.statut = false
-        message = "Demande de logement chez des amis bien effectuée, on revient vers vous pour confirmer"
+        message = "Demande de logement chez des amis bien effectuée, on revient vers vous pour confirmer."
         when "hotel"
         @accomodation_request.statut = true
-        message = "Vous irez dormir à l'hôtel, merci de l'avoir indiqué"
+        message = "Vous irez dormir à l'hôtel, merci de l'avoir indiqué."
         when "home"
         @accomodation_request.statut = true
-        message = "Vous rentrerez dormir chez vous, merci de l'avoir indiqué"
+        message = "Vous rentrerez dormir chez vous, merci de l'avoir indiqué."
         when "camping"
         @accomodation_request.statut = true
-        message = "Merci, vive le camping, pensez à un duvet bien chaud"
+        message = "Merci, vive le camping ! Pensez à prendre un duvet bien chaud."
         else
       end
       @accomodation_request.registry =  current_user.registries.last
@@ -28,10 +28,10 @@ before_action :set_accomodation_request, only: [:edit, :destroy, :mark_as_comple
       if @accomodation_request.save
         redirect_to wedding_path(@wedding), notice: message
       else
-        redirect_to wedding_path(@wedding),  alert: "La demande de logement n'a pas été créée"
+        redirect_to wedding_path(@wedding),  alert: "La demande de logement n'a pas été créée."
       end
     else
-      redirect_to wedding_path(@wedding),  alert: "La demande de logement n'a pas pu être créée"
+      redirect_to wedding_path(@wedding),  alert: "La demande de logement n'a pas pu être créée."
     end
   end
 
