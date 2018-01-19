@@ -21,127 +21,127 @@ puts "Cleaning data base users"
 User.destroy_all
 
 
-puts "Création du user polo@odile - azerty"
+puts "Création de notre user polodile.mdb@gmail.com - pontigny89"
 
 
-new_user_polo = User.create({
+new_user_us = User.create({
     first_name: "Paul",
-    last_name: "de Bodi",
-    email: "paul.debodinat@gmail.com",
-    password: "azerty",
-    password_confirmation: "azerty",
-    avatar_url: "https://avatars3.githubusercontent.com/u/32060402?s=460&v=4"
+    last_name: "Monseu de Bodinat",
+    email: "polodile.mdb@gmail.com",
+    password: "pontigny89",
+    password_confirmation: "pontigny89",
     })
 
 
-puts "id polo : #{new_user_polo.id}"
+puts "notre id : #{new_user_us.id}"
 
-puts "Création du user famille@testeur - azerty"
+# puts "Création du user famille@testeur - azerty"
 
-new_user_testeur = User.create({
-    first_name: "Famille",
-    last_name: "Testeur",
-    email: "polo2bodi@gmail.com",
-    password: "azerty",
-    password_confirmation: "azerty",
-    avatar_url: "https://t3.ftcdn.net/jpg/00/65/63/24/500_F_65632409_bzggYSmL28PdjZkuAVveONRGUnOsQNjr.jpg"
-    })
+# new_user_testeur = User.create({
+#     first_name: "Famille",
+#     last_name: "Testeur",
+#     email: "polo2bodi@gmail.com",
+#     password: "azerty",
+#     password_confirmation: "azerty",
+#     avatar_url: "https://t3.ftcdn.net/jpg/00/65/63/24/500_F_65632409_bzggYSmL28PdjZkuAVveONRGUnOsQNjr.jpg"
+#     })
 
-new_user_email_testeur = User.create({
-    first_name: "Polo",
-    last_name: "de Bodi",
-    email: "jeanbalthazard@hotmail.com",
-    password: "azerty",
-    password_confirmation: "azerty",
-    avatar_url: "http://blogs.lexpress.fr/styles/froggista/files/2013/07/facteur.jpg"
-  })
+# new_user_email_testeur = User.create({
+#     first_name: "Polo",
+#     last_name: "de Bodi",
+#     email: "jeanbalthazard@hotmail.com",
+#     password: "azerty",
+#     password_confirmation: "azerty",
+#     avatar_url: "http://blogs.lexpress.fr/styles/froggista/files/2013/07/facteur.jpg"
+#   })
 
-puts "id testeurs : #{new_user_testeur.id}"
+# puts "id testeurs : #{new_user_testeur.id}"
 
 puts "Création du mariage religieux"
 
 
 
-wedding1_polo = Wedding.create({
+wedding_for_us = Wedding.create({
   title: "Mariage Odile & Paul",
   description: "3 jours, 2 folies, 1 état d'esprit : le partage !",
-  capacity: 51,
-  user_id: new_user_polo.id,
+  capacity: 300,
+  user_id: new_user_us.id,
   date: Date.new(2018, 5, 19),
   deadline: Date.new(2018, 3, 4),
   location: "Abbaye de Pontigny",
   photo_url: "https://www.le-pigeonnier-colbert.fr/wp-content/uploads/Abbaye-de-Pontigny-1040x559.jpg",
-  spouse_photo_url: "http://static1.purepeople.com/articles/7/54/05/7/@/396217-richard-gere-et-cindy-crawford-950x0-3.jpg",
   spouse_first_name: "Odile",
-  spouse_last_name: "Monseu"
+  spouse_last_name: "Monseu de Bodinat"
   })
 
-puts "Création d'1 invitation"
 
-registry_testeurs = Registry.create({
-  user_id: new_user_testeur.id,
-  wedding_id: wedding1_polo.id,
-  email: "polo2bodi@gmail.com",
-  group_name: "Testeurs",
-  address: "Rue des testeurs",
-  zipcode: "69000",
-  city: "Lyon"
-  })
+puts "id du mariage : #{wedding_for_us.id}"
+# puts "Création d'1 invitation"
 
-puts "id registry : #{registry_testeurs.id}"
+# registry_testeurs = Registry.create({
+#   user_id: new_user_testeur.id,
+#   wedding_id: wedding1_polo.id,
+#   email: "polo2bodi@gmail.com",
+#   group_name: "Testeurs",
+#   address: "Rue des testeurs",
+#   zipcode: "69000",
+#   city: "Lyon"
+#   })
 
-puts "Creation des 5 guests adultes & 1 adulte absent & 1 enfant "
+# puts "id registry : #{registry_testeurs.id}"
 
-5.times do |i|
-  Guest.create!({
-    registry_id: registry_testeurs.id,
-    name: "adulte #{i+1}",
-    child: false,
-    presence: nil
-    })
-  puts "id adulte #{i+1} : #{Guest.last.id}"
-end
+# puts "Creation des 5 guests adultes & 1 adulte absent & 1 enfant "
 
-
-Guest.create({
-    registry_id: registry_testeurs.id,
-    name: "adulte absent",
-    child: false,
-    presence: nil
-    })
-
-puts "id adulte absent : #{Guest.last.id} "
-
-Guest.create({
-  registry_id: registry_testeurs.id,
-  name: "l'enfant",
-  child: true,
-  presence: nil
-  })
-
-puts "id enfant : #{Guest.last.id} "
+# 5.times do |i|
+#   Guest.create!({
+#     registry_id: registry_testeurs.id,
+#     name: "adulte #{i+1}",
+#     child: false,
+#     presence: nil
+#     })
+#   puts "id adulte #{i+1} : #{Guest.last.id}"
+# end
 
 
+# Guest.create({
+#     registry_id: registry_testeurs.id,
+#     name: "adulte absent",
+#     child: false,
+#     presence: nil
+#     })
 
-registry_odile = Registry.create({
-  wedding_id: wedding1_polo.id,
-  email: "o.monseu@gmail.com",
-  group_name: "Monseu de Bodinat",
-  })
+# puts "id adulte absent : #{Guest.last.id} "
 
-Guest.create({
-  registry_id: registry_odile.id,
-  name: "Odile",
-  child: false,
-  presence: nil
-  })
+# Guest.create({
+#   registry_id: registry_testeurs.id,
+#   name: "l'enfant",
+#   child: true,
+#   presence: nil
+#   })
 
-Guest.create({
-  registry_id: registry_odile.id,
-  name: "Paul",
-  child: false,
-  presence: nil
-  })
+# puts "id enfant : #{Guest.last.id} "
+
+
+
+# registry_odile = Registry.create({
+#   wedding_id: wedding1_polo.id,
+#   email: "o.monseu@gmail.com",
+#   group_name: "Monseu de Bodinat",
+#   })
+
+# Guest.create({
+#   registry_id: registry_odile.id,
+#   name: "Odile",
+#   child: false,
+#   presence: nil
+#   })
+
+# Guest.create({
+#   registry_id: registry_odile.id,
+#   name: "Paul",
+#   child: false,
+#   presence: nil
+#   })
 
 
 

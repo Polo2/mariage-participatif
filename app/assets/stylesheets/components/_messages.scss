@@ -6,7 +6,7 @@
 
   .message.frame {
     background-color: #dce5df;
-    width: 60%;
+    width: 74%;
     display: flex;
     border-radius: 5px;
   }
@@ -17,7 +17,7 @@
   }
 
   .message-body {
-    flex: 0 0 70%;
+    flex: 0 0 65%;
     margin-left: 40px;
     justify-content: center;
     align-items: center;
@@ -28,12 +28,26 @@
   }
 
   .message-name {
+    flex: 0 0 20%;
     justify-content: center;
     p {
       margin: 10px;
       font-size: 10px;
       font-weight: 300;
     }
+  }
+
+  .message-picture {
+    flex: 0 0 10%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+    .avatar {
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      }
   }
 
   .message-wrapper.wedder {
