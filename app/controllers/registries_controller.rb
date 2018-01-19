@@ -55,6 +55,12 @@ class RegistriesController < ApplicationController
 
   private
 
+  def import_registries_from_json
+    file = File.read("#{Rails.root}/lib/registries_details/DB-registries.json")
+    registries_details = JSON.parse(file)
+    return registries_details["DB-registrations"]
+  end
+
   def new_guests(all_guest_list)
 
     all_guest_list.each do |guest|
@@ -69,11 +75,6 @@ class RegistriesController < ApplicationController
     @wedding.guests
   end
 
-  def import_registries_from_json
-    file = File.read("#{Rails.root}/lib/registries_details/DB-registries.json")
-    registries_details = JSON.parse(file)
-    return registries_details["DB test"]
-  end
 
   def new_registries(all_guest_list)
     mailing_list = []
@@ -88,28 +89,8 @@ class RegistriesController < ApplicationController
       registry.save
     end
     return mailing_list.map { |reg| reg["email"] }
-
-    # name_list.each { |s_name| good_hash[s_name] = [] }
-    # services_as_array.each do |service|
-    #   good_hash[service["type"]] << {
-    #     day: service["day"],
-    #     time: service["time"],
-    #     location: service["location"],
-    #     capacity: service["capacity"].to_i,
-    #     details: service["details"]
-    #   }
-    # end
   end
 
-  def creating_new_tasks_from_hash(hash_task)
-    hash_task.each do |t_name, t_services|
-      new_task = Task.new(name: t_name, wedding: @wedding, statut: false)
-      new_task.save
-      t_services.each do |service|
-        Service.create( name: service[:day], capacity: service[:capacity], appointment: service[:time] , task: new_task, day: service[:day], location: service[:location], details: service[:details]  )
-      end
-    end
-  end
 
   def set_registry
     @registry = Registry.find(params[:id])

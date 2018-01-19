@@ -1,0 +1,788 @@
+{
+  "DB test": [
+    {
+      "email": "jerome.de.bodinat@wanadoo.fr",
+      "nom de famille": "de Bodinat",
+      "prenom": "Jérôme",
+      "qualité": "Famille",
+      "invité par": "Paul"
+    },
+    {
+      "email": "odile.de.bodinat@gmail.com",
+      "nom de famille": "de Bodinat",
+      "prenom": "Odile",
+      "qualité": "Famille",
+      "invité par": "Paul"
+    },
+    {
+      "email": "edouard.de.bodinat@hotmail.fr",
+      "nom de famille": "de Bodinat",
+      "prenom": "Edouard",
+      "qualité": "Famille",
+      "invité par": "Paul"
+    },
+    {
+      "email": "claire.de.bodinat@gmail.com",
+      "nom de famille": "de Bodinat",
+      "prenom": "Claire",
+      "qualité": "Famille",
+      "invité par": "Paul"
+    },
+    {
+      "email": "hortense.de.bodinat@gmail.com",
+      "nom de famille": "Mondesert",
+      "prenom": "Hortense",
+      "qualité": "Famille",
+      "invité par": "Paul"
+    },
+    {
+      "email": "jean.baptiste.mondesert@gmail.com",
+      "nom de famille": "Mondesert",
+      "prenom": "JB",
+      "qualité": "Famille",
+      "invité par": "Paul"
+    },
+    {
+      "email": "louisdebodinat@gmail.com",
+      "nom de famille": "de Bodinat",
+      "prenom": "Louis",
+      "qualité": "Famille",
+      "invité par": "Paul"
+    },
+    {
+      "email": "meiggechaix@hotmail.com",
+      "nom de famille": "Cheix",
+      "prenom": "Meige",
+      "qualité": "Famille",
+      "invité par": "Paul"
+    },
+    {
+      "email": "peronnet.r@gmail.com",
+      "nom de famille": "Peronnet",
+      "prenom": "Jérôme",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "peronnet.r@gmail.com",
+      "nom de famille": "Peronnet",
+      "prenom": "Roseline",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "xdb41@hotmail.fr",
+      "nom de famille": "de Bodinat",
+      "prenom": "Xavier",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "xdb41@hotmail.fr",
+      "nom de famille": "de Bodinat",
+      "prenom": "Caroline",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "sylvine.bartholoni@wanadoo.fr",
+      "nom de famille": "Bartoloni",
+      "prenom": "Sylvine",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "elisabethdebodinat@gmail.com",
+      "nom de famille": "de Bodinat",
+      "prenom": "Elisabeth",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "npiquemal.ao@gmail.com",
+      "nom de famille": "Piqmal",
+      "prenom": "Nicolas",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "beatrice.nepveu@wanadoo.fr",
+      "nom de famille": "Nepveu",
+      "prenom": "Beatrice",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "beatrice.nepveu@wanadoo.fr",
+      "nom de famille": "Nepveu",
+      "prenom": "Bernard",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "pc.devesvrotte@gmail.com",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Pierre",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "pc.devesvrotte@gmail.com",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Christine",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "emmanueldevesvrotte@gmail.com",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Emmanuel",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "emmanueldevesvrotte@gmail.com",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Florence",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "annickdesaintmeleuc@orange.fr",
+      "nom de famille": "de Saint-Meleuc",
+      "prenom": "Annick",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "elisabeth.dhausen@neuf.fr",
+      "nom de famille": "d'Hausen",
+      "prenom": "Elisabeth",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "elisabeth.dhausen@neuf.fr",
+      "nom de famille": "d'Hausen",
+      "prenom": "Gabriel",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "gwemaere@gmail.com",
+      "nom de famille": "Wemaere",
+      "prenom": "Genevieve",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "gwemaere@gmail.com",
+      "nom de famille": "Wemaere",
+      "prenom": "Jean",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "michel.debroissia@free.fr",
+      "nom de famille": "de Broissia",
+      "prenom": "Michel",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "michel.debroissia@free.fr",
+      "nom de famille": "de Broissia",
+      "prenom": "Cécile",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "demonjour.el@neuf.fr",
+      "nom de famille": "de Montjour",
+      "prenom": "Edouard",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "demonjour.el@neuf.fr",
+      "nom de famille": "de Montjour",
+      "prenom": "Laure",
+      "qualité": "Oncles",
+      "invité par": "Paul"
+    },
+    {
+      "email": "peroclo@yahoo.fr",
+      "nom de famille": "Duran",
+      "prenom": "Clothilde",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "peroclo@yahoo.fr",
+      "nom de famille": "Duran",
+      "prenom": "Denis",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "martin.devesvrotte@gmail.com",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Martin",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "martin.devesvrotte@gmail.com",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Malu",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "antoine2vesvrotte@gmail.com",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Antoine",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "antoine2vesvrotte@gmail.com",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Marie",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "marinadev@hotmail.fr",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Marina",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "marinadev@hotmail.fr",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Gab",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "gautier.devesvrotte@gmail.com",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Gautier",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "amiciegardy@gmail.com",
+      "nom de famille": "Gardy",
+      "prenom": "Alexis",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "amiciegardy@gmail.com",
+      "nom de famille": "Gardy",
+      "prenom": "Amicie",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "pstvaulry@yahoo.com",
+      "nom de famille": "de Saint Vaulry",
+      "prenom": "Pauline",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "pstvaulry@yahoo.com",
+      "nom de famille": "de Saint Vaulry",
+      "prenom": "Antoine",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "charlesdebodinat@gmail.com",
+      "nom de famille": "de Bodinat",
+      "prenom": "Charles",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "antoinebartho@hotmail.fr",
+      "nom de famille": "Bartoloni",
+      "prenom": "Antoine",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "sylvine.bartholoni@wanadoo.fr",
+      "nom de famille": "Bartoloni",
+      "prenom": "Gregoire",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "victoirebartholoni@gmail.com",
+      "nom de famille": "Bartoloni",
+      "prenom": "Victoire",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "elisabethdebodinat@gmail.com",
+      "nom de famille": "Piqmal",
+      "prenom": "Achille",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "elisabethdebodinat@gmail.com",
+      "nom de famille": "Piqmal",
+      "prenom": "Jean",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "elisabethdebodinat@gmail.com",
+      "nom de famille": "Piqmal",
+      "prenom": "Gaspard",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "beatrice.nepveu@wanadoo.fr",
+      "nom de famille": "Nepveu",
+      "prenom": "Victor",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "beatrice.nepveu@wanadoo.fr",
+      "nom de famille": "Nepveu",
+      "prenom": "Arthur",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "beatrice.nepveu@wanadoo.fr",
+      "nom de famille": "Nepveu",
+      "prenom": "Clémentine",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "virginie.grivel@gmail.com",
+      "nom de famille": "Grivel",
+      "prenom": "Virginie",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "virginie.grivel@gmail.com",
+      "nom de famille": "Grivel",
+      "prenom": "Baptiste",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "marion.peronnet@yahoo.fr",
+      "nom de famille": "Peronnet",
+      "prenom": "Marion",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "clemperonnet@gmail.com",
+      "nom de famille": "Peronnet",
+      "prenom": "Clemence",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "jeandevesvrotte@gmail.com",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Jean",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "pierre-de-vesvrotte@wanadoo.fr",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Pierre",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "pierre-de-vesvrotte@wanadoo.fr",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Meg",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "marierdv@hotmail.fr",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Marie",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "marierdv@hotmail.fr",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Come",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "alice.du38@hotmail.fr",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Alice",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "emmanueldevesvrotte@gmail.com",
+      "nom de famille": "de Vesvrotte",
+      "prenom": "Anne",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "armanddemarcillac@hotmail.com;",
+      "nom de famille": "de Marcillac",
+      "prenom": "Armand",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "armanddemarcillac@hotmail.com;",
+      "nom de famille": "de Marcillac",
+      "prenom": "Edwige",
+      "qualité": "Cousins",
+      "invité par": "Paul"
+    },
+    {
+      "email": "lamourouxjean@gmail.com",
+      "nom de famille": "Lamouroux",
+      "prenom": "Jean",
+      "qualité": "Parents",
+      "invité par": "Paul"
+    },
+    {
+      "email": "lamourouxjean@gmail.com",
+      "nom de famille": "Lamouroux",
+      "prenom": "Veronique",
+      "qualité": "Parents",
+      "invité par": "Paul"
+    },
+    {
+      "email": "geraldine.tezenasdumontcel@orange.fr",
+      "nom de famille": "Tezenas",
+      "prenom": "Geraldine",
+      "qualité": "Parents",
+      "invité par": "Paul"
+    },
+    {
+      "email": "geraldine.tezenasdumontcel@orange.fr",
+      "nom de famille": "Tezenas",
+      "prenom": "Alain",
+      "qualité": "Parents",
+      "invité par": "Paul"
+    },
+    {
+      "email": "fgirod@clubinternet.fr",
+      "nom de famille": "Giraud",
+      "prenom": "Françoise",
+      "qualité": "Parents",
+      "invité par": "Paul"
+    },
+    {
+      "email": "fgirod@clubinternet.fr",
+      "nom de famille": "Giraud",
+      "prenom": "Xavier",
+      "qualité": "Parents",
+      "invité par": "Paul"
+    },
+    {
+      "email": "annelev@free.fr",
+      "nom de famille": "Leveque",
+      "prenom": "Anne",
+      "qualité": "Parents",
+      "invité par": "Paul"
+    },
+    {
+      "email": "annelev@free.fr",
+      "nom de famille": "Leveque",
+      "prenom": "Thibault",
+      "qualité": "Parents",
+      "invité par": "Paul"
+    },
+    {
+      "email": "mnj.mondesert@orange.fr",
+      "nom de famille": "Mondesert",
+      "prenom": "Jean",
+      "qualité": "Parents",
+      "invité par": "Paul"
+    },
+    {
+      "email": "mnj.mondesert@orange.fr",
+      "nom de famille": "Mondesert",
+      "prenom": "Marie-Noelle",
+      "qualité": "Parents",
+      "invité par": "Paul"
+    },
+    {
+      "email": "plgrangeon@wanadoo.fr ",
+      "nom de famille": "Grangeon & Deschavannes",
+      "prenom": "Pierre-Laurent",
+      "qualité": "Compas",
+      "invité par": "Paul"
+    },
+    {
+      "email": "plgrangeon@wanadoo.fr ",
+      "nom de famille": "Grangeon & Deschavannes",
+      "prenom": "Anne-Lyse",
+      "qualité": "Compas",
+      "invité par": "Paul"
+    },
+    {
+      "email": "robin.nardini@gmail.com",
+      "nom de famille": "Nardini",
+      "prenom": "Robin",
+      "qualité": "Compas",
+      "invité par": "Paul"
+    },
+    {
+      "email": "katom360@gmail.com",
+      "nom de famille": "Katom",
+      "prenom": "Thomas",
+      "qualité": "Compas",
+      "invité par": "Paul"
+    },
+    {
+      "email": "katia.poje@gmail.com",
+      "nom de famille": "Katom",
+      "prenom": "Katya",
+      "qualité": "Compas",
+      "invité par": "Paul"
+    },
+    {
+      "email": "sophie.jeanma@gmail.com ",
+      "nom de famille": "Blanchoz",
+      "prenom": "Jean-Ma",
+      "qualité": "Compas",
+      "invité par": "Paul"
+    },
+    {
+      "email": "sophie.jeanma@gmail.com ",
+      "nom de famille": "Blanchoz",
+      "prenom": "Sophie",
+      "qualité": "Compas",
+      "invité par": "Paul"
+    },
+    {
+      "email": "flobos31@hotmail.fr",
+      "nom de famille": "Bos / Dugrais",
+      "prenom": "Florian",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "laure.dugrais@gmail.com",
+      "nom de famille": "Bos / Dugrais",
+      "prenom": "Laure",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "caujolle.bastien@gmail.com",
+      "nom de famille": "Cauati",
+      "prenom": "Bastien",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "caujolle.bastien@gmail.com",
+      "nom de famille": "Cauati",
+      "prenom": "Flore",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "renaud.didier69@gmail.com",
+      "nom de famille": "Didier / Vinay",
+      "prenom": "Renaud",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "renaud.didier69@gmail.com",
+      "nom de famille": "Didier / Vinay",
+      "prenom": "Katya",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "valette.jerome@gmail.com",
+      "nom de famille": "Valette / Alligier",
+      "prenom": "Jérôme",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "valette.jerome@gmail.com",
+      "nom de famille": "Valette / Alligier",
+      "prenom": "Maud",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "emilienverneret@gmail.com",
+      "nom de famille": "Verneret de la Buissière",
+      "prenom": "Emilien",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "emilienverneret@gmail.com",
+      "nom de famille": "Verneret de la Buissière",
+      "prenom": "Anne",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "thibault.guerson@gmail.com ",
+      "nom de famille": "Guerson",
+      "prenom": "Thibault",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "thibault.guerson@gmail.com ",
+      "nom de famille": "Guerson",
+      "prenom": "Yasmina",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "damien.burignat@gmail.com",
+      "nom de famille": "Burignat / Demont",
+      "prenom": "Damien",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "damien.burignat@gmail.com",
+      "nom de famille": "Burignat / Demont",
+      "prenom": "Sophie",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "marieml.laurendeau@gmail.com",
+      "nom de famille": "Delahaye",
+      "prenom": "Marie",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "marieml.laurendeau@gmail.com",
+      "nom de famille": "Delahaye",
+      "prenom": "Tsegaye",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "thomas.sertorio@gmail.com",
+      "nom de famille": "Sertorio Schwarz",
+      "prenom": "Thomas",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "thomas.sertorio@gmail.com",
+      "nom de famille": "Sertorio Schwarz",
+      "prenom": "France",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "dutelarthur@gmail.com",
+      "nom de famille": "Dutel",
+      "prenom": "Arthur",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "dutelarthur@gmail.com",
+      "nom de famille": "Dutel",
+      "prenom": "Catherine",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "romain.peretmere@gmail.com",
+      "nom de famille": "Peretmere",
+      "prenom": "Romain",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "pierre.chantereau@googlemail.com",
+      "nom de famille": "Chantereau",
+      "prenom": "Pierre",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "pierre.chantereau@googlemail.com",
+      "nom de famille": "Chantereau",
+      "prenom": "Virginia",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "elise.louvet@gmail.com",
+      "nom de famille": "Louvet",
+      "prenom": "Elise",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "elise.louvet@gmail.com",
+      "nom de famille": "Louvet",
+      "prenom": "Stephen",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "e.sbravati@gmail.com",
+      "nom de famille": "Sbravatati",
+      "prenom": "Emmanuel",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "e.sbravati@gmail.com",
+      "nom de famille": "Sbravatati",
+      "prenom": "Tatiania",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "polo2bodi@gmail.com",
+      "nom de famille": "Bodinew",
+      "prenom": "Polo",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    },
+    {
+      "email": "polo2bodi@gmail.com",
+      "nom de famille": "Bodinew",
+      "prenom": "New",
+      "qualité": "Centrale",
+      "invité par": "Paul"
+    }
+  ]
+}
