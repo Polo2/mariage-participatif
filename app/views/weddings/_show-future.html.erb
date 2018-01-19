@@ -26,12 +26,17 @@
       <div class="wedding-description">
         <blockquote>
           <%= @wedding.description %>
+          <p>Nous voudrions que notre mariage soit une épopée dont nous serions tous les héros. C'est la raison pour laquelle nous invitons chacun d'entre vous à être acteur de notre mariage, dès samedi 14h !<br/> Services, surprises, animations, préparatifs, cusine... tous les moyens sont bons pour que vous preniez possession de ces trois jours, qui resteront gravés dans nos mémoires ! </p>
+          <p>Au programme : <br/>Samedi : 10h installation >> 14h café >> 15h préparatifs >> 16h vin d'honneur >> 17h répétition des chants >> 17h30 messe >> 19h procession festive >> 20h cocktail, dîner, soirée <br/>
+          Dimanche : brunch, activités ludiques et culturelles, puis dîner et soirée <br/>
+          Lundi : rangement festif !
+          </p>
         </blockquote>
       </div>
     </div>
     <div class="col-xs-12 col-sm-4 height-to-500px">
       <div class="info-wedding-location">
-        <div id="map" style="height: 400px;"></div>
+        <div id="map" style="height: 520px;"></div>
       </div>
     </div>
   </div>
@@ -52,7 +57,7 @@
               <li>Nombre d'invitations : <%= @wedding.registries.count %> </li>
               <li>Nombre d'invités : <%= @wedding.guests.count %> </li>
               <li>Nombre d'invités ayant répondu oui : <%= @wedding.guests.where(presence: true).count %>  </li>
-              <li>(dont : <%= @wedding.guests.where(presence: true).where(child: true).count %> enfants</li>
+              <li>(dont : <%= @wedding.guests.where(presence: true).where(child: true).count %> enfants)</li>
             <ul>
             <div class="button-container">
               <%= link_to t("wedding.guest_list.add"), new_wedding_registry_path(@wedding), class: "button button-show" %>
@@ -144,23 +149,23 @@
 
               <% if @registry.services.count == 0 %>
 
-                <li>C'est un mariage collaboratif, nous proposons à chacun de vous de prendre part au déroulé de cette journée</li>
-                <li>Pour chaque catégorie, il y a plusieurs services, avec heure, lieu, chef d'equipe ... et echange de messages !</li>
+                <li>Ah ! Choisir son service... quelle belle occasion de mettre ses talents à contribution !</li>
+                <li>Pour chaque catégorie, il y a plusieurs services, avec heure, lieu, co-équipiers... et echange de messages !</li>
                 <li>Pour votre groupe, choisissez <%= @registry.guests.where(presence: true, child: false).count %> service(s)</li>
-                <li>Venez voir les services proposés, rangés par catégorie, en bas de cette page</li>
+                <li>Attention, on ne peut pas se desinscrire d'un service : choissez-bien !</li>
 
               <% elsif @registry.services.count == @registry.guests.where(presence: true, child: false).count %>
 
-                <li>Vous avez choisi tous vos services ... Merci !</li>
-                <li>Vous pouvez continuer à poster et lire des messages sur chacun des services</li>
+                <li>Vous avez choisi tous vos services... Merci !</li>
+                <li>Vous pouvez continuer à poster et lire des messages sur chacun des services.</li>
                 <li>On a hâte !</li>
 
               <% else %>
                 <li>Vous avez déjà choisi <%= @registry.services.count %> sur <%= @registry.guests.where(presence: true, child: false).count %> </li>
                 <li>Merci !</li>
-                <li>Encore un peu d'inspiration pour les derniers services ? Lisez ..</li>
-                <li>Des questions à vous poser ? Ecrivez ..</li>
-                <li>Ca y est ? Inscrivez ..</li>
+                <li>Encore un peu d'inspiration pour les derniers services ? Lisez...</li>
+                <li>Des questions à vous poser ? Ecrivez..</li>
+                <li>Ca y est ? Inscrivez.</li>
               <% end %>
             </ul>
             <div class="button-container">
@@ -181,26 +186,27 @@
                 <% accomodation = @registry.accomodation_requests.last.accomodation %>
                 <% if @registry.accomodation_requests.last.statut %>
 
-                  <li>Votre logement est bien reservé</li>
+                  <li>Votre logement est bien reservé.</li>
                   <% case accomodation.category %>
                     <% when "camping"%>
-                      <li>Vous avez prévu de camper</li>
-                      <li>Vous pourrez planter la tente le samedi après midi, après le café et avant la cérémonie</li>
+                      <li>Vous avez prévu de camper,</li>
+                      <li>Vous pourrez planter la tente le samedi après midi, après le café et avant la cérémonie.</li>
                       <li>Pensez à la tente, et un bon duvet</li>
                     <% when "amis"%>
                       <li>Demande acceptée !</li>
                       <li>Vous irez dormir chez des amis à nous,</li>
-                      <li>à savoir : <%= accomodation.name %></li>
+                      <li>à savoir : <%= accomodation.name %>,</li>
                       <li>L'adresse : <%= accomodation.location %>,</li>
-                      <li>A <%= accomodation.distance %> km du lieu de la fête (à peu près)</li>
+                      <li>A <%= accomodation.distance %> km du lieu de la fête (à peu près)...</li>
                       <li>Merci qui ?</li>
                     <% when "hotel"%>
                       <li>Vous avez prévu de dormir à l'hôtel,</li>
-                      <li>A savoir : <%= accomodation.name %></li>
-                      <li>! Parfait !</li>
+                      <li>A savoir : <%= accomodation.name %>,</li>
+                      <li>Parfait !</li>
+                      <li>Prudence sur la route ;)</li>
                     <% when "home"%>
-                      <li>Vous avez prévus de rentrer dormir chez vous</li>
-                      <li>! Parfait ! et ...</li>
+                      <li>Vous avez prévus de rentrer dormir chez vous,</li>
+                      <li>Parfait ! et ...</li>
                       <li>Prudence sur la route ;)</li>
                     <% else %>
                       <li></li>
@@ -217,10 +223,11 @@
 
               <% else %>
 
-                  <li>Vous n'avez pas encore choisi (ou confirmé) votre logement</li>
-                  <li>Nous avons recensé des lieux d'acceuil proches de Pontigny</li>
-                  <li>Des amis qui nous prêtent des chambres, des hôtels, ou la solution camping</li>
-                  <li>Allez consulter la liste, et choisissez le votre</li>
+                  <li>Vous n'avez pas encore choisi (ou confirmé) votre logement.</li>
+                  <li>Nous avons recensé des lieux d'accueil près de Pontigny :</li>
+                  <li>* des amis qui nous prêtent des chambres,</li>
+                  <li>* des hôtels,</li>
+                  <li>* un champ pour camper...</li>
               <% end%>
             </ul>
             <div class="button-container">
@@ -238,15 +245,14 @@
 
             <ul class="bloc-list">
               <% if @registry.vegetable_ids.empty? %>
-                <li>Nous demandons à chacun de préparer un plat végétal</li>
-                <li>Ces plats serviront de base au cocktail, et aà l'entrée du dîner</li>
+                <li>Chacun est invité à préparer un plat végétal, que nous mangerons lors du cocktail ou comme entrée.</li>
                 <li>Alors, à vos légumes, à vos bocaux, c'est parti !</li>
-                <li>On vous propose même de publier ici votre entrée ... Belle source d'inspiration !</li>
+                <li>En postant ici une description de votre plat, vous donnerez envie et inspiration...</li>
               <% else %>
-                <li>Merci d'avoir déjà annoncé votre entrée !</li>
-                <li><%= @registry.vegetables.last.name %></li>
-                <li>Vous pourrez la confier à une equipe de service, dès le café d'acceuil</li>
-                <li>On a hâte</li>
+                <li>Merci d'avoir déjà annoncé votre entrée :</li>
+                <li><b><%= @registry.vegetables.last.name.capitalize %> !</b></li>
+                <li>Vous pourrez la confier à une équipe de service, dès le café d'acceuil...</li>
+                <li>On s'en lèche déjà les babines !</li>
               <% end %>
             </ul>
 

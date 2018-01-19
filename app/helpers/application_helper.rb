@@ -18,7 +18,7 @@ module ApplicationHelper
     if vegetable.photo.present?
       cl_image_path vegetable.photo.path, options
     else
-      image_path 'salade.jpg', options
+      image_path 'bocaux.jpg', options
     end
   end
 
