@@ -62,7 +62,7 @@
             <div class="button-container">
               <%= link_to t("wedding.guest_list.add"), new_wedding_registry_path(@wedding), class: "button button-show" %>
               <%= link_to t("wedding.guest_list.list"), wedding_registries_path(@wedding), class: "button button-show"%>
-              <%= link_to "Import Excel", wedding_registries_upload_path(@wedding), data: { confirm: "Attention, vous allez supprimer toutes les invitations déja existantes... Continuer ?" } ,class: "button button-show" %>
+              <%= link_to "Import Excel", wedding_path(@wedding), data: { confirm: "Attention, vous allez supprimer toutes les invitations déja existantes... Continuer ?" } ,class: "button button-show" %>
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@
               </ul>
               <div class="button-container">
                 <%= link_to "Detail services", wedding_services_path(@wedding), class: "button button-show" %>
-                <%= link_to t("task.initialize"), wedding_tasks_upload_path(@wedding), data: { confirm: t("task.initialize-confirmation") } ,class: "button button-show" %>
+                <%= link_to t("task.initialize"), wedding_path(@wedding), data: { confirm: t("task.initialize-confirmation") } ,class: "button button-show" %>
               </div>
           </div>
         </div>
@@ -98,7 +98,7 @@
               <div class="button-container">
                 <%= link_to "Liste logements",  wedding_accomodations_path(@wedding), class: "button button-show" %>
                 <%= link_to "Liste demandes", wedding_accomodation_requests_path(@wedding), class: "button button-show" %>
-                <%= link_to "Import Excel", wedding_accomodations_upload_path(@wedding),  data: { confirm: t("task.initialize-accomodations-confirmation") }, class: "button button-show" %>
+                <%= link_to "Import Excel", wedding_path(@wedding),  data: { confirm: t("task.initialize-accomodations-confirmation") }, class: "button button-show" %>
               </div>
           </div>
         </div>
