@@ -5,6 +5,10 @@
 
 .links {
   padding-top: 20px;
+  &.padding-down {
+    padding-top: 0px !important;
+    padding-bottom: 11px !important;
+  }
 
 }
 

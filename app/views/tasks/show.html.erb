@@ -3,9 +3,16 @@
     <span class="section-title"><%= @task.name %></span>
   </h3>
 
+  <div class="links padding-down">
+    <%= link_to t("links.back"), wedding_path(@wedding), class: "back-link" %>
+    <% if policy(@wedding).edit? %>
+      <%= link_to t("links.destroy"), wedding_task_path(@wedding, @task), method: :delete, data: { confirm: t("links.confirmation") } %>
+    <% end %>
+  </div>
+
   <div class="fullblock">
-    <% if @services.count > 0 %>
-      <div class="statut">
+    <div class="statut">
+      <% if @services.count > 0 %>
         <p>
           <% if @task.statut %>
             <i class="fa fa-check"></i>
@@ -24,8 +31,10 @@
             <%= link_to "|     Ajouter un service", new_wedding_task_service_path(@wedding, @task)%>
           <% end %>
         </p>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+
+
 
 
     <div class="row">
@@ -34,7 +43,7 @@
         <% if @services.count > 0 %>
           <div class="col-xs-12 task-details">
           <h4><%= t("task.list")%></h4>
-            <div class="rightblock bloc invited-height-block">
+            <div class="rightblock bloc">
               <ul>
               <% @services.each do |service| %>
                 <li>
@@ -92,7 +101,7 @@
         <div class="col-xs-12 discussion">
           <h4>Discussion</h4>
           <p>Espace dédié pour parler (entre autre) de : "<%= @task.name %>" </p>
-          <div class="downblock bloc invited-height-block">
+          <div class="downblock bloc">
             <%= render 'messages/messages-content' %>
           </div>
         </div>
@@ -102,7 +111,7 @@
         <% if @services.count > 0 %>
           <div class="col-xs-12 task-details">
             <h4><%= t("task.list")%></h4>
-              <div class="rightblock bloc invited-height-block">
+              <div class="rightblock bloc">
                 <ul>
                 <% @services.each do |service| %>
                   <li>
@@ -169,20 +178,14 @@
               </div>
             </div>
           <% end %>
+
           <div class="col-xs-12 discussion">
             <h4><%= t("task.messages") %></h4>
             <p>Espace dédié pour parler (entre autre) de : "<%= @task.name %>" </p>
-            <div class="leftblock bloc invited-height-block">
+            <div class="downblock bloc">
                 <%= render 'messages/messages-content' %>
             </div>
           </div>
-      <% end %>*
-    </div>
-
-    <div class=links>
-      <%= link_to t("links.back"), wedding_path(@wedding), class: "back-link" %>
-      <% if policy(@wedding).edit? %>
-        <%= link_to t("links.destroy"), wedding_task_path(@wedding, @task), method: :delete, data: { confirm: t("links.confirmation") } %>
       <% end %>
     </div>
 
