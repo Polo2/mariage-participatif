@@ -92,7 +92,7 @@
               <li>Nombre de logements proposés: <%= @wedding.accomodations.count %></li>
               <li>Nombre d'invités inscrits aux logements : <%= @wedding.nb_of_guests_with_accomodation_count %>  </li>
               <li>Nombre de logements complets : <%= @wedding.accomodations.where(complete: true).count %></li>
-              <li>Nombre de demdandes d'hebergements à traiter : <%= @wedding.accomodation_requests.where(statut: false).count %></li>
+              <li>Nombre de demandes d'hebergements à traiter : <%= @wedding.accomodation_requests.where(statut: false).count %></li>
             </ul>
               <!-- <div id="map" style="height: 250px;"></div> -->
               <div class="button-container">
@@ -132,7 +132,7 @@
               <span class="section-title"><%= t("wedding.blocs.bloc-registry")%></span>
             </h3>
               <ul class="bloc-list">
-                <li><%=  @registry.guests.count %> personnes invitées</li>
+                <li><%= @registry.guests.count%> <%=(@registry.guests.count > 1) ? "personnes invitées" : "personne invitée"%> </li>
                 <li>dont <%= @registry.guests.where(child: true).count %> enfant <%= "s" if @registry.guests.where(child: true).count > 1%> </li>
                 <li> <%= @registry.guests.where(presence: true).count %> <%= "réponse#{"s" if @registry.guests.where(presence: true).count > 1} OUI"%> </li>
               </ul>
@@ -162,7 +162,7 @@
                 <li>On a hâte !</li>
 
               <% else %>
-                <li>Vous avez déjà choisi <%= @registry.services.count %> sur <%= @registry.guests.where(presence: true, child: false).count %> </li>
+                <li>Vous avez déjà choisi <%= @registry.services.count %> service(s) sur <%= @registry.guests.where(presence: true, child: false).count %> </li>
                 <li>Merci !</li>
                 <li>Encore un peu d'inspiration pour les derniers services ? Lisez...</li>
                 <li>Des questions à vous poser ? Ecrivez..</li>
@@ -252,7 +252,7 @@
               <% else %>
                 <li>Merci d'avoir déjà annoncé votre entrée :</li>
                 <li><b><%= @registry.vegetables.last.name.capitalize %> !</b></li>
-                <li>Vous pourrez la confier à une équipe de service, dès le café d'acceuil...</li>
+                <li>Vous pourrez la confier à une équipe de service, dès le café d'accueil...</li>
                 <li>On s'en lèche déjà les babines !</li>
               <% end %>
             </ul>

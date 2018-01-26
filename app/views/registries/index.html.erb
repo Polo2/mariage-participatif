@@ -26,8 +26,8 @@
           <tr class="guests-row">
             <td><%= reg.group_name %></td>
             <td class="text-center"><%= reg.guests.count %> </td>
-            <td class="text-center"><%= reg.guests.last.presence.nil? ? "?" : "#{reg.guests.where(presence: true).count }" %></td>
-            <td></td>
+            <td class="text-center"><%= reg.guests.last.presence.nil? ? "" : "#{reg.guests.where(presence: true).count }" %></td>
+            <td><%= reg.services.count if (reg.services.count > 0)  %></td>
             <td>
               <div class="links" id="no-margin">
                   <%= link_to t("links.show"), wedding_registry_path(@wedding, reg) %>
