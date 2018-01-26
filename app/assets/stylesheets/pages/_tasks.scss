@@ -132,6 +132,8 @@ width: 95%;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 15px;
+    height: 480px;
+    overflow: auto;
   }
 
   .downblock {
@@ -139,12 +141,11 @@ width: 95%;
     padding: 10px;
     box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.1);
     margin-bottom: 15px;
-  }
-
-  .invited-height-block{
-    height: 420px;
+    height: 650px;
     overflow: auto;
   }
+
+
 
   .btn.btn-default {
     width: 100%;
