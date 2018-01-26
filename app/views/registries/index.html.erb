@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
       <h3 class="text-center">
         <span class="section-title"><%= t("wedding.guest_list.title") %></span>
       </h3>
@@ -16,14 +16,18 @@
       <div class="guest_details">
         <table>
             <tr>
-              <th><%= t("wedding.guest_list.group") %></th>
-              <th><%= t("wedding.guest_list.number_of_guests") %></th>
-              <th><%= t("wedding.guest_list.action") %></th>
+              <th>Nom de famille</th>
+              <th class="text-center">Nombre</th>
+              <th class="text-center">Présence ?</th>
+              <th class="text-center">Service ?</th>
+              <th class="text-center">Actions</th>
             </tr>
         <% @registries.each do |reg| %>
           <tr class="guests-row">
             <td><%= reg.group_name %></td>
-            <td class="text-center"><%= reg.guests.length %> </td>
+            <td class="text-center"><%= reg.guests.count %> </td>
+            <td class="text-center"><%= reg.guests.last.presence.nil? ? "?" : "#{reg.guests.where(presence: true).count }" %></td>
+            <td></td>
             <td>
               <div class="links" id="no-margin">
                   <%= link_to t("links.show"), wedding_registry_path(@wedding, reg) %>
