@@ -26,7 +26,11 @@
                 <% if acc.contact_phone? %><li><i class="fa fa-phone"></i><%= acc.contact_phone%></li> <%end%>
               </ul>
             </td>
-            <td><%= reg.group_name %></td>
+            <td>
+              <ul class="list-unstyled">
+                <li><%= reg.group_name %></li>
+                <li><%= reg.guests.first.name %></li>
+              </td>
             <td class="text-center"><%= " #{reg.guests.count} personnes, dont #{reg.guests.where(child: true).count} enfant(s)" %></td>
             <td> <%= request.created_at.strftime(" %d/%m/%Y ")%> </td>
             <td>

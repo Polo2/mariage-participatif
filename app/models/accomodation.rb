@@ -7,4 +7,10 @@ class Accomodation < ApplicationRecord
     self.complete
   end
 
+  def nb_of_guests
+    sum = 0
+    accomodation_requests.where(statut: true).each { |request| sum += request.registry.guests.where(presence: true).where(child: false).count }
+    return sum
+  end
+
 end
