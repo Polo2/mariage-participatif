@@ -18,6 +18,7 @@ class WeddingsController < ApplicationController
     unless policy(@wedding).edit?
       @registry = @wedding.registries.where(user: current_user).last unless @wedding.registries.where(user: current_user).empty?
       @registry.score_registry = @registry.update_score unless @wedding.registries.where(user: current_user).empty?
+      @registry.save unless @wedding.registries.where(user: current_user).empty?
     end
 
     # @registry = @wedding.registries.find_by(user: current_user) if @wedding.registries.where(user: current_user).present? & !policy(@wedding).edit?
