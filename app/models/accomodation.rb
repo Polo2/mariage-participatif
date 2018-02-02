@@ -13,4 +13,12 @@ class Accomodation < ApplicationRecord
     return sum
   end
 
+  def guest_list
+    guest_list = []
+    accomodation_requests.where(statut: true).each  do |request|
+      request.registry.guests.where(presence: true).where(child: false).each { |guest| guest_list << "#{request.registry.group_name.capitalize}, #{guest.name}" }
+    end
+    return guest_list
+  end
+
 end
