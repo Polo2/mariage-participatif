@@ -77,7 +77,16 @@
               <% end %>
             </td>
             <% if policy(@wedding).edit? %>
-              <td> <%= acc.nb_of_guests %> </td>
+              <td>
+                <div class="dropdown">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" ><%= acc.nb_of_guests %></a>
+                    <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                      <% acc.guest_list.each do |guest_name| %>
+                        <li><%= guest_name %></li>
+                      <% end %>
+                    </ul>
+                </div>
+              </td>
             <% end %>
           </tr>
           <% end %>
