@@ -26,7 +26,7 @@
             <li>
               <% current_user.registries.each do |reg| %>
                 <%= link_to wedding_path(reg.wedding) do %> <i class="fa fa-hourglass-half"></i>
-                  <%= reg.wedding.user.first_name %> & <%= reg.wedding.spouse_first_name %>
+                  <%= reg.wedding.spouse_first_name %> & <%= reg.wedding.user.first_name %>
                 <% end %>
               <% end %>
             </li>

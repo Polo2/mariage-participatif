@@ -8,11 +8,27 @@
         <div class="profile-weddings-infos">
           <div class="profile-wedding-org">
             <span><%= current_user.weddings.future.count %></span>
-            <p><%= t("profile.wedding_in_preparation")%></p>
+              <p> mariage organisé</p>
+              <p> <span class="links no-padding"> <%= link_to "#{current_user.weddings.last.spouse_first_name} & #{current_user.weddings.last.user.first_name}", wedding_path(current_user.weddings.last) unless current_user.weddings.empty? %>
+
+              </span></p>
           </div>
           <div class="profile-memories">
             <span><%= current_user.registries.exists? ? current_user.registries.count : 0 %></span>
-            <p>invitation(s)</p>
+            <% if current_user.registries.exists? %>
+              <ul class="list-unstyled">
+                <li><p>invitation(s) :</p></li>
+                <li class="links no-padding">
+                  <% current_user.registries.each do |reg| %>
+                    <%= link_to wedding_path(reg.wedding) do %> <i class="fa fa-hourglass-half"></i>
+                      <%= reg.wedding.spouse_first_name %> & <%= reg.wedding.user.first_name %>
+                    <% end %>
+                  <% end %>
+                </li>
+              </ul>
+            <% else %>
+              <p>invitation ...</p>
+            <% end %>
           </div>
         </div>
       </div>
