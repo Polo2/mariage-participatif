@@ -7,7 +7,7 @@ class QuestionMailer < ApplicationMailer
   #
   def new_question(question)
     @question = question
-    mail(from: "contact@mariage-participatif.fr", to: "paul@mariage-participatif.fr",  subject: "mariage-participatif.fr : Nouveau message de #{@question.name}")
+    mail(from: "paul@mariage-participatif.fr", to: "paul@mariage-participatif.fr",  subject: "mariage-participatif.fr : Nouveau message de #{@question.name}")
   end
 end
 
