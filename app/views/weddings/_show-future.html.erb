@@ -28,13 +28,13 @@
           <%= @wedding.description %>
           <p>Nous voudrions que notre mariage soit une épopée dont nous serions tous les héros. C'est la raison pour laquelle nous invitons chacun d'entre vous à être acteur de notre mariage, dès samedi 14h !<br/> Services, surprises, animations, préparatifs, cusine... tous les moyens sont bons pour que vous preniez possession de ces trois jours, qui resteront gravés dans nos mémoires ! </p>
           <p>Au programme : <br/>Samedi : 10h installation >> 14h café >> 15h préparatifs >> 16h vin d'honneur >> 17h répétition des chants >> 17h30 messe >> 19h procession festive >> 20h cocktail, dîner, soirée <br/>
-          Dimanche : brunch, activités ludiques et culturelles, puis dîner et soirée <br/>
-          Lundi : rangement festif !
+          Dimanche : brunch, activités ludiques et naturelles, courses d'orientation et jardinage,  puis dîner et soirée <br/>
+          Lundi : rangement festif, et "envoi" après le déjeuner !
           </p>
         </blockquote>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-4 height-to-500px">
+    <div class="col-xs-12 col-sm-4 min-height-for-map">
       <div class="info-wedding-location">
         <div id="map" style="height: 520px;"></div>
       </div>
@@ -56,13 +56,14 @@
             <ul class="bloc-list">
               <li>Nombre d'invitations : <%= @wedding.registries.count %> </li>
               <li>Nombre d'invités : <%= @wedding.guests.count %> </li>
+              <li>Nombre d'invités ayant répondu : <%= @wedding.guests.where(presence: true).count + @wedding.guests.where(presence: false).count %>  </li>
               <li>Nombre d'invités ayant répondu oui : <%= @wedding.guests.where(presence: true).count %>  </li>
               <li>(dont : <%= @wedding.guests.where(presence: true).where(child: true).count %> enfants)</li>
             <ul>
             <div class="button-container">
               <%= link_to t("wedding.guest_list.add"), new_wedding_registry_path(@wedding), class: "button button-show" %>
               <%= link_to t("wedding.guest_list.list"), wedding_registries_path(@wedding), class: "button button-show"%>
-              <%= link_to "Import Excel", wedding_path(@wedding), data: { confirm: "Attention, vous allez supprimer toutes les invitations déja existantes... Continuer ?" } ,class: "button button-show" %>
+              <% # link_to "Import Excel", wedding_path(@wedding), data: { confirm: "Attention, vous allez supprimer toutes les invitations déja existantes... Continuer ?" } ,class: "button button-show" %>
             </div>
           </div>
         </div>
@@ -79,7 +80,7 @@
               </ul>
               <div class="button-container">
                 <%= link_to "Detail services", wedding_services_path(@wedding), class: "button button-show" %>
-                <%= link_to t("task.initialize"), wedding_path(@wedding), data: { confirm: t("task.initialize-confirmation") } ,class: "button button-show" %>
+                <% # link_to t("task.initialize"), wedding_path(@wedding), data: { confirm: t("task.initialize-confirmation") } ,class: "button button-show" %>
               </div>
           </div>
         </div>
@@ -98,7 +99,7 @@
               <div class="button-container">
                 <%= link_to "Liste logements",  wedding_accomodations_path(@wedding), class: "button button-show" %>
                 <%= link_to "Liste demandes", wedding_accomodation_requests_path(@wedding), class: "button button-show" %>
-                <%= link_to "Import Excel", wedding_path(@wedding),  data: { confirm: t("task.initialize-accomodations-confirmation") }, class: "button button-show" %>
+                <% # link_to "Import Excel", wedding_path(@wedding),  data: { confirm: t("task.initialize-accomodations-confirmation") }, class: "button button-show" %>
               </div>
           </div>
         </div>
