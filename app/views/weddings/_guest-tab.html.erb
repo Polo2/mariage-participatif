@@ -7,8 +7,8 @@
           <h3> J - <%=  (@wedding.deadline - Date.current).to_i%> </h3>
           <p>avant la deadline</p>
         <% else %>
-          <h3>En retard</h3>
-          <p>sur la deadline!</p>
+          <h3>deadline dépassée</h3>
+          <p>RSVP</p>
         <% end %>
       </div>
       <div class="tab">
