@@ -54,3 +54,7 @@ bloc map
 
 
 last push was rejected by heroku at 1 am
+
+
+
+in order to update every registration's score, type on console : heroku run rails update_registries:score_registry
