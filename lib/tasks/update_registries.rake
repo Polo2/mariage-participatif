@@ -1,6 +1,8 @@
 namespace :update_registries do
   desc 'on veut mettre à jour le score pour chaque invitation '
 
+# tache à lancer uniquement pour le mariage pilote d'Odile et Paul, numéro id 23
+
   task score_registry: :environment do
     wedding = Wedding.find(23)
     registries = wedding.registries
@@ -11,5 +13,6 @@ namespace :update_registries do
 
   end
 
+# merci Kevin !
 
 end
