@@ -34,9 +34,7 @@ class User < ApplicationRecord
   end
 
   def link_registries
-    registries = Registry.where(email: email.downcase)
-
-    registries.each do |registry|
+    Registry.where(email: email.downcase.strip).find_each do |registry|
       registry.user = self
       registry.guests.each { |g| g.presence = nil }
       registry.save
