@@ -5,9 +5,9 @@
       <div class="tab">
         <% if (@wedding.deadline - Date.current) > 0 %>
           <h3> J - <%=  (@wedding.deadline - Date.current).to_i%> </h3>
-          <p>avant la deadline</p>
+          <p>avant la date limite</p>
         <% else %>
-          <h3>deadline dépassée</h3>
+          <h3>date limite dépassée</h3>
           <p>RSVP</p>
         <% end %>
       </div>
