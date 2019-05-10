@@ -1,10 +1,14 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+## Mariage Participatif
 
+- Step 1 : [mari-et-vous](https://github.com/Polo2/mari-et-vous)
+MVP, designed in 2 weeks during leWagon, batch 109
 
-Maintenant, ce projet devient l'adaptation a notre site de mariage collaboratif.
-Ce projet est sur github, et sur heroku.
+- Step 2 : [Mariage-Polodile](https://github.com/Polo2/Mariage-Polodile)
+Our wedding with Odile, 2018 may the 19th in Pontigny :tada:
+www.mariage-participatif.fr
 
-Site en production depuis le 10 janvier 2018.
-Mariage prévu le 19 mai 2018, pas d'évolution du site prévue d'ici là.
+- Step 3 : here !
+how to build an API from this code ?
+how to open it to others own wedding planers ?
 
 
