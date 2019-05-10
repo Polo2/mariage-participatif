@@ -12,7 +12,6 @@ class User < ApplicationRecord
 
 
 
-  after_create :send_welcome_email
   after_create :link_registries
   has_attachment :avatar, accept: [:jpg, :png, :gif, :jpeg]
 
@@ -48,6 +47,8 @@ class User < ApplicationRecord
       registry.save
     end
   end
+
+protected
 
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
