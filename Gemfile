@@ -18,6 +18,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'awesome_print'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # devise et 118n
 gem 'devise'
