@@ -10,13 +10,8 @@ class User < ApplicationRecord
   has_many :registries
   has_many :messages, dependent: :destroy
 
-
-
-  after_create :send_welcome_email
   after_create :link_registries
   has_attachment :avatar, accept: [:jpg, :png, :gif, :jpeg]
-
-
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
@@ -35,8 +30,7 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
       user.save
     end
-
-    return user
+    user
   end
 
   def link_registries
@@ -49,8 +43,9 @@ class User < ApplicationRecord
     end
   end
 
+protected
+
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
   end
-
 end
