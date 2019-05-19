@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.5'
+ruby "2.5.5"
 
 gem 'omniauth-facebook'
 gem 'figaro'
@@ -21,7 +21,7 @@ gem 'awesome_print'
 gem 'dotenv-rails', groups: [:development, :test]
 
 # devise et 118n
-gem 'devise'
+gem "devise", "~> 4.4"
 gem 'rails-i18n', '5.0.3'
 gem 'devise-i18n', '~> 1.2 '
 
