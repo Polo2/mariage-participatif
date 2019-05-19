@@ -1,0 +1,40 @@
+{
+  "name": "mariage-participatif",
+  "scripts": {
+    "postdeploy":
+      "rails db:drop db:create db:migrate db:seed"
+  },
+  "env": {
+    "CLOUDINARY_URL" : {
+      "required": true
+    },
+    "LANG" : {
+      "required": true
+    },
+    "RACK_ENV" : {
+      "required": true
+    },
+    "RAILS_ENV" : {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT" : {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES" : {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
