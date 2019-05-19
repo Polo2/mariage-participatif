@@ -22,11 +22,17 @@
     },
     "RAILS_SERVE_STATIC_FILES" : {
       "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
     }
   },
   "formation": {
     "web": {
       "quantity": 1
+    },
+    "worker": {
+      "quantity": 0
     }
   },
   "addons": [
