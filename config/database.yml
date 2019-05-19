@@ -76,10 +76,12 @@ test:
 # You can use this database configuration with:
 #
 #   production:
-#     url: <%= ENV['DATABASE_URL'] %>
+#     url: <%= ENV["DATABASE_URL"] %>
 #
+
+# TODO : do we need a password on db production ???
 production:
   <<: *default
   database: mariage-participatif_production
   username: mariage-participatif
-  password: <%= ENV['MARIAGE-PARTICIPATIF_DATABASE_PASSWORD'] %>
+  password: <%= ENV["MARIAGE-PARTICIPATIF_DATABASE_PASSWORD"] %>

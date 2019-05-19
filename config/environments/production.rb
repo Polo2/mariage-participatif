@@ -1,7 +1,7 @@
 Rails.application.configure do
 
   config.action_mailer.delivery_method = :postmark
-  config.action_mailer.postmark_settings   = { api_key: ENV['POSTMARK_API_KEY'] }
+  config.action_mailer.postmark_settings   = { api_key: ENV["POSTMARK_API_KEY"] }
   config.action_mailer.default_url_options = { host: "http://www.mariage-participatif.fr" }
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -20,7 +20,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
