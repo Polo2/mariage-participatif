@@ -40,7 +40,6 @@ wedding = Wedding.create!(
   date: Date.new(2020, 5, 19),
   deadline: Date.new(2020, 3, 4),
   location: "Abbaye de Pontigny",
-  photo_url: "https://www.le-pigeonnier-colbert.fr/wp-content/uploads/Abbaye-de-Pontigny-1040x559.jpg",
   spouse_first_name: "Odile",
   spouse_last_name: "M2B",
 )
