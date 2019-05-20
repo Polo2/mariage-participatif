@@ -2,7 +2,7 @@
   "name": "mariage-participatif",
   "scripts": {
     "postdeploy":
-      "rails db:drop db:create db:migrate db:seed"
+      "rails db:migrate db:seed"
   },
   "env": {
     "CLOUDINARY_URL" : {
