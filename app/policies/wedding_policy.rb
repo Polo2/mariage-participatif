@@ -1,7 +1,6 @@
 class WeddingPolicy < ApplicationPolicy
-
   def new?
-    true
+    create?
   end
 
   def create?
@@ -17,7 +16,7 @@ class WeddingPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    edit? || user.registries.where(wedding: record).any?
   end
 
   def destroy?
