@@ -32,9 +32,9 @@
 
 
           <div class="tab">
-            <h3><%= @messages_count %></h3>
+            <h3><%= @wedding.unread_messages_count %></h3>
             <p>
-              <%= @messages_count > 1 ? t("wedding.wedder_tab.new_messages") : t("wedding.wedder_tab.new_message") %>
+              <%= @wedding.unread_messages_count > 1 ? t("wedding.wedder_tab.new_messages") : t("wedding.wedder_tab.new_message") %>
             </p>
           </div>
         </div>

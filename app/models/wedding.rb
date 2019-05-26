@@ -3,6 +3,7 @@ class Wedding < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :services, through: :tasks
+  has_many :messages, through: :tasks
   has_many :registries, dependent: :destroy
   has_many :guests, through: :registries
   has_many :vegetables, through: :registries
@@ -54,5 +55,9 @@ class Wedding < ApplicationRecord
 
   def tasks_without_service
     tasks.without_service
+  end
+
+  def unread_messages_count
+    messages.where(read: false).count
   end
 end

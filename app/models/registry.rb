@@ -11,15 +11,7 @@ class Registry < ApplicationRecord
 
   before_create :set_user_id
 
-  # def status
-  #   if @registry.guests.presence == true
-  #     return "Confirmed"
-  #   else
-  #     return "Pending"
-  #   end
-  # end
-
-  def update_score
+  def update_score!
     score = 0
     score += self.guests.where(presence: nil).empty? ? 25 : 0
     score += ( (self.services.count == self.guests.where(child: false).where(presence: true).count) && self.guests.where(presence: nil).empty?  ) ? 25 : 0
@@ -27,9 +19,8 @@ class Registry < ApplicationRecord
       score += self.accomodation_requests.last.statut ? 25 : 15
     end
     score += ( !self.vegetables.empty? && self.guests.where(presence: nil).empty? ) ? 25 : 0
-    return score
+    self.update!(score_registry: score)
   end
-
 
   private
 
@@ -40,6 +31,4 @@ class Registry < ApplicationRecord
       self.user_id = @user.id
     end
   end
-
-
 end
