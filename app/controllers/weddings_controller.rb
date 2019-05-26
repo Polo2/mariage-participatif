@@ -37,7 +37,7 @@ class WeddingsController < ApplicationController
     authorize(@wedding)
     respond_to do |format|
       if @wedding.save
-        format.html { redirect_to @wedding, notice: t("flash-messages.wedding-created") }
+        format.html { redirect_to @wedding, notice: t("flash_messages.wedding-created") }
         format.json { render :show, status: :created, location: @wedding }
       else
         format.html { render :new }
@@ -50,7 +50,7 @@ class WeddingsController < ApplicationController
     authorize(@wedding)
     respond_to do |format|
       if @wedding.update(wedding_params)
-        format.html { redirect_to @wedding, notice: t("flash-messages.wedding-updated") }
+        format.html { redirect_to @wedding, notice: t("flash_messages.wedding-updated") }
         format.json { render :show, status: :ok, location: @wedding }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class WeddingsController < ApplicationController
     authorize(@wedding)
     @wedding.destroy
     respond_to do |format|
-      format.html { redirect_to weddings_url, notice: t("flash-messages.wedding-destroyed") }
+      format.html { redirect_to weddings_url, notice: t("flash_messages.wedding-destroyed") }
       format.json { head :no_content }
     end
   end
@@ -73,7 +73,7 @@ private
   def set_wedding
     @wedding = Wedding.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      redirect_to weddings_path, notice: t("flash-messages.wedding-does-not-exist")
+      redirect_to weddings_path, notice: t("flash_messages.wedding-does-not-exist")
   end
 
   def wedding_params
