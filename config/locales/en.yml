@@ -99,6 +99,8 @@ en:
     new_message: "Write new message :"
     needs: "Needs"
     add_element: "Add element"
+  flash_messages:
+    user_not_authorized: "You are not authorized to perform this action."
 
 
 

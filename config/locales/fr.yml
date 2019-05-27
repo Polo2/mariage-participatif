@@ -114,7 +114,8 @@ fr:
     back_to_wedding: "Retour au mariage"
     confirmation: "Certain ?"
     validate: "Valider"
-  flash-messages:
+  flash_messages:
+    user_not_authorized: "Vous n'êtes pas invité à faire ça, désolé."
     wedding-created: "Votre mariage a bien été créée"
     wedding-updated: "Votre mariage a été mis à jour"
     wedding-destroyed: "Ce mariage a bien été supprimé du site web"
