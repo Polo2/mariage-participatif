@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-8 height-to-500px">
+    <div class="wedding-informations">
+      <div class="spouse-photo">
+        <% if @wedding.spouse_photo? %>
+          <%= cl_image_tag @wedding.spouse_photo.path, width: 130, height: 130, crop: :thumb, gravity: :center %>
+        <% end %>
+      </div>
+      <div class="details">
+        <ul>
+          <li class="primary">
+            <%= icon("heart") %>
+            <%= @wedding.user.first_name %> & <%= @wedding.spouse_first_name %>
+          </li>
+          <li class="secondary">
+            <%= icon("calendar") %><%= @wedding.date %>
+          </li>
+          <li class="secondary">
+            <%= icon("map-marker") %><%= @wedding.location %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="wedding-description">
+      <blockquote>
+        <%= @wedding.description %>
+      </blockquote>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4 min-height-for-map">
+    <div class="info-wedding-location">
+      <div id="map" style="height: 520px;"></div>
+    </div>
+  </div>
+</div>

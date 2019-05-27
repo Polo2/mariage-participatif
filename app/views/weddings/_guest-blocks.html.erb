@@ -1,0 +1,107 @@
+<div class="4-blocs">
+  <h2 class="text-center"><span class="section-title">Pour valider votre venue</span></h2>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="wedding-bloc invitations">
+        <h3 class="text-center">
+          <span class="section-title"><%= t("wedding.blocs.bloc-registry")%></span>
+        </h3>
+        <ul class="bloc-list">
+          <li><%= @registry.guests.count%> <%=(@registry.guests.count > 1) ? "personnes invitées" : "personne invitée"%> </li>
+          <li>dont <%= @registry.guests.where(child: true).count %> enfant <%= "s" if @registry.guests.where(child: true).count > 1%> </li>
+          <li> <%= @registry.guests.where(presence: true).count %> <%= "réponse#{"s" if @registry.guests.where(presence: true).count > 1} OUI"%> </li>
+        </ul>
+        <div class="button-container">
+          <%= link_to t("wedding.guest.go_to_registry"), wedding_registry_path(@wedding, @registry), class: "button button-show" %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="wedding-bloc task">
+        <h3 class="text-center">
+          <span class="section-title"><%= t("wedding.blocs.bloc-task")%></span>
+         </h3>
+         <ul class="bloc-list">
+          <% if @registry.services.count == 0 %>
+            <li>Merci de choisir <%= @registry.guests.where(presence: true, child: false).count %> services </li>
+          <% elsif @registry.services.count == @registry.guests.where(presence: true, child: false).count %>
+            <li>Vous avez choisi tous vos services... Merci !</li>
+          <% else %>
+            <li><%= @registry.services.count %> service(s) sur <%= @registry.guests.where(presence: true, child: false).count %> </li>
+            <li>Encore un effort SVP</li>
+          <% end %>
+        </ul>
+        <div class="button-container">
+          <a class="button button-show" href="#task-discussion-container">Liste des services</a>
+          <% unless @registry.services.count == 0 %>
+            <%= link_to "Vos services", wedding_services_path(@wedding), class: "button button-show" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="wedding-bloc accomodations">
+        <h3 class="text-center">
+          <span class="section-title"><%= t("wedding.blocs.bloc-accomodations")%></span>
+        </h3>
+        <ul class="bloc-list">
+          <% if !@registry.accomodation_request_ids.empty? %>
+            <% accomodation = @registry.accomodation_requests.last.accomodation %>
+            <% if @registry.accomodation_requests.last.statut %>
+              <li>Votre logement est bien reservé.</li>
+              <% case accomodation.category %>
+                <% when "camping"%>
+                  <li>Vous avez prévu de camper,</li>
+                <% when "amis"%>
+                  <li>Vous irez dormir chez des amis à nous,</li>
+                  <li>à savoir : <%= accomodation.name %>,</li>
+                  <li>L'adresse : <%= accomodation.location %>,</li>
+                  <li>A <%= accomodation.distance %> km du lieu de la fête (à peu près)...</li>
+                <% when "hotel"%>
+                  <li>Vous avez prévu de dormir à l'hôtel,</li>
+                  <li>A savoir : <%= accomodation.name %>,</li>
+                  <li>Prudence sur la route ;)</li>
+                <% when "home"%>
+                  <li>Vous avez prévus de rentrer dormir chez vous,</li>
+                  <li>Prudence sur la route ;)</li>
+                <% else %>
+                  <li></li>
+              <% end %>
+            <% else %>
+              <li>Merci d'avoir demandé à être acceuilli chez des amis</li>
+              <li>à savoir : <%= accomodation.name %></li>
+              <li>Nous sommes en train de voir avec eux, on revient vers vous</li>
+            <% end %>
+          <% else %>
+              <li>Vous n'avez pas encore choisi (ou confirmé) votre logement.</li>
+          <% end%>
+        </ul>
+        <div class="button-container">
+          <% if @registry.accomodation_request_ids.empty? %>
+            <%= link_to "Liste des logements", wedding_accomodations_path(@wedding), class: "button button-show" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="wedding-bloc vegetable">
+        <h3 class="text-center">
+          <span class="section-title"><%= t("wedding.blocs.bloc-vegetable") %></span>
+        </h3>
+        <ul class="bloc-list">
+          <% if @registry.vegetable_ids.empty? %>
+            <li>Chacun est invité à préparer un plat végétal, à publier ici</li>
+          <% else %>
+            <li>Merci d'avoir déjà annoncé votre entrée :</li>
+            <li><b><%= @registry.vegetables.last.name.capitalize %> !</b></li>
+          <% end %>
+        </ul>
+        <div class="button-container">
+          <%= link_to "Voir liste", wedding_vegetables_path(@wedding), class: "button button-show" %>
+          <%= link_to "Nouvelle entrée", new_wedding_registry_vegetable_path(@wedding, @registry), class: "button button-show" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
