@@ -79,7 +79,7 @@ private
   def wedding_params
     params.require(:wedding).permit(
       :title, :description, :date, :location, :capacity, :photo, :spouse_photo,
-      :spouse_first_name, :spouse_last_name, album_photos: []
+      :spouse_first_name, :spouse_last_name
     )
   end
 end

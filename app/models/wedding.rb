@@ -15,7 +15,6 @@ class Wedding < ApplicationRecord
 
   has_attachment :photo
   has_attachment :spouse_photo
-  has_attachments :album_photos, maximun: 30
 
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
