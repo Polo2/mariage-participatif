@@ -1,0 +1,75 @@
+<div class="4-blocs">
+  <h2 class="text-center"><span class="section-title">Vos catégories</span></h2>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="wedding-bloc invitations">
+        <h3 class="text-center">
+          <span class="section-title">
+            <%= t("wedding.blocs.bloc-registry")%>
+          </span>
+        </h3>
+        <ul class="bloc-list">
+          <li>Nombre d'invitations : <%= @wedding.registries.count %> </li>
+          <li>Nombre d'invités : <%= @wedding.guests.count %> </li>
+          <li>Nombre d'invités ayant répondu :
+            <%= @wedding.answered_guests_count %>
+          </li>
+          <li>Nombre d'invités ayant répondu oui : <%= @wedding.present_guests_count %>  </li>
+          <li>(dont : <%= @wedding.present_childs_count %> enfants)</li>
+        </ul>
+        <div class="button-container">
+          <%= link_to t("wedding.guest_list.add"), new_wedding_registry_path(@wedding), class: "button button-show" %>
+          <%= link_to t("wedding.guest_list.list"), wedding_registries_path(@wedding), class: "button button-show"%>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="wedding-bloc tasks">
+        <h3 class="text-center">
+        <span class="section-title"><%= t("wedding.blocs.bloc-task")%></span>
+        </h3>
+          <ul class="bloc-list">
+            <li>Nombre de services proposés : <%= @wedding.services_count %></li>
+            <li>Nombre d'invités inscrits   : <%= @wedding.guests_registred_to_a_service_count %></li>
+            <li>Nombre de services complets : <%= @wedding.complete_services_count %> </li>
+            <li>Nombre d'invités nécessaire : <%= @wedding.guests_needed_for_service_count %>  </li>
+          </ul>
+          <div class="button-container">
+            <%= link_to "Detail services", wedding_services_path(@wedding), class: "button button-show" %>
+          </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="wedding-bloc accomodations">
+        <h3 class="text-center">
+          <span class="section-title">
+            <%= t("wedding.blocs.bloc-accomodations")%>
+          </span>
+        </h3>
+        <ul class="bloc-list">
+          <li>Nombre de logements proposés: <%= @wedding.accomodations_count %></li>
+          <li>Nombre d'invités inscrits aux logements : <%= @wedding.nb_of_guests_with_accomodation_count %>  </li>
+          <li>Nombre de logements complets : <%= @wedding.complete_accomodations_count %></li>
+          <li>Nombre de demandes d'hebergements à traiter : <%= @wedding.pending_accomodation_requests_count %></li>
+        </ul>
+        <div class="button-container">
+          <%= link_to "Liste logements", wedding_accomodations_path(@wedding), class: "button button-show" %>
+          <%= link_to "Liste demandes", wedding_accomodation_requests_path(@wedding), class: "button button-show" %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="wedding-bloc vegetable">
+        <h3 class="text-center">
+          <span class="section-title"><%= t("wedding.blocs.bloc-vegetable") %></span>
+        </h3>
+        <ul class="bloc-list">
+          <li>Déjà <%= @wedding.vegetables_count %> entrées préparées</li>
+        </ul>
+        <div class="button-container">
+          <%= link_to "Voir liste entrées", wedding_vegetables_path(@wedding), class: "button button-show" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

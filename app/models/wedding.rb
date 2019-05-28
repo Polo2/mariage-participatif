@@ -32,12 +32,24 @@ class Wedding < ApplicationRecord
     services.select(&:is_service_complete?).count
   end
 
-  def nb_of_guests_registred_to_a_service_count
+  def guests_registred_to_a_service_count
     guests.where.not(service_id: nil).count
   end
 
   def guests_needed_for_service_count
-    services.pluck(:capacity).sum - nb_of_guests_registred_to_a_service_count
+    services.pluck(:capacity).sum - guests_registred_to_a_service_count
+  end
+
+  def accomodations_count
+    accomodations.count
+  end
+
+  def complete_accomodations_count
+    accomodations.where(complete: true).count
+  end
+
+  def pending_accomodation_requests_count
+    accomodation_requests.where(statut: false).count
   end
 
   # TODO : should be improved
@@ -47,6 +59,22 @@ class Wedding < ApplicationRecord
         registry.guests.where(child: false).where(presence: true).count
       end
     end.sum
+  end
+
+  def present_guests_count
+    guests.where(presence: true).count
+  end
+
+  def absent_guests_count
+    guests.where(presence: false).count
+  end
+
+  def answered_guests_count
+    present_guests_count + absent_guests_count
+  end
+
+  def present_childs_count
+    guests.where(presence: true).where(child: true).count
   end
 
   def tasks_with_service
@@ -59,5 +87,9 @@ class Wedding < ApplicationRecord
 
   def unread_messages_count
     messages.where(read: false).count
+  end
+
+  def vegetables_count
+    vegetables.count
   end
 end
