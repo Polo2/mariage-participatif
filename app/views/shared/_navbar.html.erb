@@ -13,7 +13,7 @@
       <% if current_user.weddings.empty? %>
         <%= link_to t("navbar.create_my_wedding"),  root_path , class: "navbar-wagon-item navbar-wagon-link" %>
       <% else %>
-        <%= link_to wedding_path(current_user.weddings.future.last), class: "navbar-wagon-item navbar-wagon-link" do %>
+        <%= link_to wedding_path(current_user.weddings.last), class: "navbar-wagon-item navbar-wagon-link" do %>
             <i class="fa fa-hourglass-half"></i>
             <%= t("navbar.see_my_wedding") %>
         <% end %>
@@ -89,7 +89,7 @@
             <li><%= link_to "#{t("navbar.create_my_wedding")}",  root_path %></li>
           <% else %>
             <li>
-              <%= link_to wedding_path(current_user.weddings.future.last) do %>
+              <%= link_to wedding_path(current_user.weddings.last) do %>
                 <i class="fa fa-hourglass-half"></i>
                 <%= t("navbar.see_my_wedding") %>
               <% end %>

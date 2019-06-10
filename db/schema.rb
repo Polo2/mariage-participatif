@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180117213057) do
+ActiveRecord::Schema.define(version: 20190528115745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -191,7 +191,6 @@ ActiveRecord::Schema.define(version: 20180117213057) do
     t.string   "spouse_photo"
     t.string   "spouse_first_name"
     t.string   "spouse_last_name"
-    t.string   "album_photos"
     t.date     "deadline"
     t.index ["user_id"], name: "index_weddings_on_user_id", using: :btree
   end

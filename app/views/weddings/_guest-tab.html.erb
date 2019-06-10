@@ -3,9 +3,12 @@
   <div class="col-xs-12">
     <div class="tabs">
       <div class="tab">
-        <% if (@wedding.deadline - Date.current) > 0 %>
+        <% if Date.current < @wedding.deadline %>
           <h3> J - <%=  (@wedding.deadline - Date.current).to_i%> </h3>
           <p>avant la date limite</p>
+        <% elsif @wedding.passed? %>
+          <h3>MERCI</h3>
+          <p>c'était top !</p>
         <% else %>
           <h3>date limite dépassée</h3>
           <p>RSVP</p>
