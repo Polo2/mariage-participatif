@@ -1,21 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
-      <h3 class="text-center">
-        <span class="section-title"> Nouvelle catégorie (de services) pour nouvelle discussion </span>
-      </h3>
       <div class="breath">
         <%= simple_form_for([@wedding, @task]) do |f| %>
-
-          <%= f.input :name, label: false, placeholder: "catégorie ?", class: "button" %>
-
+          <%= f.input :name, label: "Nouvelle discussion, intitulée..." %>
           <%= f.submit t("task.create"), class: "button maxwidth" %>
-
         <% end %>
       </div>
     </div>
   </div>
 </div>
-
-<!-- en sortie, j'espère récupérer un tableau @task_list_checked, avec la selection des task.name qui a été choisie avec check-box -->
-

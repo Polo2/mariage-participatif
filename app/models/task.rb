@@ -12,4 +12,13 @@ class Task < ApplicationRecord
   def self.without_service
     where.not id: self.with_service.pluck(:id)
   end
+
+  def unread_messages_count
+    messages.where(read: false).count
+  end
+
+  def unread_messages_count_to_display
+    return "" unless unread_messages_count > 0
+    "#{unread_messages_count} message#{unread_messages_count > 1 ? "s" : ""}"
+  end
 end

@@ -20,7 +20,7 @@ width: 95%;
 
     a {
       text-decoration: none;
-     }
+    }
 
     img {
       margin: 9px;
@@ -30,7 +30,8 @@ width: 95%;
       margin: 11px;
       margin-right: 9px;
       border-radius: 3px;
-  }
+    }
+
     .taskname {
       padding: 5px;
       color: #726e6e !important;
@@ -40,7 +41,19 @@ width: 95%;
       border: 1px solid white;
       height: 80px;
       width: 130px;
-       }
+    }
+
+    #newTask {
+      padding: 20px;
+      letter-spacing: 0px;
+      border: 1px solid $header-grey;
+      height: 80px;
+      width: 130px;
+      background-color: $header-grey !important;
+      .fa {
+        color: white !important;
+      }
+    }
 
   .button:hover {
       box-shadow: 0px 0px 10px #E0E0E0;
@@ -52,7 +65,7 @@ width: 95%;
       color: #726e6e;
       font-size: 13px;
       padding-top:6px;
-
+      font-style: italic;
   }
 
   .statut {
