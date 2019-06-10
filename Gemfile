@@ -6,7 +6,7 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
 gem 'puma'
-gem 'rails', '5.0.6'
+gem 'rails', '~> 5.2.3'
 gem 'redis'
 gem 'pundit'
 gem 'cocoon'
@@ -15,14 +15,15 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'sass-rails'
-gem 'simple_form'
+gem 'simple_form', '~> 4.1'
 gem 'uglifier'
 gem 'awesome_print'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'webpacker'
 
 # devise et 118n
 gem "devise", "~> 4.4"
-gem 'rails-i18n', '5.0.3'
+gem 'rails-i18n'
 gem 'devise-i18n', '~> 1.2 '
 
 # attachinary
@@ -51,6 +52,3 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener'
 end
-
-
-
