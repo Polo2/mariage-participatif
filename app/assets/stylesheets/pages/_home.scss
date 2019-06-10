@@ -5,22 +5,21 @@
   .phrase {
     font-family: 'Chivo', sans-serif;
     color: white;
-    text-align: center;
-    padding: 135px;
+    padding: 33px;
     font-size: 30px;
     z-index: 1;
   }
 
   .parallax {
       /* The image used */
-    background-image: asset-url("wedding3.jpg");
+    background-image: asset-url("polodile.jpg");
 
     /* Set a specific height */
     height: 500px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: center;
+    background-position-x: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
