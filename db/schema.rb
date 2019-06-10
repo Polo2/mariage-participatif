@@ -10,189 +10,190 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190528115745) do
+ActiveRecord::Schema.define(version: 2019_05_28_115745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accomodation_requests", force: :cascade do |t|
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "registry_id"
-    t.integer  "accomodation_id"
-    t.boolean  "statut"
-    t.index ["accomodation_id"], name: "index_accomodation_requests_on_accomodation_id", using: :btree
-    t.index ["registry_id"], name: "index_accomodation_requests_on_registry_id", using: :btree
-  end
-
-  create_table "accomodations", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "capacity"
-    t.string   "location"
-    t.string   "contact_name"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "wedding_id"
-    t.string   "contact_email"
-    t.string   "contact_website"
-    t.string   "contact_phone"
-    t.integer  "distance"
-    t.string   "category"
-    t.boolean  "complete"
-    t.index ["wedding_id"], name: "index_accomodations_on_wedding_id", using: :btree
-  end
-
-  create_table "attachinary_files", force: :cascade do |t|
-    t.string   "attachinariable_type"
-    t.integer  "attachinariable_id"
-    t.string   "scope"
-    t.string   "public_id"
-    t.string   "version"
-    t.integer  "width"
-    t.integer  "height"
-    t.string   "format"
-    t.string   "resource_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
-  end
-
-  create_table "guests", force: :cascade do |t|
-    t.integer  "registry_id",                 null: false
-    t.string   "name",                        null: false
-    t.boolean  "presence",    default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.boolean  "child"
-    t.integer  "service_id"
-    t.index ["registry_id"], name: "index_guests_on_registry_id", using: :btree
-    t.index ["service_id"], name: "index_guests_on_service_id", using: :btree
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.text     "content"
+  create_table "accomodation_requests", id: :serial, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.integer  "task_id"
-    t.boolean  "read"
-    t.index ["task_id"], name: "index_messages_on_task_id", using: :btree
-    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
+    t.integer "registry_id"
+    t.integer "accomodation_id"
+    t.boolean "statut"
+    t.index ["accomodation_id"], name: "index_accomodation_requests_on_accomodation_id"
+    t.index ["registry_id"], name: "index_accomodation_requests_on_registry_id"
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "message"
+  create_table "accomodations", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.integer "capacity"
+    t.string "location"
+    t.string "contact_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "wedding_id"
+    t.string "contact_email"
+    t.string "contact_website"
+    t.string "contact_phone"
+    t.integer "distance"
+    t.string "category"
+    t.boolean "complete"
+    t.index ["wedding_id"], name: "index_accomodations_on_wedding_id"
+  end
+
+  create_table "attachinary_files", id: :serial, force: :cascade do |t|
+    t.string "attachinariable_type"
+    t.integer "attachinariable_id"
+    t.string "scope"
+    t.string "public_id"
+    t.string "version"
+    t.integer "width"
+    t.integer "height"
+    t.string "format"
+    t.string "resource_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
+    t.index ["attachinariable_type", "attachinariable_id"], name: "attachinariable_index_name"
+  end
+
+  create_table "guests", id: :serial, force: :cascade do |t|
+    t.integer "registry_id", null: false
+    t.string "name", null: false
+    t.boolean "presence", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "child"
+    t.integer "service_id"
+    t.index ["registry_id"], name: "index_guests_on_registry_id"
+    t.index ["service_id"], name: "index_guests_on_service_id"
+  end
+
+  create_table "messages", id: :serial, force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "task_id"
+    t.boolean "read"
+    t.index ["task_id"], name: "index_messages_on_task_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "questions", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "registries", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "wedding_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "email"
-    t.integer  "total"
-    t.string   "group_name"
-    t.string   "address"
-    t.integer  "zipcode"
-    t.string   "city"
-    t.integer  "accomodation_id"
-    t.integer  "score_registry"
-    t.index ["accomodation_id"], name: "index_registries_on_accomodation_id", using: :btree
-    t.index ["user_id"], name: "index_registries_on_user_id", using: :btree
-    t.index ["wedding_id"], name: "index_registries_on_wedding_id", using: :btree
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.string   "content"
-    t.integer  "wedding_id"
+  create_table "registries", id: :serial, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "wedding_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["wedding_id"], name: "index_reviews_on_wedding_id", using: :btree
+    t.string "email"
+    t.integer "total"
+    t.string "group_name"
+    t.string "address"
+    t.integer "zipcode"
+    t.string "city"
+    t.integer "accomodation_id"
+    t.integer "score_registry"
+    t.index ["accomodation_id"], name: "index_registries_on_accomodation_id"
+    t.index ["user_id"], name: "index_registries_on_user_id"
+    t.index ["wedding_id"], name: "index_registries_on_wedding_id"
   end
 
-  create_table "services", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "capacity"
-    t.integer  "user_id"
-    t.integer  "task_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "appointment"
-    t.string   "day"
-    t.string   "location"
-    t.string   "details"
-    t.index ["task_id"], name: "index_services_on_task_id", using: :btree
-    t.index ["user_id"], name: "index_services_on_user_id", using: :btree
-  end
-
-  create_table "tasks", force: :cascade do |t|
-    t.string   "name"
+  create_table "reviews", id: :serial, force: :cascade do |t|
+    t.string "content"
+    t.integer "wedding_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "wedding_id"
-    t.boolean  "statut"
-    t.index ["wedding_id"], name: "index_tasks_on_wedding_id", using: :btree
+    t.index ["wedding_id"], name: "index_reviews_on_wedding_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "services", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.integer "capacity"
+    t.integer "user_id"
+    t.integer "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "appointment"
+    t.string "day"
+    t.string "location"
+    t.string "details"
+    t.index ["task_id"], name: "index_services_on_task_id"
+    t.index ["user_id"], name: "index_services_on_user_id"
+  end
+
+  create_table "tasks", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "wedding_id"
+    t.boolean "statut"
+    t.index ["wedding_id"], name: "index_tasks_on_wedding_id"
+  end
+
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "facebook_picture_url"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "token"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "provider"
+    t.string "uid"
+    t.string "facebook_picture_url"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "token"
     t.datetime "token_expiry"
-    t.string   "location"
-    t.string   "avatar"
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.string "location"
+    t.string "avatar"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "vegetables", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "name"
-    t.string   "photo"
-    t.integer  "registry_id"
-    t.string   "slogan"
-    t.integer  "capacity"
-    t.index ["registry_id"], name: "index_vegetables_on_registry_id", using: :btree
+  create_table "vegetables", id: :serial, force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "photo"
+    t.integer "registry_id"
+    t.string "slogan"
+    t.integer "capacity"
+    t.index ["registry_id"], name: "index_vegetables_on_registry_id"
   end
 
-  create_table "weddings", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.date     "date"
-    t.string   "location"
-    t.string   "photo"
-    t.integer  "capacity"
-    t.integer  "user_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "token"
-    t.string   "spouse_photo"
-    t.string   "spouse_first_name"
-    t.string   "spouse_last_name"
-    t.date     "deadline"
-    t.index ["user_id"], name: "index_weddings_on_user_id", using: :btree
+  create_table "weddings", id: :serial, force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.date "date"
+    t.string "location"
+    t.string "photo"
+    t.integer "capacity"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "token"
+    t.string "spouse_photo"
+    t.string "spouse_first_name"
+    t.string "spouse_last_name"
+    t.date "deadline"
+    t.index ["user_id"], name: "index_weddings_on_user_id"
   end
 
   add_foreign_key "messages", "tasks"
