@@ -4,25 +4,24 @@ ruby "2.5.5"
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
-gem 'pg'
+gem 'pg', '~> 0.21'
 gem 'puma'
-gem 'rails', '5.0.6'
+gem 'rails', '5.2.3'
 gem 'redis'
 gem 'pundit'
 gem 'cocoon'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 5.6.1'
 gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'awesome_print'
-gem 'dotenv-rails', groups: [:development, :test]
 
 # devise et 118n
 gem "devise", "~> 4.4"
-gem 'rails-i18n', '5.0.3'
+gem 'rails-i18n'
 gem 'devise-i18n', '~> 1.2 '
 
 # attachinary
@@ -50,6 +49,7 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener'
+  gem 'dotenv-rails'
 end
 
 
