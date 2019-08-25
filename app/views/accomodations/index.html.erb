@@ -38,7 +38,7 @@
               <% end %>
             </td>
             <td>
-              <% if acc.is_complete? %>
+              <% if acc.complete? %>
                 <div id="complete">
                   <ul class="list-unstyled">
                     <li>Logement complet !</li>
@@ -79,7 +79,7 @@
             <% if policy(@wedding).edit? %>
               <td>
                 <div class="dropdown">
-                  <a href="" class="dropdown-toggle" data-toggle="dropdown" ><%= acc.nb_of_guests %></a>
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" ><%= acc.guests_quantity %></a>
                     <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu accomodation-guest-list">
                       <% acc.guest_list.each do |guest_name| %>
                         <li><%= guest_name %></li>
