@@ -10,8 +10,8 @@ class Wedding < ApplicationRecord
   has_many :accomodations, dependent: :destroy
   has_many :accomodation_requests, through: :accomodations
 
-  scope :future, -> { where('date > ?', Date.current) }
-  scope :passed, -> { where('date < ?', Date.current) }
+  scope :future, -> { where("date > ?", Date.current) }
+  scope :passed, -> { where("date < ?", Date.current) }
 
   has_attachment :photo
   has_attachment :spouse_photo

@@ -1,8 +1,14 @@
 class Question < ApplicationRecord
-
-validates :name, presence: true
-validates :email, presence: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: "un vrai mail pour une vraie réponse, svp" }
-validates :message, presence: true, length: { minimum: 33, too_short: "33 charactères minimum" }
+  validates :name, presence: true
+  validates :email,
+    presence: true,
+    format: {
+      with: /\A[^@\s]+@[^@\s]+\z/,
+      message: "une vraie adresse email pour une vraie réponse, svp"
+    }
+  validates :message,
+    presence: true,
+    length: { minimum: 33, too_short: "33 charactères minimum" }
 
   after_create :send_question
 
