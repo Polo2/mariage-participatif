@@ -20,9 +20,7 @@ Rails.application.routes.draw do
       resources :vegetables, only: [:new, :create]
     end
     resources :vegetables, only: [:index]
-    resources :accomodations do
-      resources :accomodation_requests, only: [:new, :create]
-    end
+    resources :accomodations, only: [:index]
     resources :tasks do
       resources :services, only: [:new, :create, :update, :destroy]
       resources :messages, only: [:create, :index, :new, :destroy, :show]

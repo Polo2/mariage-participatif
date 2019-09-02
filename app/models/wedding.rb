@@ -8,7 +8,6 @@ class Wedding < ApplicationRecord
   has_many :guests, through: :registries
   has_many :vegetables, through: :registries
   has_many :accomodations, dependent: :destroy
-  has_many :accomodation_requests, through: :accomodations
 
   scope :future, -> { where("date > ?", Date.current) }
   scope :passed, -> { where("date < ?", Date.current) }
@@ -45,19 +44,6 @@ class Wedding < ApplicationRecord
 
   def complete_accomodations_count
     accomodations.where(complete: true).count
-  end
-
-  def pending_accomodation_requests_count
-    accomodation_requests.where(statut: false).count
-  end
-
-  # TODO : should be improved
-  def nb_of_guests_with_accomodation_count
-    registries.reject { |r| r.accomodation_request_ids.empty? }.map do |registry|
-      if registry.accomodation_requests.last.statut
-        registry.guests.where(child: false).where(presence: true).count
-      end
-    end.sum
   end
 
   def present_guests_count

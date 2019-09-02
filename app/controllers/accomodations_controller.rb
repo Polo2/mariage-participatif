@@ -14,17 +14,6 @@ class AccomodationsController < ApplicationController
     redirect_to wedding_path(@wedding)
   end
 
-
-  def edit
-    @accomodation = @wedding.accomodations.find(params[:id])
-    @accomodation.complete = (@accomodation.complete == false)
-    if @accomodation.save
-      redirect_to wedding_accomodations_path(@wedding), notice: "Logement marqué comme complet"
-    else
-      redirect_to wedding_accomodations_path(@wedding), error: "Erreur pour marquer ce logement comme complet"
-    end
-  end
-
   private
 
   def set_wedding
