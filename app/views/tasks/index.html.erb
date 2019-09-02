@@ -1,21 +1,49 @@
-<div id="task-container">
-    <% if policy(@wedding).edit? %>
+<div class="container">
 
-      <% if @wedding.tasks.empty? %>
-        <%= link_to "Create your first task", new_wedding_task_path(@wedding) %>
-      <% else %>
-        <% nb_tasks = @wedding.tasks.size %>
-        <p> They are <%= nb_tasks %> tasks for your wedding ! Here is the list :</p>
-        <ul>
-          <% @wedding.tasks.each_with_index do |t, ind| %>
-            <li><%= "Task n°#{ind + 1} : #{t.name}" %> </li>
-            <%= link_to "show this task", wedding_task_path(@wedding, t) %>
-          <% end %>
-        </ul>
-        <p>
-          <%= link_to "Add a new task", new_wedding_task_path(@wedding) %>
-        </p>
-      <% end %>
-    <% end %>
-  <%= link_to "Back to wedding", wedding_path(@wedding) %>
+  <div class="text-center">
+    <h3>
+      <span class="section-title">Inscription aux services</span>
+    </h3>
+    <p> Ci-dessous, la liste des services pour lesquels on a besoin de votre aide, rangés par catégorie.
+    <br>
+    Si vous êtes partant pour participer en nous donnant un coup de main le jour J, on vous laisse choisir le votre.
+    <br>
+    </p>
   </div>
+
+  <div class="tasks-bloc">
+    <div class= tasklist>
+      <ul class="tasks">
+        <div class="row extra-width">
+          <% @wedding.tasks_with_service.each do |task| %>
+            <%= link_to wedding_task_path(@wedding, task) do %>
+              <div class="col-xs-6 cos-sm-3 col-md-2">
+                <li class="task">
+                  <div class="taskname button">
+                    <strong> <%= task.name %> </strong>
+                    <div class="tasknotification">
+                      <%= task.required_guests_quantity_to_display %>
+                      <% if policy(@wedding).edit? %>
+                        <%= task.unread_messages_count_to_display %>
+                      <% end %>
+                    </div>
+                  </div>
+                </li>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <div class="links">
+    <%= link_to t("links.back"), wedding_path(@wedding) %>
+  </div>
+
+  <div class="text-center">
+    Choisir un service est une propositon que nous vous faisons, pas une obligation.
+    <br>
+    Si vous ne pouvez pas choisir de service, pas la peine de bouder. Venez profiter, on compte sur vous tout autant !
+  </div>
+</div>

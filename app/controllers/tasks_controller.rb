@@ -7,7 +7,7 @@ class TasksController< ApplicationController
 
 
   def index
-    @tasks = Task.where('wedding_id = ?', @wedding.id)
+    @tasks = Task.where wedding: @wedding
   end
 
 
@@ -129,7 +129,4 @@ private
       end
     end
   end
-
-
-
 end

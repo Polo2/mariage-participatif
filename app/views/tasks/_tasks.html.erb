@@ -1,32 +1,5 @@
 <h3 class="text-center">
-  <span class="section-title">Inscriptions aux services et discussions dédiées</span>
-</h3>
-
-<div class= tasklist>
-  <ul class="tasks">
-    <div class="row extra-width">
-      <% wedding.tasks_with_service.each do |task| %>
-        <%= link_to wedding_task_path(wedding, task) do %>
-          <div class="col-xs-6 cos-sm-3 col-md-2">
-            <li class="task">
-              <div class="taskname button">
-                <strong> <%= task.name %> </strong>
-                <div class="tasknotification">
-                  <% if policy(@wedding).edit? %>
-                    <%= task.unread_messages_count_to_display %>
-                  <% end %>
-                </div>
-              </div>
-            </li>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </ul>
-</div>
-
-<h3 class="text-center">
-  <span class="section-title">Autres discussions</span>
+  <span class="section-title">Espace de libre échange</span>
 </h3>
 
 <div class= tasklist>
@@ -63,32 +36,12 @@
 
 <div class="text-center">
   <% if policy(@wedding).edit? %>
-    <div>
-      <%= link_to new_wedding_task_path(@wedding), class: "button button-show" do %>
-        Créer une nouvelle discussion
-      <% end %>
-    </div>
+    <%= link_to new_wedding_task_path(@wedding), class: "button button-show" do %>
+      Créer une nouvelle discussion
+    <% end %>
+  <% else %>
+    <%= link_to new_wedding_task_path(@wedding), class: "button button-show" do %>
+      Proposer une nouvelle discussion
+    <% end %>
   <% end %>
 </div>
-
-
-
-<!-- pour ajouter icons
-
-
-<script>
-
-
-
-
-const list = document.getElementById("tasks-list")
-const taskItems = list.querySelectorAll("l")
-
-console.log(taskItems);
-
-taskItems.addEventListener("click", (event) => {
-  event.currentTarget.toggleClass("active")
-});
-
-</script>
- -->
