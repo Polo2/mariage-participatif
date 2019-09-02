@@ -35,7 +35,8 @@
             <li>Nombre d'invités nécessaire : <%= @wedding.guests_needed_for_service_count %>  </li>
           </ul>
           <div class="button-container">
-            <%= link_to "Detail services", wedding_services_path(@wedding), class: "button button-show" %>
+            <%= link_to "Liste services", wedding_tasks_path(@wedding), class: "button button-show" %>
+            <%= link_to "Synthèse inscriptions", wedding_services_path(@wedding), class: "button button-show" %>
           </div>
       </div>
     </div>

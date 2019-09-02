@@ -32,7 +32,7 @@
           <% end %>
         </ul>
         <div class="button-container">
-          <a class="button button-show" href="#task-discussion-container">Liste des services</a>
+          <%= link_to "Voir liste", wedding_tasks_path(@wedding), class: "button button-show" %>
           <% unless @registry.services.count == 0 %>
             <%= link_to "Vos services", wedding_services_path(@wedding), class: "button button-show" %>
           <% end %>
