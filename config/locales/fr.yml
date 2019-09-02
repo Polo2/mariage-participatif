@@ -18,25 +18,21 @@ fr:
   home:
     baseline: "Mariage Participatif 3.0"
     getting_married: "Vous vous mariez"
-    getting_married_description: "Avec cette plateforme web, vous pourrez créer une page dédiée à votre mariage et ses invités !
-              Vous pourrez par exemple :"
-    getting_married_l1: "Proposer à vos invités de vous rendre un / des services pour le jour J"
-    getting_married_l2: "Envoyer et suivre vos invitations"
-    getting_married_l3: "Planifier les services que vous demandez"
-    getting_married_l4: "Echanger facilement avec vos invités, et faciliter leurs echanges"
-    getting_married_create: "JE CREE MON \n MARIAGE PARTICIPATIF"
-    invited: "Vous êtes invité"
-    invited_l1: "En étant invité à un mariage-participatif, vous pourrez :"
-    invited_l2: "Répondre facilement de votre présence"
-    invited_l3: "Rendre service aux mariés en participant à l'un des services proposés"
-    invited_l4: "Echanger avecs les mariés, et les autres invités"
-    invited_l5: "Et vous préparer ainsi à profiter de la fête !"
-    invited_sign_up: "JE REPONDS A L'INVITATION PARTICIPATIVE"
+    getting_married_description: |
+      En organisant un mariage-participatif, vous pourrez par exemple :
+    getting_married_l1: Proposer à vos invités de vous rendre un / des services pour le jour J
+    getting_married_l2: Envoyer et suivre vos invitations
+    getting_married_l3: Planifier les services que vous demandez
+    getting_married_l4: Echanger facilement avec vos invités, et faciliter leurs echanges
+    getting_married_create: JE CREE MON MARIAGE PARTICIPATIF
+    guest: Vous êtes invité
+    guest_description: "En étant invité à un mariage participatif, vous pourrez :"
+    guest_l1: Rendre service aux mariés en participant à l'un des services proposés
+    guest_l2: Répondre facilement quand à votre présence
+    guest_l3: Echanger avec les mariés, et les autres invités
+    guest_l4: Et vous préparer ainsi à profiter de la fête !
+    guest_sign_up: JE PARTICIPE
     contact_form_title: "Nous contacter"
-    contact_form_name: "Votre nom :"
-    contact_form_email: "E-mail :"
-    contact_form_message: "Message :"
-    contact_form_send: "ENVOI"
   wedding:
     4blocs: " 4 blocs"
     title_new_wedding: "Creation de la page de votre mariage"
@@ -168,6 +164,10 @@ fr:
         slogan: "et un slogan ?"
         capacity: "pour combien de bouches :"
         photo: "avec la photo ?"
+    placeholders:
+      question:
+        message:
+          33 caractères minimum
   helpers:
     submit:
       wedding:
@@ -185,14 +185,6 @@ fr:
       messages:
         create: "Envoyer"
         update: "Envoyer"
-
-
-
-
-
-
-
-
-
-
-
+      question:
+        create: Envoyer
+        update: Envoyer
