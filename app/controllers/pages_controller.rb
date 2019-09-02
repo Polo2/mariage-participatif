@@ -3,8 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @question = Question.new
-    user_signed_in? ? @user = current_user : @user = nil
-    # @wedding_polodile = Wedding.find(23)
+    @user = user_signed_in? ? current_user : nil
   end
-
 end

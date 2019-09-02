@@ -38,27 +38,24 @@ en:
     non: "no"
     resend_instructions: "Resend confirmation instructions"
   home:
-    baseline: "Your collaborative wedding experience"
-    getting_married: "GETTING MARRIED"
-    getting_married_description: "Live a unique collaborative wedding experience.
-                You will create a dedicated platform for your website where you can :"
-    getting_married_l1: "share invitations"
-    getting_married_l2: "organize details"
-    getting_married_l3: "guest list and memories..."
-    getting_married_l4: "You may ask guest's help by participating to a dedicated extra-job !"
-    getting_married_create: "CREATE"
-    invited: "GUEST"
-    invited_l1: "As a wedding guest you will be able to"
-    invited_l2: "organize your way to the wedding"
-    invited_l3: "participate to some wedding tasks"
-    invited_l4: "see the wedding memories"
-    invited_l5: "chat with other guests..."
-    invited_sign_up: "SIGN UP"
-    contact_form_title: "Contact us"
-    contact_form_name: "Full Name"
-    contact_form_email: "Email address"
-    contact_form_message: "Message"
-    contact_form_send: "SEND"
+    baseline: Your collaborative wedding experience
+    getting_married: GETTING MARRIED
+    getting_married_description: |
+      By creating a collaborative wedding experience, you'll be able to :
+    getting_married_l1: share invitations
+    getting_married_l2: organize details
+    getting_married_l3: ask guest's help by participating to a dedicated extra-job !
+    getting_married_l4: improve sharing with and between your guests
+    getting_married_create: CREATE
+    guest: GUEST
+    guest_description: "As a wedding guest you will be able to :"
+    guest_l1: organize your way to the wedding
+    guest_l2: participate to some wedding extra jobs
+    guest_l3: chat with other guests...
+    guest_l4: "to put in a nutshell: Enjoy ;)"
+    guest_sign_up: SIGN UP
+    contact_form_title: Contact us
+
   wedding:
     4blocs: " 4 blocks"
     wedder_tab:
@@ -100,7 +97,6 @@ en:
     add_element: "Add element"
   flash_messages:
     user_not_authorized: "You are not authorized to perform this action."
-
 
 
 

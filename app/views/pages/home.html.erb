@@ -1,7 +1,5 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700" rel="stylesheet">
 
-
-<!----------- MARIES / GUEST -------------->
 <div class="home-page">
   <div class="parallax">
     <div class="banner-gradiant-shadow">
@@ -32,7 +30,7 @@
                   <li><%= t("home.getting_married_l4")%></li>
                 </ul>
             </div>
-            <%= link_to t("home.getting_married_create"), new_wedding_path, class: 'button' %>
+            <%= link_to t("home.getting_married_create"), new_wedding_path, class: "button" %>
           </div>
         </div>
         <div class="col-xs-12 col-md-6">
@@ -41,70 +39,26 @@
               <%= icon("fas", "envelope") %>
             </div>
             <div class="title">
-              <h3><%= t("home.invited") %></h3>
+              <h3><%= t("home.guest") %></h3>
             </div>
             <div class="description">
-              <%= t("home.invited_l1") %>
+              <%= t("home.guest_description") %>
+              <br>
+              <br>
               <ul>
-                <br>
-                <br>
-                <li><%= t("home.invited_l2") %></li>
-                <li><%= t("home.invited_l3") %></li>
-                <li><%= t("home.invited_l4") %></li>
-                <li><%= t("home.invited_l5") %></li>
+                <li><%= t("home.guest_l1") %></li>
+                <li><%= t("home.guest_l2") %></li>
+                <li><%= t("home.guest_l3") %></li>
+                <li><%= t("home.guest_l4") %></li>
               </ul>
             </div>
-            <%= link_to "JE REPONDS A MES INVITATIONS", users_profile_path ,class: 'button' %>
+            <%= link_to t("home.guest_sign_up"), users_profile_path ,class: "button" %>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-
-  <!----------- Ils nous font confiance -------------->
- <!--  <div class="testimonials paddded-tb">
-    <div class="container">
-      <h3 class="text-center"><span class="section-title">They trust us</span></h3>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <div class="testimonial">
-            <div class="text-center">
-              <%= image_tag "couple.jpg", class:"avatar-large" %>
-            </div>
-            <h2 class="text-center">Camille.C</h2>
-            <div class="card-testi">
-              <p>My husband and I where pretty busy at work and it was hard finding time to organize our wedding. We did not know what to start with. Our main idea was to have a collaborative wedding. What an easy and incredible website. Helped me a lot to prepare everything for D-DAY.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="testimonial">
-            <div class="text-center">
-              <%= image_tag "couple2.jpg", class:"avatar-large" %>
-            </div>
-            <h2 class="text-center">Benjamin.B</h2>
-            <div class="card-testi">
-              <p>My girlfriend and I where deeply in love and wanted to share this feeling with all our friends in a collaborative way. Mari&Vous was by far the best option we found. </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="testimonial">
-            <div class="text-center">
-              <%= image_tag "couple3.jpg", class:"avatar-large" %>
-            </div>
-            <h2 class="text-center">Claire.T</h2>
-            <div class="card-testi">
-              <p>I want to organize wedding where everyone could participate in a way or another: creating a playlist, bringing champagne, helping with the decoration. Thanks to word of mouth Mari&Vous came to us. What an incredible relief.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <!----------- Contact us form -------------->
   <div class="addmargin">
     <h3><span class="section-title"><%= t("home.contact_form_title")%></span></h3>
   </div>
@@ -124,8 +78,8 @@
             </div>
             <div class="row marged-top">
               <div class="col-xs-12">
-                <%= f.input :message , as: :text, hint: "33 caractères minimum SVP"%>
-                <%= f.submit "Envoyer", class: 'button' %>
+                <%= f.input :message , as: :text%>
+                <%= f.button :submit, class: "button" %>
               </div>
             </div>
           <% end %>
@@ -133,5 +87,4 @@
       </div>
     </div>
   </div>
-
 </div>
