@@ -10,20 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_115745) do
+ActiveRecord::Schema.define(version: 2019_09_02_092847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "accomodation_requests", id: :serial, force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "registry_id"
-    t.integer "accomodation_id"
-    t.boolean "statut"
-    t.index ["accomodation_id"], name: "index_accomodation_requests_on_accomodation_id"
-    t.index ["registry_id"], name: "index_accomodation_requests_on_registry_id"
-  end
 
   create_table "accomodations", id: :serial, force: :cascade do |t|
     t.string "name"

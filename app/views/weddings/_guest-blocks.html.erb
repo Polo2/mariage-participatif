@@ -45,41 +45,15 @@
           <span class="section-title"><%= t("wedding.blocs.bloc-accomodations")%></span>
         </h3>
         <ul class="bloc-list">
-          <% if !@registry.accomodation_request_ids.empty? %>
-            <% accomodation = @registry.accomodation_requests.last.accomodation %>
-            <% if @registry.accomodation_requests.last.statut %>
-              <li>Votre logement est bien reservé.</li>
-              <% case accomodation.category %>
-                <% when "camping"%>
-                  <li>Vous avez prévu de camper,</li>
-                <% when "amis"%>
-                  <li>Vous irez dormir chez des amis à nous,</li>
-                  <li>à savoir : <%= accomodation.name %>,</li>
-                  <li>L'adresse : <%= accomodation.location %>,</li>
-                  <li>A <%= accomodation.distance %> km du lieu de la fête (à peu près)...</li>
-                <% when "hotel"%>
-                  <li>Vous avez prévu de dormir à l'hôtel,</li>
-                  <li>A savoir : <%= accomodation.name %>,</li>
-                  <li>Prudence sur la route ;)</li>
-                <% when "home"%>
-                  <li>Vous avez prévus de rentrer dormir chez vous,</li>
-                  <li>Prudence sur la route ;)</li>
-                <% else %>
-                  <li></li>
-              <% end %>
-            <% else %>
-              <li>Merci d'avoir demandé à être acceuilli chez des amis</li>
-              <li>à savoir : <%= accomodation.name %></li>
-              <li>Nous sommes en train de voir avec eux, on revient vers vous</li>
-            <% end %>
-          <% else %>
-              <li>Vous n'avez pas encore choisi (ou confirmé) votre logement.</li>
-          <% end%>
+          <p>
+            Pour faciliter votre venue, voici une liste des logements possibles.
+            <br>
+            N'hésitez pas à nous tenir au courant si vous avez des bons plans à partager,
+            ou besoin d'aide en particulier.
+          </p>
         </ul>
         <div class="button-container">
-          <% if @registry.accomodation_request_ids.empty? %>
-            <%= link_to "Liste des logements", wedding_accomodations_path(@wedding), class: "button button-show" %>
-          <% end %>
+          <%= link_to "Liste des logements", wedding_accomodations_path(@wedding), class: "button button-show" %>
         </div>
       </div>
     </div>

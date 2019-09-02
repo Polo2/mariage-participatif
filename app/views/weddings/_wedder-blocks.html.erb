@@ -48,13 +48,10 @@
         </h3>
         <ul class="bloc-list">
           <li>Nombre de logements proposés: <%= @wedding.accomodations_count %></li>
-          <li>Nombre d'invités inscrits aux logements : <%= @wedding.nb_of_guests_with_accomodation_count %>  </li>
           <li>Nombre de logements complets : <%= @wedding.complete_accomodations_count %></li>
-          <li>Nombre de demandes d'hebergements à traiter : <%= @wedding.pending_accomodation_requests_count %></li>
         </ul>
         <div class="button-container">
           <%= link_to "Liste logements", wedding_accomodations_path(@wedding), class: "button button-show" %>
-          <%= link_to "Liste demandes", wedding_accomodation_requests_path(@wedding), class: "button button-show" %>
         </div>
       </div>
     </div>
