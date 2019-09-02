@@ -1,23 +1,23 @@
 fr:
-  hello: "Bonjour ô Monde"
+  hello: Bonjour ô Monde
   navbar:
-    login: "Connexion"
-    sign_up: "Inscription"
-    log_out: "Deconnexion"
-    log_out_confirm: "Certain ?"
-    create_my_wedding: "Créer notre mariage"
-    see_my_wedding: "Notre mariage"
-    invitations: "Mes invitations"
-    memories: "Souvenirs"
-    no_wedding: "Pas d'invitation"
-    profile: "Profil"
+    login: Connexion
+    sign_up: Inscription
+    log_out: Deconnexion
+    log_out_confirm: Certain ?
+    create_my_wedding: Créer notre mariage
+    see_my_wedding: Notre mariage
+    invitations: Mes invitations
+    memories: Souvenirs
+    no_wedding: Pas d'invitation
+    profile: Profil
   profile:
-    wedding_in_preparation: "mariage en cours de préparation"
+    wedding_in_preparation: mariage en cours de préparation
   devise:
-    resend_instructions: "Renvoi des identifiants"
+    resend_instructions: Renvoi des identifiants
   home:
-    baseline: "Mariage Participatif 3.0"
-    getting_married: "Vous vous mariez"
+    baseline: Mariage Participatif 3.0
+    getting_married: Vous vous mariez
     getting_married_description: |
       En organisant un mariage-participatif, vous pourrez par exemple :
     getting_married_l1: Proposer à vos invités de vous rendre un / des services pour le jour J
@@ -32,138 +32,138 @@ fr:
     guest_l3: Echanger avec les mariés, et les autres invités
     guest_l4: Et vous préparer ainsi à profiter de la fête !
     guest_sign_up: JE PARTICIPE
-    contact_form_title: "Nous contacter"
+    contact_form_title: Nous contacter
   wedding:
-    4blocs: " 4 blocs"
-    title_new_wedding: "Creation de la page de votre mariage"
-    title_edit_wedding: "Mise à jour la page de votre mariage"
+    4blocs: 4 blocs
+    title_new_wedding: Creation de la page de votre mariage
+    title_edit_wedding: Mise à jour la page de votre mariage
     wedder_tab:
-      guest: "Invitation"
-      guests: "Invitations"
-      answer: "Réponse"
-      answers: "Réponses"
-      pending_task: "Tâche en cours"
-      pending_tasks: "Tâches en cours"
-      pending_service: "Service proposé"
-      pending_services: "Services proposés"
-      new_message: "Nouveau message"
-      new_messages: "Nouveaux messages"
+      guest: Invitation
+      guests: Invitations
+      answer: Réponse
+      answers: Réponses
+      pending_task: Tâche en cours
+      pending_tasks: Tâches en cours
+      pending_service: Service proposé
+      pending_services: Services proposés
+      new_message: Nouveau message
+      new_messages: Nouveaux messages
     guest_list:
-      title: "Liste des invités"
-      title_bloc: "Bloc invités"
-      add: "Nouvelle invitation"
-      add_guests: "Ajouter des invités à ce groupe"
-      edit: "Mise à jour de cette invitation"
-      list: "Voir la liste"
-      number_of_guests: "Nombre"
-      action: "Action"
-      new_group: "Invitation d'une famille"
-      group: "Nom de famille"
-      name: "Nom"
-      statut: "Présence ?"
+      title: Liste des invités
+      title_bloc: Bloc invités
+      add: Nouvelle invitation
+      add_guests: Ajouter des invités à ce groupe
+      edit: Mise à jour de cette invitation
+      list: Voir la liste
+      number_of_guests: Nombre
+      action: Action
+      new_group: Invitation d'une famille
+      group: Nom de famille
+      name: Nom
+      statut: Présence ?
     guest:
-      your_invitation: "Votre invitation"
-      go_to_registry: "Voir l'invitation"
-      add_guest: "Ajouter un invité"
-      members_of_this_group: "Membres de ce groupe"
-      ask_address: "Pour recevoir votre faire-part"
+      your_invitation: Votre invitation
+      go_to_registry: Voir l'invitation
+      add_guest: Ajouter un invité
+      members_of_this_group: Membres de ce groupe
+      ask_address: Pour recevoir votre faire-part
     blocs:
-      bloc-registry: "Invitations"
-      bloc-task: "Services"
-      bloc-accomodations: "Logements"
-      bloc-trip: "CooVoiturage"
-      bloc-vegetable: "Contributions Végétales"
+      bloc-registry: Invitations
+      bloc-task: Services
+      bloc-accomodations: Logements
+      bloc-trip: CooVoiturage
+      bloc-vegetable: Contributions Végétales
   task:
-    choose_new: "Choisir une nouvelle tâche"
-    choose: "Choisir"
-    create: "Créer"
-    title: "Discussions"
-    mark: "Marquer comme complet"
-    unmark: "Marqer comme 'à compléter'"
+    choose_new: Choisir une nouvelle tâche
+    choose: Choisir
+    create: Créer
+    title: Discussions
+    mark: Marquer comme complet
+    unmark: Marqer comme 'à compléter'
     done: "Tous les services sont complets |"
     not_done: "Il reste des services disponibles |"
-    tdl: "ToDo liste"
-    type_here: "Ecrire ici"
-    add: "Nouvelle catégorie"
-    private: "Privé"
-    public: "Public"
-    comments: "Commentaires"
-    messages: "Messages"
+    tdl: ToDo liste
+    type_here: Ecrire ici
+    add: Nouvelle catégorie
+    private: Privé
+    public: Public
+    comments: Commentaires
+    messages: Messages
     new_message: "Ajouter un nouveau message :"
-    needs: "Besoins"
-    add_service: "Ajouter un service"
-    list: "Liste des services pour cette tâche"
-    initialize: "Importer depuis excel"
-    initialize-confirmation: "Attention, tous les services déja créés seront supprimés. Etes vous sûr d'importer la nouvelle liste des services ?"
-    initialize-accomodations-confirmation: "Attention, tous les hébergements déja créés seront supprimés. Etes vous sûr d'importer la nouvelle liste des hebergements ?"
+    needs: Besoins
+    add_service: Ajouter un service
+    list: Liste des services pour cette tâche
+    initialize: Importer depuis excel
+    initialize-confirmation: Attention, tous les services déja créés seront supprimés. Etes vous sûr d'importer la nouvelle liste des services ?
+    initialize-accomodations-confirmation: Attention, tous les hébergements déja créés seront supprimés. Etes vous sûr d'importer la nouvelle liste des hebergements ?
   links:
-    home: "Accueil"
-    show: "Voir"
-    edit: "Editer"
-    answer: "Répondre"
-    modify_answer: "Modifier ma réponse"
-    modify: "Modifier"
-    update: "Mettre à jour"
-    destroy: "Supprimer"
-    back: "Retour"
-    back_to_wedding: "Retour au mariage"
-    confirmation: "Certain ?"
-    validate: "Valider"
+    home: Accueil
+    show: Voir
+    edit: Editer
+    answer: Répondre
+    modify_answer: Modifier ma réponse
+    modify: Modifier
+    update: Mettre à jour
+    destroy: Supprimer
+    back: Retour
+    back_to_wedding: Retour au mariage
+    confirmation: Certain ?
+    validate: Valider
   flash_messages:
-    user_not_authorized: "Vous n'êtes pas invité à faire ça, désolé."
-    wedding-created: "Votre mariage a bien été créée"
-    wedding-updated: "Votre mariage a été mis à jour"
-    wedding-destroyed: "Ce mariage a bien été supprimé du site web"
-    wedding-does-not-exist: "Désolé, impossible de trouver de mariage "
+    user_not_authorized: Vous n'êtes pas invité à faire ça, désolé.
+    wedding-created: Votre mariage a bien été créée
+    wedding-updated: Votre mariage a été mis à jour
+    wedding-destroyed: Ce mariage a bien été supprimé du site web
+    wedding-does-not-exist: Désolé, impossible de trouver de mariage
 
   simple_form:
     labels:
       user:
-        first_name: "Prénom"
-        last_name: "Nom"
-        email: "Email"
-        avatar: "Photo (optionnel)"
-        password: "Mot de passe"
-        password_confirmation: "Confirmation du mot de passe"
+        first_name: Prénom
+        last_name: Nom
+        email: Email
+        avatar: Photo (optionnel)
+        password: Mot de passe
+        password_confirmation: Confirmation du mot de passe
       wedding:
-        title: "Nom du mariage"
-        description: "Description en quelques lignes"
-        date: "Date"
-        location: "Lieu du mariage"
-        capacity: "Nombre d'invités prévus"
-        photo: "Photo d'ambiance"
-        spouse_photo: "Photo des mariés"
-        spouse_first_name: "Prénom du / de la marié(e)"
-        spouse_last_name: "Nom du / de la marié(e)"
+        title: Nom du mariage
+        description: Description en quelques lignes
+        date: Date
+        location: Lieu du mariage
+        capacity: Nombre d'invités prévus
+        photo: Photo d'ambiance
+        spouse_photo: Photo des mariés
+        spouse_first_name: Prénom du / de la marié(e)
+        spouse_last_name: Nom du / de la marié(e)
       registry:
-        email: "Mail"
-        group_name: "Nom de famille"
-        name: "Nom"
-        presence: "Presence"
-        address: "Addresse postale (pour recevoir votre faire-part)"
-        zipcode: "Code Postal"
-        city: "Ville"
+        email: Mail
+        group_name: Nom de famille
+        name: Nom
+        presence: Presence
+        address: Addresse postale (pour recevoir votre faire-part)
+        zipcode: Code Postal
+        city: Ville
       guests:
-        name: "Prénom"
-        presence: "Presence"
-        child: "Enfant ?"
+        name: Prénom
+        presence: Presence
+        child: Enfant ?
       service:
-        guests: "Inscrire"
-        name: "Catégorie"
-        details: "Description"
-        capacity: "Nb de personnes nécessaires"
-        day: "Jour"
-        location: "Lieu"
-        appointment: "Créneau"
+        guests: Inscrire
+        name: Catégorie
+        details: Description
+        capacity: Nb de personnes nécessaires
+        day: Jour
+        location: Lieu
+        appointment: Créneau
       question:
         name: Votre nom
         email: Votre email
         message: Et votre message
       vegetable:
-        name: "son nom :"
-        slogan: "et un slogan ?"
-        capacity: "pour combien de bouches :"
-        photo: "avec la photo ?"
+        name: son nom
+        slogan: et un slogan ?
+        capacity: nombre de bouches ?
+        photo: avec la photo ?
     placeholders:
       question:
         message:
@@ -171,20 +171,20 @@ fr:
   helpers:
     submit:
       wedding:
-        create: "Création du mariage"
-        update: "Valider"
+        create: Création du mariage
+        update: Valider
       registry:
-        create: "Valider l'invitation"
-        update: "Valider"
+        create: Valider l'invitation
+        update: Valider
       guests:
-        create: "Créer"
-        update: "Valider"
+        create: Créer
+        update: Valider
       service:
-        create: "Créer"
-        update: "Valider"
+        create: Créer
+        update: Valider
       messages:
-        create: "Envoyer"
-        update: "Envoyer"
+        create: Envoyer
+        update: Envoyer
       question:
         create: Envoyer
         update: Envoyer
