@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_092847) do
+ActiveRecord::Schema.define(version: 2019_09_02_135456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,7 +108,6 @@ ActiveRecord::Schema.define(version: 2019_09_02_092847) do
   create_table "services", id: :serial, force: :cascade do |t|
     t.string "name"
     t.integer "capacity"
-    t.integer "user_id"
     t.integer "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -117,7 +116,6 @@ ActiveRecord::Schema.define(version: 2019_09_02_092847) do
     t.string "location"
     t.string "details"
     t.index ["task_id"], name: "index_services_on_task_id"
-    t.index ["user_id"], name: "index_services_on_user_id"
   end
 
   create_table "tasks", id: :serial, force: :cascade do |t|
@@ -192,7 +190,6 @@ ActiveRecord::Schema.define(version: 2019_09_02_092847) do
   add_foreign_key "registries", "weddings"
   add_foreign_key "reviews", "weddings"
   add_foreign_key "services", "tasks"
-  add_foreign_key "services", "users"
   add_foreign_key "tasks", "weddings"
   add_foreign_key "weddings", "users"
 end
