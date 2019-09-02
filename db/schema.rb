@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_135456) do
+ActiveRecord::Schema.define(version: 2019_09_02_141203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 2019_09_02_135456) do
     t.index ["attachinariable_type", "attachinariable_id"], name: "attachinariable_index_name"
   end
 
+  create_table "discussions", force: :cascade do |t|
+    t.string "name"
+    t.bigint "wedding_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["wedding_id"], name: "index_discussions_on_wedding_id"
+  end
+
   create_table "guests", id: :serial, force: :cascade do |t|
     t.integer "registry_id", null: false
     t.string "name", null: false
@@ -65,9 +73,10 @@ ActiveRecord::Schema.define(version: 2019_09_02_135456) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "task_id"
     t.boolean "read"
-    t.index ["task_id"], name: "index_messages_on_task_id"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.index ["resource_type", "resource_id"], name: "index_messages_on_resource_type_and_resource_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -184,7 +193,6 @@ ActiveRecord::Schema.define(version: 2019_09_02_135456) do
     t.index ["user_id"], name: "index_weddings_on_user_id"
   end
 
-  add_foreign_key "messages", "tasks"
   add_foreign_key "messages", "users"
   add_foreign_key "registries", "users"
   add_foreign_key "registries", "weddings"

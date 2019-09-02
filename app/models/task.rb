@@ -1,7 +1,7 @@
 class Task < ApplicationRecord
   belongs_to :wedding
   # has_many :elements, dependent: :destroy
-  has_many :messages, dependent: :destroy
+  has_many :messages, as: :resource, dependent: :destroy
   has_many :services, dependent: :destroy
 
   # TODO: should be improved

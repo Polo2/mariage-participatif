@@ -127,4 +127,9 @@ Guest.create!(
   presence: true
 )
 
+Discussion.create!(
+  wedding: wedding,
+  name: "Discussion"
+)
+
 puts "Graines plantées ! Bon Dev Polo ;)"

@@ -19,9 +19,10 @@ Rails.application.routes.draw do
     resources :accomodations, only: [:index]
     resources :tasks do
       resources :services, only: [:new, :create, :update, :destroy]
-      resources :messages, only: [:create, :index, :new, :destroy, :show]
     end
+    resources :messages, only: [:create]
     resources :services, only: [:index]
+    resources :discussions
   end
   resources :questions, only: [:new, :create]
 

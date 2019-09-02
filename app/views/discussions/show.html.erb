@@ -1,0 +1,21 @@
+<div class="container">
+  <h3 class="text-center">
+    <span class="section-title"><%= @discussion.name %></span>
+  </h3>
+
+    <div class="links padding-down">
+    <%= link_to t("links.back_to_wedding"), wedding_path(@wedding), class: "back-link" %>
+  </div>
+
+  <div class="fullblock">
+    <div class="row">
+      <div class="col-xs-12 discussion">
+
+        <h4>Espace d'echange</h4>
+        <div class="downblock bloc">
+          <%= render "messages/messages-box", resource: @discussion %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
