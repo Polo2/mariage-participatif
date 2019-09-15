@@ -3,7 +3,7 @@ class Wedding < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :services, through: :tasks
-  has_many :messages, through: :tasks
+  has_many :discussions, dependent: :destroy
   has_many :registries, dependent: :destroy
   has_many :guests, through: :registries
   has_many :vegetables, through: :registries
@@ -74,7 +74,23 @@ class Wedding < ApplicationRecord
     messages.where(read: false).count
   end
 
+  def messages
+    task_messages.or(discussion_messages)
+  end
+
   def vegetables_count
     vegetables.count
+  end
+
+private
+
+  def task_messages
+    Message.where(resource_type: "Task")
+      .where resource_id: self.tasks.pluck(:id)
+  end
+
+  def discussion_messages
+    Message.where(resource_type: "Discussion")
+      .where resource_id: self.discussions.pluck(:id)
   end
 end

@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
-  belongs_to :task
+  belongs_to :resource, polymorphic: true
   belongs_to :user
 
   def update_as_read

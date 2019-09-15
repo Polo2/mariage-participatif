@@ -5,15 +5,15 @@
 <div class= tasklist>
   <ul class="tasks">
     <div class="row extra-width">
-      <% wedding.tasks_without_service.each do |task| %>
-        <%= link_to wedding_task_path(wedding, task) do %>
+      <% wedding.discussions.each do |discussion| %>
+        <%= link_to wedding_discussion_path(wedding, discussion) do %>
           <div class="col-xs-6 cos-sm-3 col-md-2">
             <li class="task">
               <div class="taskname button">
-                <strong> <%= task.name %> </strong>
+                <strong> <%= discussion.name %> </strong>
                 <div class="tasknotification">
                   <% if policy(@wedding).edit? %>
-                    <%= task.unread_messages_count_to_display %>
+                    <%= discussion.unread_messages_count_to_display %>
                   <% end %>
                 </div>
               </div>
@@ -23,7 +23,7 @@
       <% end %>
       <div class="col-xs-6 cos-sm-3 col-md-2">
         <li class="task">
-          <%= link_to new_wedding_task_path(@wedding) do %>
+          <%= link_to new_wedding_discussion_path(@wedding) do %>
             <div class="button" id="newTask">
               <i class="fa fa-plus"></i>
             </div>
@@ -36,11 +36,11 @@
 
 <div class="text-center">
   <% if policy(@wedding).edit? %>
-    <%= link_to new_wedding_task_path(@wedding), class: "button button-show" do %>
+    <%= link_to new_wedding_discussion_path(@wedding), class: "button button-show" do %>
       Créer une nouvelle discussion
     <% end %>
   <% else %>
-    <%= link_to new_wedding_task_path(@wedding), class: "button button-show" do %>
+    <%= link_to new_wedding_discussion_path(@wedding), class: "button button-show" do %>
       Proposer une nouvelle discussion
     <% end %>
   <% end %>
