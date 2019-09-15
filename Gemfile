@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby "2.5.5"
 
-gem 'omniauth-facebook'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
@@ -51,6 +50,3 @@ group :development, :test do
   gem 'letter_opener'
   gem 'dotenv-rails'
 end
-
-
-

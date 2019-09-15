@@ -143,7 +143,6 @@ ActiveRecord::Schema.define(version: 2019_09_15_184320) do
     t.datetime "updated_at", null: false
     t.string "provider"
     t.string "uid"
-    t.string "facebook_picture_url"
     t.string "first_name"
     t.string "last_name"
     t.string "token"
