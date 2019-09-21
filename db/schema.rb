@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_141203) do
+ActiveRecord::Schema.define(version: 2019_09_15_184320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,14 +106,6 @@ ActiveRecord::Schema.define(version: 2019_09_02_141203) do
     t.index ["wedding_id"], name: "index_registries_on_wedding_id"
   end
 
-  create_table "reviews", id: :serial, force: :cascade do |t|
-    t.string "content"
-    t.integer "wedding_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["wedding_id"], name: "index_reviews_on_wedding_id"
-  end
-
   create_table "services", id: :serial, force: :cascade do |t|
     t.string "name"
     t.integer "capacity"
@@ -196,7 +188,6 @@ ActiveRecord::Schema.define(version: 2019_09_02_141203) do
   add_foreign_key "messages", "users"
   add_foreign_key "registries", "users"
   add_foreign_key "registries", "weddings"
-  add_foreign_key "reviews", "weddings"
   add_foreign_key "services", "tasks"
   add_foreign_key "tasks", "weddings"
   add_foreign_key "weddings", "users"
