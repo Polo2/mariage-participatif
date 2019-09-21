@@ -1,6 +1,7 @@
 class VegetablesController < ApplicationController
-before_action :set_wedding
-before_action :set_registry, only: [:new, :create]
+  before_action :set_wedding
+  before_action :set_registry, only: [:new, :create]
+
   def index
     @vegetables = @wedding.vegetables
   end
@@ -19,7 +20,7 @@ before_action :set_registry, only: [:new, :create]
     end
   end
 
-  private
+private
 
   def set_wedding
     @wedding = Wedding.find(params[:wedding_id])
@@ -32,5 +33,4 @@ before_action :set_registry, only: [:new, :create]
   def vegetable_params
     params.require(:vegetable).permit(:name, :slogan, :capacity, :photo)
   end
-
 end

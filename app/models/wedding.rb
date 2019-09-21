@@ -11,8 +11,8 @@ class Wedding < ApplicationRecord
   scope :future, -> { where("date > ?", Date.current) }
   scope :passed, -> { where("date < ?", Date.current) }
 
-  has_attachment :photo
-  has_attachment :spouse_photo
+  mount_uploader :photo, PhotoUploader
+  mount_uploader :spouse_photo, PhotoUploader
 
   geocoded_by :location
   after_validation :geocode, if: :location_changed?

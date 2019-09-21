@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   after_create :link_registries
-  has_attachment :avatar, accept: [:jpg, :png, :gif, :jpeg]
+  mount_uploader :avatar, PhotoUploader
 
   def link_registries
     Registry.where(email: email.downcase.strip).find_each do |registry|

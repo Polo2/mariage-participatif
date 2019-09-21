@@ -12,7 +12,7 @@
           <%= f.input :first_name, placeholder: "Prénom", required: true %>
           <%= f.input :last_name, placeholder: "Nom", required: true %>
           <%= f.input :email, required: true, autofocus: true, disabled: true  %>
-          <%= f.input :avatar, as: :attachinary %>
+          <%= f.input :avatar %>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>

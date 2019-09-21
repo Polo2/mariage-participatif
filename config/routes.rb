@@ -22,6 +22,4 @@ Rails.application.routes.draw do
     resources :discussions
   end
   resources :questions, only: [:new, :create]
-
-  mount Attachinary::Engine => "/attachinary"
 end

@@ -1,7 +1,7 @@
 module ApplicationHelper
   def avatar_for(user, options = {})
     if user.avatar.present?
-      cl_image_tag user.avatar.path, options
+      cl_image_tag user.avatar, options
     else
       image_tag "avatar_general.png", options
     end
@@ -13,7 +13,7 @@ module ApplicationHelper
 
   def background_image_for(vegetable,  options = {})
     if vegetable.photo.present?
-      cl_image_path vegetable.photo.path, options
+      cl_image_path vegetable.photo, options
     else
       image_path "bocaux.jpg", options
     end
