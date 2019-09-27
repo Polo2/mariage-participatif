@@ -100,7 +100,7 @@ puts "Creation des 2 guests adultes & 1 adulte absent & 1 enfant pour invitation
     name: "adulte A #{i + 1}",
     child: false,
     presence:true,
-    service: Service.find_by(name: "Cuisine service 2")
+    service: Service.find_by!(name: "Cuisine service 2")
   )
 end
 

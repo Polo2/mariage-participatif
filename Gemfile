@@ -23,10 +23,11 @@ gem "devise", "~> 4.4"
 gem 'rails-i18n'
 gem 'devise-i18n', '~> 1.2 '
 
-# attachinary
-gem 'cloudinary', '1.1.7'
-gem 'attachinary', github: 'assembler/attachinary'
-gem 'jquery-fileupload-rails'
+# cloudinary
+gem "cloudinary", "~> 1.11"
+gem "carrierwave", "~> 2.0"
+gem "http-accept", "~> 1.7"
+gem "addressable", "~> 2.6"
 
 # google Geocode
 gem 'geocoder'

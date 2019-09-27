@@ -5,9 +5,6 @@
       "rails db:migrate db:seed"
   },
   "env": {
-    "CLOUDINARY_URL" : {
-      "required": true
-    },
     "LANG" : {
       "required": true
     },

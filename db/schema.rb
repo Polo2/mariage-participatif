@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_15_184320) do
+ActiveRecord::Schema.define(version: 2019_09_21_145635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,22 +30,6 @@ ActiveRecord::Schema.define(version: 2019_09_15_184320) do
     t.string "category"
     t.boolean "complete"
     t.index ["wedding_id"], name: "index_accomodations_on_wedding_id"
-  end
-
-  create_table "attachinary_files", id: :serial, force: :cascade do |t|
-    t.string "attachinariable_type"
-    t.integer "attachinariable_id"
-    t.string "scope"
-    t.string "public_id"
-    t.string "version"
-    t.integer "width"
-    t.integer "height"
-    t.string "format"
-    t.string "resource_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
-    t.index ["attachinariable_type", "attachinariable_id"], name: "attachinariable_index_name"
   end
 
   create_table "discussions", force: :cascade do |t|
