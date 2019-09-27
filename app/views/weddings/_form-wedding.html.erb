@@ -9,7 +9,9 @@
     <%= f.input :location, required: true %>
     <%= f.input :capacity, numericality: { only_integer: true, greater_than: 0}, required: true , hint: "... une estimation"%>
     <%= f.input :photo, required: true %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.input :spouse_photo, required: true %>
+    <%= f.input :spouse_photo_cache, as: :hidden %>
     <%= f.input :spouse_first_name, required: true %>
     <%= f.input :spouse_last_name, required: true %>
   </div>
