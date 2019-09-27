@@ -11,6 +11,7 @@
           <%= f.input :slogan, hint: "33 caractères max" %>
           <%= f.input :capacity, hint: "à peu près ..." %>
           <%= f.input :photo, required: true %>
+          <%= f.input :photo_cache, as: :hidden %>
           <div class="form-actions">
             <%= f.button :submit, "Valider" %>
           </div>
