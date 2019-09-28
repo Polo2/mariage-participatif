@@ -17,7 +17,7 @@ require "sprockets/railtie"
 Bundler.require(*Rails.groups)
 
 
-module MariEtVous
+module MariageParticipatif
   class Application < Rails::Application
     config.generators do |generate|
       generate.assets false
@@ -32,4 +32,6 @@ module MariEtVous
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
   end
+
+  CloudinaryStoreDir = ENV.fetch "CLOUDINARY_STORE_DIR", "development/"
 end
