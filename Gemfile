@@ -30,9 +30,9 @@ gem "http-accept", "~> 1.7"
 gem "addressable", "~> 2.6"
 
 # google Geocode
-gem 'geocoder'
-gem 'coffee-rails'
-gem 'gmaps4rails'
+gem "geocoder"
+gem "coffee-rails"
+gem "gmaps4rails"
 
 source 'http://insecure.rails-assets.org' do
   gem "rails-assets-underscore"
