@@ -19,7 +19,7 @@ gem 'uglifier'
 gem 'awesome_print'
 
 # devise et 118n
-gem "devise", "~> 4.4"
+gem "devise", "~> 4.7"
 gem 'rails-i18n'
 gem 'devise-i18n', '~> 1.2 '
 
