@@ -6,9 +6,6 @@ Rails.application.routes.draw do
   get "users/profile", to: 'pages#profile'
 
   resources :weddings do
-    get "tasks/upload", to: "tasks#upload"
-    get "accomodations/upload", to: "accomodations#upload"
-    get "registries/upload", to: "registries#upload"
     resources :registries do
       resources :vegetables, only: [:new, :create]
     end
