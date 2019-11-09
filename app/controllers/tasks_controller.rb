@@ -8,6 +8,7 @@ class TasksController< ApplicationController
 
   def index
     @tasks = Task.where wedding: @wedding
+    @task = Task.new
   end
 
 
@@ -25,23 +26,12 @@ class TasksController< ApplicationController
     @list_guests_adults_without_service = @list_guests_adults.select { |g| !g.service_id?  } unless current_user == @wedding.user
   end
 
-
-  def new
-    @tasks = @wedding.tasks
-    @tasks_name_list = parsing_json.keys
-    # @tasks_existing_names_list = @tasks.pluck(:name)
-    # @tasks_filtered_names_list = @tasks_name_list.select { |taskname|  !@tasks_existing_names_list.include?(taskname) }
-    @task = Task.new
-  end
-
   def create
     @task = Task.new(task_params)
     @task.wedding_id = @wedding.id
     @task.statut = false
     if @task.save
-      redirect_to wedding_task_path(@wedding, @task)
-    else
-      render :new
+      redirect_to wedding_tasks_path(@wedding)
     end
   end
 
