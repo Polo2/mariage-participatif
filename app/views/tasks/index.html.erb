@@ -1,21 +1,30 @@
 <div class="container">
-
-  <div class="text-center">
-    <h3>
-      <span class="section-title">Inscription aux services</span>
-    </h3>
-    <p> Ci-dessous, la liste des services pour lesquels on a besoin de votre aide, rangés par catégorie.
-    <br>
-    Si vous êtes partant pour participer en nous donnant un coup de main le jour J, on vous laisse choisir le votre.
-    <br>
-    </p>
+  <div class="links">
+    <%= link_to t("links.back"), wedding_path(@wedding) %>
   </div>
 
   <div class="tasks-bloc">
+    <div class="text-center">
+      <h3>
+        <span class="section-title">Inscriptions aux services</span>
+      </h3>
+      <% if policy(@wedding).edit? %>
+        <p>
+          Ici, la liste des services proposés à vos invités, rangés par catégorie.
+        </p>
+      <% else %>
+        <p>
+          Ci-dessous, la liste des services pour lesquels on a besoin de votre aide, rangés par catégorie.
+          <br>
+          Si vous êtes partant pour participer le jour J, MERCI de choisir un de services proposés !
+        </p>
+      <% end %>
+    </div>
+
     <div class= tasklist>
       <ul class="tasks">
         <div class="row extra-width">
-          <% @wedding.tasks_with_service.each do |task| %>
+          <% @wedding.tasks.with_service.each do |task| %>
             <%= link_to wedding_task_path(@wedding, task) do %>
               <div class="col-xs-6 cos-sm-3 col-md-2">
                 <li class="task">
@@ -34,16 +43,39 @@
           <% end %>
         </div>
       </ul>
+      <% if policy(@wedding).edit? && @wedding.tasks.without_service.any?  %>
+        <div class="text-center">
+          Il manque encore des services pour les catégories suivantes. Cliquer dessus pour en ajouter.
+        </div>
+        <ul class="tasks">
+          <div class="row extra-width">
+            <% @wedding.tasks.without_service.each do |task| %>
+              <%= link_to wedding_task_path(@wedding, task) do %>
+                <div class="col-xs-6 cos-sm-3 col-md-2">
+                  <li class="task">
+                    <div class="taskname button">
+                      <strong> <%= task.name %> </strong>
+                    </div>
+                  </li>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </ul>
+      <% end %>
     </div>
-  </div>
 
-  <div class="links">
-    <%= link_to t("links.back"), wedding_path(@wedding) %>
-  </div>
+    <div class="text-center">
+      <% if policy(@wedding).edit? %>
+        <%= simple_form_for([@wedding, @task]) do |f| %>
+          <%= f.input :name, label: "Pour ajouter une catégorie :" %>
 
-  <div class="text-center">
-    Choisir un service est une propositon que nous vous faisons, pas une obligation.
-    <br>
-    Si vous ne pouvez pas choisir de service, pas la peine de bouder. Venez profiter, on compte sur vous tout autant !
+          <%= f.submit "Créer une nouvelle catégorie", class: "button maxwidth" %>
+        <% end %>
+
+      <% else %>
+        <p>Psst... Pour choisir son service, on peut voir les autre inscrits, leurs messages et leurs photos avant de s'inscrire soi-même ;)</p>
+      <% end %>
+    </div>
   </div>
 </div>
