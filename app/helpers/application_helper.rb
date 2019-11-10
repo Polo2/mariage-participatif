@@ -1,4 +1,6 @@
 module ApplicationHelper
+  DAYS_NAME = %w[lundi mardi mercredi jeudi vendredi samedi dimanche]
+
   def avatar_for(user, options = {})
     if user.avatar.present?
       cl_image_tag user.avatar, options
@@ -27,5 +29,10 @@ module ApplicationHelper
     else
       "#{icon("far", "times-circle")} Non".html_safe
     end
+  end
+
+  def day_to_display(week_day)
+    return unless (0..6).include? week_day
+    DAYS_NAME[week_day]
   end
 end

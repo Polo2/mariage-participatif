@@ -13,12 +13,12 @@
 
   <div class="fullblock">
     <div class="statut">
-      <% if @services.count > 0 %>
+      <% if @services.any? %>
         <p>
           <% if @task.statut %>
-            <i class="fa fa-check"></i>
+            <%= icon("far", "check") %>
           <% else %>
-            <i class="fa fa-hourglass-half"></i>
+            <%= icon("fa", "hourglass-half") %>
           <% end %>
 
           <%= @task.statut ? t("task.done") : t("task.not_done") %>
@@ -29,19 +29,16 @@
             <% else %>
               <%= link_to t("task.mark"), edit_wedding_task_path(@wedding, @task) %>
             <% end %>
-            <%= link_to "|     Ajouter un service", new_wedding_task_service_path(@wedding, @task)%>
+            <%= link_to "| Ajouter un service", new_wedding_task_service_path(@wedding, @task)%>
           <% end %>
         </p>
       <% end %>
     </div>
 
-
-
-
     <div class="row">
       <!-- Vu par les mariés -->
       <% if policy(@wedding).edit? %>
-        <% if @services.count > 0 %>
+        <% if @services.any? %>
           <div class="col-xs-12 task-details">
           <h4><%= t("task.list")%></h4>
             <div class="rightblock bloc">
@@ -50,18 +47,33 @@
                 <li>
                   <div class="service-card">
                     <div class="service-description">
-                      <%= service.details %>
+                      <%= service.description %>
                     </div>
                     <div class="service-details">
                       <ul>
-                        <li><%= icon("far", "calendar") %><%= service.day %></li>
-                        <li><%= icon("far", "clock") %></i><%= service.appointment %></li>
-                        <li><%= icon("fas", "map-marker-alt") %><%= service.location %></li>
+                        <li>
+                          <%= icon("far", "calendar") %>
+                          <%= day_to_display service.week_day %>
+                        </li>
+                        <li>
+                          <%= icon("far", "clock") %>
+                          <%= service.schedule %>
+                        </li>
+                        <li>
+                          <%= icon("fas", "map-marker-alt") %>
+                          <%= service.location %>
+                        </li>
+                        <li>
+                          <%= link_to edit_wedding_task_service_path(@wedding, @task, service) do%>
+                            <%= icon("far", "edit") %>
+                            Modifier
+                          <% end %>
+                        </li>
                       </ul>
                     </div>
 
                     <% if service.is_service_complete? %>
-                      <div class="service-registrations" id="complete">
+                      <div class="service-registrations complete">
                         <ul>
                           <li>Service complet !</li>
                           <div class="dropdown">
@@ -77,7 +89,7 @@
                     <% else %>
                       <div class="service-registrations">
                         <ul>
-                          <li><%= "#{service.capacity - service.guests.count} place(s)" %></li>
+                          <li><%= "#{service.remaining_places_count} place(s)" %></li>
                           <li>
                             <div class="dropdown">
                               <a href="" class="dropdown-toggle" data-toggle="dropdown" ><%= "#{service.guests.count} inscrits"%></a>
@@ -100,7 +112,7 @@
         <% end %>
 
         <div class="col-xs-12 discussion">
-          <h4>Espace d'échange</h4>
+          <h4>On échange ?</h4>
           <div class="downblock bloc">
             <%= render "messages/messages-box", resource: @task %>
           </div>
@@ -108,27 +120,35 @@
 
       <% else %>
       <!-- Vue par les invités -->
-        <% if @services.count > 0 %>
+        <% if @services.any? %>
           <div class="col-xs-12 task-details">
             <h4><%= t("task.list")%></h4>
-              <div class="rightblock bloc">
-                <ul>
+            <div class="rightblock bloc">
+              <ul>
                 <% @services.each do |service| %>
                   <li>
                     <div class="service-card">
                       <div class="service-description">
-                        <%= service.details %>
+                        <%= service.description %>
                       </div>
                       <div class="service-details">
-                        <ul>
-                          <li><%= icon("far", "calendar") %><%= service.day %></li>
-                          <li><%= icon("far", "clock") %><%= service.appointment %></li>
-                          <li><%= icon("fas", "map-marker-alt") %><%= service.location %></li>
-                        </ul>
-                      </div>
-
+                      <ul>
+                        <li>
+                          <%= icon("far", "calendar") %>
+                          <%= day_to_display service.week_day %>
+                        </li>
+                        <li>
+                          <%= icon("far", "clock") %>
+                          <%= service.schedule %>
+                        </li>
+                        <li>
+                          <%= icon("fas", "map-marker-alt") %>
+                          <%= service.location %>
+                        </li>
+                      </ul>
+                    </div>
                       <% if service.is_service_complete? %>
-                        <div class="service-registrations" id="complete">
+                        <div class="service-registrations complete">
                           <ul>
                             <li>Service complet !</li>
                           </ul>
@@ -137,16 +157,16 @@
                           <div class="dropdown">
                             <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"><%= "#{service.guests.count} inscrits !"%></a>
                             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                            <% service.guests.each do |guest| %>
-                              <li><%= "#{guest.registry.group_name.capitalize}, #{guest.name} " %></li>
-                            <% end %>
+                              <% service.guests.each do |guest| %>
+                                <li><%= "#{guest.registry.group_name.capitalize}, #{guest.name} " %></li>
+                              <% end %>
                             </ul>
                           </div>
                         </div>
                       <% else %>
                         <div class="service-registrations">
                           <ul>
-                            <li><%= "#{service.capacity - service.guests.count} place(s)" %></li>
+                            <li><%= "#{service.remaining_places_count} place(s)" %></li>
                             <li>
                               <div class="dropdown">
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown" ><%= "#{service.guests.count} inscrits"%></a>
@@ -164,7 +184,7 @@
                             <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"> Inscription </a>
                             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
                               <%= simple_form_for([@wedding, @task, service]) do |f| %>
-                                <%= f.association :guests, collection: @list_guests_adults_without_service, as: :check_boxes %>
+                                <%= f.association :guests, collection: @guests_without_service, as: :check_boxes %>
                                 <%= f.button :submit %>
                               <% end %>
                             </ul>
@@ -174,22 +194,19 @@
                     </div>
                   </li>
                 <% end %>
-                </ul>
-              </div>
-            </div>
-          <% end %>
-
-          <div class="col-xs-12 discussion">
-            <h4><%= t("task.messages") %></h4>
-            <p>Espace dédié pour parler (entre autre) de : "<%= @task.name %>" </p>
-            <div class="downblock bloc">
-                <%= render "messages/messages-box", resource: @task %>
+              </ul>
             </div>
           </div>
+        <% end %>
+
+        <div class="col-xs-12 discussion">
+          <h4><%= t("task.messages") %></h4>
+          <p>On échange ?</p>
+          <div class="downblock bloc">
+            <%= render "messages/messages-box", resource: @task %>
+          </div>
+        </div>
       <% end %>
     </div>
-
   </div>
 </div>
-
-

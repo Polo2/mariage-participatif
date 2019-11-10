@@ -1,14 +1,16 @@
-<%= simple_form_for([@wedding, @task, @service]) do |f| %>
-
-
-  <%= f.input :details, as: :text %>
-  <%= f.input :capacity %>
-  <%= f.input :day %>
-  <%= f.input :appointment %>
-  <%= f.input :location %>
-
-  <%= f.button :submit, "Valider" %>
-
-<% end %>
-
-
+<div class="container">
+  <div class="form-center">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <%= simple_form_for([@wedding, @task, @service]) do |f| %>
+          <%= f.input :description, as: :text %>
+          <%= f.input :capacity %>
+          <%= f.input :location %>
+          <%= f.input :start_at %>
+          <%= f.input :stop_at %>
+          <%= f.button :submit, "Valider" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,6 +20,11 @@ class User < ApplicationRecord
     end
   end
 
+  def registry_for_wedding(wedding)
+    # NOTE : add uniqueness validation, one registry per user & per wedding
+    registries.where(wedding_id: wedding.id).last
+  end
+
 protected
 
   def send_welcome_email

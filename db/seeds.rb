@@ -54,13 +54,12 @@ puts "creation de 2 taches, 2 services chacune"
   )
   2.times do |i|
     Service.create!(
-      name: "#{task_title} service #{i + 1}",
+      description: "#{task_title} service #{i + 1}",
       capacity: i + 1,
       task: task,
-      appointment: "1#{i + 1}h - 1#{i + 3}h",
-      day: "samedi",
       location: "ici",
-      details: "des détails",
+      start_at: Time.new(2020, 7, 1, 10 + i),
+      stop_at: Time.new(2020, 7, 1, 11 + i)
     )
   end
 end
@@ -100,7 +99,7 @@ puts "Creation des 2 guests adultes & 1 adulte absent & 1 enfant pour invitation
     name: "adulte A #{i + 1}",
     child: false,
     presence:true,
-    service: Service.find_by!(name: "Cuisine service 2")
+    service: Service.find_by!(description: "Cuisine service 2")
   )
 end
 

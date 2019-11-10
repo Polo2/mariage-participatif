@@ -148,13 +148,14 @@ fr:
         presence: Presence
         child: Enfant ?
       service:
-        guests: Inscrire
         name: Catégorie
-        details: Description
-        capacity: Nb de personnes nécessaires
-        day: Jour
+        dsecription: Description
+        capacity: Nombre de personnes nécessaires
         location: Lieu
         appointment: Créneau
+        start_at: de
+        stop_at: à
+
       question:
         name: Votre nom
         email: Votre email
