@@ -17,8 +17,7 @@ class TasksController< ApplicationController
 
     @message = Message.new
 
-    @list_guests_adults = current_user.registries.last.guests.where(child: false).where(presence: true) unless current_user == @wedding.user
-    @list_guests_adults_without_service = @list_guests_adults.select { |g| !g.service_id?  } unless current_user == @wedding.user
+    @guests_without_service = guests_without_service
   end
 
   def create
@@ -63,5 +62,12 @@ private
 
   def task_params
     params.require(:task).permit(:name)
+  end
+
+  def guests_without_service
+    return if policy(@wedding).edit?
+    current_user.registry_for_wedding(@wedding)
+      .guests
+      .where_service_is_required
   end
 end

@@ -13,7 +13,7 @@ class Registry < ApplicationRecord
   def update_score!
     score = 1
     score += guests.where(presence: nil).empty? ? 33 : 0
-    score += ((services.count == guests.where(child: false).where(presence: true).count) && guests.where(presence: nil).empty?) ? 33 : 0
+    score += (services.count == guests.where_service_is_required) ? 33 : 0
     score += (!vegetables.empty? && guests.where(presence: nil).empty?) ? 33 : 0
     update! score_registry: score
   end

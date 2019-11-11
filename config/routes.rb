@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :vegetables, only: [:index]
     resources :accomodations, only: [:index]
     resources :tasks do
-      resources :services, only: [:new, :create, :update, :destroy]
+      resources :services, only: [:new, :create, :edit, :update]
     end
     resources :messages, only: [:create]
     resources :services, only: [:index]

@@ -1,40 +1,60 @@
 <div class="container">
-
-  <% if policy(@wedding).edit? %>
-    <p>Coucou les mariés ! Vous voulez voir la liste des services ? Désolé, mais le mieux, et de passer par votre BDD Excel, ou de passer par les categories / discussions </p>
-    <p>Sur cette page, un invité voit le service auquel il est inscrit</p>
-
-  <% else %>
-
-    <p><%= @services.count %> services !</p>
+  <% if @services.any? && !policy(@wedding).edit? %>
+    <p>
+      Vous avez choisi
+      <% if @services.count > 1 %>
+        <%= @services.count %> services,
+      <% else %>
+        <%= @services.count %> service,
+      <% end %>
+      merci !
+    </p>
     <div class="fullblock">
-      <% if @services.count > 0 %>
+      <% if @services.any? %>
         <div class="col-xs-12 task-details">
-          <% @guests.each do |g| %>
-            <h4><%= g.name %> :</h4>
-            <% if g.service_id? %>
+          <% @guests.each do |guest| %>
+            <h4><%= guest.name %> :</h4>
+            <% if guest.service %>
               <div class="service-card">
                 <div class="service-description">
-                  <%= g.service.details %>
+                  <%= guest.service.description %>
                 </div>
 
                 <div class="service-details">
                   <ul>
-                    <li><%= icon("far", "calendar") %><%= g.service.day %></li>
-                    <li><%= icon("far", "clock") %><%= g.service.appointment %></li>
-                    <li><%= icon("fas", "map-marker-alt") %><%= g.service.location %></li>
+                    <li>
+                      <%= icon("far", "calendar") %>
+                      <%= day_to_display guest.service.week_day %>
+                    </li>
+                    <li>
+                      <%= icon("far", "clock") %>
+                      <%= guest.service.schedule %>
+                    </li>
+                    <li>
+                      <%= icon("fas", "map-marker-alt") %>
+                      <%= guest.service.location %>
+                    </li>
                   </ul>
                 </div>
 
-                <% if g.service.is_service_complete? %>
-                  <div class="service-registrations" id="complete">
+                <% if guest.service.is_service_complete? %>
+                  <div class="service-registrations complete">
                     <ul>
                       <li>Service complet !</li>
                       <div class="dropdown">
-                        <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown"><%= "#{g.service.guests.count} inscrits !"%></a>
+                        <a href="" class="dropdown-toggle" id="service-registration-guests-list" data-toggle="dropdown">
+                          <% if guest.service.guests.count > 2 %>
+                            <%="#{guest.service.guests.count - 1} autres volontaires"%>
+                          <% else %>
+                            <%="#{guest.service.guests.count - 1} autre volontaire"%>
+                          <% end %>
+                        </a>
                         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                          <% g.service.guests.each do |guest| %>
-                            <li><%= "#{guest.registry.group_name.capitalize}, #{guest.name} " %></li>
+                          <% guest.service.guests.each do |other_guest| %>
+                            <% next if guest == other_guest %>
+                            <li>
+                              <%= "#{other_guest.registry.group_name.capitalize}, #{other_guest.name}" %>
+                            </li>
                           <% end %>
                         </ul>
                       </div>
@@ -43,20 +63,34 @@
                 <% else %>
                   <div class="service-registrations">
                     <ul>
-                      <li><%= "#{g.service.capacity - g.service.guests.count} place(s)" %></li>
-                      <li><%= "#{g.service.guests.count} inscrits"%></li>
+                      <li><%= "déjà #{guest.service.guests.count} volontaires,"%></li>
+                      <li>
+                        <% if guest.service.remaining_places_count > 1 %>
+                          <%= "il reste #{guest.service.remaining_places_count} places." %>
+                        <% else %>
+                          <%= "il reste #{guest.service.remaining_places_count} place." %>
+                        <% end %>
+                      </li>
                     </ul>
                   </div>
                 <% end %>
                 <div class="service-links">
                   <ul>
-                    <li>Catégorie:</li>
-                    <li><%= link_to g.service.task.name, wedding_task_path(@wedding, g.service.task) %></li>
+                    <li>
+                      <%= link_to wedding_task_path(@wedding, guest.service.task) do %>
+                        <%= icon("far", "envelope") %>
+                      <% end %>
+                    </li>
                   </ul>
                 </div>
               </div>
             <% else %>
-              <p>Pas encore de service</p>
+              <p>Pas encore de service ?</p>
+              <p>
+                <%= link_to wedding_tasks_path(@wedding), class: "button service-button" do %>
+                  Voir la liste
+                <% end %>
+              </p>
             <% end %>
           <% end %>
         </div>
@@ -68,5 +102,3 @@
     <%= link_to t("links.back"), wedding_path(@wedding), class: "back-link" %>
   </div>
 </div>
-
-

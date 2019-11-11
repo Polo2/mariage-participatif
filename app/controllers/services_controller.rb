@@ -1,7 +1,7 @@
 class ServicesController < ApplicationController
-before_action :set_wedding
-before_action :set_task, only: [:new, :create, :update, :destroy]
-before_action :set_service, only: [:show, :edit, :update, :destroy]
+  before_action :set_wedding
+  before_action :set_task, except: [:index]
+  before_action :set_service, only: [:show, :edit, :update, :destroy]
 
   def index
     if policy(@wedding).edit?
@@ -20,7 +20,6 @@ before_action :set_service, only: [:show, :edit, :update, :destroy]
   end
 
   def create
-
     @service = Service.new(service_params)
     @service.task = @task
     if @service.save
@@ -32,37 +31,23 @@ before_action :set_service, only: [:show, :edit, :update, :destroy]
   end
 
   def update
-
     if policy(@wedding).edit?
-      @service.update(service_params)
-      @service.task = @task
-      redirect_to wedding_task_path(@wedding, @task) if @service.save
+      if @service.update service_params.merge(task_id: @task.id)
+        redirect_to wedding_task_path(@wedding, @task)
+      else
+        render :edit
+      end
     else
-
-      guest_list = register_guests(params[:service]["guest_ids"])
-
-      if (guest_list.length + @service.guests.count ) <= @service.capacity
-        guest_list.each do |g|
-          g.service = @service
-          g.save
+      if guests_ids.length <= @service.remaining_places_count
+        guests_ids.each do |guest_id|
+          Guest.find(guest_id).update service: @service
         end
-        @service.update(service_params)
-
-        @service.task = @task
-        if @service.save
-          redirect_to wedding_task_path(@wedding, @task)
-        end
+        redirect_to wedding_task_path(@wedding, @task), notice: "Merci du coup de main, inscription réussie"
       else
         redirect_to wedding_task_path(@wedding, @task), alert: "Désolé, pas assez de place sur ce service"
       end
     end
   end
-
-  def destroy
-    @service.destroy
-    redirect_to wedding_task_path(@wedding, @task)
-  end
-
 
 private
 
@@ -79,15 +64,12 @@ private
   end
 
   def service_params
-    params.require(:service).permit(:name, :capacity, :appointment)
+    params.require(:service).permit(
+      :description, :capacity, :location, :start_at, :stop_at
+    )
   end
 
-  def register_guests(array_guest_ids)
-    array_ids = array_guest_ids.select{ |e| !e.empty? }.map{ |n| n.to_i }
-    guests_array =  []
-    array_ids.each { |id| guests_array << Guest.find(id) }
-    return guests_array
+  def guests_ids
+    params[:service]["guest_ids"].reject(&:empty?).map(&:to_i)
   end
-
-
 end
