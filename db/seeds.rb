@@ -33,15 +33,13 @@ user3 = User.create!(
 puts "Création du mariage"
 
 wedding = Wedding.create!(
-  title: "Mariage Odile & Paul",
   description: "3 jours, 2 folies, 1 état d'esprit : le partage !",
-  capacity: 300,
   user_id: new_user_us.id,
   date: Date.new(2020, 5, 19),
   deadline: Date.new(2020, 3, 4),
   location: "Abbaye de Pontigny",
-  spouse_first_name: "Odile",
-  spouse_last_name: "M2B",
+  first_name_1: "Odile",
+  first_name_2: "Paul",
 )
 
 puts "creation de 2 taches, 2 services chacune"

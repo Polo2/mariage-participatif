@@ -1,5 +1,16 @@
 class Wedding < ApplicationRecord
   belongs_to :user
+
+  validates :first_name_1, presence: true
+  validates :first_name_2, presence: true
+  validates :description, presence: true
+  validates :location, presence: true
+  validates :date, presence: true
+  validates :deadline, presence: true
+
+  validate :date_cannot_be_in_the_past
+  validate :deadline_date_has_to_be_until_now_and_wedding_date
+
   has_many :tasks, dependent: :destroy
   has_many :services, through: :tasks
   has_many :discussions, dependent: :destroy
@@ -21,8 +32,16 @@ class Wedding < ApplicationRecord
     date < Date.current
   end
 
+  def title
+    couple_first_names + ", Mariage Participatif"
+  end
+
   def services_count
     services.count
+  end
+
+  def couple_first_names
+    [first_name_1, first_name_2].join(" & ")
   end
 
   def complete_services_count
@@ -81,6 +100,18 @@ class Wedding < ApplicationRecord
     vegetables.count
   end
 
+  def present_guests_text
+    present_guests_count > 1 ? "Réponses OUI" : "Réponse OUI"
+  end
+
+  def unread_messages_text
+    unread_messages_count > 1 ? "nouveaux messages" : "nouveau message"
+  end
+
+  def services_text
+    services_count > 1 ? "services proposés" : "service proposé"
+  end
+
 private
 
   def task_messages
@@ -91,5 +122,19 @@ private
   def discussion_messages
     Message.where(resource_type: "Discussion")
       .where resource_id: self.discussions.pluck(:id)
+  end
+
+  def date_cannot_be_in_the_past
+    return unless date
+    if date < Time.now
+      errors.add(:date, "le mariage est déjà passé ?")
+    end
+  end
+
+  def deadline_date_has_to_be_until_now_and_wedding_date
+    return unless deadline && date
+    if deadline < Time.now || deadline > date
+      errors.add(:deadline, "entre maintenant et avant le mariage")
+    end
   end
 end

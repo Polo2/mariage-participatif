@@ -1,3 +1,11 @@
+<div class="row wedding-link">
+  <% if policy(@wedding).edit? %>
+    <%= link_to edit_wedding_path(@wedding) do %>
+      <%= icon("far", "edit") %>
+      Modifier ces informations
+    <% end %>
+  <% end %>
+</div>
 <div class="row min-height-for-map">
   <div class="col-xs-12 col-sm-8">
     <div class="wedding-informations">
@@ -10,7 +18,7 @@
         <ul>
           <li class="primary">
             <%= icon("fas", "heart") %>
-            <%= @wedding.user.first_name %> & <%= @wedding.spouse_first_name %>
+            <%= @wedding.couple_first_names %>
           </li>
           <li class="secondary">
             <%= icon("fas", "calendar") %><%= @wedding.date %>

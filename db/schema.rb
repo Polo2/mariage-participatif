@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_10_140616) do
+ActiveRecord::Schema.define(version: 2019_11_23_183445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -148,12 +148,10 @@ ActiveRecord::Schema.define(version: 2019_11_10_140616) do
   end
 
   create_table "weddings", id: :serial, force: :cascade do |t|
-    t.string "title"
     t.text "description"
     t.date "date"
     t.string "location"
     t.string "photo"
-    t.integer "capacity"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -161,9 +159,9 @@ ActiveRecord::Schema.define(version: 2019_11_10_140616) do
     t.float "longitude"
     t.string "token"
     t.string "spouse_photo"
-    t.string "spouse_first_name"
-    t.string "spouse_last_name"
     t.date "deadline"
+    t.string "first_name_1"
+    t.string "first_name_2"
     t.index ["user_id"], name: "index_weddings_on_user_id"
   end
 
