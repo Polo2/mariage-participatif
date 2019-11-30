@@ -38,14 +38,10 @@ en:
   wedding:
     4blocs: 4 blocks
     wedder_tab:
-      guest: Guest
-      guests: Guests
       answer: Answer
       answers: Answers
       pending_task: Pending task
       pending_tasks: Pending tasks
-      new_message: New Message
-      new_messages: New Messages
     guest_list:
       title: Guest list
       add: Add guest

@@ -35,19 +35,12 @@ fr:
     contact_form_title: Nous contacter
   wedding:
     4blocs: 4 blocs
-    title_new_wedding: Creation de la page de votre mariage
-    title_edit_wedding: Mise à jour la page de votre mariage
+    title_wedding_form: Votre mariage en quelques infos
     wedder_tab:
-      guest: Invitation
-      guests: Invitations
       answer: Réponse
       answers: Réponses
       pending_task: Tâche en cours
       pending_tasks: Tâches en cours
-      pending_service: Service proposé
-      pending_services: Services proposés
-      new_message: Nouveau message
-      new_messages: Nouveaux messages
     guest_list:
       title: Liste des invités
       title_bloc: Bloc invités
@@ -111,7 +104,7 @@ fr:
     validate: Valider
   flash_messages:
     user_not_authorized: Vous n'êtes pas invité à faire ça, désolé.
-    wedding-created: Votre mariage a bien été créée
+    wedding-created: Félicitation, voici la page créée pour votre mariage participatif.
     wedding-updated: Votre mariage a été mis à jour
     wedding-destroyed: Ce mariage a bien été supprimé du site web
     wedding-does-not-exist: Désolé, impossible de trouver de mariage
@@ -126,15 +119,15 @@ fr:
         password: Mot de passe
         password_confirmation: Confirmation du mot de passe
       wedding:
-        title: Nom du mariage
         description: Description en quelques lignes
         date: Date
         location: Lieu du mariage
         capacity: Nombre d'invités prévus
         photo: Photo d'ambiance
         spouse_photo: Photo des mariés
-        spouse_first_name: Prénom du / de la marié(e)
-        spouse_last_name: Nom du / de la marié(e)
+        first_name_1: Prénom lui / elle
+        first_name_2: Prénom elle / lui
+
       registry:
         email: Mail
         group_name: Nom de famille

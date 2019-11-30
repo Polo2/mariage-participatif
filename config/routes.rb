@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "users/profile", to: 'pages#profile'
 
-  resources :weddings do
+  resources :weddings, only: [:new, :create, :edit, :update, :show] do
     resources :registries do
       resources :vegetables, only: [:new, :create]
     end

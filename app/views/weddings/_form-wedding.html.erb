@@ -1,22 +1,34 @@
-<%= simple_form_for(@wedding) do |f| %>
-  <%= f.error_notification %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+      <h3 class="text-center">
+        <span class="section-title">
+          <%= t :"wedding.title_wedding_form" %>
+        </span>
+      </h3>
+      <%= simple_form_for(@wedding) do |f| %>
+        <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title, required: true %>
-    <%= f.input :description, required: true %>
-    <%= f.input :date,  start_year: Time.now.year, end_year: Time.now.year + 8, order: [:day, :month, :year], required: true, class: "inline" %>
-    <%= f.input :deadline,  start_year: Time.now.year, end_year: Time.now.year + 8, order: [:day, :month, :year], required: true, class: "inline" %>
-    <%= f.input :location, required: true %>
-    <%= f.input :capacity, numericality: { only_integer: true, greater_than: 0}, required: true , hint: "... une estimation"%>
-    <%= f.input :photo, required: true %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :spouse_photo, required: true %>
-    <%= f.input :spouse_photo_cache, as: :hidden %>
-    <%= f.input :spouse_first_name, required: true %>
-    <%= f.input :spouse_last_name, required: true %>
-  </div>
+        <div>
+          <%= f.input :first_name_1 %>
+          <%= f.input :first_name_2 %>
+          <%= f.input :description, label: "description de votre mariage, en quelques lignes", placeholder: "sera utilisé sur la page du mariage" %>
+          <%= f.input :date, label: "Date de votre mariage", start_year: Time.now.year, order: [:day, :month, :year], class: "inline" %>
+          <%= f.input :deadline, label: "Date limite de réponse pour les invités", start_year: Time.now.year, order: [:day, :month, :year], class: "inline" %>
+          <%= f.input :location, placeholder: "pour afficher le lieu sur une carte" %>
+          <%= f.input :photo, hint: "une photo du lieu, de la salle, de l'église..." %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.input :spouse_photo, hint: "belle photo de vous deux" %>
+          <%= f.input :spouse_photo_cache, as: :hidden %>
+        </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+      <div class="links">
+        <%= link_to t("links.home"), root_path %>
+      </div>
+    </div>
   </div>
-<% end %>
+</div>

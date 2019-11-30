@@ -1,10 +1,5 @@
 class WeddingsController < ApplicationController
-  before_action :set_wedding, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @weddings = policy_scope(Wedding)
-    @memories = Wedding.passed
-  end
+  before_action :set_wedding, only: [:show, :edit, :update]
 
   def show
     authorize(@wedding)
@@ -59,15 +54,6 @@ class WeddingsController < ApplicationController
     end
   end
 
-  def destroy
-    authorize(@wedding)
-    @wedding.destroy
-    respond_to do |format|
-      format.html { redirect_to weddings_url, notice: t("flash_messages.wedding-destroyed") }
-      format.json { head :no_content }
-    end
-  end
-
 private
 
   def set_wedding
@@ -78,8 +64,8 @@ private
 
   def wedding_params
     params.require(:wedding).permit(
-      :title, :description, :date, :location, :capacity, :photo, :spouse_photo,
-      :spouse_first_name, :spouse_last_name
+      :description, :date, :deadline, :location, :photo, :spouse_photo,
+      :first_name_1, :first_name_2
     )
   end
 end

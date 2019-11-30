@@ -11,7 +11,7 @@
 
       <!-- Links when logged in -->
       <% if current_user.weddings.empty? %>
-        <%= link_to t("navbar.create_my_wedding"),  root_path , class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to t("navbar.create_my_wedding"), new_wedding_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% else %>
         <%= link_to wedding_path(current_user.weddings.last), class: "navbar-wagon-item navbar-wagon-link" do %>
             <i class="fa fa-hourglass-half"></i>
@@ -26,7 +26,7 @@
             <li>
               <% current_user.registries.each do |reg| %>
                 <%= link_to wedding_path(reg.wedding) do %> <i class="fa fa-hourglass-half"></i>
-                  <%= reg.wedding.spouse_first_name %> & <%= reg.wedding.user.first_name %>
+                  <%= reg.wedding.couple_first_names %>
                 <% end %>
               <% end %>
             </li>
@@ -80,13 +80,13 @@
             <% end %>
           </li>
           <li>
-            <%= link_to destroy_user_session_path,  method: :delete, data: { confirm: t("navbar.log_out_confirm")}  do %>
+            <%= link_to destroy_user_session_path, method: :delete, data: { confirm: t("navbar.log_out_confirm")}  do %>
               <i class="fa fa-sign-out"></i>
               <%= t("navbar.log_out") %>
             <% end %>
           </li>
           <% if current_user.weddings.empty? %>
-            <li><%= link_to "#{t("navbar.create_my_wedding")}",  root_path %></li>
+            <li><%= link_to "#{t("navbar.create_my_wedding")}", new_wedding_path %></li>
           <% else %>
             <li>
               <%= link_to wedding_path(current_user.weddings.last) do %>
@@ -102,7 +102,7 @@
                   <li>
                     <%= link_to wedding_path(reg.wedding) do %>
                       <i class="fa fa-hourglass-half"></i>
-                      <%= reg.wedding.user.first_name %> & <%= reg.wedding.spouse_first_name %>
+                      <%= reg.wedding.couple_first_names %>
                     <% end %>
                   </li>
                 <% end %>
