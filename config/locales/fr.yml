@@ -100,6 +100,7 @@ fr:
     destroy: Supprimer
     back: Retour
     back_to_wedding: Retour au mariage
+    back_to_tasks: Retour aux autres services
     confirmation: Certain ?
     validate: Valider
   flash_messages:
