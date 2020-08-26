@@ -35,8 +35,8 @@ puts "Création du mariage"
 wedding = Wedding.create!(
   description: "3 jours, 2 folies, 1 état d'esprit : le partage !",
   user_id: new_user_us.id,
-  date: Date.new(2020, 5, 19),
-  deadline: Date.new(2020, 3, 4),
+  date: Date.new(2022, 5, 19),
+  deadline: Date.new(2022, 3, 4),
   location: "Abbaye de Pontigny",
   first_name_1: "Odile",
   first_name_2: "Paul",
