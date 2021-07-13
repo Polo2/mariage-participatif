@@ -27,7 +27,7 @@ gem 'devise-i18n', '~> 1.2 '
 gem "cloudinary", "~> 1.11"
 gem "carrierwave", "~> 2.0"
 gem "http-accept", "~> 1.7"
-gem "addressable", "~> 2.6"
+gem "addressable", "~> 2.8"
 
 # google Geocode
 gem "geocoder"
